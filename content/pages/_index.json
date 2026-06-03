@@ -1,0 +1,286 @@
+{
+  "exported_at": "2026-06-03T07:30:58.738Z",
+  "base_url": "https://armstrong-cap.com",
+  "count": 31,
+  "items": [
+    {
+      "id": 9640,
+      "slug": "career-transition",
+      "title": "Career Transition",
+      "link": "https://armstrong-cap.com/career-transition/",
+      "modified": "2026-02-17T09:45:08",
+      "featured_media_id": null,
+      "file": "career-transition.json"
+    },
+    {
+      "id": 9445,
+      "slug": "newsletters",
+      "title": "Newsletters",
+      "link": "https://armstrong-cap.com/newsletters/",
+      "modified": "2026-04-10T11:36:56",
+      "featured_media_id": null,
+      "file": "newsletters.json"
+    },
+    {
+      "id": 9379,
+      "slug": "market-updates",
+      "title": "Market Updates",
+      "link": "https://armstrong-cap.com/market-updates/",
+      "modified": "2026-06-02T11:39:05",
+      "featured_media_id": null,
+      "file": "market-updates.json"
+    },
+    {
+      "id": 9015,
+      "slug": "media-spotlight",
+      "title": "Media Spotlight",
+      "link": "https://armstrong-cap.com/media-spotlight/",
+      "modified": "2025-10-08T09:35:29",
+      "featured_media_id": null,
+      "file": "media-spotlight.json"
+    },
+    {
+      "id": 8618,
+      "slug": "pre-retirement-planning",
+      "title": "Pre-Retirement Planning",
+      "link": "https://armstrong-cap.com/pre-retirement-planning/",
+      "modified": "2026-02-17T09:48:06",
+      "featured_media_id": null,
+      "file": "pre-retirement-planning.json"
+    },
+    {
+      "id": 8610,
+      "slug": "non-resident-indians-nri",
+      "title": "Non–Resident Indians (NRI)",
+      "link": "https://armstrong-cap.com/non-resident-indians-nri/",
+      "modified": "2026-02-17T09:47:35",
+      "featured_media_id": null,
+      "file": "non-resident-indians-nri.json"
+    },
+    {
+      "id": 8603,
+      "slug": "high-net-worth-individuals-hnis",
+      "title": "High-Net-Worth Individuals (HNIs)",
+      "link": "https://armstrong-cap.com/high-net-worth-individuals-hnis/",
+      "modified": "2026-02-17T09:47:03",
+      "featured_media_id": null,
+      "file": "high-net-worth-individuals-hnis.json"
+    },
+    {
+      "id": 8597,
+      "slug": "women-investors",
+      "title": "Women Investors",
+      "link": "https://armstrong-cap.com/women-investors/",
+      "modified": "2026-02-17T09:46:33",
+      "featured_media_id": null,
+      "file": "women-investors.json"
+    },
+    {
+      "id": 8576,
+      "slug": "beginning-to-invest",
+      "title": "Beginning to invest",
+      "link": "https://armstrong-cap.com/beginning-to-invest/",
+      "modified": "2026-02-17T09:45:42",
+      "featured_media_id": null,
+      "file": "beginning-to-invest.json"
+    },
+    {
+      "id": 8229,
+      "slug": "career-send-resume",
+      "title": "career-send-resume",
+      "link": "https://armstrong-cap.com/career-send-resume/",
+      "modified": "2025-05-15T13:24:45",
+      "featured_media_id": null,
+      "file": "career-send-resume.json"
+    },
+    {
+      "id": 8035,
+      "slug": "research-archives",
+      "title": "Research Archives",
+      "link": "https://armstrong-cap.com/research-archives/",
+      "modified": "2026-02-13T10:22:09",
+      "featured_media_id": null,
+      "file": "research-archives.json"
+    },
+    {
+      "id": 7480,
+      "slug": "career",
+      "title": "Career",
+      "link": "https://armstrong-cap.com/career/",
+      "modified": "2025-05-15T13:21:39",
+      "featured_media_id": null,
+      "file": "career.json"
+    },
+    {
+      "id": 6508,
+      "slug": "home",
+      "title": "Home",
+      "link": "https://armstrong-cap.com/",
+      "modified": "2025-10-08T09:31:05",
+      "featured_media_id": null,
+      "file": "home.json"
+    },
+    {
+      "id": 6123,
+      "slug": "risk-management",
+      "title": "Risk Management",
+      "link": "https://armstrong-cap.com/risk-management/",
+      "modified": "2025-09-17T13:05:04",
+      "featured_media_id": null,
+      "file": "risk-management.json"
+    },
+    {
+      "id": 6118,
+      "slug": "education-planning",
+      "title": "Education Planning",
+      "link": "https://armstrong-cap.com/education-planning/",
+      "modified": "2024-12-03T06:01:50",
+      "featured_media_id": null,
+      "file": "education-planning.json"
+    },
+    {
+      "id": 6111,
+      "slug": "retirement-planning",
+      "title": "Retirement Planning",
+      "link": "https://armstrong-cap.com/retirement-planning/",
+      "modified": "2024-12-06T06:55:05",
+      "featured_media_id": null,
+      "file": "retirement-planning.json"
+    },
+    {
+      "id": 6103,
+      "slug": "financial-planning",
+      "title": "Financial Planning",
+      "link": "https://armstrong-cap.com/financial-planning/",
+      "modified": "2024-12-02T09:06:25",
+      "featured_media_id": null,
+      "file": "financial-planning.json"
+    },
+    {
+      "id": 6089,
+      "slug": "investment-management",
+      "title": "Investment Management",
+      "link": "https://armstrong-cap.com/investment-management/",
+      "modified": "2024-12-02T09:04:01",
+      "featured_media_id": null,
+      "file": "investment-management.json"
+    },
+    {
+      "id": 6044,
+      "slug": "wealth-management",
+      "title": "Wealth Management",
+      "link": "https://armstrong-cap.com/wealth-management/",
+      "modified": "2024-12-02T09:01:55",
+      "featured_media_id": null,
+      "file": "wealth-management.json"
+    },
+    {
+      "id": 5774,
+      "slug": "values",
+      "title": "Our Values",
+      "link": "https://armstrong-cap.com/values/",
+      "modified": "2024-12-03T05:50:22",
+      "featured_media_id": null,
+      "file": "values.json"
+    },
+    {
+      "id": 5604,
+      "slug": "our-process",
+      "title": "Our Process",
+      "link": "https://armstrong-cap.com/our-process/",
+      "modified": "2024-12-06T07:38:09",
+      "featured_media_id": null,
+      "file": "our-process.json"
+    },
+    {
+      "id": 5535,
+      "slug": "our-customer-journey",
+      "title": "Our Customer Journey",
+      "link": "https://armstrong-cap.com/our-customer-journey/",
+      "modified": "2024-12-06T06:58:56",
+      "featured_media_id": null,
+      "file": "our-customer-journey.json"
+    },
+    {
+      "id": 5526,
+      "slug": "our-research",
+      "title": "Our Research",
+      "link": "https://armstrong-cap.com/our-research/",
+      "modified": "2024-12-24T10:44:04",
+      "featured_media_id": null,
+      "file": "our-research.json"
+    },
+    {
+      "id": 4588,
+      "slug": "our-plan",
+      "title": "Our Plan",
+      "link": "https://armstrong-cap.com/our-plan/",
+      "modified": "2024-12-06T12:48:10",
+      "featured_media_id": null,
+      "file": "our-plan.json"
+    },
+    {
+      "id": 4449,
+      "slug": "our-accolade",
+      "title": "Our Accolade",
+      "link": "https://armstrong-cap.com/our-accolade/",
+      "modified": "2024-12-03T06:00:20",
+      "featured_media_id": 3719,
+      "file": "our-accolade.json"
+    },
+    {
+      "id": 4260,
+      "slug": "about-us",
+      "title": "About Us",
+      "link": "https://armstrong-cap.com/about-us/",
+      "modified": "2024-12-03T10:54:54",
+      "featured_media_id": null,
+      "file": "about-us.json"
+    },
+    {
+      "id": 40,
+      "slug": "contact",
+      "title": "Contact",
+      "link": "https://armstrong-cap.com/contact/",
+      "modified": "2026-01-20T10:12:17",
+      "featured_media_id": null,
+      "file": "contact.json"
+    },
+    {
+      "id": 38,
+      "slug": "faqs",
+      "title": "Faq’s",
+      "link": "https://armstrong-cap.com/faqs/",
+      "modified": "2025-09-11T05:50:55",
+      "featured_media_id": null,
+      "file": "faqs.json"
+    },
+    {
+      "id": 36,
+      "slug": "our-team",
+      "title": "Our Team",
+      "link": "https://armstrong-cap.com/our-team/",
+      "modified": "2026-02-13T09:20:24",
+      "featured_media_id": null,
+      "file": "our-team.json"
+    },
+    {
+      "id": 28,
+      "slug": "blog",
+      "title": "Blog",
+      "link": "https://armstrong-cap.com/blog/",
+      "modified": "2025-09-23T11:54:55",
+      "featured_media_id": null,
+      "file": "blog.json"
+    },
+    {
+      "id": 3061,
+      "slug": "home-old-backup",
+      "title": "Home-old-backup",
+      "link": "https://armstrong-cap.com/home-old-backup/",
+      "modified": "2024-09-17T12:44:49",
+      "featured_media_id": null,
+      "file": "home-old-backup.json"
+    }
+  ]
+}

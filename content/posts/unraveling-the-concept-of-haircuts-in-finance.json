@@ -1,0 +1,319 @@
+{
+  "id": 7494,
+  "type": "post",
+  "slug": "unraveling-the-concept-of-haircuts-in-finance",
+  "status": "publish",
+  "link": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/",
+  "date": "2024-10-14T07:30:17",
+  "date_gmt": "2024-10-14T07:30:17",
+  "modified": "2024-10-14T07:30:17",
+  "modified_gmt": "2024-10-14T07:30:17",
+  "guid": {
+    "rendered": "http://devbox.bizbrolly.com:8080/mstrong/?p=7494"
+  },
+  "title": "Unraveling the Concept of Haircuts in Finance",
+  "excerpt": "<p>Unraveling the Concept of Haircuts in Finance In recent times, the term &#8220;haircut&#8221; has transcended its usual use in beauty and lifestyle discussions to become a significant topic in financial news. Reports are abuzz with lenders hesitating to pursue bankruptcies with major corporations for fear of significant &#8220;haircuts.&#8221; At a recent insolvency law conference, the [&hellip;]</p>\n",
+  "content": "<div class=\"content-two\">\n<p><strong>Unraveling the Concept of Haircuts in Finance</strong></p>\n<p>In recent times, the term &#8220;haircut&#8221; has transcended its usual use in beauty and lifestyle discussions to become a significant topic in financial news. Reports are abuzz with lenders hesitating to pursue bankruptcies with major corporations for fear of significant &#8220;haircuts.&#8221; At a recent insolvency law conference, the NCLAT Chairman advised creditors to act wisely, akin to skilled barbers. Meanwhile, mutual funds are anxiously considering the implications of AMFI&#8217;s new haircut matrix for their debt securities.</p>\n<p><strong>Understanding Financial Haircuts</strong></p>\n<p>In finance, a &#8220;haircut&#8221; denotes the loss that lenders must absorb when negotiating with borrowers who cannot fully repay their debts. During prosperous periods, banks extended substantial loans to sectors like steel, power, telecom, and infrastructure. When these sectors faltered, borrowers defaulted, prompting banks to label these loans as non-performing assets (NPAs). Subsequently, lenders often resort to legal measures to reclaim outstanding debts.</p>\n<p>However, the assets recorded by borrowers frequently fall short of covering their liabilities, making full recovery improbable. Consequently, lenders might opt for a compromise where the borrower agrees to settle a portion of the debt in a lump sum. The &#8220;haircut&#8221; reflects the permanent loss incurred by lenders in these situations.</p>\n<p><strong>Significance of Financial Haircuts</strong></p>\n<p>When borrowers delay loan repayments, financial institutions must adhere to regulatory guidelines for categorizing these loans as doubtful. For example, banks are required to set aside provisions of 15-25% if loans remain unpaid beyond 90 days. This provision can escalate to 40% if the loan remains substandard for over a year, and further delays could necessitate provisions of up to 100%. Despite these measures, the actual value of the borrower’s assets may be insufficient to fully repay the debt. Extending the repayment period risks further asset devaluation, prompting lenders to negotiate a haircut to salvage some of the loan.</p>\n<p>In the realm of mutual funds, schemes must promptly reflect the realizable value of their bonds in their net asset values (NAVs). SEBI mandates that funds holding defaulting or downgraded bonds must promptly adjust their market values. Previously, there was no standardized approach to determining the size of haircuts in various scenarios. However, following SEBI’s intervention, AMFI introduced a haircut matrix to guide funds on expected losses for non-investment grade bonds under different circumstances.</p>\n<p><strong>Why Haircuts Matter</strong></p>\n<p>Provisions for bad loans in banks or write-down rules for debt funds are accounting mechanisms aimed at estimating potential investor losses when loans default. The actual amount recovered upon resolution may differ substantially from these estimates. Therefore, for investors in banking stocks or debt funds, vigilantly monitoring the final haircuts is essential. These haircuts dictate the financial impact investors will face from defaulted loans.</p>\n</div>\n<p>Understanding the intricacies of financial haircuts equips investors with insights into potential risks and impacts on their investments in banking stocks or debt funds. Keeping abreast of these developments is crucial for making informed investment decisions amid the unpredictable financial landscape.</p>\n",
+  "author": 1,
+  "featured_media_id": 7326,
+  "featured_image": {
+    "id": 7326,
+    "slug": "istockphoto-866149824-1024x1024",
+    "link": "https://armstrong-cap.com/values/istockphoto-866149824-1024x1024/",
+    "title": "istockphoto-866149824-1024&#215;1024",
+    "alt_text": "Fractional Ownership",
+    "caption": "<p>Close up of Business people shaking hands, finishing up meeting, business etiquette, congratulation, merger and acquisition concept</p>\n",
+    "description": "<p class=\"attachment\"><a href='https://armstrong-cap.com/wp-content/uploads/2024/09/istockphoto-866149824-1024x1024-1.jpg'><img fetchpriority=\"high\" decoding=\"async\" width=\"300\" height=\"200\" src=\"https://armstrong-cap.com/wp-content/uploads/2024/09/istockphoto-866149824-1024x1024-1.jpg\" class=\"attachment-medium size-medium\" alt=\"Fractional Ownership\" /></a></p>\n",
+    "mime_type": "image/jpeg",
+    "media_type": "image",
+    "source_url": "https://armstrong-cap.com/wp-content/uploads/2024/09/istockphoto-866149824-1024x1024-1.jpg",
+    "width": 1024,
+    "height": 682,
+    "file": "2024/09/istockphoto-866149824-1024x1024-1.jpg",
+    "sizes": {},
+    "date": "2024-09-25T06:09:27",
+    "modified": "2024-10-10T07:45:15"
+  },
+  "parent": 0,
+  "menu_order": 0,
+  "template": "",
+  "comment_status": "open",
+  "ping_status": "open",
+  "meta": {
+    "footnotes": ""
+  },
+  "categories": [
+    6
+  ],
+  "tags": [],
+  "class_list": [
+    "post-7494",
+    "post",
+    "type-post",
+    "status-publish",
+    "format-standard",
+    "has-post-thumbnail",
+    "hentry",
+    "category-investment"
+  ],
+  "yoast": {
+    "title": "Unraveling the Concept of Haircuts in Finance - Armstrong",
+    "description": "Haircuts Understanding Financial Haircuts borrowers lump sum loan repayment devaluation mutual funds AMFI investment decisions SEBI outstanding debt",
+    "robots": {
+      "index": "index",
+      "follow": "follow",
+      "max-snippet": "max-snippet:-1",
+      "max-image-preview": "max-image-preview:large",
+      "max-video-preview": "max-video-preview:-1"
+    },
+    "canonical": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/",
+    "og_locale": "en_US",
+    "og_type": "article",
+    "og_title": "Unraveling the Concept of Haircuts in Finance - Armstrong",
+    "og_description": "Haircuts Understanding Financial Haircuts borrowers lump sum loan repayment devaluation mutual funds AMFI investment decisions SEBI outstanding debt",
+    "og_url": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/",
+    "og_site_name": "Armstrong",
+    "article_published_time": "2024-10-14T07:30:17+00:00",
+    "og_image": [
+      {
+        "width": 1024,
+        "height": 682,
+        "url": "https://armstrong-cap.com/wp-content/uploads/2024/09/istockphoto-866149824-1024x1024-1.jpg",
+        "type": "image/jpeg"
+      }
+    ],
+    "author": "admin",
+    "twitter_card": "summary_large_image",
+    "twitter_misc": {
+      "Written by": "admin",
+      "Est. reading time": "3 minutes"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/#article",
+          "isPartOf": {
+            "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/"
+          },
+          "author": {
+            "name": "admin",
+            "@id": "https://armstrong-cap.com/#/schema/person/24f96129660eed3d53306bca4fb0a495"
+          },
+          "headline": "Unraveling the Concept of Haircuts in Finance",
+          "datePublished": "2024-10-14T07:30:17+00:00",
+          "mainEntityOfPage": {
+            "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/"
+          },
+          "wordCount": 492,
+          "commentCount": 0,
+          "publisher": {
+            "@id": "https://armstrong-cap.com/#/schema/person/24f96129660eed3d53306bca4fb0a495"
+          },
+          "image": {
+            "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/#primaryimage"
+          },
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/2024/09/istockphoto-866149824-1024x1024-1.jpg",
+          "articleSection": [
+            "Investment"
+          ],
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "CommentAction",
+              "name": "Comment",
+              "target": [
+                "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/#respond"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/",
+          "url": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/",
+          "name": "Unraveling the Concept of Haircuts in Finance - Armstrong",
+          "isPartOf": {
+            "@id": "https://armstrong-cap.com/#website"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/#primaryimage"
+          },
+          "image": {
+            "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/#primaryimage"
+          },
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/2024/09/istockphoto-866149824-1024x1024-1.jpg",
+          "datePublished": "2024-10-14T07:30:17+00:00",
+          "description": "Haircuts Understanding Financial Haircuts borrowers lump sum loan repayment devaluation mutual funds AMFI investment decisions SEBI outstanding debt",
+          "breadcrumb": {
+            "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/#primaryimage",
+          "url": "https://armstrong-cap.com/wp-content/uploads/2024/09/istockphoto-866149824-1024x1024-1.jpg",
+          "contentUrl": "https://armstrong-cap.com/wp-content/uploads/2024/09/istockphoto-866149824-1024x1024-1.jpg",
+          "width": 1024,
+          "height": 682,
+          "caption": "Close up of Business people shaking hands, finishing up meeting, business etiquette, congratulation, merger and acquisition concept"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://armstrong-cap.com/unraveling-the-concept-of-haircuts-in-finance/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://armstrong-cap.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Unraveling the Concept of Haircuts in Finance"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://armstrong-cap.com/#website",
+          "url": "https://armstrong-cap.com/",
+          "name": "Armstrong",
+          "description": "",
+          "publisher": {
+            "@id": "https://armstrong-cap.com/#/schema/person/24f96129660eed3d53306bca4fb0a495"
+          },
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://armstrong-cap.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": [
+            "Person",
+            "Organization"
+          ],
+          "@id": "https://armstrong-cap.com/#/schema/person/24f96129660eed3d53306bca4fb0a495",
+          "name": "admin",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://armstrong-cap.com/#/schema/person/image/",
+            "url": "https://armstrong-cap.com/wp-content/uploads/2024/07/logo-new-2.png",
+            "contentUrl": "https://armstrong-cap.com/wp-content/uploads/2024/07/logo-new-2.png",
+            "width": 682,
+            "height": 459,
+            "caption": "admin"
+          },
+          "logo": {
+            "@id": "https://armstrong-cap.com/#/schema/person/image/"
+          },
+          "sameAs": [
+            "http://devbox.bizbrolly.com:8080/mstrong"
+          ]
+        }
+      ]
+    }
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/posts/7494",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/posts"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/comments?post=7494"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 1,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/posts/7494/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 7495,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/posts/7494/revisions/7495"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/media/7326"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/media?parent=7494"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/categories?post=7494"
+      },
+      {
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/tags?post=7494"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "exported_at": "2026-06-03T07:31:02.736Z",
+  "source_url": "https://armstrong-cap.com/wp-json/wp/v2/posts/7494"
+}

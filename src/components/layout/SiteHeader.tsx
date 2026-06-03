@@ -1,0 +1,144 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { leftNav, LOGO_SRC, rightNav, type NavItem } from "@/data/navigation";
+import { MobileNav } from "./MobileNav";
+import { NavDropdown } from "./NavDropdown";
+
+function isActive(pathname: string, href: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function NavLinkItem({
+  href,
+  label,
+  active,
+  external,
+}: {
+  href: string;
+  label: string;
+  active: boolean;
+  external?: boolean;
+}) {
+  const className = `font-display text-[15px] font-medium transition-colors ${
+    active
+      ? "text-brand-blue"
+      : "text-brand-navy hover:text-brand-blue"
+  }`;
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {label}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className} aria-current={active ? "page" : undefined}>
+      {label}
+    </Link>
+  );
+}
+
+function renderNavItem(item: NavItem, pathname: string, align: "left" | "right") {
+  if (item.type === "link") {
+    return (
+      <NavLinkItem
+        key={item.label}
+        href={item.href}
+        label={item.label}
+        active={isActive(pathname, item.href)}
+        external={item.external}
+      />
+    );
+  }
+
+  return (
+    <NavDropdown
+      key={item.label}
+      label={item.label}
+      groups={item.groups}
+      align={align}
+    />
+  );
+}
+
+export function SiteHeader() {
+  const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-[9999] px-3 pt-3 sm:px-4 sm:pt-4 lg:px-6">
+      <div className="pointer-events-auto mx-auto max-w-[1320px]">
+        <div className="flex items-center justify-between gap-2 rounded-2xl bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(39,46,57,0.12)] sm:gap-4 sm:rounded-[1.25rem] sm:px-4 sm:py-3 lg:px-5">
+          {/* Left nav — desktop */}
+          <nav
+            className="hidden min-w-0 flex-1 items-center gap-4 lg:flex lg:gap-5 xl:gap-6"
+            aria-label="Primary left"
+          >
+            <NavLinkItem
+              href="/"
+              label="Home"
+              active={pathname === "/"}
+            />
+            {leftNav.slice(1).map((item) => renderNavItem(item, pathname, "left"))}
+          </nav>
+
+          {/* Logo — center */}
+          <Link
+            href="/"
+            className="flex shrink-0 items-center justify-center px-1 sm:px-2"
+            aria-label="Armstrong Capital — Home"
+          >
+            <Image
+              src={LOGO_SRC}
+              alt="Armstrong Capital"
+              width={200}
+              height={57}
+              priority
+              className="h-[40px] w-auto sm:h-[48px] lg:h-[52px]"
+            />
+          </Link>
+
+          {/* Right nav — desktop */}
+          <div className="hidden min-w-0 flex-1 items-center justify-end gap-4 lg:flex lg:gap-5 xl:gap-6">
+            <nav className="flex items-center gap-4 lg:gap-5 xl:gap-6" aria-label="Primary right">
+              {rightNav.map((item) => renderNavItem(item, pathname, "right"))}
+            </nav>
+            <Link
+              href="/contact"
+              className="theme-btn btn-two shrink-0 !px-5 !py-2.5 text-base"
+            >
+              Contact Us
+            </Link>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-brand-navy lg:hidden"
+            aria-label="Open menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(true)}
+          >
+            <svg viewBox="0 0 24 24" className="h-6 w-6" stroke="currentColor" strokeWidth="2">
+              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
+    </header>
+  );
+}

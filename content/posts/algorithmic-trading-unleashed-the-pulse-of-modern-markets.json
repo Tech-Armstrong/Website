@@ -1,0 +1,320 @@
+{
+  "id": 7191,
+  "type": "post",
+  "slug": "algorithmic-trading-unleashed-the-pulse-of-modern-markets",
+  "status": "publish",
+  "link": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/",
+  "date": "2024-09-24T09:54:52",
+  "date_gmt": "2024-09-24T09:54:52",
+  "modified": "2024-09-24T10:42:22",
+  "modified_gmt": "2024-09-24T10:42:22",
+  "guid": {
+    "rendered": "http://devbox.bizbrolly.com:8080/mstrong/?p=7191"
+  },
+  "title": "Algorithmic Trading Unleashed: The Pulse of Modern Markets",
+  "excerpt": "<p>Algorithmic Trading Unleashed: The Pulse of Modern Markets SEBI recently announced new guidelines aimed at making algorithmic trading more accessible to investors while ensuring robust monitoring. Algorithmic trading, or &#8216;algo trading,&#8217; has already captivated institutional investors, contributing to 35-40% of the turnover on Indian exchanges. What is Algo Trading? Algo trading refers to the use [&hellip;]</p>\n",
+  "content": "<div class=\"content-two\">\n<h5>Algorithmic Trading Unleashed: The Pulse of Modern Markets</h5>\n<p>SEBI recently announced new guidelines aimed at making algorithmic trading more accessible to investors while ensuring robust monitoring. Algorithmic trading, or &#8216;algo trading,&#8217; has already captivated institutional investors, contributing to 35-40% of the turnover on Indian exchanges.</p>\n<h5>What is Algo Trading?</h5>\n<p>Algo trading refers to the use of computer programs to execute trades on stock exchanges. These programs, designed by the users, automatically execute trades based on pre-set conditions. Introduced in India in 2009, algo trading has rapidly gained traction among large domestic and foreign institutional investors who trade on proprietary books.<br />\nThere are varying levels of manual intervention in algo trading. In zero-touch algos, the program identifies and executes trading opportunities without any human input. These trades might be triggered by technical levels, quantitative indicators, or arbitrage opportunities, depending on the user&#8217;s preferences. More commonly, algos in India use Application Programming Interfaces (APIs), allowing investors to select their strategies, program their requirements, and execute trades via their broker.<br />\nIt&#8217;s important to differentiate between algo trading and high-frequency trading (HFT). HFT involves executing large volumes of orders within split seconds to capitalize on market opportunities, often relying on algorithms to spot these opportunities. The success of these strategies hinges on execution speed, which depends on connection bandwidth and the distance data packets must travel. This is why institutions favor co-location at exchange premises, positioning their servers close to the exchange’s servers.</p>\n<h5>Why is Algo Trading Important?</h5>\n<p>Algo trading significantly enhances the efficiency of trade execution and helps spot fleeting market opportunities, thereby adding liquidity to the market. However, it also has its downsides. Algo trading is often blamed for market volatility and flash crashes. When stocks or markets reach critical levels, such as a 200-day moving average or a 52-week high/low, algorithms can trigger large volumes of trades, amplifying market trends.<br />\nIndia has stringent regulations for algo trading. Exchanges must get their programs approved by SEBI before deployment. Recent rules have tightened, requiring stock exchanges to assign unique identifiers to each approved algorithm, ensuring each order is tagged for better surveillance. To mitigate price swings, SEBI has also introduced penalties for algo orders placed more than 0.75% away from the last traded price.</p>\n<h5>Why Should You Care?</h5>\n<p>Even if you don&#8217;t personally use algorithms for trading, understanding their impact is crucial if you&#8217;re involved in the market. One of the key concerns with HFT and algo trading is the potential for program bugs to cause significant losses to numerous investors. For instance, in 2010, during the Muhurat trading session, volumes in the BSE derivatives segment surged sharply due to an error in a Delhi share broker&#8217;s algorithm, leading to repeated execution of buy and sell orders. Moreover, trader errors or typos can cause stock prices to skyrocket or plummet if HFT or algo trades latch onto the trend. Understanding algo trading equips you with the knowledge to navigate market dynamics more effectively and stay informed about the factors influencing market movements.</p>\n</div>\n",
+  "author": 1,
+  "featured_media_id": 7192,
+  "featured_image": {
+    "id": 7192,
+    "slug": "1698752853755defence-sector-300x200-1",
+    "link": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/1698752853755defence-sector-300x200-1/",
+    "title": "1698752853755Defence-Sector-300&#215;200-1",
+    "alt_text": "blog",
+    "caption": "",
+    "description": "<p class=\"attachment\"><a href='https://armstrong-cap.com/wp-content/uploads/2024/09/1698752853755Defence-Sector-300x200-1.jpg'><img fetchpriority=\"high\" decoding=\"async\" width=\"300\" height=\"200\" src=\"https://armstrong-cap.com/wp-content/uploads/2024/09/1698752853755Defence-Sector-300x200-1.jpg\" class=\"attachment-medium size-medium\" alt=\"blog\" /></a></p>\n",
+    "mime_type": "image/jpeg",
+    "media_type": "image",
+    "source_url": "https://armstrong-cap.com/wp-content/uploads/2024/09/1698752853755Defence-Sector-300x200-1.jpg",
+    "width": 300,
+    "height": 200,
+    "file": "2024/09/1698752853755Defence-Sector-300x200-1.jpg",
+    "sizes": {},
+    "date": "2024-09-24T09:54:38",
+    "modified": "2024-09-24T09:54:45"
+  },
+  "parent": 0,
+  "menu_order": 0,
+  "template": "",
+  "comment_status": "open",
+  "ping_status": "open",
+  "meta": {
+    "footnotes": ""
+  },
+  "categories": [
+    6
+  ],
+  "tags": [],
+  "class_list": [
+    "post-7191",
+    "post",
+    "type-post",
+    "status-publish",
+    "format-standard",
+    "has-post-thumbnail",
+    "hentry",
+    "category-investment"
+  ],
+  "yoast": {
+    "title": "Algorithmic Trading Unleashed: The Pulse of Modern Markets - Armstrong",
+    "robots": {
+      "index": "index",
+      "follow": "follow",
+      "max-snippet": "max-snippet:-1",
+      "max-image-preview": "max-image-preview:large",
+      "max-video-preview": "max-video-preview:-1"
+    },
+    "canonical": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/",
+    "og_locale": "en_US",
+    "og_type": "article",
+    "og_title": "Algorithmic Trading Unleashed: The Pulse of Modern Markets - Armstrong",
+    "og_description": "Algorithmic Trading Unleashed: The Pulse of Modern Markets SEBI recently announced new guidelines aimed at making algorithmic trading more accessible to investors while ensuring robust monitoring. Algorithmic trading, or &#8216;algo trading,&#8217; has already captivated institutional investors, contributing to 35-40% of the turnover on Indian exchanges. What is Algo Trading? Algo trading refers to the use [&hellip;]",
+    "og_url": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/",
+    "og_site_name": "Armstrong",
+    "article_published_time": "2024-09-24T09:54:52+00:00",
+    "article_modified_time": "2024-09-24T10:42:22+00:00",
+    "og_image": [
+      {
+        "width": 300,
+        "height": 200,
+        "url": "https://armstrong-cap.com/wp-content/uploads/2024/09/1698752853755Defence-Sector-300x200-1.jpg",
+        "type": "image/jpeg"
+      }
+    ],
+    "author": "admin",
+    "twitter_card": "summary_large_image",
+    "twitter_misc": {
+      "Written by": "admin",
+      "Est. reading time": "3 minutes"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/#article",
+          "isPartOf": {
+            "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/"
+          },
+          "author": {
+            "name": "admin",
+            "@id": "https://armstrong-cap.com/#/schema/person/24f96129660eed3d53306bca4fb0a495"
+          },
+          "headline": "Algorithmic Trading Unleashed: The Pulse of Modern Markets",
+          "datePublished": "2024-09-24T09:54:52+00:00",
+          "dateModified": "2024-09-24T10:42:22+00:00",
+          "mainEntityOfPage": {
+            "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/"
+          },
+          "wordCount": 511,
+          "commentCount": 0,
+          "publisher": {
+            "@id": "https://armstrong-cap.com/#/schema/person/24f96129660eed3d53306bca4fb0a495"
+          },
+          "image": {
+            "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/#primaryimage"
+          },
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/2024/09/1698752853755Defence-Sector-300x200-1.jpg",
+          "articleSection": [
+            "Investment"
+          ],
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "CommentAction",
+              "name": "Comment",
+              "target": [
+                "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/#respond"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/",
+          "url": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/",
+          "name": "Algorithmic Trading Unleashed: The Pulse of Modern Markets - Armstrong",
+          "isPartOf": {
+            "@id": "https://armstrong-cap.com/#website"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/#primaryimage"
+          },
+          "image": {
+            "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/#primaryimage"
+          },
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/2024/09/1698752853755Defence-Sector-300x200-1.jpg",
+          "datePublished": "2024-09-24T09:54:52+00:00",
+          "dateModified": "2024-09-24T10:42:22+00:00",
+          "breadcrumb": {
+            "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/#primaryimage",
+          "url": "https://armstrong-cap.com/wp-content/uploads/2024/09/1698752853755Defence-Sector-300x200-1.jpg",
+          "contentUrl": "https://armstrong-cap.com/wp-content/uploads/2024/09/1698752853755Defence-Sector-300x200-1.jpg",
+          "width": 300,
+          "height": 200,
+          "caption": "blog"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://armstrong-cap.com/algorithmic-trading-unleashed-the-pulse-of-modern-markets/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://armstrong-cap.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Algorithmic Trading Unleashed: The Pulse of Modern Markets"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://armstrong-cap.com/#website",
+          "url": "https://armstrong-cap.com/",
+          "name": "Armstrong",
+          "description": "",
+          "publisher": {
+            "@id": "https://armstrong-cap.com/#/schema/person/24f96129660eed3d53306bca4fb0a495"
+          },
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://armstrong-cap.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": [
+            "Person",
+            "Organization"
+          ],
+          "@id": "https://armstrong-cap.com/#/schema/person/24f96129660eed3d53306bca4fb0a495",
+          "name": "admin",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://armstrong-cap.com/#/schema/person/image/",
+            "url": "https://armstrong-cap.com/wp-content/uploads/2024/07/logo-new-2.png",
+            "contentUrl": "https://armstrong-cap.com/wp-content/uploads/2024/07/logo-new-2.png",
+            "width": 682,
+            "height": 459,
+            "caption": "admin"
+          },
+          "logo": {
+            "@id": "https://armstrong-cap.com/#/schema/person/image/"
+          },
+          "sameAs": [
+            "http://devbox.bizbrolly.com:8080/mstrong"
+          ]
+        }
+      ]
+    }
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/posts/7191",
+        "targetHints": {
+          "allow": [
+            "GET"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/posts"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/comments?post=7191"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 1,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/posts/7191/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 7193,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/posts/7191/revisions/7193"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/media/7192"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/media?parent=7191"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/categories?post=7191"
+      },
+      {
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://armstrong-cap.com/wp-json/wp/v2/tags?post=7191"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "exported_at": "2026-06-03T07:31:04.383Z",
+  "source_url": "https://armstrong-cap.com/wp-json/wp/v2/posts/7191"
+}
