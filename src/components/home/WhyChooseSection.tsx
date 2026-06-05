@@ -11,11 +11,11 @@ export function WhyChooseSection() {
 
   return (
     <section
-      className="bg-brand-surface px-4 py-20 lg:py-24"
+      className="home-section bg-brand-surface"
       aria-labelledby="why-choose-heading"
     >
-      <div className="mx-auto max-w-[1200px]">
-        <div className="relative overflow-hidden rounded-[20px] shadow-[0_20px_50px_rgba(20,32,58,0.15)] lg:rounded-[24px]">
+      <div className="site-container">
+        <div className="relative overflow-hidden rounded-2xl shadow-[0_16px_48px_rgba(20,32,58,0.12)] lg:rounded-3xl">
           <div className="absolute inset-0">
             <Image
               src={backgroundImage}
@@ -24,13 +24,13 @@ export function WhyChooseSection() {
               sizes="(max-width: 1200px) 100vw, 1200px"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-brand-dark/25" aria-hidden />
+            <div className="absolute inset-0 bg-brand-dark/30" aria-hidden />
           </div>
 
           <div className="relative flex min-h-[520px] flex-col lg:min-h-[560px] lg:flex-row">
             <div className="flex flex-1 flex-col bg-brand-dark/90 px-6 py-8 sm:px-8 lg:max-w-[68%] lg:px-10 lg:py-10">
               <div className="sec-title light mb-8 flex flex-col items-start">
-                <span className="te-subtitle mb-3 inline-block rounded-full rounded-br-none border border-brand-blue px-[15px] py-[2px] font-display text-xs font-bold uppercase leading-[26px] text-white">
+                <span className="te-subtitle mb-3 inline-block rounded-full rounded-br-none border border-white/30 bg-white/10 px-4 py-0.5 font-display text-[11px] font-bold uppercase tracking-wide text-white sm:text-xs sm:leading-[26px]">
                   {eyebrow}
                 </span>
                 <h2
@@ -58,7 +58,7 @@ export function WhyChooseSection() {
                       aria-controls={`why-choose-panel-${index}`}
                       id={`why-choose-tab-${index}`}
                       onClick={() => setActiveIndex(index)}
-                      className={`group relative w-full text-left transition-colors ${
+                      className={`group relative w-full text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 ${
                         index < tabs.length - 1 && !isActive
                           ? "border-b border-white/10"
                           : ""
@@ -102,7 +102,7 @@ export function WhyChooseSection() {
                 role="tabpanel"
                 id={`why-choose-panel-${activeIndex}`}
                 aria-labelledby={`why-choose-tab-${activeIndex}`}
-                className="flex w-full flex-col justify-center rounded-[16px] bg-white px-6 py-8 shadow-lg sm:px-8 sm:py-10"
+                className="flex w-full flex-col justify-center rounded-2xl bg-white px-6 py-8 shadow-lg sm:px-8 sm:py-10"
               >
                 <h3 className="mb-5 font-display text-xl font-semibold text-brand-navy sm:text-2xl">
                   {active.title}

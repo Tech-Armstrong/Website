@@ -25,27 +25,57 @@ function Chevron({ open }: { open: boolean }) {
   );
 }
 
+const CLOSE_DELAY_MS = 250;
+
 export function NavDropdown({ label, groups, align = "left" }: NavDropdownProps) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const openMenu = () => {
+    clearCloseTimer();
+    setOpen(true);
+  };
+
+  const scheduleClose = () => {
+    clearCloseTimer();
+    closeTimerRef.current = setTimeout(() => setOpen(false), CLOSE_DELAY_MS);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (rootRef.current && !rootRef.current.contains(event.target as Node)) {
+        clearCloseTimer();
         setOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      clearCloseTimer();
+    };
   }, []);
 
   return (
     <div
       ref={rootRef}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={openMenu}
+      onMouseLeave={scheduleClose}
+      onFocus={openMenu}
+      onBlur={(event) => {
+        if (!rootRef.current?.contains(event.relatedTarget as Node)) {
+          scheduleClose();
+        }
+      }}
     >
       <button
         type="button"
@@ -60,16 +90,23 @@ export function NavDropdown({ label, groups, align = "left" }: NavDropdownProps)
 
       <div
         id={panelId}
-        className={`absolute top-full z-50 mt-3 min-w-[280px] rounded-2xl border border-[#e8e8e8] bg-white p-5 shadow-xl ${
+        className={`absolute top-full z-50 pt-3 ${
           align === "right" ? "right-0" : "left-0"
-        } ${open ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-200`}
+        } ${
+          open
+            ? "visible pointer-events-auto opacity-100"
+            : "invisible pointer-events-none opacity-0"
+        } transition-opacity duration-200`}
         role="menu"
+        onMouseEnter={openMenu}
+        onMouseLeave={scheduleClose}
       >
-        <div
-          className={`grid gap-6 ${
-            groups.length > 1 ? "sm:grid-cols-2" : "grid-cols-1"
-          }`}
-        >
+        <div className="min-w-[280px] rounded-2xl border border-[#e8e8e8] bg-white p-5 shadow-xl">
+          <div
+            className={`grid gap-6 ${
+              groups.length > 1 ? "sm:grid-cols-2" : "grid-cols-1"
+            }`}
+          >
           {groups.map((group) => (
             <div key={group.title}>
               <p className="mb-3 font-display text-xs font-bold uppercase tracking-wide text-brand-blue">
@@ -94,6 +131,7 @@ export function NavDropdown({ label, groups, align = "left" }: NavDropdownProps)
               </ul>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </div>

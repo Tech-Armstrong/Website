@@ -263,6 +263,13 @@ export const homeStats = [
   { value: "2", suffix: "K", label: "Satisfied Clients" },
 ] as const;
 
+export const footerAssets = {
+  logo:
+    "https://armstrong-cap.com/wp-content/uploads/Group-1707483555-1024x292.png",
+  ctaBackground:
+    "https://armstrong-cap.com/wp-content/uploads/coffee_banner-1.webp",
+} as const;
+
 export const footerServices = services.map(({ title, href }) => ({
   label: title,
   href,

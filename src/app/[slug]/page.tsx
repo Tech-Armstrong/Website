@@ -14,7 +14,9 @@ type MarketingPageProps = {
 };
 
 export async function generateStaticParams() {
-  const slugs = await getMarketingPageSlugs();
+  const slugs = (await getMarketingPageSlugs()).filter(
+    (slug) => slug !== "about-us" && slug !== "beginning-to-invest",
+  );
   return slugs.map((slug) => ({ slug }));
 }
 

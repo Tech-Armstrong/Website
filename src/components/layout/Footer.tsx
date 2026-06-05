@@ -1,14 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  footerAssets,
   footerSegments,
   footerServices,
 } from "@/data/home";
-
-const LOGO =
-  "https://armstrong-cap.com/wp-content/uploads/Group-1707483555-1024x292.png";
-const CTA_BG =
-  "https://armstrong-cap.com/wp-content/uploads/coffee_banner-1.webp";
 
 function YoutubeIcon() {
   return (
@@ -26,51 +22,61 @@ function LinkedInIcon() {
   );
 }
 
+const socialLinkClass =
+  "flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+
+const sectionTitleClass =
+  "mb-4 font-display text-xl font-semibold leading-snug text-white";
+
 export function Footer() {
+  const { logo, ctaBackground } = footerAssets;
+
   return (
-    <footer className="mt-[50px] bg-brand-dark pt-20 pb-8 text-white">
-      <div className="mx-auto max-w-[1200px] px-4">
-        <div className="grid gap-8 lg:grid-cols-12 lg:gap-6">
-          {/* CTA card */}
-          <div className="lg:col-span-5">
-            <div
-              className="relative -mt-[150px] overflow-hidden rounded-[30px] rounded-br-none bg-cover bg-center px-[30px] py-20"
-              style={{ backgroundImage: `url(${CTA_BG})` }}
+    <footer className="mt-12 overflow-visible bg-brand-dark pt-28 pb-10 text-white lg:mt-16 lg:pt-40">
+      <div className="site-container px-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          {/* CTA card + social */}
+          <div className="md:col-span-2 lg:col-span-5">
+            <section
+              aria-labelledby="footer-cta-heading"
+              className="relative overflow-hidden rounded-[30px] rounded-br-none bg-cover bg-center px-8 py-16 shadow-xl lg:-mt-32"
+              style={{ backgroundImage: `url(${ctaBackground})` }}
             >
-              <div className="absolute inset-0 bg-black/50" />
+              <div className="footer-cta-overlay absolute inset-0" aria-hidden />
               <div className="relative z-[1] text-center">
                 <Image
-                  src={LOGO}
+                  src={logo}
                   alt="Armstrong Capital"
                   width={525}
                   height={150}
                   className="mx-auto mb-6 h-auto w-full max-w-[280px]"
                 />
-                <div className="mx-auto mb-6 h-[3px] w-16 bg-white" />
-                <h2 className="font-display text-2xl font-semibold leading-[34px] text-white">
+                <div className="mx-auto mb-6 h-[3px] w-16 bg-white" aria-hidden />
+                <h2
+                  id="footer-cta-heading"
+                  className="font-display text-2xl font-semibold leading-[34px] text-white"
+                >
                   Thinking &<br />
                   Planning for your<br />
                   Future
                 </h2>
                 <Link
                   href="/contact"
-                  className="theme-btn btn-two mt-8 inline-block"
+                  className="theme-btn btn-two mt-8 inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Appointment
                 </Link>
               </div>
-            </div>
+            </section>
 
             <div className="mt-8 lg:mt-10">
-              <h3 className="mb-4 font-display text-2xl font-semibold leading-[34px]">
-                Follow us on
-              </h3>
+              <h3 className={sectionTitleClass}>Follow us on</h3>
               <div className="flex gap-3">
                 <a
                   href="http://www.youtube.com/@ArmstrongCapital"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-brand-blue"
+                  className={socialLinkClass}
                   aria-label="YouTube"
                 >
                   <YoutubeIcon />
@@ -79,7 +85,7 @@ export function Footer() {
                   href="https://www.linkedin.com/company/armstrong-capital-advisory-pvt-ltd/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-brand-blue"
+                  className={socialLinkClass}
                   aria-label="LinkedIn"
                 >
                   <LinkedInIcon />
@@ -89,36 +95,28 @@ export function Footer() {
           </div>
 
           {/* Get in touch */}
-          <div className="lg:col-span-3 lg:pl-4">
-            <h3 className="mb-4 font-display text-2xl font-semibold leading-[34px]">
-              Get in Touch
-            </h3>
-            <p className="mb-6 font-body text-[15px] leading-[26px] text-[#c8c8c8]">
+          <div className="md:col-span-2 lg:col-span-3 lg:pl-2">
+            <h3 className={sectionTitleClass}>Get in Touch</h3>
+            <p className="footer-text mb-6 font-body text-[15px] leading-[26px]">
               Armstrong Capital &amp; Financial Services Pvt. Ltd.
               <br />
               AMFI Registration Number: ARN- 105949
               <br />
               ARN Validity – 09-Oct-2027
             </p>
-            <h4 className="mb-3 font-display text-xl font-semibold leading-[34px]">
+            <h4 className="mb-3 font-display text-lg font-semibold text-white">
               Quick Contact
             </h4>
-            <ul className="space-y-2 font-body text-base text-brand-muted">
+            <ul className="space-y-2 font-body text-base footer-text">
               <li>
                 E :{" "}
-                <a
-                  href="mailto:reachus@armstrong-cap.com"
-                  className="text-[#c8c8c8] hover:text-white"
-                >
+                <a href="mailto:reachus@armstrong-cap.com" className="footer-link">
                   reachus@armstrong-cap.com
                 </a>
               </li>
               <li>
                 P :{" "}
-                <a
-                  href="tel:+919739041588"
-                  className="text-[#c8c8c8] hover:text-white"
-                >
+                <a href="tel:+919739041588" className="footer-link">
                   +919739041588
                 </a>
               </li>
@@ -127,24 +125,16 @@ export function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-2">
-            <h3 className="mb-4 font-display text-2xl font-semibold leading-[34px]">
-              Services
-            </h3>
+            <h3 className={sectionTitleClass}>Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  href="/blog"
-                  className="font-body text-base text-brand-muted transition-colors hover:text-white"
-                >
+                <Link href="/blog" className="footer-link font-body text-base">
                   Blog
                 </Link>
               </li>
               {footerServices.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="font-body text-base text-brand-muted transition-colors hover:text-white"
-                  >
+                  <Link href={item.href} className="footer-link font-body text-base">
                     {item.label}
                   </Link>
                 </li>
@@ -154,16 +144,11 @@ export function Footer() {
 
           {/* Segments */}
           <div className="lg:col-span-2">
-            <h3 className="mb-4 font-display text-2xl font-semibold leading-[34px]">
-              Segments
-            </h3>
+            <h3 className={sectionTitleClass}>Segments</h3>
             <ul className="space-y-2">
               {footerSegments.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="font-body text-base text-brand-muted transition-colors hover:text-white"
-                  >
+                  <Link href={item.href} className="footer-link font-body text-base">
                     {item.label}
                   </Link>
                 </li>
@@ -173,17 +158,17 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
-          <p className="font-body text-base text-[#c8c8c8]">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center md:flex-row md:text-left">
+          <p className="footer-text font-body text-base">
             Copyright © 2026{" "}
-            <Link href="/" className="hover:text-white">
+            <Link href="/" className="footer-link">
               Armstrong.
             </Link>{" "}
             All Rights Reserved.
           </p>
-          <ul className="flex flex-wrap gap-6">
+          <ul className="flex flex-wrap justify-center gap-6 md:justify-end">
             <li>
-              <span className="font-body text-base text-brand-muted">
+              <span className="footer-text font-body text-base">
                 Terms &amp; Conditions
               </span>
             </li>

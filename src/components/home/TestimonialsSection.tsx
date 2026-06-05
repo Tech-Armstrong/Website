@@ -42,6 +42,9 @@ export function TestimonialsSection() {
   }, [total]);
 
   useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return;
+
     const interval = setInterval(goNext, 6000);
     return () => clearInterval(interval);
   }, [goNext]);
@@ -53,9 +56,9 @@ export function TestimonialsSection() {
 
   return (
     <>
-      <section className="bg-brand-surface px-4 pt-4 lg:pt-8" aria-labelledby="praise-heading">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="testimonial-panel relative overflow-hidden rounded-[24px] bg-brand-dark px-6 py-10 sm:px-10 lg:rounded-[32px] lg:px-12 lg:py-12">
+      <section className="home-section !pb-8 !pt-8 lg:!pt-12" aria-labelledby="praise-heading">
+        <div className="site-container">
+          <div className="testimonial-panel relative overflow-hidden rounded-2xl bg-brand-dark px-6 py-10 sm:px-10 lg:rounded-3xl lg:px-12 lg:py-12">
             <span
               className="testimonial-praise-label pointer-events-none absolute left-4 top-1/2 hidden -translate-y-1/2 font-display text-[72px] font-bold uppercase tracking-widest text-white/[0.07] lg:block xl:left-8 xl:text-[90px]"
               aria-hidden
@@ -91,7 +94,7 @@ export function TestimonialsSection() {
                     <button
                       type="button"
                       onClick={goPrev}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-white hover:bg-white/10"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                       aria-label="Previous testimonial"
                     >
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
@@ -102,7 +105,7 @@ export function TestimonialsSection() {
                     <button
                       type="button"
                       onClick={goNext}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-white hover:bg-white/10"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                       aria-label="Next testimonial"
                     >
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
@@ -130,7 +133,7 @@ export function TestimonialsSection() {
                   </li>
                 </ul>
 
-                <div className="relative overflow-hidden rounded-2xl">
+                <div className="relative overflow-hidden rounded-2xl ring-2 ring-white/20 ring-offset-2 ring-offset-brand-dark">
                   <Image
                     src={displayAvatar}
                     alt={active.name}

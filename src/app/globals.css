@@ -65,13 +65,122 @@ body {
   -webkit-text-stroke-color: rgba(255, 255, 255, 1);
 }
 
-/* Services card hover */
+/* Layout — shared max-width container */
+.site-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+/* Homepage section rhythm */
+.home-section {
+  padding-inline: 1rem;
+  padding-block: 4rem;
+}
+
+@media (min-width: 640px) {
+  .home-section {
+    padding-block: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-section {
+    padding-block: 6rem;
+  }
+}
+
+/* About section — rotating ring text (desktop) */
+@keyframes about-ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.about-ring-spin {
+  animation: about-ring-spin 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-ring-spin {
+    animation: none;
+  }
+}
+
+.about-ring-static {
+  margin-top: 1.5rem;
+}
+
+/* Hero — readable overlay on photography */
+.hero-overlay {
+  background: linear-gradient(
+    105deg,
+    rgba(39, 46, 57, 0.82) 0%,
+    rgba(39, 46, 57, 0.55) 45%,
+    rgba(39, 46, 57, 0.35) 100%
+  );
+}
+
+/* Services card */
 .service-card {
-  transition: border-color 0.3s ease;
+  border-radius: 12px;
+  border-color: #e8eaed;
+  box-shadow: 0 1px 3px rgba(20, 32, 58, 0.06);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .service-card:hover {
   border-color: var(--brand-blue);
+  box-shadow: 0 8px 24px rgba(13, 127, 182, 0.12);
+}
+
+/* Media spotlight cards */
+.media-card a {
+  border-radius: 12px;
+  border-color: #e8eaed;
+  box-shadow: 0 1px 3px rgba(20, 32, 58, 0.05);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.media-card a:hover {
+  border-color: var(--brand-blue);
+  box-shadow: 0 8px 20px rgba(20, 32, 58, 0.08);
+}
+
+/* Footer */
+.footer-cta-overlay {
+  background: linear-gradient(
+    160deg,
+    rgba(20, 32, 58, 0.88) 0%,
+    rgba(20, 32, 58, 0.65) 50%,
+    rgba(20, 32, 58, 0.5) 100%
+  );
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Why Choose — active tab number badge overlaps dark panel edge */

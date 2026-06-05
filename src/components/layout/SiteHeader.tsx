@@ -80,24 +80,11 @@ export function SiteHeader() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-[9999] px-3 pt-3 sm:px-4 sm:pt-4 lg:px-6">
       <div className="pointer-events-auto mx-auto max-w-[1320px]">
-        <div className="flex items-center justify-between gap-2 rounded-2xl bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(39,46,57,0.12)] sm:gap-4 sm:rounded-[1.25rem] sm:px-4 sm:py-3 lg:px-5">
-          {/* Left nav — desktop */}
-          <nav
-            className="hidden min-w-0 flex-1 items-center gap-4 lg:flex lg:gap-5 xl:gap-6"
-            aria-label="Primary left"
-          >
-            <NavLinkItem
-              href="/"
-              label="Home"
-              active={pathname === "/"}
-            />
-            {leftNav.slice(1).map((item) => renderNavItem(item, pathname, "left"))}
-          </nav>
-
-          {/* Logo — center */}
+        <div className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(39,46,57,0.12)] sm:gap-4 sm:rounded-[1.25rem] sm:px-4 sm:py-3 lg:gap-6 lg:px-5">
+          {/* Logo — left */}
           <Link
             href="/"
-            className="flex shrink-0 items-center justify-center px-1 sm:px-2"
+            className="flex shrink-0 items-center justify-center"
             aria-label="Armstrong Capital — Home"
           >
             <Image
@@ -110,9 +97,13 @@ export function SiteHeader() {
             />
           </Link>
 
-          {/* Right nav — desktop */}
+          {/* Desktop navigation — all links on the right */}
           <div className="hidden min-w-0 flex-1 items-center justify-end gap-4 lg:flex lg:gap-5 xl:gap-6">
-            <nav className="flex items-center gap-4 lg:gap-5 xl:gap-6" aria-label="Primary right">
+            <nav
+              className="flex flex-wrap items-center justify-end gap-4 lg:gap-5 xl:gap-6"
+              aria-label="Primary"
+            >
+              {leftNav.map((item) => renderNavItem(item, pathname, "right"))}
               {rightNav.map((item) => renderNavItem(item, pathname, "right"))}
             </nav>
             <Link
