@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { testimonials } from "@/data/home";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { StatsSection } from "./StatsSection";
 
 function QuoteIcon() {
@@ -58,6 +59,7 @@ export function TestimonialsSection() {
     <>
       <section className="home-section !pb-8 !pt-8 lg:!pt-12" aria-labelledby="praise-heading">
         <div className="site-container">
+          <ScrollReveal>
           <div className="testimonial-panel relative overflow-hidden rounded-2xl bg-brand-dark px-6 py-10 sm:px-10 lg:rounded-3xl lg:px-12 lg:py-12">
             <span
               className="testimonial-praise-label pointer-events-none absolute left-4 top-1/2 hidden -translate-y-1/2 font-display text-[72px] font-bold uppercase tracking-widest text-white/[0.07] lg:block xl:left-8 xl:text-[90px]"
@@ -72,18 +74,20 @@ export function TestimonialsSection() {
                   Client testimonials
                 </h2>
 
+                <div key={activeIndex} className="testimonial-fade-in">
                 <div className="mb-6 flex items-start justify-between gap-4">
-                  <p className="font-display text-2xl font-semibold text-white md:text-[28px]">
+                  <p className="font-display text-2xl font-semibold text-white md:text-[26px]">
                     {active.name}
                   </p>
                   <QuoteIcon />
                 </div>
 
                 <blockquote>
-                  <p className="max-w-[720px] font-body text-base leading-[28px] text-white/75 md:text-[17px]">
+                  <p className="max-w-[720px] font-body text-base leading-[28px] text-white/80 md:text-[17px]">
                     {active.quote}
                   </p>
                 </blockquote>
+                </div>
 
                 <div className="mt-10 flex items-center gap-6">
                   <p className="font-display text-sm font-semibold text-white">
@@ -133,7 +137,10 @@ export function TestimonialsSection() {
                   </li>
                 </ul>
 
-                <div className="relative overflow-hidden rounded-2xl ring-2 ring-white/20 ring-offset-2 ring-offset-brand-dark">
+                <div
+                  key={`avatar-${activeIndex}`}
+                  className="testimonial-fade-in relative overflow-hidden rounded-2xl ring-2 ring-white/20 ring-offset-2 ring-offset-brand-dark"
+                >
                   <Image
                     src={displayAvatar}
                     alt={active.name}
@@ -150,6 +157,7 @@ export function TestimonialsSection() {
               aria-hidden
             />
           </div>
+          </ScrollReveal>
         </div>
       </section>
 

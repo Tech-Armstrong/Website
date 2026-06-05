@@ -79,7 +79,7 @@ export function Hero() {
               aria-label={`${index + 1} of ${heroSlides.length}`}
               aria-hidden={selectedIndex !== index}
             >
-              <div className="slide-item relative flex min-h-[min(85vh,720px)] items-center px-4 py-24 sm:min-h-[min(78vh,680px)] sm:py-28 md:px-6 lg:min-h-[620px] lg:py-32">
+              <div className="slide-item relative flex min-h-[min(82vh,680px)] items-center px-4 py-24 sm:min-h-[min(76vh,640px)] sm:py-28 md:px-6 lg:min-h-[580px] lg:py-28">
                 <Image
                   src={slide.image}
                   alt={`${slide.title} ${slide.titleOutline} ${slide.titleSuffix}`}
@@ -91,8 +91,12 @@ export function Hero() {
                 <div className="hero-overlay absolute inset-0" aria-hidden />
 
                 <div className="site-container relative z-[5]">
-                  <div className="content-box max-w-xl lg:max-w-[550px]">
-                    <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.05]">
+                  <div
+                    className={`content-box max-w-xl lg:max-w-[550px] ${
+                      selectedIndex === index ? "hero-content-animate" : "opacity-0"
+                    }`}
+                  >
+                    <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-[56px] lg:text-[64px] lg:leading-[1.08]">
                       {slide.title}{" "}
                       <span className="hero-outline block sm:inline">
                         {slide.titleOutline}
@@ -100,7 +104,11 @@ export function Hero() {
                       {slide.titleSuffix}
                     </h2>
 
-                    <div className="lower-box relative mt-6 pl-0 md:mt-8 md:pl-[115px]">
+                    <div
+                      className={`lower-box relative mt-6 pl-0 md:mt-8 md:pl-[115px] ${
+                        selectedIndex === index ? "hero-content-animate hero-content-animate-delay-1" : ""
+                      }`}
+                    >
                       <div
                         className="icon-box absolute left-0 top-0 hidden h-16 w-16 items-center justify-center rounded-full rounded-br-none bg-brand-green text-white shadow-lg md:flex lg:h-[75px] lg:w-[75px]"
                         aria-hidden

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { whyChooseSection } from "@/data/home";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function WhyChooseSection() {
   const { backgroundImage, eyebrow, title, tabs } = whyChooseSection;
@@ -15,7 +16,8 @@ export function WhyChooseSection() {
       aria-labelledby="why-choose-heading"
     >
       <div className="site-container">
-        <div className="relative overflow-hidden rounded-2xl shadow-[0_16px_48px_rgba(20,32,58,0.12)] lg:rounded-3xl">
+        <ScrollReveal>
+        <div className="relative overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(20,32,58,0.1)] lg:rounded-3xl">
           <div className="absolute inset-0">
             <Image
               src={backgroundImage}
@@ -58,7 +60,7 @@ export function WhyChooseSection() {
                       aria-controls={`why-choose-panel-${index}`}
                       id={`why-choose-tab-${index}`}
                       onClick={() => setActiveIndex(index)}
-                      className={`group relative w-full text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 ${
+                      className={`group relative w-full text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 ${
                         index < tabs.length - 1 && !isActive
                           ? "border-b border-white/10"
                           : ""
@@ -99,10 +101,11 @@ export function WhyChooseSection() {
 
             <div className="relative z-10 flex items-stretch p-4 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[42%] lg:items-center lg:p-6 xl:w-[40%]">
               <div
+                key={activeIndex}
                 role="tabpanel"
                 id={`why-choose-panel-${activeIndex}`}
                 aria-labelledby={`why-choose-tab-${activeIndex}`}
-                className="flex w-full flex-col justify-center rounded-2xl bg-white px-6 py-8 shadow-lg sm:px-8 sm:py-10"
+                className="panel-fade-in flex w-full flex-col justify-center rounded-2xl bg-white px-6 py-8 shadow-lg sm:px-8 sm:py-10"
               >
                 <h3 className="mb-5 font-display text-xl font-semibold text-brand-navy sm:text-2xl">
                   {active.title}
@@ -126,6 +129,7 @@ export function WhyChooseSection() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

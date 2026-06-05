@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "export:wp": "node scripts/export-wordpress.mjs",
+    "extract:marketing": "node scripts/extract-marketing-content.mjs",
     "audit:site": "node scripts/audit-site.mjs"
   },
   "dependencies": {

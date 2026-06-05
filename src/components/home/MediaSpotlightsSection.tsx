@@ -5,6 +5,7 @@ import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { mediaSpotlights } from "@/data/home";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function MediaSpotlightsSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -57,7 +58,7 @@ export function MediaSpotlightsSection() {
       aria-labelledby="media-spotlights-heading"
     >
       <div className="site-container">
-        <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <ScrollReveal className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="mb-2 font-display text-[11px] font-bold uppercase tracking-wide text-brand-blue sm:text-xs">
               In the news
@@ -75,8 +76,9 @@ export function MediaSpotlightsSection() {
           >
             View More
           </Link>
-        </div>
+        </ScrollReveal>
 
+        <ScrollReveal delay={120}>
         <div ref={emblaRef} className="overflow-hidden" aria-roledescription="carousel">
           <div className="flex gap-4 md:gap-5">
             {mediaSpotlights.map((item) => (
@@ -88,7 +90,7 @@ export function MediaSpotlightsSection() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-full flex-col overflow-hidden border bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+                  className="hover-lift flex h-full flex-col overflow-hidden border bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
                 >
                   <div className="flex min-h-[180px] items-center justify-center bg-brand-surface/60 px-6 py-8 sm:min-h-[200px] sm:py-10">
                     <Image
@@ -125,6 +127,7 @@ export function MediaSpotlightsSection() {
             />
           ))}
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

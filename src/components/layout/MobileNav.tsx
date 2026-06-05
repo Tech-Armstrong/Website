@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   CLIENT_LOGIN_URL,
   LOGO_SRC,
@@ -66,6 +67,12 @@ type MobileNavProps = {
 };
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -73,14 +80,18 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
     };
   }, [open]);
 
-  if (!open) return null;
+  if (!open || !mounted) return null;
 
-  return (
-    <div className="fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true">
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[10000] lg:hidden"
+      role="dialog"
+      aria-modal="true"
+    >
       <button
         type="button"
         className="absolute inset-0 bg-brand-navy/50"
-        aria-label="Close menu"
+        aria-label="Dismiss menu"
         onClick={onClose}
       />
       <div className="absolute right-0 top-0 flex h-full w-[min(100%,320px)] flex-col bg-white shadow-2xl">
@@ -132,6 +143,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           </a>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

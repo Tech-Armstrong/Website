@@ -78,6 +78,7 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
+    <>
     <header className="pointer-events-none fixed inset-x-0 top-0 z-[9999] px-3 pt-3 sm:px-4 sm:pt-4 lg:px-6">
       <div className="pointer-events-auto mx-auto max-w-[1320px]">
         <div className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(39,46,57,0.12)] sm:gap-4 sm:rounded-[1.25rem] sm:px-4 sm:py-3 lg:gap-6 lg:px-5">
@@ -128,8 +129,9 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
-
-      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </header>
+
+    <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
+    </>
   );
 }

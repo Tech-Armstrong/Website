@@ -6,6 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { services } from "@/data/home";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function ServicesSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -48,23 +49,30 @@ export function ServicesSection() {
   }, [emblaApi]);
 
   return (
-    <section className="home-section bg-brand-surface" aria-labelledby="services-heading">
+    <section
+      className="home-section bg-brand-surface"
+      aria-labelledby="services-heading"
+    >
       <div className="site-container">
-        <SectionTitle
-          align="center"
-          eyebrow="Our Services"
-          headingId="services-heading"
-          title={
-            <>
-              <strong className="font-semibold text-brand-navy">Strategizing Wealth</strong>
-              <br />
-              Maximizing Opportunities!
-            </>
-          }
-          className="mx-auto max-w-2xl"
-        />
+        <ScrollReveal>
+          <SectionTitle
+            align="center"
+            eyebrow="Our Services"
+            headingId="services-heading"
+            title={
+              <>
+                <strong className="font-semibold text-brand-navy">
+                  Strategizing Wealth
+                </strong>
+                <br />
+                Maximizing Opportunities
+              </>
+            }
+            className="mx-auto mb-12 max-w-2xl"
+          />
+        </ScrollReveal>
 
-        <div className="relative px-12 sm:px-14">
+        <ScrollReveal delay={150} className="relative px-12 sm:px-14">
           <div ref={emblaRef} className="overflow-hidden">
             <div className="flex gap-4 md:gap-5">
               {services.map((service) => (
@@ -72,21 +80,21 @@ export function ServicesSection() {
                   key={service.title}
                   className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_calc(50%-8px)] lg:flex-[0_0_calc(25%-15px)]"
                 >
-                  <div className="service-card flex h-full flex-col gap-6 border bg-white px-6 pb-6 pt-8 sm:gap-8 sm:px-7 sm:pb-7 sm:pt-9">
-                    <h3 className="text-center font-display text-xl font-semibold text-brand-navy sm:text-2xl">
+                  <div className="service-card flex h-full flex-col gap-5 border bg-white px-6 pb-6 pt-7 sm:gap-6 sm:px-7 sm:pb-7 sm:pt-8">
+                    <h3 className="text-center font-display text-lg font-semibold text-brand-navy sm:text-xl">
                       {service.title}
                     </h3>
                     <Link
                       href={service.href}
-                      className="block overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+                      className="group block overflow-hidden rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
                     >
-                      <div className="relative aspect-square w-full">
+                      <div className="relative aspect-square w-full overflow-hidden rounded-xl">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                          className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+                          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                         />
                       </div>
                     </Link>
@@ -118,7 +126,7 @@ export function ServicesSection() {
               <path d="M9 6l6 6-6 6" />
             </svg>
           </button>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

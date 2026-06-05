@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/blog/Breadcrumbs";
-import { BlogPostContent } from "@/components/blog/BlogPostContent";
-import { Footer } from "@/components/layout/Footer";
-import { marketingPageMetadata } from "@/lib/pages/metadata";
+import { MarketingPageRenderer } from "@/components/marketing/MarketingPageRenderer";
+import {
+  getMarketingPageConfig,
+  isMarketingPageSlug,
+} from "@/data/marketing-pages";
 import {
   getMarketingPageBySlug,
   getMarketingPageSlugs,
 } from "@/lib/pages/content";
+import { marketingPageMetadata } from "@/lib/pages/metadata";
 
 type MarketingPageProps = {
   params: Promise<{ slug: string }>;
@@ -15,7 +17,10 @@ type MarketingPageProps = {
 
 export async function generateStaticParams() {
   const slugs = (await getMarketingPageSlugs()).filter(
-    (slug) => slug !== "about-us" && slug !== "beginning-to-invest",
+    (slug) =>
+      slug !== "about-us" &&
+      slug !== "beginning-to-invest" &&
+      isMarketingPageSlug(slug),
   );
   return slugs.map((slug) => ({ slug }));
 }
@@ -36,33 +41,11 @@ export async function generateMetadata({
 export default async function MarketingPage({ params }: MarketingPageProps) {
   const { slug } = await params;
   const page = await getMarketingPageBySlug(slug);
+  const config = getMarketingPageConfig(slug);
 
-  if (!page) {
+  if (!page || !config) {
     notFound();
   }
 
-  return (
-    <>
-      <main id="main-content" className="px-4 pb-12 pt-28 lg:pb-16 lg:pt-32">
-        <article className="mx-auto max-w-[1200px]">
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: page.title },
-            ]}
-          />
-
-          <header className="mb-10">
-            <h1 className="font-display text-[32px] font-semibold leading-tight text-brand-navy md:text-[42px]">
-              {page.title}
-            </h1>
-          </header>
-
-          <BlogPostContent html={page.content} />
-        </article>
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <MarketingPageRenderer page={page} config={config} />;
 }
