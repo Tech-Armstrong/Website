@@ -7,6 +7,8 @@ type MarketingPageShellProps = {
   title: string;
   sidebar?: ReactNode;
   fullWidth?: boolean;
+  /** Renders below the main+sidebar grid at full container width */
+  fullWidthSections?: ReactNode;
   compact?: boolean;
   children: ReactNode;
 };
@@ -15,6 +17,7 @@ export function MarketingPageShell({
   title,
   sidebar,
   fullWidth = false,
+  fullWidthSections,
   compact = false,
   children,
 }: MarketingPageShellProps) {
@@ -44,14 +47,24 @@ export function MarketingPageShell({
           </header>
 
           {fullWidth || !sidebar ? (
-            <div className="min-w-0">{children}</div>
-          ) : (
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-8">
+            <>
               <div className="min-w-0">{children}</div>
-              <ScrollReveal direction="right" delay={100}>
-                {sidebar}
-              </ScrollReveal>
-            </div>
+              {fullWidthSections ? (
+                <div className="min-w-0">{fullWidthSections}</div>
+              ) : null}
+            </>
+          ) : (
+            <>
+              <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-8">
+                <div className="min-w-0">{children}</div>
+                <ScrollReveal direction="right" delay={100}>
+                  {sidebar}
+                </ScrollReveal>
+              </div>
+              {fullWidthSections ? (
+                <div className="mt-8 min-w-0">{fullWidthSections}</div>
+              ) : null}
+            </>
           )}
         </div>
       </main>

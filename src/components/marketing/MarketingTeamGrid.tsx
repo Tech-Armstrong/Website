@@ -1,101 +1,67 @@
 "use client";
 
-import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 import type { MarketingTeamMember } from "@/types/marketing-page";
-import { SectionTitle } from "@/components/ui/SectionTitle";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import {
+  TeamMemberCard,
+  TeamMemberModal,
+} from "@/components/marketing/TeamMemberCard";
+
+const TeamScrollDriveGate = dynamic(
+  () =>
+    import("./TeamScrollDrive").then((mod) => mod.TeamScrollDriveGate),
+  { ssr: false },
+);
+
+/** Fixed scroll runway — same scale as Why Choose (400vh), not per-member 100vh. */
+const TEAM_SCROLL_TRACK_VH = 400;
 
 type MarketingTeamGridProps = {
   members: MarketingTeamMember[];
 };
 
-function LinkedInIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="h-4 w-4"
-      aria-hidden
-    >
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  );
+function subscribeReducedMotion(onStoreChange: () => void) {
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
 }
 
-function TeamMemberModal({
-  member,
-  onClose,
+function getReducedMotionSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function TeamDotNav({
+  members,
+  activeIndex,
+  onSelect,
 }: {
-  member: MarketingTeamMember;
-  onClose: () => void;
+  members: MarketingTeamMember[];
+  activeIndex: number;
+  onSelect: (index: number) => void;
 }) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-
-  useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-    dialog.showModal();
-    const handleCancel = (event: Event) => {
-      event.preventDefault();
-      onClose();
-    };
-    dialog.addEventListener("cancel", handleCancel);
-    return () => dialog.removeEventListener("cancel", handleCancel);
-  }, [onClose]);
-
-  const paragraphs = member.bio?.split("\n\n").filter(Boolean) ?? [];
-
   return (
-    <dialog
-      ref={dialogRef}
-      className="team-member-dialog fixed inset-0 z-50 m-auto w-[min(100%-2rem,640px)] max-h-[85vh] overflow-hidden rounded-xl border border-[#e8eaed] bg-white p-0 shadow-xl backdrop:bg-brand-dark/50 open:flex open:flex-col"
-      aria-labelledby="team-member-dialog-title"
-      onClick={(event) => {
-        if (event.target === dialogRef.current) onClose();
-      }}
+    <div
+      className="mt-4 flex flex-wrap justify-center gap-2 lg:mt-6"
+      role="tablist"
+      aria-label="Team member navigation"
     >
-      <div className="flex items-start justify-between gap-4 border-b border-[#eef0f2] px-6 py-5">
-        <div>
-          <h2
-            id="team-member-dialog-title"
-            className="font-display text-xl font-semibold text-brand-navy"
-          >
-            {member.name}
-          </h2>
-          <p className="mt-1 font-body text-sm text-brand-muted">{member.role}</p>
-        </div>
+      {members.map((member, index) => (
         <button
+          key={member.name}
           type="button"
-          onClick={onClose}
-          className="shrink-0 rounded-lg p-2 text-brand-muted transition-colors hover:bg-[#f4f5f6] hover:text-brand-navy"
-          aria-label="Close"
+          role="tab"
+          aria-selected={index === activeIndex}
+          aria-controls={`team-carousel-panel-${index}`}
+          onClick={() => onSelect(index)}
+          className={`team-scroll-dot focus-settle h-2.5 w-2.5 rounded-full transition-colors ${
+            index === activeIndex ? "is-active" : ""
+          }`}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden>
-            <path strokeLinecap="round" d="M18 6L6 18M6 6l12 12" />
-          </svg>
+          <span className="sr-only">{member.name}</span>
         </button>
-      </div>
-      <div className="overflow-y-auto px-6 py-5">
-        <div className="space-y-4 font-body text-[15px] leading-relaxed text-brand-muted">
-          {paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-          ))}
-        </div>
-        {member.linkedinUrl ? (
-          <a
-            href={member.linkedinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 font-display text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
-          >
-            <LinkedInIcon />
-            View LinkedIn profile
-          </a>
-        ) : null}
-      </div>
-    </dialog>
+      ))}
+    </div>
   );
 }
 
@@ -103,74 +69,180 @@ export function MarketingTeamGrid({ members }: MarketingTeamGridProps) {
   const [activeMember, setActiveMember] = useState<MarketingTeamMember | null>(
     null,
   );
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [pinActive, setPinActive] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const carouselContentRef = useRef<HTMLDivElement>(null);
+
+  const reduceMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    () => false,
+  );
+  const pinned = !reduceMotion;
+
+  useEffect(() => {
+    setPinActive(pinned);
+  }, [pinned]);
+
+  useLayoutEffect(() => {
+    if (!pinActive) return;
+    const content = carouselContentRef.current;
+    if (!content) return;
+
+    const updateSlideWidth = () => {
+      const contentW = content.clientWidth;
+      if (contentW <= 0) return;
+
+      const isLg = window.matchMedia("(min-width: 1024px)").matches;
+      const isXl = window.matchMedia("(min-width: 1280px)").matches;
+      const gapPx = isLg ? 24 : 16;
+
+      let slidePx: number;
+      if (!isLg) {
+        slidePx = Math.min(window.innerWidth * 0.85, 360);
+      } else {
+        const cols = isXl ? 4 : 3;
+        const gapCount = cols - 1;
+        slidePx = (contentW - gapCount * gapPx) / cols;
+      }
+
+      content.style.setProperty("--team-slide-w", `${Math.floor(slidePx)}px`);
+      window.dispatchEvent(new Event("resize"));
+
+      const slide = content.querySelector<HTMLElement>("[role=tabpanel]");
+      const section = sectionRef.current;
+      const siteContainer = section?.closest(".site-container");
+      const containerW = siteContainer?.clientWidth ?? 0;
+      const sectionW = section?.clientWidth ?? 0;
+      // #region agent log
+      fetch("http://127.0.0.1:7554/ingest/9555c182-db1e-4c7f-8232-b6887f4fc3da", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Debug-Session-Id": "d00c4f",
+        },
+        body: JSON.stringify({
+          sessionId: "d00c4f",
+          runId: "layout-fix",
+          hypothesisId: "H3-full-container",
+          location: "MarketingTeamGrid.tsx:updateSlideWidth",
+          message: "layout column check",
+          data: {
+            viewportW: window.innerWidth,
+            sectionW,
+            contentW,
+            containerW,
+            slideW: slide?.clientWidth ?? 0,
+            slideVarPx: content.style.getPropertyValue("--team-slide-w"),
+            matchesContainer: Math.abs(sectionW - containerW) < 16,
+            isLg,
+          },
+          timestamp: Date.now(),
+        }),
+      }).catch(() => {});
+      // #endregion
+    };
+
+    updateSlideWidth();
+    const observer = new ResizeObserver(() => {
+      requestAnimationFrame(updateSlideWidth);
+    });
+    observer.observe(content);
+    window.addEventListener("resize", updateSlideWidth);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateSlideWidth);
+    };
+  }, [pinActive]);
 
   const closeModal = useCallback(() => setActiveMember(null), []);
+  const openModal = useCallback(
+    (member: MarketingTeamMember) => setActiveMember(member),
+    [],
+  );
+
+  function scrollToMember(index: number) {
+    const track = trackRef.current;
+    if (!track) return;
+    const headerPx = window.matchMedia("(min-width: 1024px)").matches
+      ? 128
+      : 112;
+    const distance = track.offsetHeight - (window.innerHeight - headerPx);
+    const progress = (index + 0.5) / members.length;
+    window.scrollTo({
+      top: track.offsetTop + progress * distance,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <section
-      className="border-t border-[#eef0f2] pt-8 pb-6"
-      aria-labelledby="our-team-grid-heading"
+      ref={sectionRef}
+      className="border-t border-[#eef0f2] pt-10 pb-12 lg:pt-12 lg:pb-16"
+      aria-label="Our team"
     >
-      <ScrollReveal>
-        <SectionTitle
-          eyebrow="LEADERSHIP"
-          title="Team Behind Company"
-          headingId="our-team-grid-heading"
-          align="left"
-          className="mb-6"
-        />
-      </ScrollReveal>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-        {members.map((member, index) => (
-          <ScrollReveal key={member.name} delay={index * 60}>
-            <article className="lift-card group flex h-full flex-col overflow-hidden rounded-xl border border-[#e8eaed] bg-white">
-              {member.image ? (
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#f4f5f6]">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
-                  />
-                </div>
-              ) : null}
-              <div className="flex flex-1 flex-col p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h3 className="font-display text-lg font-semibold text-brand-navy">
-                      {member.name}
-                    </h3>
-                    <p className="mt-1 font-body text-sm text-brand-muted">
-                      {member.role}
-                    </p>
-                  </div>
-                  {member.linkedinUrl ? (
-                    <a
-                      href={member.linkedinUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="shrink-0 rounded-lg p-2 text-brand-blue transition-colors hover:bg-brand-blue/10 hover:text-brand-navy"
-                      aria-label={`${member.name} on LinkedIn`}
-                    >
-                      <LinkedInIcon />
-                    </a>
-                  ) : null}
-                </div>
-                {member.bio ? (
-                  <button
-                    type="button"
-                    onClick={() => setActiveMember(member)}
-                    className="mt-4 self-start font-display text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
+      {pinActive ? (
+        <div
+          ref={trackRef}
+          className="scroll-mt-[var(--site-header-offset)]"
+          style={{ height: `${TEAM_SCROLL_TRACK_VH}vh` }}
+        >
+          <div className="sticky top-[var(--site-header-offset)] flex h-[calc(100dvh-var(--site-header-offset))] w-full flex-col pt-8 pb-6 lg:pt-12 lg:pb-8">
+            <div className="flex min-h-0 flex-1 flex-col justify-center">
+              <div
+                ref={carouselRef}
+                className="mt-12 mb-10 w-full overflow-x-clip py-2 lg:mt-16 lg:mb-12"
+                aria-roledescription="carousel"
+                aria-label="Team members"
+              >
+                <div
+                  ref={carouselContentRef}
+                  className="w-full [--team-slide-w:min(85vw,360px)]"
+                >
+                  <TeamScrollDriveGate
+                    trackRef={trackRef}
+                    memberCount={members.length}
+                    setActiveIndex={setActiveIndex}
+                    className="flex w-max min-w-full gap-4 px-4 sm:gap-5 lg:gap-6 lg:px-0"
                   >
-                    Read more
-                  </button>
-                ) : null}
+                    {members.map((member, index) => (
+                      <div
+                        key={member.name}
+                        id={`team-carousel-panel-${index}`}
+                        role="tabpanel"
+                        aria-labelledby={`team-dot-${index}`}
+                        aria-hidden={index !== activeIndex}
+                        className="w-[var(--team-slide-w)] shrink-0"
+                      >
+                        <TeamMemberCard member={member} onReadMore={openModal} />
+                      </div>
+                    ))}
+                  </TeamScrollDriveGate>
+                </div>
               </div>
-            </article>
-          </ScrollReveal>
-        ))}
-      </div>
+              <TeamDotNav
+                members={members}
+                activeIndex={activeIndex}
+                onSelect={scrollToMember}
+              />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+          {members.map((member) => (
+            <TeamMemberCard
+              key={member.name}
+              member={member}
+              onReadMore={openModal}
+            />
+          ))}
+        </div>
+      )}
+
       {activeMember ? (
         <TeamMemberModal member={activeMember} onClose={closeModal} />
       ) : null}

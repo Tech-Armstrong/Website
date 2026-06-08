@@ -51,12 +51,22 @@ export function MarketingPageRenderer({
   const headingId = `${config.slug}-hero-heading`;
   const sidebar = renderSidebar(config);
   const isContact = config.category === "contact";
+  const useFullWidthTeamBlock =
+    Boolean(sidebar && config.team && config.team.length > 0);
+
+  const fullWidthSections = useFullWidthTeamBlock ? (
+    <>
+      <MarketingTeamGrid members={config.team!} />
+      {config.quote ? <MarketingQuote quote={config.quote} /> : null}
+    </>
+  ) : undefined;
 
   return (
     <MarketingPageShell
       title={page.title}
       sidebar={sidebar}
       fullWidth={config.fullWidth && !sidebar}
+      fullWidthSections={fullWidthSections}
       compact={isContact}
     >
       {isContact ? (
@@ -93,7 +103,7 @@ export function MarketingPageRenderer({
             <MarketingPlanGrid plans={config.plans} />
           ) : null}
 
-          {config.team && config.team.length > 0 ? (
+          {!useFullWidthTeamBlock && config.team && config.team.length > 0 ? (
             <MarketingTeamGrid members={config.team} />
           ) : null}
 
@@ -108,7 +118,9 @@ export function MarketingPageRenderer({
             />
           ) : null}
 
-          {config.quote ? <MarketingQuote quote={config.quote} /> : null}
+          {config.quote && !useFullWidthTeamBlock ? (
+            <MarketingQuote quote={config.quote} />
+          ) : null}
 
           {config.showContactForm ? (
             <ScrollReveal>

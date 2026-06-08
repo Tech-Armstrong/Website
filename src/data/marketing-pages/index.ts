@@ -16,7 +16,6 @@ const overrides: Record<string, Partial<MarketingPageConfig>> = {
         "https://armstrong-cap.com/wp-content/uploads/2024/10/about-3-1-min-1.png",
     },
     team: ourTeamMembers,
-    showContactForm: true,
   },
   "research-archives": {
     hero: {

@@ -9,6 +9,8 @@
   --brand-muted: #5f6b7a;
   --brand-surface: #f7f7f7;
   --container-max: 1200px;
+  /* Fixed header clearance — matches main pt-28 / lg:pt-32 */
+  --site-header-offset: 7rem;
   /* Signature motion (Settle & Lift) */
   --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-settle-soft: cubic-bezier(0.33, 1, 0.68, 1);
@@ -24,6 +26,12 @@
   --elevation-header: 0 8px 30px rgba(39, 46, 57, 0.12);
   --elevation-header-scrolled: 0 4px 20px rgba(39, 46, 57, 0.1);
   --elevation-pop: 0 8px 40px -8px rgba(20, 32, 58, 0.18);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --site-header-offset: 8rem;
+  }
 }
 
 @theme inline {
@@ -196,6 +204,19 @@ body {
 .lift-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--elevation-card-hover);
+}
+
+.team-scroll-dot {
+  background-color: rgb(20 32 58 / 0.2);
+}
+
+.team-scroll-dot:hover {
+  background-color: rgb(20 32 58 / 0.35);
+}
+
+.team-scroll-dot.is-active {
+  background-color: var(--color-brand-pink);
+  transform: scale(1.1);
 }
 
 .header-shell {
