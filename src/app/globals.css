@@ -2,11 +2,11 @@
 
 :root {
   --brand-navy: #272e39;
-  --brand-blue: #0d7fb6;
+  --brand-blue: #0a6d9c;
   --brand-pink: #f66587;
   --brand-green: #7ab036;
   --brand-dark: #14203a;
-  --brand-muted: #9ca4af;
+  --brand-muted: #5f6b7a;
   --brand-surface: #f7f7f7;
   --container-max: 1200px;
   /* Signature motion (Settle & Lift) */
@@ -18,9 +18,9 @@
   --dur-4: 480ms;
   /* Elevation — navy/blue tinted, two-layer */
   --elevation-card: 0 1px 2px -1px rgba(39, 46, 57, 0.08),
-    0 2px 8px -2px rgba(13, 127, 182, 0.08);
+    0 2px 8px -2px rgba(10, 109, 156, 0.08);
   --elevation-card-hover: 0 2px 4px -1px rgba(39, 46, 57, 0.1),
-    0 8px 24px -4px rgba(13, 127, 182, 0.14);
+    0 8px 24px -4px rgba(10, 109, 156, 0.14);
   --elevation-header: 0 8px 30px rgba(39, 46, 57, 0.12);
   --elevation-header-scrolled: 0 4px 20px rgba(39, 46, 57, 0.1);
   --elevation-pop: 0 8px 40px -8px rgba(20, 32, 58, 0.18);
@@ -182,7 +182,7 @@ body {
 .focus-settle:focus-visible {
   outline: 2px solid var(--brand-blue);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px rgba(13, 127, 182, 0.18);
+  box-shadow: 0 0 0 4px rgba(10, 109, 156, 0.18);
   transition: box-shadow var(--dur-2) var(--ease-settle);
 }
 
@@ -379,7 +379,7 @@ body {
 
 .service-card:hover {
   border-color: var(--brand-blue);
-  box-shadow: 0 12px 32px rgba(13, 127, 182, 0.14);
+  box-shadow: 0 12px 32px rgba(10, 109, 156, 0.14);
   transform: translateY(-4px);
 }
 
@@ -453,32 +453,6 @@ body {
   .why-choose-badge {
     margin-left: -28px;
   }
-}
-
-/* Form inputs — counsolve contact form style */
-.form-input {
-  width: 100%;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  padding: 12px 16px;
-  font-size: 15px;
-  line-height: 24px;
-  color: var(--brand-navy);
-  background: #fff;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--brand-blue);
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 8px;
-  font-family: var(--font-urbanist), sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--brand-navy);
 }
 
 /* Blog article prose (WordPress HTML) */

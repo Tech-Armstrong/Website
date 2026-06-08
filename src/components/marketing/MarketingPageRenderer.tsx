@@ -1,6 +1,6 @@
-import { AirtableContactForm } from "@/components/contact/AirtableContactForm";
+import { BookAppointmentSection } from "@/components/contact/BookAppointmentSection";
 import { ContactInfoCards } from "@/components/contact/ContactInfoCards";
-import { ContactMap } from "@/components/contact/ContactMap";
+import { ContactPageIntro } from "@/components/contact/ContactPageIntro";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import type { MarketingPage } from "@/lib/pages/content";
 import type { MarketingPageConfig } from "@/types/marketing-page";
@@ -60,21 +60,12 @@ export function MarketingPageRenderer({
       compact={isContact}
     >
       {isContact ? (
-        <div className="mx-auto max-w-[960px] space-y-6">
-          {config.hero ? (
-            <MarketingHero
-              hero={config.hero}
-              headingId={headingId}
-              compact
-            />
-          ) : null}
+        <div className="mx-auto max-w-[960px] space-y-8">
+          <ContactPageIntro />
           <ContactInfoCards />
-          <ScrollReveal delay={180}>
-            <ContactMap />
-          </ScrollReveal>
           {config.showContactForm ? (
-            <ScrollReveal delay={240}>
-              <AirtableContactForm />
+            <ScrollReveal delay={180}>
+              <BookAppointmentSection showDescription />
             </ScrollReveal>
           ) : null}
         </div>
@@ -121,7 +112,7 @@ export function MarketingPageRenderer({
 
           {config.showContactForm ? (
             <ScrollReveal>
-              <AirtableContactForm />
+              <BookAppointmentSection className="border-t border-[#eef0f2] pt-8" />
             </ScrollReveal>
           ) : null}
         </>

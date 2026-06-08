@@ -1,7 +1,6 @@
 "use client";
 
 import { contactInfo } from "@/data/contact";
-import { buildMapSearchUrl } from "@/lib/google/embed";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import type { ReactNode, SVGProps } from "react";
 
@@ -13,6 +12,13 @@ const contactRowClass =
 
 const linkClass =
   "focus-settle mt-1 inline-flex min-h-11 items-center rounded-md font-body text-sm font-medium text-brand-blue transition-colors hover:text-brand-navy";
+
+function buildMapSearchUrl(address: string): string {
+  const url = new URL("https://www.google.com/maps/search/");
+  url.searchParams.set("api", "1");
+  url.searchParams.set("query", address);
+  return url.toString();
+}
 
 type ContactCardShellProps = {
   children: ReactNode;

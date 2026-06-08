@@ -148,13 +148,7 @@ export const marketingPages = {
     "slug": "contact",
     "category": "contact",
     "showContactForm": true,
-    "fullWidth": true,
-    "hero": {
-      "title": "Book an Appointment",
-      "paragraphs": [
-        "Connect with our advisors to discuss your financial goals and discover how Armstrong Capital can help you build a secure financial future."
-      ]
-    }
+    "fullWidth": true
   },
   "education-planning": {
     "slug": "education-planning",
@@ -672,20 +666,14 @@ export const marketingPages = {
     "hero": {
       "title": "Our Team",
       "paragraphs": [
-        "Coming Together Is A Beginning.Keeping Together Is Progress.Working Together Is Success.Henry Ford"
+        "At Armstrong Capital, we're committed to eliminating every barrier between where you are today and where you want to be tomorrow."
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "https://armstrong-cap.com/wp-content/uploads/2024/10/about-3-1-min-1.png"
     },
     "quote": {
-      "text": "Coming Together Is A Beginning.",
+      "text": "Coming Together Is A Beginning.\nKeeping Together Is Progress.\nWorking Together Is Success.",
       "attribution": "Henry Ford"
-    },
-    "team": [
-      {
-        "name": "Manju Mastakar",
-        "role": "LEADERSHIP"
-      }
-    ]
+    }
   },
   "pre-retirement-planning": {
     "slug": "pre-retirement-planning",

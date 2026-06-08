@@ -48,7 +48,3 @@ export const contactInfo = {
     },
   ] satisfies ContactOffice[],
 };
-
-export const headOffice = contactInfo.offices.find(
-  (office) => office.id === "head",
-)!;

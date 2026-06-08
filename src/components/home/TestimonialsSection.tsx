@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { testimonials } from "@/data/home";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { StatsSection } from "./StatsSection";
 
 function QuoteIcon() {
   return (
@@ -160,8 +159,6 @@ export function TestimonialsSection() {
           </ScrollReveal>
         </div>
       </section>
-
-      <StatsSection />
     </>
   );
 }

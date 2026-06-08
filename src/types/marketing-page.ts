@@ -32,6 +32,8 @@ export type MarketingTeamMember = {
   name: string;
   role: string;
   image?: string;
+  linkedinUrl?: string;
+  bio?: string;
 };
 
 export type MarketingPlanItem = {

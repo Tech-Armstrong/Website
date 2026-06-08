@@ -177,6 +177,29 @@ function extractFaqs(html) {
 
 function extractTeam(html) {
   const members = [];
+  const seen = new Set();
+
+  const slideBlocks = [
+    ...html.matchAll(
+      /swiper-slide[\s\S]*?<img[^>]+src="([^"]+)"[\s\S]*?elementor-heading-title[^>]*>([\s\S]*?)<\/[\s\S]*?elementor-heading-title[^>]*>([\s\S]*?)<\/[\s\S]*?(?:href="(https:\/\/www\.linkedin\.com\/in\/[^"]+)")?/gi,
+    ),
+  ];
+
+  for (const block of slideBlocks) {
+    const name = decodeHtml(block[2]).trim();
+    const role = decodeHtml(block[3]).trim();
+    if (!name || !role || seen.has(name)) continue;
+    seen.add(name);
+    members.push({
+      name,
+      role,
+      image: block[1],
+      ...(block[4] ? { linkedinUrl: block[4] } : {}),
+    });
+  }
+
+  if (members.length > 0) return members;
+
   const blocks = [
     ...html.matchAll(
       /counsolve_team[\s\S]*?<h3[^>]*>([\s\S]*?)<\/h3>[\s\S]*?<span[^>]*>([\s\S]*?)<\/span>/gi,
@@ -244,12 +267,6 @@ function buildConfig(slug, raw) {
   if (category === "contact") {
     config.showContactForm = true;
     config.fullWidth = true;
-    config.hero = {
-      title: "Book an Appointment",
-      paragraphs: [
-        "Connect with our advisors to discuss your financial goals and discover how Armstrong Capital can help you build a secure financial future.",
-      ],
-    };
     return config;
   }
 

@@ -163,10 +163,6 @@ export function Footer() {
             </Link>{" "}
             All Rights Reserved.
           </p>
-
-          <span className="footer-text font-body text-sm md:text-base">
-            Terms &amp; Conditions
-          </span>
         </div>
       </div>
     </footer>

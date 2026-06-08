@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 export function StatsSection() {
   return (
     <section
-      className="home-section !pt-0 border-t border-[#eef0f2] bg-white"
+      className="border-t border-[#eef0f2] bg-white px-4 py-10 md:py-12 lg:py-14"
       aria-label="Company statistics"
     >
       <div className="site-container grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4 md:gap-8">

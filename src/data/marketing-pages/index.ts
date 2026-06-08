@@ -1,4 +1,5 @@
 import { mediaSpotlights } from "@/data/home";
+import { ourTeamMembers } from "@/data/team";
 import type { MarketingPageConfig } from "@/types/marketing-page";
 import { marketingPages } from "./pages";
 
@@ -8,11 +9,14 @@ const overrides: Record<string, Partial<MarketingPageConfig>> = {
       title: "Our Team At Armstrong Capital",
       paragraphs: [
         "At Armstrong Capital, we're committed to eliminating every barrier between where you are today and where you want to be tomorrow. As one of Bangalore's leading wealth management firms, we invite you to learn more about the expert team dedicated to your financial success.",
-        "Our well-structured organization ensures that every client receives personalized attention through dedicated relationship managers and service managers.",
+        "Our well-structured organization ensures that you have a complete Portfolio Management team by your side.",
+        "This includes both a Relationship Manager and a Service Manager, each directly in touch with you, providing personalized guidance. They work closely to understand your financial goals and craft tailored investment plans that align with your needs.",
       ],
       image:
-        "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp",
+        "https://armstrong-cap.com/wp-content/uploads/2024/10/about-3-1-min-1.png",
     },
+    team: ourTeamMembers,
+    showContactForm: true,
   },
   "research-archives": {
     hero: {
