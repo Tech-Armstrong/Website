@@ -108,6 +108,7 @@ export function SiteHeader() {
       <header className="pointer-events-none fixed inset-x-0 top-0 z-[9999] px-3 pt-3 sm:px-4 sm:pt-4 lg:px-6">
         <div className="pointer-events-auto mx-auto max-w-[1320px]">
           <div
+            data-header-shell
             data-scrolled={scrolled ? "true" : "false"}
             className={`header-shell flex items-center gap-2 rounded-2xl bg-white px-3 sm:gap-4 sm:rounded-[1.25rem] sm:px-4 lg:gap-6 lg:px-5 ${
               scrolled ? "py-2 sm:py-2.5" : "py-2.5 sm:py-3"

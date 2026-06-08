@@ -10,6 +10,7 @@ export function BlogPostContent({ html }: BlogPostContentProps) {
     <ScrollReveal delay={120}>
       <div
         className="blog-prose"
+        data-blog-content
         dangerouslySetInnerHTML={{ __html: enhanceContentHtml(html) }}
       />
     </ScrollReveal>
