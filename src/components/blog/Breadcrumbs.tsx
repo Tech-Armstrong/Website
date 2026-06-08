@@ -7,11 +7,12 @@ type BreadcrumbItem = {
 
 type BreadcrumbsProps = {
   items: BreadcrumbItem[];
+  className?: string;
 };
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, className = "mb-8" }: BreadcrumbsProps) {
   return (
-    <nav aria-label="Breadcrumb" className="mb-8">
+    <nav aria-label="Breadcrumb" className={className}>
       <ol className="flex flex-wrap items-center gap-2 font-body text-sm text-brand-muted">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;

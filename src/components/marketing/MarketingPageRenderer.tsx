@@ -1,4 +1,6 @@
-import { CtaSection } from "@/components/home/CtaSection";
+import { AirtableContactForm } from "@/components/contact/AirtableContactForm";
+import { ContactDetails } from "@/components/contact/ContactDetails";
+import { ContactMap } from "@/components/contact/ContactMap";
 import type { MarketingPage } from "@/lib/pages/content";
 import type { MarketingPageConfig } from "@/types/marketing-page";
 import { MarketingCareerSections } from "./MarketingCareerSections";
@@ -47,57 +49,72 @@ export function MarketingPageRenderer({
 }: MarketingPageRendererProps) {
   const headingId = `${config.slug}-hero-heading`;
   const sidebar = renderSidebar(config);
+  const isContact = config.category === "contact";
 
   return (
     <MarketingPageShell
       title={page.title}
       sidebar={sidebar}
       fullWidth={config.fullWidth && !sidebar}
+      compact={isContact}
     >
-      {config.hero ? (
-        <MarketingHero hero={config.hero} headingId={headingId} />
-      ) : null}
-
-      {config.careerSections ? (
-        <MarketingCareerSections
-          sections={config.careerSections}
-          cta={config.careerCta}
-        />
-      ) : null}
-
-      {config.features && config.features.items.length > 0 ? (
-        <MarketingFeatures
-          features={config.features}
-          headingId={`${config.slug}-features-heading`}
-        />
-      ) : null}
-
-      {config.plans && config.plans.length > 0 ? (
-        <MarketingPlanGrid plans={config.plans} />
-      ) : null}
-
-      {config.team && config.team.length > 0 ? (
-        <MarketingTeamGrid members={config.team} />
-      ) : null}
-
-      {config.faqs && config.faqs.length > 0 ? (
-        <MarketingFaqAccordion faqs={config.faqs} />
-      ) : null}
-
-      {config.mediaArticles || config.mediaPodcasts ? (
-        <MarketingMediaTabs
-          articles={config.mediaArticles ?? []}
-          podcasts={config.mediaPodcasts ?? []}
-        />
-      ) : null}
-
-      {config.quote ? <MarketingQuote quote={config.quote} /> : null}
-
-      {config.showContactForm ? (
-        <div className="pt-4 [&_section]:!px-0 [&_section]:!py-10">
-          <CtaSection />
+      {isContact ? (
+        <div className="mx-auto max-w-[960px] space-y-6">
+          {config.hero ? (
+            <MarketingHero
+              hero={config.hero}
+              headingId={headingId}
+              compact
+            />
+          ) : null}
+          <ContactDetails />
+          <ContactMap />
+          {config.showContactForm ? <AirtableContactForm /> : null}
         </div>
-      ) : null}
+      ) : (
+        <>
+          {config.hero ? (
+            <MarketingHero hero={config.hero} headingId={headingId} />
+          ) : null}
+
+          {config.careerSections ? (
+            <MarketingCareerSections
+              sections={config.careerSections}
+              cta={config.careerCta}
+            />
+          ) : null}
+
+          {config.features && config.features.items.length > 0 ? (
+            <MarketingFeatures
+              features={config.features}
+              headingId={`${config.slug}-features-heading`}
+            />
+          ) : null}
+
+          {config.plans && config.plans.length > 0 ? (
+            <MarketingPlanGrid plans={config.plans} />
+          ) : null}
+
+          {config.team && config.team.length > 0 ? (
+            <MarketingTeamGrid members={config.team} />
+          ) : null}
+
+          {config.faqs && config.faqs.length > 0 ? (
+            <MarketingFaqAccordion faqs={config.faqs} />
+          ) : null}
+
+          {config.mediaArticles || config.mediaPodcasts ? (
+            <MarketingMediaTabs
+              articles={config.mediaArticles ?? []}
+              podcasts={config.mediaPodcasts ?? []}
+            />
+          ) : null}
+
+          {config.quote ? <MarketingQuote quote={config.quote} /> : null}
+
+          {config.showContactForm ? <AirtableContactForm /> : null}
+        </>
+      )}
     </MarketingPageShell>
   );
 }

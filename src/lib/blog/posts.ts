@@ -109,3 +109,49 @@ export async function getAdjacentPosts(slug: string): Promise<{
     older: index < posts.length - 1 ? posts[index + 1] : null,
   };
 }
+
+export const BLOG_PAGE_SIZE = 9;
+
+export type PaginatedPostSummaries = {
+  posts: BlogPostSummary[];
+  currentPage: number;
+  totalPages: number;
+  totalCount: number;
+};
+
+export function parseBlogPageParam(value: string | undefined): number {
+  if (!value) return 1;
+
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isFinite(parsed) || parsed < 1) return 1;
+
+  return parsed;
+}
+
+export async function getPaginatedPostSummaries(
+  page: number,
+): Promise<PaginatedPostSummaries> {
+  const allPosts = await getAllPostSummaries();
+  const totalCount = allPosts.length;
+  const totalPages = Math.max(1, Math.ceil(totalCount / BLOG_PAGE_SIZE));
+
+  if (totalCount === 0) {
+    return {
+      posts: [],
+      currentPage: 1,
+      totalPages: 0,
+      totalCount: 0,
+    };
+  }
+
+  const currentPage = Math.min(Math.max(1, page), totalPages);
+  const start = (currentPage - 1) * BLOG_PAGE_SIZE;
+  const posts = allPosts.slice(start, start + BLOG_PAGE_SIZE);
+
+  return {
+    posts,
+    currentPage,
+    totalPages,
+    totalCount,
+  };
+}

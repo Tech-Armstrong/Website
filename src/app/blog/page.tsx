@@ -1,14 +1,35 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { BlogCard } from "@/components/blog/BlogCard";
+import { BlogPagination } from "@/components/blog/BlogPagination";
 import { Breadcrumbs } from "@/components/blog/Breadcrumbs";
 import { Footer } from "@/components/layout/Footer";
 import { blogListingMetadata } from "@/lib/blog/metadata";
-import { getAllPostSummaries } from "@/lib/blog/posts";
+import {
+  getPaginatedPostSummaries,
+  parseBlogPageParam,
+} from "@/lib/blog/posts";
 
-export const metadata: Metadata = blogListingMetadata();
+type BlogPageProps = {
+  searchParams: Promise<{ page?: string }>;
+};
 
-export default async function BlogPage() {
-  const posts = await getAllPostSummaries();
+export async function generateMetadata({
+  searchParams,
+}: BlogPageProps): Promise<Metadata> {
+  const { page } = await searchParams;
+  return blogListingMetadata(parseBlogPageParam(page));
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const { page } = await searchParams;
+  const requestedPage = parseBlogPageParam(page);
+  const { posts, currentPage, totalPages, totalCount } =
+    await getPaginatedPostSummaries(requestedPage);
+
+  if (requestedPage > totalPages && totalCount > 0) {
+    notFound();
+  }
 
   return (
     <>
@@ -34,14 +55,20 @@ export default async function BlogPage() {
             </p>
           </div>
 
-          {posts.length === 0 ? (
+          {totalCount === 0 ? (
             <p className="font-body text-brand-muted">No articles published yet.</p>
           ) : (
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post) => (
-                <BlogCard key={post.slug} post={post} />
-              ))}
-            </div>
+            <>
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {posts.map((post) => (
+                  <BlogCard key={post.slug} post={post} />
+                ))}
+              </div>
+              <BlogPagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+              />
+            </>
           )}
         </div>
       </main>

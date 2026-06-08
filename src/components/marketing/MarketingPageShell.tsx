@@ -6,6 +6,7 @@ type MarketingPageShellProps = {
   title: string;
   sidebar?: ReactNode;
   fullWidth?: boolean;
+  compact?: boolean;
   children: ReactNode;
 };
 
@@ -13,13 +14,22 @@ export function MarketingPageShell({
   title,
   sidebar,
   fullWidth = false,
+  compact = false,
   children,
 }: MarketingPageShellProps) {
   return (
     <>
-      <main id="main-content" className="pb-10 pt-28 lg:pb-12 lg:pt-32">
+      <main
+        id="main-content"
+        className={
+          compact
+            ? "pb-8 pt-28 lg:pb-10 lg:pt-32"
+            : "pb-10 pt-28 lg:pb-12 lg:pt-32"
+        }
+      >
         <div className="site-container px-4">
           <Breadcrumbs
+            className={compact ? "mb-4" : "mb-8"}
             items={[
               { label: "Home", href: "/" },
               { label: title },

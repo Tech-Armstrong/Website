@@ -17,6 +17,14 @@ const LEGACY_REDIRECTS: Record<string, string> = {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  const blogPageMatch = pathname.match(/^\/blog\/page\/(\d+)\/?$/);
+  if (blogPageMatch) {
+    return NextResponse.redirect(
+      new URL(`/blog?page=${blogPageMatch[1]}`, request.url),
+      301,
+    );
+  }
+
   if (pathname in LEGACY_REDIRECTS) {
     return NextResponse.redirect(
       new URL(LEGACY_REDIRECTS[pathname], request.url),

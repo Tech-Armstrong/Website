@@ -4,13 +4,21 @@ import type { MarketingHero as MarketingHeroData } from "@/types/marketing-page"
 type MarketingHeroProps = {
   hero: MarketingHeroData;
   headingId: string;
+  compact?: boolean;
 };
 
-export function MarketingHero({ hero, headingId }: MarketingHeroProps) {
+export function MarketingHero({
+  hero,
+  headingId,
+  compact = false,
+}: MarketingHeroProps) {
   const { title, paragraphs, image } = hero;
 
   return (
-    <section className="pb-8" aria-labelledby={headingId}>
+    <section
+      className={compact ? "pb-4" : "pb-8"}
+      aria-labelledby={headingId}
+    >
       <div
         className={`grid items-center gap-6 ${image ? "lg:grid-cols-2 lg:gap-8" : ""}`}
       >
@@ -31,14 +39,24 @@ export function MarketingHero({ hero, headingId }: MarketingHeroProps) {
           </div>
         ) : null}
 
-        <div className={image ? "" : "max-w-3xl"}>
+        <div className={image ? "" : compact ? "max-w-2xl" : "max-w-3xl"}>
           <h2
             id={headingId}
-            className="font-display text-[26px] font-semibold leading-tight text-brand-navy sm:text-[28px] md:text-[30px] md:leading-[38px]"
+            className={
+              compact
+                ? "font-display text-[24px] font-semibold leading-tight text-brand-navy sm:text-[26px] md:text-[28px] md:leading-[34px]"
+                : "font-display text-[26px] font-semibold leading-tight text-brand-navy sm:text-[28px] md:text-[30px] md:leading-[38px]"
+            }
           >
             {title}
           </h2>
-          <div className="mt-4 space-y-4 font-body text-base leading-relaxed text-brand-muted md:text-[17px] md:leading-[28px]">
+          <div
+            className={
+              compact
+                ? "mt-3 space-y-3 font-body text-[15px] leading-[24px] text-brand-muted md:text-base md:leading-[26px]"
+                : "mt-4 space-y-4 font-body text-base leading-relaxed text-brand-muted md:text-[17px] md:leading-[28px]"
+            }
+          >
             {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

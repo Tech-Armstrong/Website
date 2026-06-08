@@ -4,19 +4,22 @@ import { stripHtml } from "./html";
 
 import { SITE_NAME, SITE_URL } from "@/lib/site/config";
 
-export function blogListingMetadata(): Metadata {
-  const title = "Blog | Investment Insights & Financial Planning";
+export function blogListingMetadata(page = 1): Metadata {
+  const baseTitle = "Blog | Investment Insights & Financial Planning";
+  const title = page > 1 ? `${baseTitle} | Page ${page}` : baseTitle;
   const description =
     "Expert articles on mutual funds, portfolio strategy, market updates, and wealth management from Armstrong Capital.";
+  const canonical =
+    page > 1 ? `${SITE_URL}/blog?page=${page}` : `${SITE_URL}/blog`;
 
   return {
     title,
     description,
-    alternates: { canonical: `${SITE_URL}/blog` },
+    alternates: { canonical },
     openGraph: {
       title,
       description,
-      url: `${SITE_URL}/blog`,
+      url: canonical,
       siteName: SITE_NAME,
       type: "website",
     },
