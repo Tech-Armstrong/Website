@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { MarketingFaqItem } from "@/types/marketing-page";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 type MarketingFaqAccordionProps = {
   faqs: MarketingFaqItem[];
@@ -17,8 +18,8 @@ export function MarketingFaqAccordion({ faqs }: MarketingFaqAccordionProps) {
           const isOpen = openIndex === index;
 
           return (
+            <ScrollReveal key={faq.question} delay={index * 50}>
             <div
-              key={faq.question}
               className="overflow-hidden rounded-xl border border-[#e8eaed] bg-white shadow-sm"
             >
               <button
@@ -40,6 +41,7 @@ export function MarketingFaqAccordion({ faqs }: MarketingFaqAccordionProps) {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           );
         })}
       </div>

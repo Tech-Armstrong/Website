@@ -5,6 +5,7 @@ import { BlogPostHeader } from "@/components/blog/BlogPostHeader";
 import { Breadcrumbs } from "@/components/blog/Breadcrumbs";
 import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import {
   articleJsonLd,
   blogPostMetadata,
@@ -59,6 +60,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <main id="main-content" className="px-4 pb-12 pt-28 lg:pb-16 lg:pt-32">
         <article className="mx-auto max-w-[800px]">
+          <ScrollReveal>
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
@@ -66,6 +68,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               { label: post.title },
             ]}
           />
+          </ScrollReveal>
 
           <BlogPostHeader post={post} />
           <BlogPostContent html={post.content} />

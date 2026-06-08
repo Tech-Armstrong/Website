@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { aboutUsHero } from "@/data/about-us";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function AboutUsHero() {
   const { title, paragraphs, images } = aboutUsHero;
@@ -7,7 +8,7 @@ export function AboutUsHero() {
   return (
     <section className="pb-16 lg:pb-20" aria-labelledby="about-us-hero-heading">
       <div className="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-md lg:max-w-none">
+        <ScrollReveal direction="left" className="relative mx-auto aspect-[4/5] w-full max-w-md lg:max-w-none">
           <div
             className="absolute -left-4 -top-4 h-[85%] w-[85%] bg-contain bg-left-top bg-no-repeat opacity-90 sm:-left-6 sm:-top-6"
             style={{ backgroundImage: `url(${images.shape})` }}
@@ -34,21 +35,23 @@ export function AboutUsHero() {
               />
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div>
-          <h2
-            id="about-us-hero-heading"
-            className="font-display text-[28px] font-semibold leading-tight text-brand-navy sm:text-[32px] md:text-[36px] md:leading-[44px]"
-          >
-            {title}
-          </h2>
-          <div className="mt-6 space-y-5 font-body text-base leading-relaxed text-brand-muted md:text-[17px] md:leading-[30px]">
-            {paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
+        <ScrollReveal direction="right" delay={100}>
+          <div>
+            <h2
+              id="about-us-hero-heading"
+              className="font-display text-[28px] font-semibold leading-tight text-brand-navy sm:text-[32px] md:text-[36px] md:leading-[44px]"
+            >
+              {title}
+            </h2>
+            <div className="mt-6 space-y-5 font-body text-base leading-relaxed text-brand-muted md:text-[17px] md:leading-[30px]">
+              {paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { enhanceContentHtml } from "@/lib/blog/html";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 type BlogPostContentProps = {
   html: string;
@@ -6,9 +7,11 @@ type BlogPostContentProps = {
 
 export function BlogPostContent({ html }: BlogPostContentProps) {
   return (
-    <div
-      className="blog-prose"
-      dangerouslySetInnerHTML={{ __html: enhanceContentHtml(html) }}
-    />
+    <ScrollReveal delay={120}>
+      <div
+        className="blog-prose"
+        dangerouslySetInnerHTML={{ __html: enhanceContentHtml(html) }}
+      />
+    </ScrollReveal>
   );
 }

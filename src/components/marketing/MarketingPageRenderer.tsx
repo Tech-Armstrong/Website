@@ -1,6 +1,7 @@
 import { AirtableContactForm } from "@/components/contact/AirtableContactForm";
 import { ContactInfoCards } from "@/components/contact/ContactInfoCards";
 import { ContactMap } from "@/components/contact/ContactMap";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import type { MarketingPage } from "@/lib/pages/content";
 import type { MarketingPageConfig } from "@/types/marketing-page";
 import { MarketingCareerSections } from "./MarketingCareerSections";
@@ -68,8 +69,14 @@ export function MarketingPageRenderer({
             />
           ) : null}
           <ContactInfoCards />
-          <ContactMap />
-          {config.showContactForm ? <AirtableContactForm /> : null}
+          <ScrollReveal delay={180}>
+            <ContactMap />
+          </ScrollReveal>
+          {config.showContactForm ? (
+            <ScrollReveal delay={240}>
+              <AirtableContactForm />
+            </ScrollReveal>
+          ) : null}
         </div>
       ) : (
         <>
@@ -112,7 +119,11 @@ export function MarketingPageRenderer({
 
           {config.quote ? <MarketingQuote quote={config.quote} /> : null}
 
-          {config.showContactForm ? <AirtableContactForm /> : null}
+          {config.showContactForm ? (
+            <ScrollReveal>
+              <AirtableContactForm />
+            </ScrollReveal>
+          ) : null}
         </>
       )}
     </MarketingPageShell>

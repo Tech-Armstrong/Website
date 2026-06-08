@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { MarketingMediaArticle, MarketingMediaPodcast } from "@/types/marketing-page";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 type MarketingMediaTabsProps = {
   articles: MarketingMediaArticle[];
@@ -14,6 +15,7 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
 
   return (
     <section className="pt-6 pb-2" aria-label="Media spotlight">
+      <ScrollReveal>
       <div className="mb-6 flex gap-2 border-b border-[#eef0f2]">
         {(["articles", "podcasts"] as const).map((key) => (
           <button
@@ -32,12 +34,13 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
           </button>
         ))}
       </div>
+      </ScrollReveal>
 
       {tab === "articles" ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
+          {articles.map((article, index) => (
+            <ScrollReveal key={article.href} delay={index * 60}>
             <a
-              key={article.href}
               href={article.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -58,13 +61,14 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
                 {article.title}
               </h3>
             </a>
+            </ScrollReveal>
           ))}
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
-          {podcasts.map((podcast) => (
+          {podcasts.map((podcast, index) => (
+            <ScrollReveal key={podcast.embedUrl} delay={index * 60}>
             <div
-              key={podcast.embedUrl}
               className="lift-card overflow-hidden rounded-xl border border-[#e8eaed] bg-white"
             >
               <div className="aspect-video w-full">
@@ -79,6 +83,7 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
                 {podcast.title}
               </p>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       )}

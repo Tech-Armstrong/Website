@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Mulish, Urbanist } from "next/font/google";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site/config";
 import "./globals.css";
 
@@ -61,9 +62,11 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://armstrong-cap.com" />
       </head>
       <body className="font-body antialiased">
-        <SkipLink />
-        <SiteHeader />
-        {children}
+        <MotionProvider>
+          <SkipLink />
+          <SiteHeader />
+          {children}
+        </MotionProvider>
       </body>
     </html>
   );

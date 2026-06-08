@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/blog/Breadcrumbs";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 type MarketingPageShellProps = {
   title: string;
@@ -28,6 +29,7 @@ export function MarketingPageShell({
         }
       >
         <div className="site-container px-4">
+          <ScrollReveal>
           <Breadcrumbs
             className={compact ? "mb-4" : "mb-8"}
             items={[
@@ -35,6 +37,7 @@ export function MarketingPageShell({
               { label: title },
             ]}
           />
+          </ScrollReveal>
 
           <header className="sr-only">
             <h1>{title}</h1>
@@ -45,7 +48,9 @@ export function MarketingPageShell({
           ) : (
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-8">
               <div className="min-w-0">{children}</div>
-              {sidebar}
+              <ScrollReveal direction="right" delay={100}>
+                {sidebar}
+              </ScrollReveal>
             </div>
           )}
         </div>

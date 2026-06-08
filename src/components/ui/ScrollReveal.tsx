@@ -1,6 +1,8 @@
+"use no memo";
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { div as MotionDiv } from "framer-motion/client";
+import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 type ScrollRevealProps = {
   children: ReactNode;
@@ -8,6 +10,33 @@ type ScrollRevealProps = {
   delay?: number;
   direction?: "up" | "left" | "right" | "none";
 };
+
+const settleEase = [0.22, 1, 0.36, 1] as const;
+
+const hiddenByDirection = {
+  up: { opacity: 0, y: 28, x: 0 },
+  left: { opacity: 0, x: -28, y: 0 },
+  right: { opacity: 0, x: 28, y: 0 },
+  none: { opacity: 0, x: 0, y: 0 },
+} as const;
+
+const visibleTarget = { opacity: 1, x: 0, y: 0 };
+
+function subscribeReducedMotion(onStoreChange: () => void) {
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+
+function getReducedMotionSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function isInViewport(el: HTMLElement) {
+  const rect = el.getBoundingClientRect();
+  const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+  return rect.top < viewHeight * 0.92 && rect.bottom > 0;
+}
 
 export function ScrollReveal({
   children,
@@ -17,21 +46,33 @@ export function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const reduceMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    () => false,
+  );
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mq.matches) {
+    if (reduceMotion) {
       setVisible(true);
       return;
     }
 
+    const el = ref.current;
+    if (!el) return;
+
+    let revealed = false;
+
+    const reveal = () => {
+      if (revealed) return;
+      revealed = true;
+      setVisible(true);
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
+          reveal();
           observer.disconnect();
         }
       },
@@ -39,25 +80,43 @@ export function ScrollReveal({
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
-  const directionClass =
-    direction === "left"
-      ? "scroll-reveal-left"
-      : direction === "right"
-        ? "scroll-reveal-right"
-        : direction === "none"
-          ? "scroll-reveal-fade"
-          : "scroll-reveal-up";
+    if (isInViewport(el)) {
+      requestAnimationFrame(reveal);
+    }
+
+    return () => observer.disconnect();
+  }, [reduceMotion]);
+
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  const hiddenTarget = hiddenByDirection[direction];
+  const hiddenClass =
+    !visible && direction === "up"
+      ? "opacity-0 translate-y-7"
+      : !visible && direction === "left"
+        ? "opacity-0 -translate-x-7"
+        : !visible && direction === "right"
+          ? "opacity-0 translate-x-7"
+          : !visible
+            ? "opacity-0"
+            : "";
 
   return (
-    <div
+    <MotionDiv
       ref={ref}
-      className={`scroll-reveal ${directionClass} ${visible ? "is-visible" : ""} ${className}`}
-      style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}
+      className={`${hiddenClass} ${className}`.trim()}
+      initial={false}
+      animate={visible ? visibleTarget : hiddenTarget}
+      transition={{
+        duration: 0.65,
+        delay: delay / 1000,
+        ease: settleEase,
+      }}
     >
       {children}
-    </div>
+    </MotionDiv>
   );
 }

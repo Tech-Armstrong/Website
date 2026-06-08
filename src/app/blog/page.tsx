@@ -4,6 +4,7 @@ import { BlogCard } from "@/components/blog/BlogCard";
 import { BlogPagination } from "@/components/blog/BlogPagination";
 import { Breadcrumbs } from "@/components/blog/Breadcrumbs";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { blogListingMetadata } from "@/lib/blog/metadata";
 import {
   getPaginatedPostSummaries,
@@ -35,13 +36,16 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     <>
       <main id="main-content" className="px-4 pb-12 pt-28 lg:pb-16 lg:pt-32">
         <div className="mx-auto max-w-[1200px]">
+          <ScrollReveal>
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
               { label: "Blog" },
             ]}
           />
+          </ScrollReveal>
 
+          <ScrollReveal delay={60}>
           <div className="mb-12 max-w-3xl">
             <span className="te-subtitle mb-[13px] inline-block rounded-full rounded-br-none border border-brand-blue px-[15px] py-[2px] font-display text-xs font-bold uppercase leading-[26px] text-brand-blue">
               Knowledge Hub
@@ -54,8 +58,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               guidance from the Armstrong Capital team.
             </p>
           </div>
+          </ScrollReveal>
 
           {totalCount === 0 ? (
+            <ScrollReveal delay={120}>
             <div className="not-found-enter flex flex-col items-center gap-4 py-12 text-center">
               <div
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-surface text-brand-blue"
@@ -67,17 +73,22 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               </div>
               <p className="font-body text-brand-muted">No articles published yet.</p>
             </div>
+            </ScrollReveal>
           ) : (
             <>
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {posts.map((post) => (
-                  <BlogCard key={post.slug} post={post} />
+                {posts.map((post, index) => (
+                  <ScrollReveal key={post.slug} delay={index * 60}>
+                    <BlogCard post={post} />
+                  </ScrollReveal>
                 ))}
               </div>
+              <ScrollReveal delay={posts.length * 60}>
               <BlogPagination
                 currentPage={currentPage}
                 totalPages={totalPages}
               />
+              </ScrollReveal>
             </>
           )}
         </div>
