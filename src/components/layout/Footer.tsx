@@ -22,8 +22,8 @@ function LinkedInIcon() {
   );
 }
 
-const socialLinkClass =
-  "flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+const socialLinkBaseClass =
+  "flex h-9 w-9 items-center justify-center rounded-full text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 
 const sectionTitleClass =
   "mb-4 font-display text-xl font-semibold leading-snug text-white";
@@ -32,14 +32,13 @@ export function Footer() {
   const { logo, ctaBackground } = footerAssets;
 
   return (
-    <footer className="mt-12 overflow-visible bg-brand-dark pt-28 pb-10 text-white lg:mt-16 lg:pt-40">
+    <footer className="mt-12 overflow-visible bg-brand-dark pt-24 pb-8 text-white lg:mt-16 lg:pt-36">
       <div className="site-container px-4">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-          {/* CTA card + social */}
-          <div className="md:col-span-2 lg:col-span-5">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:items-start lg:gap-8">
+          <div className="md:col-span-2 lg:col-span-3 lg:-mt-32">
             <section
               aria-labelledby="footer-cta-heading"
-              className="relative overflow-hidden rounded-[30px] rounded-br-none bg-cover bg-center px-8 py-16 shadow-xl lg:-mt-32"
+              className="relative mx-auto w-full max-w-[280px] overflow-hidden rounded-[30px] rounded-br-none bg-cover bg-center px-5 py-8 shadow-xl lg:mx-0"
               style={{ backgroundImage: `url(${ctaBackground})` }}
             >
               <div className="footer-cta-overlay absolute inset-0" aria-hidden />
@@ -49,12 +48,12 @@ export function Footer() {
                   alt="Armstrong Capital"
                   width={525}
                   height={150}
-                  className="mx-auto mb-6 h-auto w-full max-w-[280px]"
+                  className="mx-auto mb-4 h-auto w-full max-w-[180px]"
                 />
-                <div className="mx-auto mb-6 h-[3px] w-16 bg-white" aria-hidden />
+                <div className="mx-auto mb-4 h-[3px] w-12 bg-white" aria-hidden />
                 <h2
                   id="footer-cta-heading"
-                  className="font-display text-2xl font-semibold leading-[34px] text-white"
+                  className="font-display text-lg font-semibold leading-[26px] text-white"
                 >
                   Thinking &<br />
                   Planning for your<br />
@@ -62,40 +61,15 @@ export function Footer() {
                 </h2>
                 <Link
                   href="/contact"
-                  className="theme-btn btn-two mt-8 inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="theme-btn btn-two mt-5 inline-block !px-5 !py-2.5 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Appointment
                 </Link>
               </div>
             </section>
-
-            <div className="mt-8 lg:mt-10">
-              <h3 className={sectionTitleClass}>Follow us on</h3>
-              <div className="flex gap-3">
-                <a
-                  href="http://www.youtube.com/@ArmstrongCapital"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={socialLinkClass}
-                  aria-label="YouTube"
-                >
-                  <YoutubeIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/armstrong-capital-advisory-pvt-ltd/posts/?feedView=all"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={socialLinkClass}
-                  aria-label="LinkedIn"
-                >
-                  <LinkedInIcon />
-                </a>
-              </div>
-            </div>
           </div>
 
-          {/* Get in touch */}
-          <div className="md:col-span-2 lg:col-span-3 lg:pl-2">
+          <div className="md:col-span-2 lg:col-span-4 lg:-mt-32">
             <h3 className={sectionTitleClass}>Get in Touch</h3>
             <p className="footer-text mb-6 font-body text-[15px] leading-[26px]">
               Armstrong Capital &amp; Financial Services Pvt. Ltd.
@@ -123,8 +97,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 lg:-mt-32">
             <h3 className={sectionTitleClass}>Services</h3>
             <ul className="space-y-2">
               <li>
@@ -142,8 +115,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Segments */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3 lg:-mt-32">
             <h3 className={sectionTitleClass}>Segments</h3>
             <ul className="space-y-2">
               {footerSegments.map((item) => (
@@ -157,22 +129,44 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center md:flex-row md:text-left">
-          <p className="footer-text font-body text-base">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-white/10 pt-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="font-display text-sm font-semibold text-white">
+              Follow us on
+            </span>
+            <div className="flex gap-2">
+              <a
+                href="http://www.youtube.com/@ArmstrongCapital"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${socialLinkBaseClass} footer-social-youtube`}
+                aria-label="YouTube"
+              >
+                <YoutubeIcon />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/armstrong-capital-advisory-pvt-ltd/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${socialLinkBaseClass} footer-social-linkedin`}
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon />
+              </a>
+            </div>
+          </div>
+
+          <p className="footer-text font-body text-sm md:text-base">
             Copyright © 2026{" "}
             <Link href="/" className="footer-link">
               Armstrong.
             </Link>{" "}
             All Rights Reserved.
           </p>
-          <ul className="flex flex-wrap justify-center gap-6 md:justify-end">
-            <li>
-              <span className="footer-text font-body text-base">
-                Terms &amp; Conditions
-              </span>
-            </li>
-          </ul>
+
+          <span className="footer-text font-body text-sm md:text-base">
+            Terms &amp; Conditions
+          </span>
         </div>
       </div>
     </footer>

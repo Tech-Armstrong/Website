@@ -1,5 +1,5 @@
 import { AirtableContactForm } from "@/components/contact/AirtableContactForm";
-import { ContactDetails } from "@/components/contact/ContactDetails";
+import { ContactInfoCards } from "@/components/contact/ContactInfoCards";
 import { ContactMap } from "@/components/contact/ContactMap";
 import type { MarketingPage } from "@/lib/pages/content";
 import type { MarketingPageConfig } from "@/types/marketing-page";
@@ -67,7 +67,7 @@ export function MarketingPageRenderer({
               compact
             />
           ) : null}
-          <ContactDetails />
+          <ContactInfoCards />
           <ContactMap />
           {config.showContactForm ? <AirtableContactForm /> : null}
         </div>

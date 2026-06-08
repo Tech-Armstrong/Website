@@ -77,6 +77,11 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const desktopNavItems = [
+    ...leftNav.slice(1),
+    ...rightNav.filter((item) => item.type !== "link" || !item.external),
+  ];
+
   return (
     <>
     <header className="pointer-events-none fixed inset-x-0 top-0 z-[9999] px-3 pt-3 sm:px-4 sm:pt-4 lg:px-6">
@@ -104,8 +109,7 @@ export function SiteHeader() {
               className="flex flex-wrap items-center justify-end gap-4 lg:gap-5 xl:gap-6"
               aria-label="Primary"
             >
-              {leftNav.map((item) => renderNavItem(item, pathname, "right"))}
-              {rightNav.map((item) => renderNavItem(item, pathname, "right"))}
+              {desktopNavItems.map((item) => renderNavItem(item, pathname, "right"))}
             </nav>
             <Link
               href="/contact"

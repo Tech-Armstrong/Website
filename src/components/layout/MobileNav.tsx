@@ -115,15 +115,10 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           </button>
         </div>
         <nav className="flex-1 overflow-y-auto px-4 py-4">
-          <Link
-            href="/"
-            className="block py-2 font-display text-base font-medium text-brand-navy"
-            onClick={onClose}
-          >
-            Home
-          </Link>
           {leftNav.slice(1).map((item) => renderMobileItem(item, onClose))}
-          {rightNav.map((item) => renderMobileItem(item, onClose))}
+          {rightNav
+            .filter((item) => item.type !== "link" || !item.external)
+            .map((item) => renderMobileItem(item, onClose))}
         </nav>
         <div className="border-t border-[#eee] p-4">
           <Link

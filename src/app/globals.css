@@ -302,6 +302,22 @@ body {
   border-radius: 2px;
 }
 
+.footer-social-youtube {
+  background: #ff0000;
+}
+
+.footer-social-youtube:hover {
+  background: #cc0000;
+}
+
+.footer-social-linkedin {
+  background: #0a66c2;
+}
+
+.footer-social-linkedin:hover {
+  background: #004182;
+}
+
 /* Why Choose — active tab number badge overlaps dark panel edge */
 .why-choose-badge {
   margin-left: -4px;
