@@ -6,9 +6,7 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { MediaSpotlightsSection } from "@/components/home/MediaSpotlightsSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { WhyChooseSection } from "@/components/home/WhyChooseSection";
-import { BookAppointmentSection } from "@/components/contact/BookAppointmentSection";
 import { Footer } from "@/components/layout/Footer";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site/config";
 
 export const metadata: Metadata = {
@@ -33,13 +31,6 @@ export default function HomePage() {
       <WhyChooseSection />
       <MediaSpotlightsSection />
       <TestimonialsSection />
-      <section className="border-t border-[#eef0f2] bg-white py-12 lg:py-16">
-        <div className="site-container px-4">
-          <ScrollReveal>
-            <BookAppointmentSection />
-          </ScrollReveal>
-        </div>
-      </section>
       <Footer />
     </main>
   );

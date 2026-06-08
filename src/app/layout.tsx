@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Mulish, Urbanist } from "next/font/google";
+import { CalendlyBadge } from "@/components/integrations/CalendlyBadge";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { MotionProvider } from "@/components/ui/MotionProvider";
@@ -60,6 +61,10 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://armstrong-cap.com" />
         <link rel="dns-prefetch" href="https://armstrong-cap.com" />
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
       </head>
       <body className="font-body antialiased">
         <MotionProvider>
@@ -67,6 +72,7 @@ export default function RootLayout({
           <SiteHeader />
           {children}
         </MotionProvider>
+        <CalendlyBadge />
       </body>
     </html>
   );

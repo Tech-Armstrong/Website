@@ -40,17 +40,26 @@ function TeamScrollStrip({
   const x = useTransform(scrollYProgress, [0, 1], [0, -maxTranslate]);
 
   useLayoutEffect(() => {
+    const strip = stripRef.current;
+    const viewport = strip?.parentElement;
+    if (!strip || !viewport) return;
+
     const measure = () => {
-      const strip = stripRef.current;
-      const viewport = strip?.parentElement;
-      if (!strip || !viewport) return;
       setMaxTranslate(Math.max(0, strip.scrollWidth - viewport.clientWidth));
     };
 
     measure();
+    const observer = new ResizeObserver(() => {
+      requestAnimationFrame(measure);
+    });
+    observer.observe(strip);
+    observer.observe(viewport);
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [children, memberCount]);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [memberCount]);
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     const index = Math.min(
@@ -77,12 +86,27 @@ export function TeamScrollDriveGate({
   const [ready, setReady] = useState(false);
 
   useLayoutEffect(() => {
-    if (trackRef.current) {
-      setReady(true);
-      return;
-    }
+    let cancelled = false;
+    let frameId = 0;
+
+    const tryReady = () => {
+      if (cancelled) return;
+      if (trackRef.current) {
+        setReady(true);
+        return;
+      }
+      frameId = requestAnimationFrame(tryReady);
+    };
+
     setReady(false);
-  }, [trackRef]);
+    tryReady();
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(frameId);
+      setReady(false);
+    };
+  }, [trackRef, memberCount]);
 
   if (!ready) {
     return <div className={className}>{children}</div>;

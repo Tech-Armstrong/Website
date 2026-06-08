@@ -51,7 +51,7 @@ export function TeamMemberModal({
       }}
     >
       <div className="flex items-start justify-between gap-4 border-b border-[#eef0f2] px-6 py-5">
-        <div>
+        <div className="min-w-0">
           <h2
             id="team-member-dialog-title"
             className="font-display text-xl font-semibold text-brand-navy"
@@ -59,19 +59,20 @@ export function TeamMemberModal({
             {member.name}
           </h2>
           <p className="mt-1 font-body text-sm text-brand-muted">{member.role}</p>
+        </div>
+        <div className="flex shrink-0 items-center gap-2">
           {member.linkedinUrl ? (
             <a
               href={member.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 font-display text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
+              aria-label={`${member.name} on LinkedIn`}
+              className="rounded-lg p-2 text-brand-blue transition-colors hover:bg-brand-blue/10 hover:text-brand-navy"
             >
               <LinkedInIcon />
-              View LinkedIn profile
             </a>
           ) : null}
-        </div>
-        <button
+          <button
           type="button"
           onClick={onClose}
           className="shrink-0 rounded-lg p-2 text-brand-muted transition-colors hover:bg-[#f4f5f6] hover:text-brand-navy"
@@ -89,6 +90,7 @@ export function TeamMemberModal({
             <path strokeLinecap="round" d="M18 6L6 18M6 6l12 12" />
           </svg>
         </button>
+        </div>
       </div>
       <div className="overflow-y-auto px-6 py-5">
         <div className="space-y-4 font-body text-[15px] leading-relaxed text-brand-muted">

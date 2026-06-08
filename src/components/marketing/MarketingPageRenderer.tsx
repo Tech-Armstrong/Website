@@ -73,11 +73,9 @@ export function MarketingPageRenderer({
         <div className="mx-auto max-w-[960px] space-y-8">
           <ContactPageIntro />
           <ContactInfoCards />
-          {config.showContactForm ? (
-            <ScrollReveal delay={180}>
-              <BookAppointmentSection showDescription />
-            </ScrollReveal>
-          ) : null}
+          <ScrollReveal delay={180}>
+            <BookAppointmentSection showDescription />
+          </ScrollReveal>
         </div>
       ) : (
         <>
@@ -120,12 +118,6 @@ export function MarketingPageRenderer({
 
           {config.quote && !useFullWidthTeamBlock ? (
             <MarketingQuote quote={config.quote} />
-          ) : null}
-
-          {config.showContactForm ? (
-            <ScrollReveal>
-              <BookAppointmentSection className="border-t border-[#eef0f2] pt-8" />
-            </ScrollReveal>
           ) : null}
         </>
       )}

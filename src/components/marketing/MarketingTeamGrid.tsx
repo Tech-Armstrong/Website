@@ -1,7 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
+import { usePathname } from "next/navigation";
+import { useCallback, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 import type { MarketingTeamMember } from "@/types/marketing-page";
 import {
   TeamMemberCard,
@@ -70,7 +71,6 @@ export function MarketingTeamGrid({ members }: MarketingTeamGridProps) {
     null,
   );
   const [activeIndex, setActiveIndex] = useState(0);
-  const [pinActive, setPinActive] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -81,11 +81,8 @@ export function MarketingTeamGrid({ members }: MarketingTeamGridProps) {
     getReducedMotionSnapshot,
     () => false,
   );
-  const pinned = !reduceMotion;
-
-  useEffect(() => {
-    setPinActive(pinned);
-  }, [pinned]);
+  const pinActive = !reduceMotion;
+  const pathname = usePathname();
 
   useLayoutEffect(() => {
     if (!pinActive) return;
@@ -111,39 +108,6 @@ export function MarketingTeamGrid({ members }: MarketingTeamGridProps) {
 
       content.style.setProperty("--team-slide-w", `${Math.floor(slidePx)}px`);
       window.dispatchEvent(new Event("resize"));
-
-      const slide = content.querySelector<HTMLElement>("[role=tabpanel]");
-      const section = sectionRef.current;
-      const siteContainer = section?.closest(".site-container");
-      const containerW = siteContainer?.clientWidth ?? 0;
-      const sectionW = section?.clientWidth ?? 0;
-      // #region agent log
-      fetch("http://127.0.0.1:7554/ingest/9555c182-db1e-4c7f-8232-b6887f4fc3da", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Debug-Session-Id": "d00c4f",
-        },
-        body: JSON.stringify({
-          sessionId: "d00c4f",
-          runId: "layout-fix",
-          hypothesisId: "H3-full-container",
-          location: "MarketingTeamGrid.tsx:updateSlideWidth",
-          message: "layout column check",
-          data: {
-            viewportW: window.innerWidth,
-            sectionW,
-            contentW,
-            containerW,
-            slideW: slide?.clientWidth ?? 0,
-            slideVarPx: content.style.getPropertyValue("--team-slide-w"),
-            matchesContainer: Math.abs(sectionW - containerW) < 16,
-            isLg,
-          },
-          timestamp: Date.now(),
-        }),
-      }).catch(() => {});
-      // #endregion
     };
 
     updateSlideWidth();
@@ -203,6 +167,7 @@ export function MarketingTeamGrid({ members }: MarketingTeamGridProps) {
                   className="w-full [--team-slide-w:min(85vw,360px)]"
                 >
                   <TeamScrollDriveGate
+                    key={`${pathname}-team-scroll`}
                     trackRef={trackRef}
                     memberCount={members.length}
                     setActiveIndex={setActiveIndex}
