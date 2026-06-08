@@ -86,7 +86,7 @@ export function ServicesSection() {
                     </h3>
                     <Link
                       href={service.href}
-                      className="group block overflow-hidden rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+                      className="group block overflow-hidden rounded-xl focus-settle"
                     >
                       <div className="relative aspect-square w-full overflow-hidden rounded-xl">
                         <Image
@@ -94,7 +94,7 @@ export function ServicesSection() {
                           alt={service.title}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                          className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
                         />
                       </div>
                     </Link>
@@ -108,7 +108,7 @@ export function ServicesSection() {
             type="button"
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className="absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#e8eaed] bg-white text-brand-navy shadow-md transition-colors hover:border-brand-blue hover:text-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:pointer-events-none disabled:opacity-35 sm:h-11 sm:w-11"
+            className="focus-settle absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#e8eaed] bg-white text-brand-navy shadow-md transition-colors hover:border-brand-blue hover:text-brand-blue disabled:pointer-events-none disabled:opacity-35 sm:h-11 sm:w-11"
             aria-label="Previous services"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
@@ -119,7 +119,7 @@ export function ServicesSection() {
             type="button"
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className="absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#e8eaed] bg-white text-brand-navy shadow-md transition-colors hover:border-brand-blue hover:text-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:pointer-events-none disabled:opacity-35 sm:h-11 sm:w-11"
+            className="focus-settle absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#e8eaed] bg-white text-brand-navy shadow-md transition-colors hover:border-brand-blue hover:text-brand-blue disabled:pointer-events-none disabled:opacity-35 sm:h-11 sm:w-11"
             aria-label="Next services"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>

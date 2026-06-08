@@ -60,7 +60,7 @@ export function WhyChooseSection() {
                       aria-controls={`why-choose-panel-${index}`}
                       id={`why-choose-tab-${index}`}
                       onClick={() => setActiveIndex(index)}
-                      className={`group relative w-full text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80 ${
+                      className={`focus-settle group relative w-full rounded-md text-left transition-all duration-300 ${
                         index < tabs.length - 1 && !isActive
                           ? "border-b border-white/10"
                           : ""

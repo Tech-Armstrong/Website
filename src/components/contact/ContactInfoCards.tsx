@@ -2,7 +2,7 @@ import { contactInfo } from "@/data/contact";
 import { buildMapSearchUrl } from "@/lib/google/embed";
 
 const cardClass =
-  "flex h-full flex-col rounded-xl border border-[#e8eaed] bg-white p-4";
+  "lift-card flex h-full flex-col rounded-xl border border-[#e8eaed] bg-white p-4";
 
 export function ContactInfoCards() {
   const [headOffice, branchOffice] = contactInfo.offices;
@@ -24,7 +24,7 @@ export function ContactInfoCards() {
               </p>
               <a
                 href={phone.href}
-                className="mt-1 inline-block font-body text-sm font-medium text-brand-blue transition-colors hover:text-brand-navy"
+                className="focus-settle mt-1 inline-block rounded-md font-body text-sm font-medium text-brand-blue transition-colors hover:text-brand-navy"
                 {...(phone.href.startsWith("http")
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
@@ -39,7 +39,7 @@ export function ContactInfoCards() {
             </p>
             <a
               href={contactInfo.email.href}
-              className="mt-1 inline-block font-body text-sm font-medium text-brand-blue transition-colors hover:text-brand-navy"
+              className="focus-settle mt-1 inline-block rounded-md font-body text-sm font-medium text-brand-blue transition-colors hover:text-brand-navy"
             >
               {contactInfo.email.display}
             </a>
@@ -59,7 +59,7 @@ export function ContactInfoCards() {
             href={buildMapSearchUrl(office.address)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex items-center gap-1 font-display text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
+            className="focus-settle mt-3 inline-flex items-center gap-1 rounded-md font-display text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
           >
             View on Google Maps
             <span aria-hidden="true">→</span>

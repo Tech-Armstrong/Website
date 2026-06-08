@@ -23,7 +23,7 @@ function LinkedInIcon() {
 }
 
 const socialLinkBaseClass =
-  "flex h-9 w-9 items-center justify-center rounded-full text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+  "focus-settle flex h-9 w-9 items-center justify-center rounded-full text-white transition-colors active:scale-[0.98]";
 
 const sectionTitleClass =
   "mb-4 font-display text-xl font-semibold leading-snug text-white";
@@ -61,7 +61,7 @@ export function Footer() {
                 </h2>
                 <Link
                   href="/contact"
-                  className="theme-btn btn-two mt-5 inline-block !px-5 !py-2.5 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="theme-btn btn-two focus-settle mt-5 inline-block !px-5 !py-2.5 text-sm active:scale-[0.98]"
                 >
                   Appointment
                 </Link>

@@ -56,7 +56,17 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </div>
 
           {totalCount === 0 ? (
-            <p className="font-body text-brand-muted">No articles published yet.</p>
+            <div className="not-found-enter flex flex-col items-center gap-4 py-12 text-center">
+              <div
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-surface text-brand-blue"
+                aria-hidden
+              >
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.75">
+                  <path d="M4 6h16M4 12h10M4 18h14" strokeLinecap="round" />
+                </svg>
+              </div>
+              <p className="font-body text-brand-muted">No articles published yet.</p>
+            </div>
           ) : (
             <>
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

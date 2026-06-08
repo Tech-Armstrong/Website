@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import {
   CLIENT_LOGIN_URL,
@@ -18,7 +18,7 @@ function renderMobileItem(item: NavItem, onClose: () => void) {
       <Link
         key={item.label}
         href={item.href}
-        className="block py-2 font-display text-base font-medium text-brand-navy"
+        className="focus-settle block rounded-md py-2 font-display text-base font-medium text-brand-navy"
         onClick={onClose}
         {...(item.external
           ? { target: "_blank", rel: "noopener noreferrer" }
@@ -44,7 +44,7 @@ function renderMobileItem(item: NavItem, onClose: () => void) {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block py-1 font-body text-sm text-brand-navy"
+                  className="focus-settle block rounded-md py-1 font-body text-sm text-brand-navy"
                   onClick={onClose}
                   {...(link.external
                     ? { target: "_blank", rel: "noopener noreferrer" }
@@ -67,11 +67,40 @@ type MobileNavProps = {
 };
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+  const [rendered, setRendered] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (open) {
+      let frame1 = 0;
+      let frame2 = 0;
+      frame1 = requestAnimationFrame(() => {
+        setRendered(true);
+        frame2 = requestAnimationFrame(() => setVisible(true));
+      });
+      return () => {
+        cancelAnimationFrame(frame1);
+        cancelAnimationFrame(frame2);
+      };
+    }
+
+    let frame = 0;
+    frame = requestAnimationFrame(() => setVisible(false));
+    const t = window.setTimeout(() => {
+      requestAnimationFrame(() => setRendered(false));
+    }, 320);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.clearTimeout(t);
+    };
+  }, [open]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -80,21 +109,43 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
     };
   }, [open]);
 
-  if (!open || !mounted) return null;
+  useEffect(() => {
+    if (!open || !visible) return;
+    closeButtonRef.current?.focus();
+  }, [open, visible]);
+
+  useEffect(() => {
+    if (!open) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open, onClose]);
+
+  if (!mounted || !rendered) return null;
 
   return createPortal(
     <div
       className="fixed inset-0 z-[10000] lg:hidden"
       role="dialog"
       aria-modal="true"
+      aria-label="Mobile navigation"
     >
       <button
         type="button"
-        className="absolute inset-0 bg-brand-navy/50"
+        className={`mobile-nav-backdrop focus-settle absolute inset-0 bg-brand-navy/50 ${
+          visible ? "is-visible" : ""
+        }`}
         aria-label="Dismiss menu"
         onClick={onClose}
       />
-      <div className="absolute right-0 top-0 flex h-full w-[min(100%,320px)] flex-col bg-white shadow-2xl">
+      <div
+        ref={panelRef}
+        className={`mobile-nav-panel absolute right-0 top-0 flex h-full w-[min(100%,320px)] flex-col bg-white shadow-2xl ${
+          visible ? "is-visible" : ""
+        }`}
+      >
         <div className="flex items-center justify-between border-b border-[#eee] px-4 py-4">
           <Image
             src={LOGO_SRC}
@@ -104,9 +155,10 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             className="h-auto w-[140px]"
           />
           <button
+            ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-brand-navy"
+            className="focus-settle flex h-10 w-10 items-center justify-center rounded-full text-brand-navy"
             aria-label="Close menu"
           >
             <svg viewBox="0 0 24 24" className="h-6 w-6" stroke="currentColor" strokeWidth="2">
@@ -123,7 +175,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         <div className="border-t border-[#eee] p-4">
           <Link
             href="/contact"
-            className="theme-btn btn-two block w-full text-center"
+            className="theme-btn btn-two focus-settle block w-full text-center"
             onClick={onClose}
           >
             Contact Us
@@ -132,7 +184,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             href={CLIENT_LOGIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 block text-center font-display text-sm font-medium text-brand-blue"
+            className="focus-settle mt-3 block rounded-md text-center font-display text-sm font-medium text-brand-blue"
           >
             Client Login
           </a>

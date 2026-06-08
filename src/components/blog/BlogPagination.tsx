@@ -40,7 +40,7 @@ function getPageNumbers(
 }
 
 const pageLinkClass =
-  "inline-flex h-10 min-w-10 items-center justify-center rounded-full border border-[#e8eaed] px-3 font-display text-sm font-semibold text-brand-navy transition-colors hover:border-brand-blue hover:text-brand-blue";
+  "focus-settle inline-flex h-10 min-w-10 items-center justify-center rounded-full border border-[#e8eaed] px-3 font-display text-sm font-semibold text-brand-navy transition-colors hover:border-brand-blue hover:text-brand-blue";
 
 const activePageClass =
   "inline-flex h-10 min-w-10 items-center justify-center rounded-full bg-brand-blue px-3 font-display text-sm font-semibold text-white";

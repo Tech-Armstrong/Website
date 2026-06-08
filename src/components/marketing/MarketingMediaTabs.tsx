@@ -22,7 +22,7 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
             role="tab"
             aria-selected={tab === key}
             onClick={() => setTab(key)}
-            className={`px-4 py-2.5 font-display text-sm font-semibold capitalize transition-colors ${
+            className={`focus-settle px-4 py-2.5 font-display text-sm font-semibold capitalize transition-colors ${
               tab === key
                 ? "border-b-2 border-brand-blue text-brand-blue"
                 : "text-brand-muted hover:text-brand-navy"
@@ -41,7 +41,7 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
               href={article.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl border border-[#e8eaed] bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+              className="lift-card focus-settle block rounded-xl border border-[#e8eaed] bg-white p-5"
             >
               {article.logo ? (
                 <div className="mb-4 flex h-16 items-center justify-center">
@@ -65,7 +65,7 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
           {podcasts.map((podcast) => (
             <div
               key={podcast.embedUrl}
-              className="overflow-hidden rounded-xl border border-[#e8eaed] bg-white shadow-sm"
+              className="lift-card overflow-hidden rounded-xl border border-[#e8eaed] bg-white"
             >
               <div className="aspect-video w-full">
                 <iframe

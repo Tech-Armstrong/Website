@@ -65,7 +65,7 @@ export function MediaSpotlightsSection() {
             </p>
             <h2
               id="media-spotlights-heading"
-              className="font-display text-[28px] font-semibold leading-tight text-brand-navy sm:text-[32px] md:text-[36px]"
+              className="font-display text-[28px] font-semibold text-balance leading-tight tracking-tight text-brand-navy sm:text-[32px] md:text-[36px]"
             >
               Media Spotlights
             </h2>
@@ -90,7 +90,7 @@ export function MediaSpotlightsSection() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover-lift flex h-full flex-col overflow-hidden border bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+                  className="lift-card hover-lift flex h-full flex-col overflow-hidden border bg-white focus-settle"
                 >
                   <div className="flex min-h-[180px] items-center justify-center bg-brand-surface/60 px-6 py-8 sm:min-h-[200px] sm:py-10">
                     <Image
@@ -121,7 +121,7 @@ export function MediaSpotlightsSection() {
               aria-selected={activePage === index}
               aria-label={`Go to slide group ${index + 1}`}
               onClick={() => scrollTo(Math.min(index * 3, scrollSnaps.length - 1))}
-              className={`h-2.5 w-2.5 rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue ${
+              className={`focus-settle h-2.5 w-2.5 rounded-full transition-colors ${
                 activePage === index ? "bg-brand-blue" : "bg-[#d4d8de] hover:bg-brand-muted/60"
               }`}
             />

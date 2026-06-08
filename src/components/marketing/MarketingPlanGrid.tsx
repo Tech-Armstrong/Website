@@ -11,7 +11,7 @@ export function MarketingPlanGrid({ plans }: MarketingPlanGridProps) {
         {plans.map((plan, index) => (
           <article
             key={plan.title}
-            className="rounded-xl border border-[#e8eaed] bg-white p-5 shadow-sm sm:p-6"
+            className="lift-card rounded-xl border border-[#e8eaed] bg-white p-5 sm:p-6"
           >
             <span className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-blue/10 font-display text-sm font-bold text-brand-blue">
               {String(index + 1).padStart(2, "0")}

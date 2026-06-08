@@ -14,7 +14,7 @@ function Chevron({ open }: { open: boolean }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`}
+      className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
@@ -79,7 +79,7 @@ export function NavDropdown({ label, groups, align = "left" }: NavDropdownProps)
     >
       <button
         type="button"
-        className="flex items-center gap-1 font-display text-[15px] font-medium text-brand-navy transition-colors hover:text-brand-blue"
+        className="focus-settle flex items-center gap-1 rounded-md font-display text-[15px] font-medium text-brand-navy transition-colors hover:text-brand-blue"
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((value) => !value)}
@@ -90,18 +90,14 @@ export function NavDropdown({ label, groups, align = "left" }: NavDropdownProps)
 
       <div
         id={panelId}
-        className={`absolute top-full z-50 pt-3 ${
+        className={`nav-dropdown-panel absolute top-full z-50 pt-3 ${
           align === "right" ? "right-0" : "left-0"
-        } ${
-          open
-            ? "visible pointer-events-auto opacity-100"
-            : "invisible pointer-events-none opacity-0"
-        } transition-opacity duration-200`}
+        } ${open ? "is-open visible pointer-events-auto" : "invisible pointer-events-none"}`}
         role="menu"
         onMouseEnter={openMenu}
         onMouseLeave={scheduleClose}
       >
-        <div className="min-w-[280px] rounded-2xl border border-[#e8e8e8] bg-white p-5 shadow-xl">
+        <div className="min-w-[280px] rounded-2xl border border-[#e8e8e8] bg-white p-5 shadow-[var(--elevation-pop)]">
           <div
             className={`grid gap-6 ${
               groups.length > 1 ? "sm:grid-cols-2" : "grid-cols-1"
@@ -117,7 +113,7 @@ export function NavDropdown({ label, groups, align = "left" }: NavDropdownProps)
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="block font-body text-sm text-brand-navy transition-colors hover:text-brand-blue"
+                      className="focus-settle block rounded-md font-body text-sm text-brand-navy transition-colors hover:text-brand-blue"
                       role="menuitem"
                       onClick={() => setOpen(false)}
                       {...(link.external

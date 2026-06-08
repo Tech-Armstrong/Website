@@ -23,7 +23,7 @@ export function MarketingFaqAccordion({ faqs }: MarketingFaqAccordionProps) {
             >
               <button
                 type="button"
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-display text-base font-semibold text-brand-navy transition-colors hover:text-brand-blue"
+                className="focus-settle flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-display text-base font-semibold text-brand-navy transition-colors hover:text-brand-blue"
                 aria-expanded={isOpen}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >
@@ -32,11 +32,13 @@ export function MarketingFaqAccordion({ faqs }: MarketingFaqAccordionProps) {
                   {isOpen ? "−" : "+"}
                 </span>
               </button>
-              {isOpen ? (
-                <div className="border-t border-[#eef0f2] px-5 py-4 font-body text-[15px] leading-relaxed text-brand-muted">
-                  {faq.answer}
+              <div className={`faq-answer-grid ${isOpen ? "is-open" : ""}`}>
+                <div className="faq-answer-inner">
+                  <div className="border-t border-[#eef0f2] px-5 py-4 font-body text-[15px] leading-relaxed text-brand-muted">
+                    {faq.answer}
+                  </div>
                 </div>
-              ) : null}
+              </div>
             </div>
           );
         })}

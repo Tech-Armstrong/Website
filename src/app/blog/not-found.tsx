@@ -4,7 +4,13 @@ import { Footer } from "@/components/layout/Footer";
 export default function BlogNotFound() {
   return (
     <>
-      <main className="flex min-h-[50vh] flex-col items-center justify-center px-4 py-20 text-center">
+      <main className="not-found-enter flex min-h-[50vh] flex-col items-center justify-center px-4 py-20 text-center">
+        <div
+          className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-brand-surface font-display text-lg font-bold text-brand-blue"
+          aria-hidden
+        >
+          404
+        </div>
         <h1 className="font-display text-3xl font-semibold text-brand-navy">
           Article not found
         </h1>
@@ -13,7 +19,7 @@ export default function BlogNotFound() {
         </p>
         <Link
           href="/blog"
-          className="theme-btn btn-two mt-8 inline-block"
+          className="theme-btn btn-two focus-settle mt-8 inline-block active:scale-[0.98]"
         >
           Back to blog
         </Link>

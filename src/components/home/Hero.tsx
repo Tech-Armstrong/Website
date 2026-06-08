@@ -92,8 +92,8 @@ export function Hero() {
 
                 <div className="site-container relative z-[5]">
                   <div
-                    className={`content-box max-w-xl lg:max-w-[550px] ${
-                      selectedIndex === index ? "hero-content-animate" : "opacity-0"
+                    className={`content-box max-w-xl transition-opacity duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:max-w-[550px] ${
+                      selectedIndex === index ? "hero-content-animate opacity-100" : "opacity-0"
                     }`}
                   >
                     <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-[56px] lg:text-[64px] lg:leading-[1.08]">
@@ -143,7 +143,7 @@ export function Hero() {
         <button
           type="button"
           onClick={scrollPrev}
-          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/25 hover:text-brand-pink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="focus-settle pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/25 hover:text-brand-pink"
           aria-label="Previous slide"
         >
           <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
@@ -153,7 +153,7 @@ export function Hero() {
         <button
           type="button"
           onClick={scrollNext}
-          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/25 hover:text-brand-pink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="focus-settle pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/25 hover:text-brand-pink"
           aria-label="Next slide"
         >
           <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
@@ -175,7 +175,7 @@ export function Hero() {
             aria-selected={index === selectedIndex}
             aria-controls={`hero-slide-${index}`}
             onClick={() => emblaApi?.scrollTo(index)}
-            className={`h-2.5 w-2.5 rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${
+            className={`focus-settle h-2.5 w-2.5 rounded-full transition-colors ${
               index === selectedIndex ? "bg-brand-pink scale-110" : "bg-white/40 hover:bg-white/60"
             }`}
           >

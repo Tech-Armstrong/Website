@@ -15,7 +15,7 @@ export function MarketingTeamGrid({ members }: MarketingTeamGridProps) {
         {members.map((member) => (
           <article
             key={member.name}
-            className="rounded-xl border border-[#e8eaed] bg-white p-5 shadow-sm"
+            className="lift-card rounded-xl border border-[#e8eaed] bg-white p-5"
           >
             {member.image ? (
               <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-lg">

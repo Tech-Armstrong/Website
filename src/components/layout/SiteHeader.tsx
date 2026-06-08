@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { leftNav, LOGO_SRC, rightNav, type NavItem } from "@/data/navigation";
 import { MobileNav } from "./MobileNav";
 import { NavDropdown } from "./NavDropdown";
@@ -24,7 +24,7 @@ function NavLinkItem({
   active: boolean;
   external?: boolean;
 }) {
-  const className = `font-display text-[15px] font-medium transition-colors ${
+  const className = `focus-settle rounded-md font-display text-[15px] font-medium transition-colors ${
     active
       ? "text-brand-blue"
       : "text-brand-navy hover:text-brand-blue"
@@ -76,6 +76,27 @@ function renderNavItem(item: NavItem, pathname: string, align: "left" | "right")
 export function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        setScrolled((prev) => {
+          if (!prev && y > 24) return true;
+          if (prev && y < 8) return false;
+          return prev;
+        });
+        ticking = false;
+      });
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const desktopNavItems = [
     ...leftNav.slice(1),
@@ -84,58 +105,64 @@ export function SiteHeader() {
 
   return (
     <>
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-[9999] px-3 pt-3 sm:px-4 sm:pt-4 lg:px-6">
-      <div className="pointer-events-auto mx-auto max-w-[1320px]">
-        <div className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(39,46,57,0.12)] sm:gap-4 sm:rounded-[1.25rem] sm:px-4 sm:py-3 lg:gap-6 lg:px-5">
-          {/* Logo — left */}
-          <Link
-            href="/"
-            className="flex shrink-0 items-center justify-center"
-            aria-label="Armstrong Capital — Home"
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-[9999] px-3 pt-3 sm:px-4 sm:pt-4 lg:px-6">
+        <div className="pointer-events-auto mx-auto max-w-[1320px]">
+          <div
+            data-scrolled={scrolled ? "true" : "false"}
+            className={`header-shell flex items-center gap-2 rounded-2xl bg-white px-3 sm:gap-4 sm:rounded-[1.25rem] sm:px-4 lg:gap-6 lg:px-5 ${
+              scrolled ? "py-2 sm:py-2.5" : "py-2.5 sm:py-3"
+            }`}
           >
-            <Image
-              src={LOGO_SRC}
-              alt="Armstrong Capital"
-              width={200}
-              height={57}
-              priority
-              className="h-[40px] w-auto sm:h-[48px] lg:h-[52px]"
-            />
-          </Link>
-
-          {/* Desktop navigation — all links on the right */}
-          <div className="hidden min-w-0 flex-1 items-center justify-end gap-4 lg:flex lg:gap-5 xl:gap-6">
-            <nav
-              className="flex flex-wrap items-center justify-end gap-4 lg:gap-5 xl:gap-6"
-              aria-label="Primary"
-            >
-              {desktopNavItems.map((item) => renderNavItem(item, pathname, "right"))}
-            </nav>
             <Link
-              href="/contact"
-              className="theme-btn btn-two shrink-0 !px-5 !py-2.5 text-base"
+              href="/"
+              className="focus-settle flex shrink-0 items-center justify-center rounded-md"
+              aria-label="Armstrong Capital — Home"
             >
-              Contact Us
+              <Image
+                src={LOGO_SRC}
+                alt="Armstrong Capital"
+                width={200}
+                height={57}
+                priority
+                className={`header-logo w-auto ${
+                  scrolled
+                    ? "h-[32px] sm:h-[40px] lg:h-[44px]"
+                    : "h-[40px] sm:h-[48px] lg:h-[52px]"
+                }`}
+              />
             </Link>
+
+            <div className="hidden min-w-0 flex-1 items-center justify-end gap-4 lg:flex lg:gap-5 xl:gap-6">
+              <nav
+                className="flex flex-wrap items-center justify-end gap-4 lg:gap-5 xl:gap-6"
+                aria-label="Primary"
+              >
+                {desktopNavItems.map((item) => renderNavItem(item, pathname, "right"))}
+              </nav>
+              <Link
+                href="/contact"
+                className="theme-btn btn-two focus-settle shrink-0 !px-5 !py-2.5 text-base"
+              >
+                Contact Us
+              </Link>
+            </div>
+
+            <button
+              type="button"
+              className="focus-settle ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-brand-navy lg:hidden"
+              aria-label="Open menu"
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen(true)}
+            >
+              <svg viewBox="0 0 24 24" className="h-6 w-6" stroke="currentColor" strokeWidth="2">
+                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              </svg>
+            </button>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-brand-navy lg:hidden"
-            aria-label="Open menu"
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen(true)}
-          >
-            <svg viewBox="0 0 24 24" className="h-6 w-6" stroke="currentColor" strokeWidth="2">
-              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-            </svg>
-          </button>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
   );
 }

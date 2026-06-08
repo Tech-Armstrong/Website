@@ -1,4 +1,5 @@
 import { headOffice } from "@/data/contact";
+import { ContactMapEmbed } from "@/components/contact/ContactMapEmbed";
 import { buildMapEmbedUrl, buildMapSearchUrl } from "@/lib/google/embed";
 import { geocodeAddress } from "@/lib/google/geocode";
 
@@ -30,23 +31,14 @@ export async function ContactMap() {
           href={mapSearchUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-display text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
+          className="focus-settle rounded-md font-display text-sm font-semibold text-brand-blue transition-colors hover:text-brand-navy"
         >
           View on Google Maps
         </a>
       </div>
 
       {embedUrl ? (
-        <div className="aspect-[16/10] overflow-hidden rounded-lg border border-[#eef0f2]">
-          <iframe
-            src={embedUrl}
-            title="Armstrong Capital head office map"
-            className="h-full w-full"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
-        </div>
+        <ContactMapEmbed src={embedUrl} title="Armstrong Capital head office map" />
       ) : (
         <div className="rounded-lg border border-[#eef0f2] bg-brand-surface/60 p-4">
           <p className="font-body text-sm leading-relaxed text-brand-muted">
