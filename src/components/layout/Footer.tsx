@@ -32,7 +32,7 @@ export function Footer() {
   const { logo, ctaBackground } = footerAssets;
 
   return (
-    <footer className="mt-12 overflow-visible bg-brand-dark pt-24 pb-8 text-white lg:mt-16 lg:pt-36">
+    <footer className="mt-12 overflow-x-clip bg-brand-dark pt-24 pb-8 text-white lg:mt-16 lg:overflow-visible lg:pt-36">
       <div className="site-container px-4">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:items-start lg:gap-8">
           <div className="md:col-span-2 lg:col-span-3 lg:-mt-32">

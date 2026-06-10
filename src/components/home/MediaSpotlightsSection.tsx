@@ -78,8 +78,8 @@ export function MediaSpotlightsSection() {
           </Link>
         </ScrollReveal>
 
-        <ScrollReveal delay={120}>
-        <div ref={emblaRef} className="overflow-hidden py-1" aria-roledescription="carousel">
+        <ScrollReveal delay={120} className="min-w-0 w-full">
+        <div ref={emblaRef} className="min-w-0 overflow-hidden py-1" aria-roledescription="carousel">
           <div className="flex gap-4 md:gap-5">
             {mediaSpotlights.map((item) => (
               <article

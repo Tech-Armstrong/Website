@@ -9,6 +9,7 @@ type ScrollRevealProps = {
   className?: string;
   delay?: number;
   direction?: "up" | "left" | "right" | "none";
+  mobileDirection?: "up" | "left" | "right" | "none";
 };
 
 const settleEase = [0.22, 1, 0.36, 1] as const;
@@ -32,6 +33,16 @@ function getReducedMotionSnapshot() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
+function subscribeDesktop(onStoreChange: () => void) {
+  const mq = window.matchMedia("(min-width: 1024px)");
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+
+function getDesktopSnapshot() {
+  return window.matchMedia("(min-width: 1024px)").matches;
+}
+
 function isInViewport(el: HTMLElement) {
   const rect = el.getBoundingClientRect();
   const viewHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -43,6 +54,7 @@ export function ScrollReveal({
   className = "",
   delay = 0,
   direction = "up",
+  mobileDirection,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -51,6 +63,13 @@ export function ScrollReveal({
     getReducedMotionSnapshot,
     () => false,
   );
+  const isDesktop = useSyncExternalStore(
+    subscribeDesktop,
+    getDesktopSnapshot,
+    () => true,
+  );
+  const effectiveDirection =
+    isDesktop || !mobileDirection ? direction : mobileDirection;
 
   useEffect(() => {
     if (reduceMotion) {
@@ -92,13 +111,13 @@ export function ScrollReveal({
     return <div className={className}>{children}</div>;
   }
 
-  const hiddenTarget = hiddenByDirection[direction];
+  const hiddenTarget = hiddenByDirection[effectiveDirection];
   const hiddenClass =
-    !visible && direction === "up"
+    !visible && effectiveDirection === "up"
       ? "opacity-0 translate-y-7"
-      : !visible && direction === "left"
+      : !visible && effectiveDirection === "left"
         ? "opacity-0 -translate-x-7"
-        : !visible && direction === "right"
+        : !visible && effectiveDirection === "right"
           ? "opacity-0 translate-x-7"
           : !visible
             ? "opacity-0"

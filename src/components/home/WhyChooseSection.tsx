@@ -311,7 +311,7 @@ export function WhyChooseSection() {
                               className={cx(
                                 "flex min-w-0 flex-1 items-center font-display font-medium",
                                 isActive
-                                  ? "rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy max-lg:px-4 max-lg:py-2.5 sm:px-6 sm:py-4 sm:text-lg"
+                                  ? "truncate rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy max-lg:px-4 max-lg:py-2.5 sm:px-6 sm:py-4 sm:text-lg"
                                   : cx(
                                       "pl-1 text-base text-white/75 group-hover:text-white sm:text-lg",
                                       mobilePinActive &&

@@ -72,8 +72,8 @@ export function ServicesSection() {
           />
         </ScrollReveal>
 
-        <ScrollReveal delay={150} className="relative px-12 sm:px-14">
-          <div ref={emblaRef} className="overflow-hidden">
+        <ScrollReveal delay={150} className="relative min-w-0 w-full px-12 sm:px-14">
+          <div ref={emblaRef} className="min-w-0 overflow-hidden">
             <div className="flex gap-4 md:gap-5">
               {services.map((service) => (
                 <div

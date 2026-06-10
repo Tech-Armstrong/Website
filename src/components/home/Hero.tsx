@@ -105,24 +105,24 @@ export function Hero() {
 
   return (
     <section
-      className="banner-section relative w-full overflow-hidden"
+      className="banner-section relative w-full overflow-hidden min-h-[min(82vh,680px)] sm:min-h-[min(76vh,640px)] lg:min-h-[580px]"
       aria-label="Featured highlights"
     >
-      <div className="slide-item relative flex min-h-[min(82vh,680px)] items-center px-4 py-24 sm:min-h-[min(76vh,640px)] sm:py-28 md:px-6 lg:min-h-[580px] lg:py-28">
-        <div className="absolute inset-0" aria-hidden>
-          <Image
-            key={slide.image}
-            src={slide.image}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="hero-overlay absolute inset-0" />
-        </div>
+      <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden>
+        <Image
+          key={slide.image}
+          src={slide.image}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="h-full min-h-full w-full min-w-full object-cover object-center"
+        />
+        <div className="hero-overlay absolute inset-0" />
+      </div>
 
-        <div className="site-container relative z-[5] w-full">
+      <div className="slide-item relative z-[5] flex items-center px-4 py-24 sm:py-28 md:px-6 lg:py-28">
+        <div className="site-container w-full">
           <div className="max-w-xl lg:max-w-[550px]" aria-live="polite">
             <div className="content-box">
               <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-[56px] lg:text-[64px] lg:leading-[1.08]">

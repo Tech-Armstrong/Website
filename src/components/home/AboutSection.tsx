@@ -13,11 +13,11 @@ export function AboutSection() {
       aria-labelledby="about-heading"
     >
       <div className="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
-        <ScrollReveal direction="left" className="order-2 lg:order-1">
+        <ScrollReveal direction="left" mobileDirection="up" className="order-2 lg:order-1">
           <ExperienceCircle />
         </ScrollReveal>
 
-        <ScrollReveal direction="right" delay={120} className="order-1 lg:order-2 lg:py-4">
+        <ScrollReveal direction="right" mobileDirection="up" delay={120} className="order-1 lg:order-2 lg:py-4">
           <SectionTitle
             eyebrow={eyebrow}
             title={title}
