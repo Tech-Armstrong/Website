@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useSyncExternalStore, useState } from "react";
+import { useEffect, useSyncExternalStore, useState } from "react";
 import { heroSlides } from "@/data/home";
 
 function subscribeReducedMotion(onStoreChange: () => void) {
@@ -41,9 +41,6 @@ export function Hero() {
     getReducedMotionSnapshot,
     () => false,
   );
-
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -137,29 +134,6 @@ export function Hero() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-10 mx-auto flex site-container items-center justify-between px-4 sm:px-6">
-        <button
-          type="button"
-          onClick={scrollPrev}
-          className="focus-settle pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/25 hover:text-brand-pink"
-          aria-label="Previous slide"
-        >
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </button>
-        <button
-          type="button"
-          onClick={scrollNext}
-          className="focus-settle pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/25 hover:text-brand-pink"
-          aria-label="Next slide"
-        >
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
-            <path d="M9 6l6 6-6 6" />
-          </svg>
-        </button>
       </div>
 
       <div

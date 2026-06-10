@@ -79,7 +79,7 @@ export function MediaSpotlightsSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={120}>
-        <div ref={emblaRef} className="overflow-hidden" aria-roledescription="carousel">
+        <div ref={emblaRef} className="overflow-hidden py-1" aria-roledescription="carousel">
           <div className="flex gap-4 md:gap-5">
             {mediaSpotlights.map((item) => (
               <article
@@ -90,7 +90,7 @@ export function MediaSpotlightsSection() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="lift-card hover-lift flex h-full flex-col overflow-hidden border bg-white focus-settle"
+                  className="lift-card flex h-full flex-col overflow-hidden border bg-white focus-settle"
                 >
                   <div className="flex min-h-[180px] items-center justify-center bg-brand-surface/60 px-6 py-8 sm:min-h-[200px] sm:py-10">
                     <Image

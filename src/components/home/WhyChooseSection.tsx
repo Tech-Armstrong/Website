@@ -113,7 +113,7 @@ export function WhyChooseSection() {
               </div>
 
               <div className="relative z-[1] flex min-h-[520px] flex-col lg:min-h-[560px] lg:flex-row">
-                <div className="flex flex-1 flex-col bg-brand-dark/90 px-6 py-8 sm:px-8 lg:max-w-[68%] lg:px-10 lg:py-10">
+                <div className="flex min-w-0 flex-col overflow-hidden bg-brand-dark/90 px-6 py-8 sm:px-8 lg:w-[58%] lg:max-w-[58%] lg:shrink-0 lg:px-10 lg:py-10 xl:w-[60%] xl:max-w-[60%]">
                   <div className="sec-title light mb-8 flex flex-col items-start">
                     <span className="te-subtitle mb-3 inline-block rounded-full rounded-br-none border border-white/30 bg-white/10 px-4 py-0.5 font-display text-[11px] font-bold uppercase tracking-wide text-white sm:text-xs sm:leading-[26px]">
                       {eyebrow}
@@ -143,14 +143,14 @@ export function WhyChooseSection() {
                           aria-controls={`why-choose-panel-${index}`}
                           id={`why-choose-tab-${index}`}
                           onClick={() => handleTabClick(index)}
-                          className={`focus-settle touch-manipulation group relative w-full rounded-md text-left transition-all duration-300 ${
+                          className={`focus-settle touch-manipulation group relative w-full min-w-0 rounded-md text-left transition-all duration-300 ${
                             index < tabs.length - 1 && !isActive
                               ? "border-b border-white/10"
                               : ""
                           }`}
                         >
                           <div
-                            className={`flex items-stretch ${
+                            className={`flex min-w-0 items-stretch ${
                               isActive ? "py-2" : "py-4"
                             }`}
                           >
@@ -164,7 +164,7 @@ export function WhyChooseSection() {
                             ) : null}
 
                             <span
-                              className={`flex flex-1 items-center font-display text-base font-medium sm:text-lg ${
+                              className={`flex min-w-0 flex-1 items-center font-display text-base font-medium sm:text-lg ${
                                 isActive
                                   ? "rounded-r-full bg-white px-5 py-3.5 font-semibold text-brand-navy sm:px-6 sm:py-4"
                                   : "pl-1 text-white/75 group-hover:text-white"

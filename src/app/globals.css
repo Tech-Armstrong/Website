@@ -419,6 +419,11 @@ body {
   box-shadow: 0 8px 20px rgba(20, 32, 58, 0.08);
 }
 
+.media-card .lift-card:hover,
+.media-card .hover-lift:hover {
+  transform: none;
+}
+
 /* Footer */
 .footer-cta-overlay {
   background: linear-gradient(
