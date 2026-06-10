@@ -1,0 +1,34 @@
+---
+description: Design system integrity and non-regression rules
+globs: ["src/app/**", "src/components/**", "src/**/*.css"]
+alwaysApply: true
+---
+
+## Scope discipline
+- Only edit files directly required by the current task. Never "improve" or reformat unrelated components, even if you notice issues — list them as suggestions instead.
+- Never edit `src/app/globals.css`, `tailwind.config.*`, `src/app/layout.tsx`, or any file in `src/components/ui/`, `src/components/layout/`, or equivalent shared folders unless the task explicitly targets them. These are blast-radius files: a change there affects every page.
+- Before editing any shared/blast-radius file, first run a grep for every class, CSS variable, or export you are about to change, list all usage sites found, and state how each one is affected. Only then make the change.
+
+## Design tokens are law
+- Colors: ONLY brand tokens (bg-brand-*, text-brand-*, CSS variables defined in globals.css). Never introduce raw hex values, rgb(), or new Tailwind palette colors (e.g. slate-500) in component code. If a needed color doesn't exist as a token, stop and propose adding the token first.
+- Typography: only font-display and font-body. Use the existing type scale already present in the codebase; do not invent new arbitrary font sizes if a close existing one is used elsewhere for the same role.
+- Spacing/radii/shadows: reuse values already established in the codebase (grep for them) before introducing new arbitrary values like p-[13px] or shadow-[...]. New arbitrary values require justification in the response.
+- All layout offsets that depend on the header MUST use var(--site-header-offset). Never hardcode header heights.
+
+## Responsive + a11y floor (non-negotiable on every component touched)
+- Every component must work at 360px, 768px, 1024px, 1440px widths. State which breakpoints you reasoned about.
+- prefers-reduced-motion must disable any animation/scroll-driven effect you add.
+- Interactive elements need focus-visible styles (use the existing focus-settle utility), correct ARIA roles, and keyboard operability.
+- Images: Next/Image with sizes prop; decorative images get alt="".
+
+## Additive-change principle
+- Default to additive changes: new props with defaults, new variants, new files. Changing an existing component's props, exported types, class names, or CSS variables is a breaking change and requires the usage-site grep audit above.
+- Never delete or rename a CSS class/variable without grepping for all usages first and updating every one in the same change.
+
+## Definition of done for any UI task
+Before declaring a task complete, output a short "Regression check" section answering:
+1. Which files changed, and why each was necessary.
+2. Which shared tokens/components were touched (ideally: none).
+3. Which other pages/components consume what I changed (from grep), and why they're unaffected.
+4. Breakpoints and reduced-motion verified.
+If you cannot answer #3 confidently, the task is not done.

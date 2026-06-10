@@ -221,6 +221,13 @@ export function WhyChooseSection() {
                 >
                   <div
                     className={cx(
+                      "flex min-w-0 flex-col",
+                      mobilePinActive &&
+                        "max-lg:min-h-0 max-lg:flex-1 max-lg:pl-3",
+                    )}
+                  >
+                  <div
+                    className={cx(
                       "sec-title light mb-8 flex flex-col items-start",
                       mobilePinActive && "max-lg:mb-1 max-lg:shrink-0",
                     )}
@@ -315,7 +322,7 @@ export function WhyChooseSection() {
                                   : cx(
                                       "pl-1 text-base text-white/75 group-hover:text-white sm:text-lg",
                                       mobilePinActive &&
-                                        "max-lg:text-sm max-lg:leading-snug",
+                                        "max-lg:pl-0 max-lg:text-sm max-lg:leading-snug",
                                     ),
                               )}
                             >
@@ -328,6 +335,7 @@ export function WhyChooseSection() {
                         </button>
                       );
                     })}
+                  </div>
                   </div>
                 </div>
 

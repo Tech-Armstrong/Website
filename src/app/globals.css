@@ -542,6 +542,10 @@ body {
   .why-choose-mobile-pin [role="tablist"] button .font-display {
     line-height: 1.4;
   }
+
+  .why-choose-mobile-pin .why-choose-badge {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 1023px) and (max-height: 500px) {
