@@ -70,23 +70,6 @@ function HeroTypewriter({
   );
 }
 
-function ChatIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      className="h-7 w-7"
-      aria-hidden="true"
-    >
-      <path
-        d="M12 3C7.03 3 3 6.58 3 11c0 2.02.9 3.86 2.41 5.29L4 21l5.2-1.46C10.45 19.82 11.2 20 12 20c4.97 0 9-3.58 9-8s-4.03-8-9-8Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-    </svg>
-  );
-}
-
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const advanceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -154,19 +137,7 @@ export function Hero() {
                 <span className="block">{slide.titleSuffix}</span>
               </h2>
 
-              <div className="lower-box relative mt-6 pl-0 md:mt-8 md:pl-[115px]">
-                <div
-                  className="icon-box absolute left-0 top-0 hidden h-16 w-16 items-center justify-center rounded-full rounded-br-none bg-brand-green text-white shadow-lg md:flex lg:h-[75px] lg:w-[75px]"
-                  aria-hidden
-                >
-                  <ChatIcon />
-                </div>
-                <div
-                  className="icon-box mb-5 flex h-16 w-16 items-center justify-center rounded-full rounded-br-none bg-brand-green text-white shadow-lg md:hidden"
-                  aria-hidden
-                >
-                  <ChatIcon />
-                </div>
+              <div className="lower-box mt-6 md:mt-8">
                 <p className="mb-8 max-w-md whitespace-pre-line text-base leading-relaxed text-white/85 sm:text-lg sm:leading-[30px]">
                   {slide.description}
                 </p>
