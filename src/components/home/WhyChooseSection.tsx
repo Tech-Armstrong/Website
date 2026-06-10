@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useEffect, useRef, useState, useSyncExternalStore, type RefObject } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 import { whyChooseSection } from "@/data/home";
 
 const WhyChooseScrollDriveGate = dynamic(
@@ -52,63 +52,11 @@ function getSiteHeaderOffsetPx() {
   return Number.isFinite(rem) ? rem * 16 : 112;
 }
 
-/** Let page scroll drive pin when wheel hits a nested scroll area at its edge (or when not scrollable). */
-function usePinScrollWheelChain(
-  ref: RefObject<HTMLElement | null>,
-  enabled: boolean,
-) {
-  useEffect(() => {
-    if (!enabled) return;
-    const el = ref.current;
-    if (!el) return;
-
-    const onWheel = (e: WheelEvent) => {
-      const maxScroll = el.scrollHeight - el.clientHeight;
-      if (maxScroll <= 1) return;
-
-      const atTop = el.scrollTop <= 0;
-      const atBottom = el.scrollTop >= maxScroll - 1;
-
-      if ((e.deltaY > 0 && atBottom) || (e.deltaY < 0 && atTop)) {
-        window.scrollBy({ top: e.deltaY, behavior: "auto" });
-      }
-    };
-
-    el.addEventListener("wheel", onWheel, { passive: true });
-    return () => el.removeEventListener("wheel", onWheel);
-  }, [enabled]);
-}
-
-/** Only enable inner scroll when content actually overflows — avoids trapping wheel on empty scroll containers. */
-function usePinPanelOverflow(
-  ref: RefObject<HTMLElement | null>,
-  enabled: boolean,
-  contentKey: number,
-) {
-  useEffect(() => {
-    if (!enabled) return;
-    const el = ref.current;
-    if (!el) return;
-
-    const sync = () => {
-      el.style.overflowY =
-        el.scrollHeight > el.clientHeight + 1 ? "auto" : "hidden";
-    };
-
-    sync();
-    const observer = new ResizeObserver(sync);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [enabled, contentKey, ref]);
-}
-
 export function WhyChooseSection() {
   const { backgroundImage, eyebrow, title, tabs } = whyChooseSection;
   const [activeIndex, setActiveIndex] = useState(0);
   const active = tabs[activeIndex];
   const trackRef = useRef<HTMLDivElement>(null);
-  const tablistRef = useRef<HTMLDivElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
 
   const isDesktop = useSyncExternalStore(
     subscribeDesktop,
@@ -128,10 +76,6 @@ export function WhyChooseSection() {
   const desktopPinActive = isDesktop && !reduceMotion && !isTouch;
   const mobilePinActive = !isDesktop && !reduceMotion;
   const scrollDriveActive = desktopPinActive || mobilePinActive;
-
-  usePinScrollWheelChain(tablistRef, mobilePinActive);
-  usePinScrollWheelChain(panelRef, mobilePinActive);
-  usePinPanelOverflow(panelRef, mobilePinActive, activeIndex);
 
   function handleTabClick(index: number) {
     if (scrollDriveActive) {
@@ -197,7 +141,7 @@ export function WhyChooseSection() {
               <div
                 className={`relative z-[1] flex flex-col lg:flex-row ${
                   mobilePinActive
-                    ? "max-lg:grid max-lg:min-h-0 max-lg:flex-1 max-lg:grid-rows-[minmax(0,1fr)_minmax(11rem,0.85fr)] max-lg:overflow-hidden lg:min-h-[560px]"
+                    ? "max-lg:grid max-lg:min-h-0 max-lg:flex-1 max-lg:grid-rows-[minmax(0,1fr)_minmax(0,1fr)] max-lg:overflow-hidden lg:min-h-[560px]"
                     : "min-h-[520px] lg:min-h-[560px]"
                 }`}
               >
@@ -233,10 +177,9 @@ export function WhyChooseSection() {
                   </div>
 
                   <div
-                    ref={tablistRef}
                     className={`flex flex-col ${
                       mobilePinActive
-                        ? "max-lg:min-h-0 max-lg:flex-1 max-lg:overflow-hidden max-lg:[-webkit-overflow-scrolling:touch]"
+                        ? "max-lg:min-h-0 max-lg:flex-1 max-lg:overflow-hidden"
                         : ""
                     }`}
                     role="tablist"
@@ -308,10 +251,9 @@ export function WhyChooseSection() {
                 </div>
 
                 <div
-                  ref={panelRef}
                   className={`relative z-10 flex items-stretch p-4 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[42%] lg:items-center lg:p-6 xl:w-[40%] ${
                     mobilePinActive
-                      ? "max-lg:min-h-0 max-lg:overflow-hidden max-lg:p-3 max-lg:[-webkit-overflow-scrolling:touch]"
+                      ? "max-lg:flex max-lg:min-h-0 max-lg:flex-1 max-lg:flex-col max-lg:overflow-hidden max-lg:p-3"
                       : ""
                   }`}
                 >
@@ -320,8 +262,10 @@ export function WhyChooseSection() {
                     role="tabpanel"
                     id={`why-choose-panel-${activeIndex}`}
                     aria-labelledby={`why-choose-tab-${activeIndex}`}
-                    className={`panel-fade-in flex w-full flex-col justify-center rounded-2xl bg-white px-6 py-8 shadow-lg sm:px-8 sm:py-10${
-                      mobilePinActive ? " max-lg:py-5" : ""
+                    className={`panel-fade-in flex w-full flex-col rounded-2xl bg-white px-6 py-8 shadow-lg sm:px-8 sm:py-10 justify-center${
+                      mobilePinActive
+                        ? " max-lg:h-full max-lg:min-h-0 max-lg:flex-1 max-lg:justify-start max-lg:overflow-hidden max-lg:py-5"
+                        : ""
                     }${desktopPinActive ? " lg:min-h-[480px]" : ""}`}
                   >
                     <h3 className="mb-5 font-display text-xl font-semibold text-brand-navy sm:text-2xl">
