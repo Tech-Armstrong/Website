@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useSyncExternalStore, useState } from "react";
 import { heroSlides } from "@/data/home";
 
@@ -34,8 +33,7 @@ function ChatIcon() {
 }
 
 export function Hero() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const reduceMotion = useSyncExternalStore(
     subscribeReducedMotion,
     getReducedMotionSnapshot,
@@ -43,119 +41,82 @@ export function Hero() {
   );
 
   useEffect(() => {
-    if (!emblaApi) return;
-
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
-    emblaApi.on("select", onSelect);
-    onSelect();
-
     if (reduceMotion) return;
 
-    const interval = setInterval(() => emblaApi.scrollNext(), 5000);
-    return () => {
-      emblaApi.off("select", onSelect);
-      clearInterval(interval);
-    };
-  }, [emblaApi, reduceMotion]);
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [reduceMotion]);
 
   return (
     <section
       className="banner-section relative w-full overflow-hidden"
-      aria-roledescription="carousel"
       aria-label="Featured highlights"
     >
-      <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex">
-          {heroSlides.map((slide, index) => (
-            <div
-              key={slide.id}
-              id={`hero-slide-${index}`}
-              className="relative min-w-0 flex-[0_0_100%]"
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${index + 1} of ${heroSlides.length}`}
-              aria-hidden={selectedIndex !== index}
-            >
-              <div className="slide-item relative flex min-h-[min(82vh,680px)] items-center px-4 py-24 sm:min-h-[min(76vh,640px)] sm:py-28 md:px-6 lg:min-h-[580px] lg:py-28">
-                <Image
-                  src={slide.image}
-                  alt={`${slide.title} ${slide.titleOutline} ${slide.titleSuffix}`}
-                  fill
-                  priority={index === 0}
-                  sizes="100vw"
-                  className="object-cover"
-                />
-                <div className="hero-overlay absolute inset-0" aria-hidden />
+      <div className="slide-item relative flex min-h-[min(82vh,680px)] items-center px-4 py-24 sm:min-h-[min(76vh,640px)] sm:py-28 md:px-6 lg:min-h-[580px] lg:py-28">
+        <div className="absolute inset-0" aria-hidden>
+          <Image
+            src={heroSlides[0].image}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="hero-overlay absolute inset-0" />
+        </div>
 
-                <div className="site-container relative z-[5]">
-                  <div
-                    className={`content-box max-w-xl transition-opacity duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] lg:max-w-[550px] ${
-                      selectedIndex === index ? "hero-content-animate opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-[56px] lg:text-[64px] lg:leading-[1.08]">
-                      {slide.title}{" "}
-                      <span className="hero-outline block sm:inline">
-                        {slide.titleOutline}
-                      </span>{" "}
-                      {slide.titleSuffix}
-                    </h2>
+        <div className="site-container relative z-[5] w-full">
+          <div
+            className="relative min-h-[320px] max-w-xl sm:min-h-[340px] lg:min-h-[360px] lg:max-w-[550px]"
+            aria-live="polite"
+          >
+            {heroSlides.map((item, index) => (
+              <div
+                key={item.id}
+                className={`hero-text-layer ${index === activeIndex ? "is-active" : ""}`}
+                aria-hidden={index !== activeIndex}
+              >
+                <div className="content-box">
+                  <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-[56px] lg:text-[64px] lg:leading-[1.08]">
+                    {item.title}{" "}
+                    <span className="hero-outline block sm:inline">
+                      {item.titleOutline}
+                    </span>{" "}
+                    {item.titleSuffix}
+                  </h2>
 
+                  <div className="lower-box relative mt-6 pl-0 md:mt-8 md:pl-[115px]">
                     <div
-                      className={`lower-box relative mt-6 pl-0 md:mt-8 md:pl-[115px] ${
-                        selectedIndex === index ? "hero-content-animate hero-content-animate-delay-1" : ""
-                      }`}
+                      className="icon-box absolute left-0 top-0 hidden h-16 w-16 items-center justify-center rounded-full rounded-br-none bg-brand-green text-white shadow-lg md:flex lg:h-[75px] lg:w-[75px]"
+                      aria-hidden
                     >
-                      <div
-                        className="icon-box absolute left-0 top-0 hidden h-16 w-16 items-center justify-center rounded-full rounded-br-none bg-brand-green text-white shadow-lg md:flex lg:h-[75px] lg:w-[75px]"
-                        aria-hidden
-                      >
-                        <ChatIcon />
-                      </div>
-                      <div
-                        className="icon-box mb-5 flex h-16 w-16 items-center justify-center rounded-full rounded-br-none bg-brand-green text-white shadow-lg md:hidden"
-                        aria-hidden
-                      >
-                        <ChatIcon />
-                      </div>
-                      <p className="mb-8 max-w-md whitespace-pre-line text-base leading-relaxed text-white/85 sm:text-lg sm:leading-[30px]">
-                        {slide.description}
-                      </p>
-                      <Link
-                        href={slide.ctaHref}
-                        className="theme-btn btn-two counsolve-btn inline-block"
-                      >
-                        {slide.ctaLabel}
-                      </Link>
+                      <ChatIcon />
                     </div>
+                    <div
+                      className="icon-box mb-5 flex h-16 w-16 items-center justify-center rounded-full rounded-br-none bg-brand-green text-white shadow-lg md:hidden"
+                      aria-hidden
+                    >
+                      <ChatIcon />
+                    </div>
+                    <p className="mb-8 max-w-md whitespace-pre-line text-base leading-relaxed text-white/85 sm:text-lg sm:leading-[30px]">
+                      {item.description}
+                    </p>
+                    <Link
+                      href={item.ctaHref}
+                      className="theme-btn btn-two counsolve-btn inline-block"
+                      tabIndex={index === activeIndex ? 0 : -1}
+                    >
+                      {item.ctaLabel}
+                    </Link>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2"
-        role="tablist"
-        aria-label="Slide navigation"
-      >
-        {heroSlides.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            role="tab"
-            aria-selected={index === selectedIndex}
-            aria-controls={`hero-slide-${index}`}
-            onClick={() => emblaApi?.scrollTo(index)}
-            className={`focus-settle h-2.5 w-2.5 rounded-full transition-colors ${
-              index === selectedIndex ? "bg-brand-pink scale-110" : "bg-white/40 hover:bg-white/60"
-            }`}
-          >
-            <span className="sr-only">Slide {index + 1}</span>
-          </button>
-        ))}
       </div>
     </section>
   );

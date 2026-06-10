@@ -147,6 +147,23 @@ body {
   animation-delay: 0.24s;
 }
 
+.hero-text-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.hero-text-layer.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 @keyframes panel-fade-in {
   from {
     opacity: 0;
@@ -305,6 +322,17 @@ body {
   .panel-fade-in,
   .testimonial-fade-in {
     animation: none;
+  }
+
+  .hero-text-layer {
+    transition: none;
+    opacity: 0;
+    transform: none;
+  }
+
+  .hero-text-layer.is-active {
+    opacity: 1;
+    transform: none;
   }
 
   .hover-lift:hover,
