@@ -215,20 +215,20 @@ export function WhyChooseSection() {
                   className={cx(
                     "flex min-w-0 flex-col overflow-hidden bg-brand-dark/90 px-6 py-8 sm:px-8 lg:w-[58%] lg:max-w-[58%] lg:shrink-0 lg:px-10 lg:py-10 xl:w-[60%] xl:max-w-[60%]",
                     mobilePinActive &&
-                      "max-lg:flex max-lg:h-full max-lg:min-h-0 max-lg:flex-col max-lg:px-5 max-lg:py-3",
+                      "max-lg:flex max-lg:h-full max-lg:min-h-0 max-lg:flex-col max-lg:px-5 max-lg:py-2",
                     !scrollDriveActive && !isDesktop && "max-lg:min-h-[360px]",
                   )}
                 >
                   <div
                     className={cx(
                       "sec-title light mb-8 flex flex-col items-start",
-                      mobilePinActive && "max-lg:mb-2 max-lg:shrink-0",
+                      mobilePinActive && "max-lg:mb-1 max-lg:shrink-0",
                     )}
                   >
                     <span
                       className={cx(
                         "te-subtitle mb-3 inline-block rounded-full rounded-br-none border border-white/30 bg-white/10 px-4 py-0.5 font-display text-[11px] font-bold uppercase tracking-wide text-white sm:text-xs sm:leading-[26px]",
-                        mobilePinActive && "max-lg:mb-1.5",
+                        mobilePinActive && "max-lg:mb-1",
                       )}
                     >
                       {eyebrow}
@@ -237,7 +237,7 @@ export function WhyChooseSection() {
                       id="why-choose-heading"
                       className={cx(
                         "font-display text-[36px] font-semibold leading-tight text-white md:text-[42px]",
-                        mobilePinActive && "max-lg:text-[30px]",
+                        mobilePinActive && "max-lg:text-[30px] max-lg:leading-tight",
                       )}
                     >
                       {title}
@@ -288,7 +288,7 @@ export function WhyChooseSection() {
                             className={cx(
                               "flex min-w-0 items-stretch",
                               mobilePinActive
-                                ? "max-lg:h-full max-lg:items-center"
+                                ? "max-lg:h-full max-lg:items-center max-lg:py-2"
                                 : isActive
                                   ? "py-2"
                                   : "py-4",
@@ -299,7 +299,7 @@ export function WhyChooseSection() {
                                 className={cx(
                                   "why-choose-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white font-display text-xl font-bold text-brand-blue sm:h-[58px] sm:w-[58px] sm:text-2xl",
                                   mobilePinActive &&
-                                    "max-lg:h-11 max-lg:w-11 max-lg:text-lg",
+                                    "max-lg:h-10 max-lg:w-10 max-lg:text-base",
                                 )}
                                 aria-hidden
                               >
@@ -311,7 +311,7 @@ export function WhyChooseSection() {
                               className={cx(
                                 "flex min-w-0 flex-1 items-center font-display font-medium",
                                 isActive
-                                  ? "truncate rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy max-lg:px-4 max-lg:py-2.5 sm:px-6 sm:py-4 sm:text-lg"
+                                  ? "truncate rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy max-lg:px-4 max-lg:py-2 max-lg:leading-tight sm:px-6 sm:py-4 sm:text-lg"
                                   : cx(
                                       "pl-1 text-base text-white/75 group-hover:text-white sm:text-lg",
                                       mobilePinActive &&
@@ -346,25 +346,53 @@ export function WhyChooseSection() {
                     className={cx(
                       "panel-fade-in flex w-full flex-col justify-center rounded-2xl bg-white px-6 py-8 shadow-lg sm:px-8 sm:py-10",
                       mobilePinActive &&
-                        "max-lg:h-full max-lg:min-h-0 max-lg:flex-1 max-lg:justify-start max-lg:overflow-hidden max-lg:py-5",
+                        "max-lg:h-full max-lg:min-h-0 max-lg:flex-1 max-lg:justify-start max-lg:overflow-hidden max-lg:px-5 max-lg:py-2",
                       desktopPinActive && "lg:min-h-[480px]",
                     )}
                   >
-                    <h3 className="mb-5 font-display text-xl font-semibold text-brand-navy sm:text-2xl">
+                    <h3
+                      className={cx(
+                        "mb-5 font-display text-xl font-semibold text-brand-navy sm:text-2xl",
+                        mobilePinActive &&
+                          "max-lg:mb-2 max-lg:text-lg max-lg:leading-tight",
+                      )}
+                    >
                       {active.title}
                     </h3>
 
-                    <div className="space-y-4 font-body text-[15px] leading-[26px] text-brand-muted">
+                    <div
+                      className={cx(
+                        "space-y-4 font-body text-[15px] leading-[26px] text-brand-muted",
+                        mobilePinActive &&
+                          "max-lg:space-y-1 max-lg:text-sm max-lg:leading-[19px]",
+                      )}
+                    >
                       {active.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
                     </div>
 
-                    <blockquote className="mt-6 border-0">
-                      <p className="font-display text-base font-semibold leading-relaxed text-brand-navy sm:text-lg">
+                    <blockquote
+                      className={cx(
+                        "mt-6 border-0",
+                        mobilePinActive && "max-lg:mt-2",
+                      )}
+                    >
+                      <p
+                        className={cx(
+                          "font-display text-base font-semibold leading-relaxed text-brand-navy sm:text-lg",
+                          mobilePinActive &&
+                            "max-lg:text-sm max-lg:leading-tight",
+                        )}
+                      >
                         {active.quote}
                       </p>
-                      <cite className="mt-3 block font-body text-sm not-italic text-brand-muted">
+                      <cite
+                        className={cx(
+                          "mt-3 block font-body text-sm not-italic text-brand-muted",
+                          mobilePinActive && "max-lg:mt-1 max-lg:text-xs",
+                        )}
+                      >
                         -{active.attribution}
                       </cite>
                     </blockquote>
