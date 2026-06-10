@@ -88,6 +88,22 @@ body {
   -webkit-text-stroke-color: rgba(255, 255, 255, 1);
 }
 
+.hero-typewriter {
+  display: inline;
+}
+
+.hero-typewriter-cursor {
+  display: inline-block;
+  margin-left: 1px;
+  animation: hero-cursor-blink 0.8s step-end infinite;
+}
+
+@keyframes hero-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* Layout — shared max-width container */
 .site-container {
   width: 100%;
@@ -122,46 +138,6 @@ body {
 .scroll-reveal.is-visible {
   opacity: 1;
   transform: translate(0, 0);
-}
-
-@keyframes hero-content-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-content-animate {
-  animation: hero-content-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.hero-content-animate-delay-1 {
-  animation-delay: 0.12s;
-}
-
-.hero-content-animate-delay-2 {
-  animation-delay: 0.24s;
-}
-
-.hero-text-layer {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-}
-
-.hero-text-layer.is-active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
 @keyframes panel-fade-in {
@@ -316,23 +292,13 @@ body {
     transition: none;
   }
 
-  .hero-content-animate,
-  .hero-content-animate-delay-1,
-  .hero-content-animate-delay-2,
-  .panel-fade-in,
-  .testimonial-fade-in {
+  .hero-typewriter-cursor {
     animation: none;
   }
 
-  .hero-text-layer {
-    transition: none;
-    opacity: 0;
-    transform: none;
-  }
-
-  .hero-text-layer.is-active {
-    opacity: 1;
-    transform: none;
+  .panel-fade-in,
+  .testimonial-fade-in {
+    animation: none;
   }
 
   .hover-lift:hover,
@@ -544,6 +510,21 @@ body {
 @media (min-width: 1024px) {
   .why-choose-badge {
     margin-left: -28px;
+  }
+}
+
+@media (max-width: 1023px) and (max-height: 500px) {
+  .why-choose-mobile-pin .sec-title.light {
+    margin-bottom: 0.5rem;
+  }
+
+  .why-choose-mobile-pin .sec-title.light h2 {
+    font-size: 1.75rem;
+  }
+
+  .why-choose-mobile-pin [role="tablist"] button > div {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
 }
 
