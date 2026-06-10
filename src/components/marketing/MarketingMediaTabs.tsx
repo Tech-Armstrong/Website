@@ -10,31 +10,30 @@ type MarketingMediaTabsProps = {
   podcasts: MarketingMediaPodcast[];
 };
 
+const TAB_ITEMS = [
+  { key: "articles" as const, label: "Articles" },
+  { key: "podcasts" as const, label: "Podcasts" },
+];
+
 export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsProps) {
   const [tab, setTab] = useState<"articles" | "podcasts">("articles");
 
   return (
     <section className="pt-6 pb-2" aria-label="Media spotlight">
-      <ScrollReveal>
-      <div className="mb-6 flex gap-2 border-b border-[#eef0f2]">
-        {(["articles", "podcasts"] as const).map((key) => (
+      <div className="media-spotlight-tabs" role="tablist" aria-label="Media type">
+        {TAB_ITEMS.map(({ key, label }) => (
           <button
             key={key}
             type="button"
             role="tab"
             aria-selected={tab === key}
             onClick={() => setTab(key)}
-            className={`focus-settle px-4 py-2.5 font-display text-sm font-semibold capitalize transition-colors ${
-              tab === key
-                ? "border-b-2 border-brand-blue text-brand-blue"
-                : "text-brand-muted hover:text-brand-navy"
-            }`}
+            className="media-spotlight-tab focus-settle"
           >
-            {key}
+            {label}
           </button>
         ))}
       </div>
-      </ScrollReveal>
 
       {tab === "articles" ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
