@@ -172,7 +172,7 @@ export function WhyChooseSection() {
 
   return (
     <section
-      className="home-section bg-brand-surface"
+      className="home-section"
       aria-labelledby="why-choose-heading"
     >
       <div className="site-container">
@@ -184,7 +184,7 @@ export function WhyChooseSection() {
           <div className={stickyClassName || undefined}>
             <div
               className={cx(
-                "relative w-full overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(20,32,58,0.1)] lg:rounded-3xl",
+                "relative w-full overflow-hidden rounded-2xl shadow-[var(--elevation-panel)] lg:rounded-3xl",
                 mobilePinActive &&
                   "why-choose-mobile-pin max-lg:flex max-lg:min-h-0 max-lg:flex-1 max-lg:flex-col",
               )}
@@ -318,7 +318,7 @@ export function WhyChooseSection() {
                               className={cx(
                                 "flex min-w-0 flex-1 items-center font-display font-medium",
                                 isActive
-                                  ? "truncate rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy max-lg:px-4 max-lg:py-2 max-lg:leading-tight sm:px-6 sm:py-4 sm:text-lg"
+                                  ? "truncate rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy shadow-[var(--elevation-card)] max-lg:px-4 max-lg:py-2 max-lg:leading-tight sm:px-6 sm:py-4 sm:text-lg"
                                   : cx(
                                       "pl-1 text-base text-white/75 group-hover:text-white sm:text-lg",
                                       mobilePinActive &&
@@ -352,7 +352,7 @@ export function WhyChooseSection() {
                     id={`why-choose-panel-${safeIndex}`}
                     aria-labelledby={`why-choose-tab-${safeIndex}`}
                     className={cx(
-                      "panel-fade-in flex w-full flex-col justify-center rounded-2xl bg-white px-6 py-8 shadow-lg sm:px-8 sm:py-10",
+                      "panel-fade-in flex w-full flex-col justify-center rounded-2xl bg-white px-6 py-8 shadow-[var(--elevation-card)] sm:px-8 sm:py-10",
                       mobilePinActive &&
                         "max-lg:h-full max-lg:min-h-0 max-lg:flex-1 max-lg:justify-start max-lg:overflow-hidden max-lg:px-5 max-lg:py-2",
                       desktopPinActive && "lg:min-h-[480px]",

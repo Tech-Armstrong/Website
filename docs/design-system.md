@@ -16,7 +16,8 @@ Defined in `:root` and exposed to Tailwind via `@theme inline` in [`src/app/glob
 | `--brand-green` / `brand-green` | `#7ab036` | Secondary accent (available, sparse use) |
 | `--brand-dark` / `brand-dark` | `#14203a` | Dark panels, footer, hero overlay base, theme-color |
 | `--brand-muted` / `brand-muted` | `#5f6b7a` | Secondary / meta text |
-| `--brand-surface` / `brand-surface` | `#f7f7f7` | Subtle backgrounds, skeletons, placeholders |
+| `--brand-surface` / `brand-surface` | `var(--site-background)` | Same as page canvas — placeholders, skeletons, hover fills |
+| `--site-background` / `site-background` | `color-mix(in srgb, var(--brand-blue) 12%, white)` | Page canvas (`body` background) |
 
 ### Layout & elevation variables
 
@@ -29,6 +30,7 @@ Defined in `:root` and exposed to Tailwind via `@theme inline` in [`src/app/glob
 | `--elevation-header` | `0 8px 30px rgba(39,46,57,0.12)` | Header shell default |
 | `--elevation-header-scrolled` | `0 4px 20px rgba(39,46,57,0.1)` | Header shell when scrolled |
 | `--elevation-pop` | `0 8px 40px -8px rgba(20,32,58,0.18)` | Nav dropdown popover |
+| `--elevation-panel` | `0 12px 40px rgba(20,32,58,0.12)` | Large homepage panels (testimonials, Why Choose shell) |
 
 ### Motion tokens
 

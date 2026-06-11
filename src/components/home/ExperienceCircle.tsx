@@ -43,7 +43,7 @@ export function ExperienceCircle() {
           </g>
         </svg>
 
-        <div className="absolute inset-[14%] overflow-hidden rounded-full border border-[#e8eaed] bg-white shadow-[0_8px_32px_rgba(20,32,58,0.08),inset_0_0_0_1px_rgba(39,46,57,0.04)]">
+        <div className="absolute inset-[14%] overflow-hidden rounded-full border border-[#e8eaed] bg-white shadow-[var(--elevation-panel)]">
           <Image
             src={image}
             alt="Balanced stones on a pebble beach"
@@ -70,7 +70,7 @@ export function ExperienceCircle() {
         {ringText.map((text) => (
           <li
             key={text}
-            className="rounded-lg border border-[#e8eaed] bg-brand-surface/80 px-3 py-2 font-display text-[11px] font-semibold uppercase tracking-wide text-brand-navy"
+            className="lift-card rounded-lg border border-[#e8eaed] bg-brand-surface/80 px-3 py-2 font-display text-[11px] font-semibold uppercase tracking-wide text-brand-navy"
           >
             {text}
           </li>

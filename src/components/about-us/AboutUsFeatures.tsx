@@ -7,7 +7,7 @@ export function AboutUsFeatures() {
 
   return (
     <section
-      className="border-t border-[#eef0f2] bg-brand-surface py-16 lg:py-20"
+      className="border-t border-[#eef0f2] py-16 lg:py-20"
       aria-labelledby="about-us-features-heading"
     >
       <div className="site-container">

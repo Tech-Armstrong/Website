@@ -54,7 +54,7 @@ export function MediaSpotlightsSection() {
 
   return (
     <section
-      className="home-section border-t border-[#eef0f2] bg-white"
+      className="home-section border-t border-[#eef0f2]"
       aria-labelledby="media-spotlights-heading"
     >
       <div className="site-container">
@@ -122,7 +122,9 @@ export function MediaSpotlightsSection() {
               aria-label={`Go to slide group ${index + 1}`}
               onClick={() => scrollTo(Math.min(index * 3, scrollSnaps.length - 1))}
               className={`focus-settle h-2.5 w-2.5 rounded-full transition-colors ${
-                activePage === index ? "bg-brand-blue" : "bg-[#d4d8de] hover:bg-brand-muted/60"
+                activePage === index
+                  ? "bg-brand-blue shadow-[var(--elevation-card)]"
+                  : "bg-[#d4d8de] hover:bg-brand-muted/60"
               }`}
             />
           ))}

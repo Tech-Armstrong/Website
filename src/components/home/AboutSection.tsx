@@ -9,7 +9,7 @@ export function AboutSection() {
 
   return (
     <section
-      className="home-section border-t border-[#eef0f2] bg-white"
+      className="home-section border-t border-[#eef0f2]"
       aria-labelledby="about-heading"
     >
       <div className="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">

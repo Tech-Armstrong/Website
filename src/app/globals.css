@@ -7,7 +7,8 @@
   --brand-green: #7ab036;
   --brand-dark: #14203a;
   --brand-muted: #5f6b7a;
-  --brand-surface: #f7f7f7;
+  --site-background: color-mix(in srgb, var(--brand-blue) 12%, white);
+  --brand-surface: var(--site-background);
   --container-max: 1200px;
   /* Fixed header clearance — matches main pt-28 / lg:pt-32 */
   --site-header-offset: 7rem;
@@ -26,6 +27,7 @@
   --elevation-header: 0 8px 30px rgba(39, 46, 57, 0.12);
   --elevation-header-scrolled: 0 4px 20px rgba(39, 46, 57, 0.1);
   --elevation-pop: 0 8px 40px -8px rgba(20, 32, 58, 0.18);
+  --elevation-panel: 0 12px 40px rgba(20, 32, 58, 0.12);
 }
 
 @media (min-width: 1024px) {
@@ -42,6 +44,7 @@
   --color-brand-dark: var(--brand-dark);
   --color-brand-muted: var(--brand-muted);
   --color-brand-surface: var(--brand-surface);
+  --color-site-background: var(--site-background);
   --font-display: var(--font-urbanist);
   --font-body: var(--font-mulish);
 }
@@ -54,7 +57,7 @@ html {
 body {
   font-family: var(--font-mulish), sans-serif;
   color: var(--brand-navy);
-  background: #ffffff;
+  background: var(--site-background);
   overflow-x: clip;
   max-width: 100%;
 }
@@ -73,7 +76,7 @@ body {
 .theme-btn {
   position: relative;
   display: inline-block;
-  overflow: hidden;
+  overflow: visible;
   font-family: var(--font-urbanist), sans-serif;
   font-size: 18px;
   line-height: 28px;
@@ -82,7 +85,10 @@ body {
   padding: 16px 40px;
   text-transform: capitalize;
   border-radius: 35px 35px 0 35px;
-  transition: all 500ms ease;
+  box-shadow: var(--elevation-card-hover);
+  transition:
+    background-color 500ms ease,
+    box-shadow var(--dur-3) var(--ease-settle);
 }
 
 .theme-btn.btn-two {
@@ -92,6 +98,7 @@ body {
 
 .theme-btn.btn-two:hover {
   background: #000066;
+  box-shadow: var(--elevation-panel);
 }
 
 /* Hero outline text on span */
@@ -319,6 +326,10 @@ body {
     transform: none;
   }
 
+  .theme-btn.btn-two:hover {
+    box-shadow: var(--elevation-card-hover);
+  }
+
   .mobile-nav-panel {
     transform: none;
   }
@@ -391,14 +402,14 @@ body {
 
 /* Testimonial panel */
 .testimonial-panel {
-  box-shadow: 0 12px 40px rgba(20, 32, 58, 0.12);
+  box-shadow: var(--elevation-panel);
 }
 
 /* Services card */
 .service-card {
   border-radius: 14px;
   border-color: #e8eaed;
-  box-shadow: 0 2px 8px rgba(20, 32, 58, 0.05);
+  box-shadow: var(--elevation-card);
   transition:
     border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -407,7 +418,7 @@ body {
 
 .service-card:hover {
   border-color: var(--brand-blue);
-  box-shadow: 0 12px 32px rgba(10, 109, 156, 0.14);
+  box-shadow: var(--elevation-card-hover);
   transform: translateY(-4px);
 }
 
