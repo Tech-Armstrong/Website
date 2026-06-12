@@ -16,7 +16,7 @@ export function SectionTitle({
   const alignClass = align === "center" ? "text-center items-center" : "text-left items-start";
 
   return (
-    <div className={`sec-title mb-10 flex flex-col ${alignClass} ${className}`}>
+    <div className={`sec-title mb-8 flex flex-col ${alignClass} ${className}`}>
       <span className="te-subtitle mb-3 inline-block rounded-full rounded-br-none border border-brand-blue/80 bg-brand-blue/[0.06] px-4 py-0.5 font-display text-[11px] font-bold uppercase tracking-wide text-brand-blue sm:text-xs sm:leading-[26px]">
         {eyebrow}
       </span>

@@ -37,7 +37,6 @@ function useMediaQuery(query: string, serverFallback = false) {
         mq.addEventListener("change", onStoreChange);
         return () => mq.removeEventListener("change", onStoreChange);
       }
-      // Legacy Safari / older WebViews
       mq.addListener(onStoreChange);
       return () => mq.removeListener(onStoreChange);
     },
@@ -57,24 +56,6 @@ function useMediaQuery(query: string, serverFallback = false) {
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
 
-/**
- * Resolve --site-header-offset to pixels. Handles rem (using the real root
- * font size instead of assuming 16px) and px values, with a safe default.
- */
-function getSiteHeaderOffsetPx() {
-  const root = document.documentElement;
-  const raw = getComputedStyle(root)
-    .getPropertyValue("--site-header-offset")
-    .trim();
-  const value = parseFloat(raw);
-  if (!Number.isFinite(value)) return 112;
-  if (raw.endsWith("rem")) {
-    const rootFontSize = parseFloat(getComputedStyle(root).fontSize) || 16;
-    return value * rootFontSize;
-  }
-  return value;
-}
-
 export function WhyChooseSection() {
   const { backgroundImage, eyebrow, title, tabs } = whyChooseSection;
   const [activeIndex, setActiveIndex] = useState(0);
@@ -85,11 +66,10 @@ export function WhyChooseSection() {
   const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const isTouch = useMediaQuery("(pointer: coarse)");
 
+  const isMobileLayout = !isDesktop;
   const desktopPinActive = isDesktop && !reduceMotion && !isTouch;
-  const mobilePinActive = !isDesktop && !reduceMotion;
-  const scrollDriveActive = desktopPinActive || mobilePinActive;
+  const scrollDriveActive = desktopPinActive;
 
-  // Defensive: never index past the end if the tabs data changes length.
   const tabCount = tabs.length;
   const safeIndex = Math.min(Math.max(activeIndex, 0), tabCount - 1);
   const active = tabs[safeIndex];
@@ -101,20 +81,15 @@ export function WhyChooseSection() {
         setActiveIndex(index);
         return;
       }
-      const visibleHeight = desktopPinActive
-        ? window.innerHeight
-        : window.innerHeight - getSiteHeaderOffsetPx();
-      // offsetTop is relative to the offsetParent, not the document, so it
-      // breaks inside positioned ancestors. Use a document-relative position.
       const trackTop = track.getBoundingClientRect().top + window.scrollY;
-      const distance = Math.max(track.offsetHeight - visibleHeight, 0);
+      const distance = Math.max(track.offsetHeight - window.innerHeight, 0);
       const progress = (index + 0.5) / tabCount;
       window.scrollTo({
         top: Math.max(trackTop + progress * distance, 0),
         behavior: "smooth",
       });
     },
-    [desktopPinActive, tabCount],
+    [tabCount],
   );
 
   function handleTabClick(index: number) {
@@ -125,7 +100,6 @@ export function WhyChooseSection() {
     setActiveIndex(index);
   }
 
-  // WAI-ARIA tabs pattern: arrow keys, Home, and End move between tabs.
   function handleTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     let next: number | null = null;
     switch (event.key) {
@@ -153,42 +127,24 @@ export function WhyChooseSection() {
 
   if (tabCount === 0) return null;
 
-  // The pinned track must be tall enough for one viewport per tab. The
-  // previous hardcoded 400vh silently broke whenever tabs.length !== 4.
   const trackStyle = scrollDriveActive
     ? { height: `${tabCount * 100}vh` }
     : undefined;
 
-  const trackClassName = cx(
-    mobilePinActive && "max-lg:scroll-mt-[var(--site-header-offset)]",
-  );
-
   const stickyClassName = cx(
-    mobilePinActive &&
-      "max-lg:sticky max-lg:top-[var(--site-header-offset)] max-lg:flex max-lg:h-[calc(100dvh-var(--site-header-offset))] max-lg:max-h-[calc(100svh-var(--site-header-offset))] max-lg:min-h-0 max-lg:flex-col max-lg:py-2 max-lg:pb-[max(0.5rem,env(safe-area-inset-bottom))]",
     desktopPinActive &&
       "lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-full lg:items-center",
   );
 
   return (
     <section
-      className="home-section"
+      className="home-section !pt-8 sm:!pt-9 lg:!pt-10"
       aria-labelledby="why-choose-heading"
     >
       <div className="site-container">
-        <div
-          ref={trackRef}
-          className={trackClassName || undefined}
-          style={trackStyle}
-        >
+        <div ref={trackRef} style={trackStyle}>
           <div className={stickyClassName || undefined}>
-            <div
-              className={cx(
-                "relative w-full overflow-hidden rounded-2xl shadow-[var(--elevation-panel)] lg:rounded-3xl",
-                mobilePinActive &&
-                  "why-choose-mobile-pin max-lg:flex max-lg:min-h-0 max-lg:flex-1 max-lg:flex-col",
-              )}
-            >
+            <div className="relative w-full overflow-hidden rounded-2xl shadow-[var(--elevation-panel)] lg:rounded-3xl">
               <div className="pointer-events-none absolute inset-0">
                 <Image
                   src={backgroundImage}
@@ -203,60 +159,19 @@ export function WhyChooseSection() {
                 />
               </div>
 
-              <div
-                className={cx(
-                  "relative z-[1] flex flex-col lg:flex-row",
-                  mobilePinActive
-                    ? "max-lg:grid max-lg:min-h-0 max-lg:flex-1 max-lg:grid-rows-[minmax(0,1fr)_minmax(0,1fr)] max-lg:overflow-hidden lg:min-h-[560px]"
-                    : "min-h-[520px] lg:min-h-[560px]",
-                )}
-              >
-                <div
-                  className={cx(
-                    "flex min-w-0 flex-col overflow-hidden bg-brand-dark/90 px-6 py-8 sm:px-8 lg:w-[58%] lg:max-w-[58%] lg:shrink-0 lg:px-10 lg:py-10 xl:w-[60%] xl:max-w-[60%]",
-                    mobilePinActive &&
-                      "max-lg:flex max-lg:h-full max-lg:min-h-0 max-lg:flex-col max-lg:px-5 max-lg:py-2",
-                    !scrollDriveActive && !isDesktop && "max-lg:min-h-[360px]",
-                  )}
-                >
-                  <div
-                    className={cx(
-                      "flex min-w-0 flex-col",
-                      mobilePinActive &&
-                        "max-lg:min-h-0 max-lg:flex-1 max-lg:pl-3",
-                    )}
-                  >
-                  <div
-                    className={cx(
-                      "sec-title light mb-8 flex flex-col items-start",
-                      mobilePinActive && "max-lg:mb-1 max-lg:shrink-0",
-                    )}
-                  >
-                    <span
-                      className={cx(
-                        "te-subtitle mb-3 inline-block rounded-full rounded-br-none border border-white/30 bg-white/10 px-4 py-0.5 font-display text-[11px] font-bold uppercase tracking-wide text-white sm:text-xs sm:leading-[26px]",
-                        mobilePinActive && "max-lg:mb-1",
-                      )}
-                    >
-                      {eyebrow}
-                    </span>
+              <div className="relative z-[1] flex flex-col lg:min-h-[560px] lg:flex-row">
+                <div className="flex min-w-0 flex-col bg-brand-dark/90 px-5 py-5 sm:px-8 lg:w-[58%] lg:max-w-[58%] lg:shrink-0 lg:px-10 lg:py-10 xl:w-[60%] xl:max-w-[60%]">
+                  <div className="sec-title light mb-4 flex flex-col items-start lg:mb-8">
                     <h2
                       id="why-choose-heading"
-                      className={cx(
-                        "font-display text-[36px] font-semibold leading-tight text-white md:text-[42px]",
-                        mobilePinActive && "max-lg:text-[30px] max-lg:leading-tight",
-                      )}
+                      className="font-display text-[28px] font-semibold leading-tight text-white lg:text-[36px] lg:leading-tight xl:text-[42px]"
                     >
-                      {title}
+                      {eyebrow} {title}
                     </h2>
                   </div>
 
                   <div
-                    className={cx(
-                      "flex flex-col",
-                      mobilePinActive &&
-                        "max-lg:min-h-0 max-lg:flex-1 max-lg:overflow-hidden",
-                    )}
+                    className="flex flex-col gap-1 lg:gap-0"
                     role="tablist"
                     aria-label="Why choose Armstrong"
                     aria-orientation="vertical"
@@ -280,34 +195,44 @@ export function WhyChooseSection() {
                           onClick={() => handleTabClick(index)}
                           onKeyDown={(event) => handleTabKeyDown(event, index)}
                           className={cx(
-                            "focus-settle group relative w-full min-w-0 touch-manipulation rounded-md text-left transition-all duration-300",
-                            // Keep the divider in the layout when active
-                            // (transparent) so rows don't shift by 1px.
-                            !isLast &&
-                              (isActive
-                                ? "border-b border-transparent"
-                                : "border-b border-white/10"),
-                            mobilePinActive &&
-                              "max-lg:flex max-lg:min-h-[2.75rem] max-lg:flex-1",
+                            "focus-settle group relative w-full min-w-0 touch-manipulation text-left transition-all duration-300",
+                            isMobileLayout &&
+                              cx(
+                                "rounded-md border-l-4 px-3 py-3",
+                                isActive
+                                  ? "border-brand-blue bg-white/10"
+                                  : "border-transparent",
+                              ),
+                            !isMobileLayout &&
+                              cx(
+                                "rounded-md",
+                                !isLast &&
+                                  (isActive
+                                    ? "border-b border-transparent"
+                                    : "border-b border-white/10"),
+                              ),
                           )}
                         >
                           <div
                             className={cx(
-                              "flex min-w-0 items-stretch",
-                              mobilePinActive
-                                ? "max-lg:h-full max-lg:items-center max-lg:py-2"
-                                : isActive
-                                  ? "py-2"
-                                  : "py-4",
+                              "flex min-w-0 items-center",
+                              isMobileLayout ? "gap-3" : "items-stretch",
+                              !isMobileLayout && (isActive ? "py-2" : "py-4"),
                             )}
                           >
-                            {isActive ? (
+                            {isMobileLayout ? (
                               <span
                                 className={cx(
-                                  "why-choose-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white font-display text-xl font-bold text-brand-blue sm:h-[58px] sm:w-[58px] sm:text-2xl",
-                                  mobilePinActive &&
-                                    "max-lg:h-10 max-lg:w-10 max-lg:text-base",
+                                  "w-9 shrink-0 font-display text-sm font-bold",
+                                  isActive ? "text-white" : "text-white/60",
                                 )}
+                                aria-hidden
+                              >
+                                {tab.number}
+                              </span>
+                            ) : isActive ? (
+                              <span
+                                className="why-choose-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white font-display text-xl font-bold text-brand-blue sm:h-[58px] sm:w-[58px] sm:text-2xl"
                                 aria-hidden
                               >
                                 {tab.number}
@@ -317,16 +242,19 @@ export function WhyChooseSection() {
                             <span
                               className={cx(
                                 "flex min-w-0 flex-1 items-center font-display font-medium",
-                                isActive
-                                  ? "truncate rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy shadow-[var(--elevation-card)] max-lg:px-4 max-lg:py-2 max-lg:leading-tight sm:px-6 sm:py-4 sm:text-lg"
-                                  : cx(
-                                      "pl-1 text-base text-white/75 group-hover:text-white sm:text-lg",
-                                      mobilePinActive &&
-                                        "max-lg:pl-0 max-lg:text-sm max-lg:leading-snug",
-                                    ),
+                                isMobileLayout
+                                  ? cx(
+                                      "text-left text-sm leading-snug sm:text-base",
+                                      isActive
+                                        ? "font-semibold text-white"
+                                        : "text-white/75 group-hover:text-white",
+                                    )
+                                  : isActive
+                                    ? "truncate rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy shadow-[var(--elevation-card)] sm:px-6 sm:py-4 sm:text-lg"
+                                    : "pl-1 text-base text-white/75 group-hover:text-white sm:text-lg",
                               )}
                             >
-                              {!isActive ? (
+                              {!isMobileLayout && !isActive ? (
                                 <span className="sr-only">{tab.number} </span>
                               ) : null}
                               {tab.title}
@@ -336,72 +264,49 @@ export function WhyChooseSection() {
                       );
                     })}
                   </div>
-                  </div>
                 </div>
 
-                <div
-                  className={cx(
-                    "relative z-10 flex items-stretch p-4 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[42%] lg:items-center lg:p-6 xl:w-[40%]",
-                    mobilePinActive &&
-                      "max-lg:flex max-lg:min-h-0 max-lg:flex-1 max-lg:flex-col max-lg:overflow-hidden max-lg:p-3",
-                  )}
-                >
+                <div className="relative z-10 flex items-stretch p-4 max-lg:pt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[42%] lg:items-center lg:p-6 xl:w-[40%]">
                   <div
                     key={safeIndex}
                     role="tabpanel"
                     id={`why-choose-panel-${safeIndex}`}
                     aria-labelledby={`why-choose-tab-${safeIndex}`}
                     className={cx(
-                      "panel-fade-in flex w-full flex-col justify-center rounded-2xl bg-white px-6 py-8 shadow-[var(--elevation-card)] sm:px-8 sm:py-10",
-                      mobilePinActive &&
-                        "max-lg:h-full max-lg:min-h-0 max-lg:flex-1 max-lg:justify-start max-lg:overflow-hidden max-lg:px-5 max-lg:py-2",
+                      "lift-card panel-fade-in flex w-full flex-col justify-center rounded-2xl border border-brand-blue/10 bg-gradient-to-br from-white via-white to-brand-blue/[0.05] px-5 py-5 shadow-[var(--elevation-panel)] max-lg:justify-start sm:px-8 sm:py-10 lg:px-6 lg:py-8",
                       desktopPinActive && "lg:min-h-[480px]",
                     )}
                   >
-                    <h3
-                      className={cx(
-                        "mb-5 font-display text-xl font-semibold text-brand-navy sm:text-2xl",
-                        mobilePinActive &&
-                          "max-lg:mb-2 max-lg:text-lg max-lg:leading-tight",
-                      )}
-                    >
-                      {active.title}
-                    </h3>
+                    <div className="mb-4 flex items-start gap-3 sm:mb-5 sm:gap-5">
+                      <span
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue font-display text-base font-bold text-white sm:h-14 sm:w-14 sm:text-xl"
+                        aria-hidden
+                      >
+                        {active.number}
+                      </span>
+                      <h3 className="pt-0.5 font-display text-lg font-semibold leading-snug text-brand-navy sm:pt-1 sm:text-2xl">
+                        {active.title}
+                      </h3>
+                    </div>
 
-                    <div
-                      className={cx(
-                        "space-y-4 font-body text-[15px] leading-[26px] text-brand-muted",
-                        mobilePinActive &&
-                          "max-lg:space-y-1 max-lg:text-sm max-lg:leading-[19px]",
-                      )}
-                    >
+                    <div className="space-y-3 font-body text-[15px] leading-relaxed text-brand-muted sm:space-y-4 sm:text-base lg:text-[17px] lg:leading-[28px]">
                       {active.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
                     </div>
 
-                    <blockquote
-                      className={cx(
-                        "mt-6 border-0",
-                        mobilePinActive && "max-lg:mt-2",
-                      )}
-                    >
-                      <p
-                        className={cx(
-                          "font-display text-base font-semibold leading-relaxed text-brand-navy sm:text-lg",
-                          mobilePinActive &&
-                            "max-lg:text-sm max-lg:leading-tight",
-                        )}
+                    <blockquote className="relative mt-5 rounded-xl border-l-4 border-brand-blue bg-brand-blue/[0.06] px-4 py-3 sm:mt-6 sm:px-5 sm:py-4">
+                      <span
+                        className="pointer-events-none absolute left-4 top-2 font-display text-4xl leading-none text-brand-blue/25"
+                        aria-hidden
                       >
+                        &ldquo;
+                      </span>
+                      <p className="relative font-display text-sm font-semibold leading-relaxed text-brand-navy sm:text-base lg:text-lg">
                         {active.quote}
                       </p>
-                      <cite
-                        className={cx(
-                          "mt-3 block font-body text-sm not-italic text-brand-muted",
-                          mobilePinActive && "max-lg:mt-1 max-lg:text-xs",
-                        )}
-                      >
-                        -{active.attribution}
+                      <cite className="relative mt-2 block font-body text-xs font-medium not-italic text-brand-blue sm:mt-3 sm:text-sm">
+                        — {active.attribution}
                       </cite>
                     </blockquote>
                   </div>

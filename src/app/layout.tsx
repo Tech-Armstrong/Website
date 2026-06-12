@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Mulish, Urbanist } from "next/font/google";
 import { CalendlyBadge } from "@/components/integrations/CalendlyBadge";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SocialSidebar } from "@/components/layout/SocialSidebar";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { MotionProvider } from "@/components/ui/MotionProvider";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site/config";
@@ -73,6 +74,7 @@ export default function RootLayout({
           <SiteHeader />
           {children}
         </MotionProvider>
+        <SocialSidebar />
         <CalendlyBadge />
       </body>
     </html>

@@ -27,8 +27,8 @@ export function MarketingPageShell({
         id="main-content"
         className={
           compact
-            ? "pb-8 pt-28 lg:pb-10 lg:pt-32"
-            : "pb-10 pt-28 lg:pb-12 lg:pt-32"
+            ? "pb-6 pt-28 lg:pb-10 lg:pt-32"
+            : "pb-8 pt-28 lg:pb-10 lg:pt-32"
         }
       >
         <div className="site-container px-4">

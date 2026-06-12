@@ -3,7 +3,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function AboutUsQuote() {
   return (
-    <section className="py-16 lg:py-20" aria-label="Featured quote">
+    <section className="py-12 lg:py-16" aria-label="Featured quote">
       <div className="site-container">
         <ScrollReveal direction="none">
           <blockquote className="relative overflow-hidden rounded-2xl bg-brand-dark px-8 py-10 text-center sm:px-12 sm:py-12 lg:rounded-3xl">

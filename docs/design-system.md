@@ -99,9 +99,9 @@ Homepage section rhythm:
 
 | Breakpoint | Padding |
 |------------|---------|
-| Default | `padding-inline: 1rem`; `padding-block: 4rem` |
-| `sm` (640px+) | `padding-block: 5rem` |
-| `lg` (1024px+) | `padding-block: 6rem` |
+| Default | `padding-inline: 1rem`; `padding-block: 3rem` |
+| `sm` (640px+) | `padding-block: 3.75rem` |
+| `lg` (1024px+) | `padding-block: 4.5rem` |
 
 Used by AboutSection, ServicesSection, MediaSpotlightsSection, WhyChooseSection.
 
@@ -138,7 +138,7 @@ Primary breakpoint: **`lg` (1024px)**.
 | At `lg` | Behavior |
 |---------|----------|
 | Header | Taller `--site-header-offset` (8rem); desktop nav visible |
-| Home sections | Taller `.home-section` block padding (6rem) |
+| Home sections | Taller `.home-section` block padding (4.5rem) |
 | Grids | Multi-column layouts (e.g. About 2-col, Services carousel, marketing sidebar `lg:grid-cols-[minmax(0,1fr)_280px]`) |
 | Scroll-drive | Desktop pin activates (Why Choose, Team grid) when not reduced-motion |
 

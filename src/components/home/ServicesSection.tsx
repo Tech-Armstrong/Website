@@ -5,7 +5,6 @@ import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { services } from "@/data/home";
-import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function ServicesSection() {
@@ -14,18 +13,20 @@ export function ServicesSection() {
     loop: true,
     slidesToScroll: 1,
   });
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback(
+    (index: number) => emblaApi?.scrollTo(index),
+    [emblaApi],
+  );
 
   useEffect(() => {
     if (!emblaApi) return;
 
     const update = () => {
-      setCanScrollPrev(emblaApi.canScrollPrev());
-      setCanScrollNext(emblaApi.canScrollNext());
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+      setScrollSnaps(emblaApi.scrollSnapList());
     };
 
     emblaApi.on("select", update);
@@ -50,82 +51,101 @@ export function ServicesSection() {
 
   return (
     <section
-      className="home-section"
+      className="home-section !pt-8 sm:!pt-9 lg:!pt-10"
       aria-labelledby="services-heading"
     >
       <div className="site-container">
         <ScrollReveal>
-          <SectionTitle
-            align="center"
-            eyebrow="Our Services"
-            headingId="services-heading"
-            title={
-              <>
-                <strong className="font-semibold text-brand-navy">
-                  Strategizing Wealth
-                </strong>
-                <br />
-                Maximizing Opportunities
-              </>
-            }
-            className="mx-auto mb-12 max-w-2xl"
-          />
+          <div className="mx-auto mb-8 max-w-4xl text-center">
+            <h2
+              id="services-heading"
+              className="font-display text-[28px] font-semibold leading-tight tracking-tight text-brand-navy sm:text-[34px] md:text-[40px] lg:text-[44px]"
+            >
+              Strategizing Wealth, Maximizing Opportunities
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl font-body text-base leading-relaxed text-brand-muted md:text-[17px] md:leading-[28px]">
+              Tailored solutions across planning, investing, and protection.
+            </p>
+          </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={150} className="relative min-w-0 w-full px-12 sm:px-14">
-          <div ref={emblaRef} className="min-w-0 overflow-hidden">
-            <div className="flex gap-4 md:gap-5">
-              {services.map((service) => (
-                <div
-                  key={service.title}
-                  className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_calc(50%-8px)] lg:flex-[0_0_calc(25%-15px)]"
-                >
-                  <div className="service-card flex h-full flex-col gap-5 border bg-white px-6 pb-6 pt-7 sm:gap-6 sm:px-7 sm:pb-7 sm:pt-8">
-                    <h3 className="text-center font-display text-lg font-semibold text-brand-navy sm:text-xl">
-                      {service.title}
-                    </h3>
+        <ScrollReveal delay={150} className="relative min-w-0 w-full">
+          <div className="relative min-w-0">
+            <div
+              ref={emblaRef}
+              className="min-w-0 overflow-hidden py-1 [mask-image:linear-gradient(to_right,transparent_0,black_0.75rem,black_calc(100%-0.75rem),transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0,black_0.75rem,black_calc(100%-0.75rem),transparent_100%)]"
+              aria-roledescription="carousel"
+            >
+              <div className="-ml-4 flex items-stretch md:-ml-5">
+                {services.map((service) => (
+                  <article
+                    key={service.title}
+                    className="h-full min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] md:pl-5 lg:flex-[0_0_25%]"
+                  >
                     <Link
                       href={service.href}
-                      className="group block overflow-hidden rounded-xl focus-settle"
+                      className="lift-card group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-blue/10 bg-white focus-settle"
                     >
-                      <div className="relative aspect-square w-full overflow-hidden rounded-xl">
+                      <div className="relative aspect-[4/3] overflow-hidden">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                          className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+                          className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                        />
+                        <div
+                          className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-navy/40 to-transparent"
+                          aria-hidden
                         />
                       </div>
+                      <div className="flex flex-1 flex-col p-5 sm:p-6">
+                        <h3 className="line-clamp-2 min-h-[3.25rem] font-display text-lg font-semibold leading-snug text-brand-navy sm:min-h-[3.5rem] sm:text-xl">
+                          {service.title}
+                        </h3>
+                        <p className="mt-2 line-clamp-2 min-h-[2.75rem] font-body text-sm leading-relaxed text-brand-muted">
+                          {service.tagline}
+                        </p>
+                        <span className="mt-auto inline-flex items-center gap-1 pt-4 font-display text-sm font-semibold text-brand-blue transition-[gap] duration-300 group-hover:gap-2">
+                          Learn more
+                          <svg
+                            viewBox="0 0 24 24"
+                            className="h-4 w-4"
+                            fill="currentColor"
+                            aria-hidden
+                          >
+                            <path d="M9 6l6 6-6 6" />
+                          </svg>
+                        </span>
+                      </div>
                     </Link>
-                  </div>
-                </div>
-              ))}
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={scrollPrev}
-            disabled={!canScrollPrev}
-            className="focus-settle absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#e8eaed] bg-white text-brand-navy shadow-[var(--elevation-card)] transition-colors hover:border-brand-blue hover:text-brand-blue disabled:pointer-events-none disabled:opacity-35 sm:h-11 sm:w-11"
-            aria-label="Previous services"
+          <div
+            className="mt-8 flex justify-center gap-2.5"
+            role="tablist"
+            aria-label="Services carousel"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={scrollNext}
-            disabled={!canScrollNext}
-            className="focus-settle absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#e8eaed] bg-white text-brand-navy shadow-[var(--elevation-card)] transition-colors hover:border-brand-blue hover:text-brand-blue disabled:pointer-events-none disabled:opacity-35 sm:h-11 sm:w-11"
-            aria-label="Next services"
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
-              <path d="M9 6l6 6-6 6" />
-            </svg>
-          </button>
+            {scrollSnaps.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                role="tab"
+                aria-selected={selectedIndex === index}
+                aria-label={`Go to service slide ${index + 1}`}
+                onClick={() => scrollTo(index)}
+                className={`focus-settle h-2.5 w-2.5 rounded-full transition-colors ${
+                  selectedIndex === index
+                    ? "bg-brand-blue shadow-[var(--elevation-card)]"
+                    : "bg-brand-muted/30 hover:bg-brand-muted/60"
+                }`}
+              />
+            ))}
+          </div>
         </ScrollReveal>
       </div>
     </section>

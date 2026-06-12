@@ -58,7 +58,7 @@ export function MediaSpotlightsSection() {
       aria-labelledby="media-spotlights-heading"
     >
       <div className="site-container">
-        <ScrollReveal className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <ScrollReveal className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="mb-2 font-display text-[11px] font-bold uppercase tracking-wide text-brand-blue sm:text-xs">
               In the news

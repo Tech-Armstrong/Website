@@ -46,7 +46,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </ScrollReveal>
 
           <ScrollReveal delay={60}>
-          <div className="mb-12 max-w-3xl">
+          <div className="mb-8 max-w-3xl">
             <span className="te-subtitle mb-[13px] inline-block rounded-full rounded-br-none border border-brand-blue px-[15px] py-[2px] font-display text-xs font-bold uppercase leading-[26px] text-brand-blue">
               Knowledge Hub
             </span>

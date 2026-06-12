@@ -7,7 +7,7 @@ export function AboutUsHero() {
 
   return (
     <section className="pb-16 lg:pb-20" aria-labelledby="about-us-hero-heading">
-      <div className="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="site-container grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
         <ScrollReveal direction="left" className="relative mx-auto aspect-[4/5] w-full max-w-md lg:max-w-none">
           <div
             className="absolute -left-4 -top-4 h-[85%] w-[85%] bg-contain bg-left-top bg-no-repeat opacity-90 sm:-left-6 sm:-top-6"

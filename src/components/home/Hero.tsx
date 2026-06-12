@@ -11,7 +11,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { heroSlides } from "@/data/home";
+import { heroSlides, homeStats } from "@/data/home";
+import { CountUp } from "@/components/ui/CountUp";
 
 const settleEase = [0.22, 1, 0.36, 1] as const;
 const revealHidden = { opacity: 0, y: 20 };
@@ -127,6 +128,7 @@ function HeroTypewriter({
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [restRevealed, setRestRevealed] = useState(false);
+  const [statsRevealed, setStatsRevealed] = useState(false);
   const advanceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const slide = heroSlides[activeIndex];
 
@@ -142,6 +144,7 @@ export function Hero() {
 
   const handleTypewriterComplete = useCallback(() => {
     setRestRevealed(true);
+    setStatsRevealed(true);
     if (reduceMotion) return;
     if (advanceTimeoutRef.current) clearTimeout(advanceTimeoutRef.current);
     advanceTimeoutRef.current = setTimeout(advanceSlide, 3200);
@@ -156,6 +159,11 @@ export function Hero() {
       setRestRevealed(true);
     }
   }, [activeIndex, reduceMotion]);
+
+  useEffect(() => {
+    if (!reduceMotion) return;
+    setStatsRevealed(true);
+  }, [reduceMotion]);
 
   useEffect(() => {
     return () => {
@@ -187,9 +195,13 @@ export function Hero() {
         <div className="hero-overlay absolute inset-0" />
       </div>
 
-      <div className="slide-item relative z-[5] flex min-h-[inherit] items-center px-4 pb-10 pt-[calc(var(--site-header-offset)+1.5rem)] sm:px-6 sm:pb-12 lg:min-h-0 lg:px-6 lg:py-28 lg:pt-28">
+      <div className="slide-item relative z-[5] flex min-h-[inherit] items-center px-4 pb-8 pt-[calc(var(--site-header-offset)+1.5rem)] sm:px-6 sm:pb-10 lg:min-h-0 lg:px-6 lg:py-28 lg:pt-28">
         <div className="site-container w-full">
-          <div className="max-w-xl lg:max-w-[550px]" aria-live="polite">
+          <div
+            className="grid lg:grid-cols-2 lg:items-center lg:gap-12"
+            aria-live="polite"
+          >
+            <div className="max-w-xl lg:max-w-none">
             <div className="content-box">
               <h2 className="font-display text-[2.75rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-[56px] lg:text-[64px] lg:leading-[1.08]">
                 <span className="block">
@@ -215,7 +227,7 @@ export function Hero() {
                 show={restRevealed}
                 delay={240}
                 as="div"
-                className="lower-box mt-6 md:mt-8"
+                className="lower-box mt-5 md:mt-6"
               >
                 <p className="mb-8 max-w-md whitespace-pre-line text-lg leading-relaxed text-white/85 sm:leading-[30px]">
                   {slide.description}
@@ -228,6 +240,34 @@ export function Hero() {
                 </Link>
               </HeroReveal>
             </div>
+            </div>
+
+            <HeroReveal
+              show={statsRevealed}
+              delay={360}
+              as="div"
+              className="hidden lg:block"
+            >
+              <div
+                className="grid grid-cols-2 gap-4"
+                aria-label="Company highlights"
+              >
+                {homeStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="lift-card rounded-2xl bg-white px-5 py-6 text-center"
+                  >
+                    <p className="font-display text-3xl font-semibold tabular-nums leading-none text-brand-navy xl:text-4xl">
+                      <CountUp value={Number(stat.value)} />
+                      <span className="text-brand-blue">{stat.suffix}</span>
+                    </p>
+                    <p className="mt-2 font-body text-sm leading-snug text-brand-muted">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </HeroReveal>
           </div>
         </div>
       </div>

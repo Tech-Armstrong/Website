@@ -7,7 +7,7 @@ export function AboutUsFeatures() {
 
   return (
     <section
-      className="border-t border-[#eef0f2] py-16 lg:py-20"
+      className="border-t border-[#eef0f2] py-12 lg:py-16"
       aria-labelledby="about-us-features-heading"
     >
       <div className="site-container">
@@ -21,7 +21,7 @@ export function AboutUsFeatures() {
           />
         </ScrollReveal>
         <ScrollReveal delay={80}>
-          <p className="mx-auto mb-12 max-w-3xl text-center font-body text-base leading-relaxed text-brand-muted md:text-[17px] md:leading-[30px]">
+          <p className="mx-auto mb-8 max-w-3xl text-center font-body text-base leading-relaxed text-brand-muted md:text-[17px] md:leading-[30px]">
             {description}
           </p>
         </ScrollReveal>

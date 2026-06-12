@@ -11,7 +11,7 @@ export function BlogPostHeader({ post }: BlogPostHeaderProps) {
   const image = post.featured_image;
 
   return (
-    <header className="mb-10">
+    <header className="mb-8">
       <ScrollReveal>
         <h1 className="font-display text-[32px] font-semibold leading-tight text-brand-navy md:text-[42px] md:leading-[1.15]">
           {post.title}

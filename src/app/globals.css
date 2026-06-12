@@ -351,18 +351,18 @@ body {
 /* Homepage section rhythm */
 .home-section {
   padding-inline: 1rem;
-  padding-block: 4rem;
+  padding-block: 3rem;
 }
 
 @media (min-width: 640px) {
   .home-section {
-    padding-block: 5rem;
+    padding-block: 3.75rem;
   }
 }
 
 @media (min-width: 1024px) {
   .home-section {
-    padding-block: 6rem;
+    padding-block: 4.5rem;
   }
 }
 

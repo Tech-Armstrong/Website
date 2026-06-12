@@ -41,36 +41,48 @@ export const services = [
   {
     title: "Wealth Management",
     href: "/wealth-management",
+    tagline:
+      "Holistic planning and investment strategies for lasting prosperity.",
     image:
       "https://armstrong-cap.com/wp-content/uploads/wealth_management.webp",
   },
   {
     title: "Investment Management",
     href: "/investment-management",
+    tagline:
+      "Disciplined portfolio management aligned with your goals and risk profile.",
     image:
       "https://armstrong-cap.com/wp-content/uploads/investment_management-min.webp",
   },
   {
     title: "Financial Planning",
     href: "/financial-planning",
+    tagline:
+      "Personalized plans that balance today's needs with tomorrow's ambitions.",
     image:
       "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp",
   },
   {
     title: "Retirement Planning",
     href: "/retirement-planning",
+    tagline:
+      "Build confidence for the lifestyle you envision after your career.",
     image:
       "https://armstrong-cap.com/wp-content/uploads/retirement_planning-min.webp",
   },
   {
     title: "Education Planning",
     href: "/education-planning",
+    tagline:
+      "Structured savings strategies to fund your child's educational future.",
     image:
       "https://armstrong-cap.com/wp-content/uploads/educational_planning-min.webp",
   },
   {
     title: "Risk Management",
     href: "/risk-management",
+    tagline:
+      "Protect what you've built with thoughtful, proactive risk strategies.",
     image:
       "https://armstrong-cap.com/wp-content/uploads/risk_management-min.webp",
   },
@@ -86,11 +98,13 @@ export const aboutSection = {
     "not Just Promise, a result delivered",
     "Giving wings to financial dreams",
   ] as const,
-  eyebrow: "About Us",
+  heading: "About Us",
   title:
     "Elevating Wealth Management with Strategic Precision and Excellence",
-  description:
-    "Armstrong Capital excels in delivering bespoke wealth management solutions through revolutionary research and strategic innovation. Our expert team curates personalized financial plans with unparalleled insight and precision, empowering you to achieve extraordinary success and navigate your financial journey with confidence and excellence.",
+  paragraphs: [
+    "Armstrong Capital excels in delivering bespoke wealth management solutions through rigorous research and strategic innovation. Our expert team curates personalized financial plans with unparalleled insight and precision, empowering you to achieve lasting success and navigate your financial journey with confidence and excellence.",
+    "We go beyond short-term gains to steward your wealth for the long run—combining transparent advice, disciplined risk management, and solutions shaped around your goals. With Armstrong, you work with a dedicated team that treats your financial future as a partnership, not a transaction.",
+  ] as const,
   ctaLabel: "More About Us",
   ctaHref: "/about-us",
 } as const;
