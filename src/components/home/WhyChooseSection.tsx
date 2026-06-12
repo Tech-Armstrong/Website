@@ -125,8 +125,6 @@ export function WhyChooseSection() {
     tabRefs.current[next]?.focus();
   }
 
-  if (tabCount === 0) return null;
-
   const trackStyle = scrollDriveActive
     ? { height: `${tabCount * 100}vh` }
     : undefined;
