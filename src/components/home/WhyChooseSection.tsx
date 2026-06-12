@@ -138,7 +138,7 @@ export function WhyChooseSection() {
 
   return (
     <section
-      className="home-section !pt-8 sm:!pt-9 lg:!pt-10"
+      className="home-section !pt-8 sm:!pt-9 lg:!pt-10 !pb-6 sm:!pb-8 lg:!pb-9"
       aria-labelledby="why-choose-heading"
     >
       <div className="site-container">
@@ -289,9 +289,18 @@ export function WhyChooseSection() {
                       </h3>
                     </div>
 
-                    <div className="space-y-3 font-body text-[15px] leading-relaxed text-brand-muted sm:space-y-4 sm:text-base lg:text-[17px] lg:leading-[28px]">
-                      {active.paragraphs.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
+                    <div className="space-y-3 sm:space-y-4">
+                      {active.paragraphs.map((paragraph, index) => (
+                        <p
+                          key={paragraph}
+                          className={
+                            index === 0
+                              ? "font-display text-base font-semibold leading-snug text-brand-navy sm:text-lg"
+                              : "font-body text-[15px] leading-relaxed text-brand-navy/85 sm:text-base lg:text-[17px] lg:leading-[30px]"
+                          }
+                        >
+                          {paragraph}
+                        </p>
                       ))}
                     </div>
 

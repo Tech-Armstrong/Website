@@ -460,25 +460,7 @@ body {
   border-color: #0d7fb6;
 }
 
-/* Media spotlight cards */
-.media-card a {
-  border-radius: 12px;
-  border-color: #e8eaed;
-  box-shadow: 0 1px 3px rgba(20, 32, 58, 0.05);
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.media-card a:hover {
-  border-color: var(--brand-blue);
-  box-shadow: 0 8px 20px rgba(20, 32, 58, 0.08);
-}
-
-.media-card .lift-card:hover,
-.media-card .hover-lift:hover {
-  transform: none;
-}
+/* Media spotlight cards — hover lift handled by .lift-card in component */
 
 /* Footer */
 .footer-cta-overlay {

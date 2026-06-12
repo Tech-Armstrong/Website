@@ -51,7 +51,7 @@ export function ServicesSection() {
 
   return (
     <section
-      className="home-section !pt-8 sm:!pt-9 lg:!pt-10"
+      className="home-section !pt-4 sm:!pt-5 lg:!pt-6"
       aria-labelledby="services-heading"
     >
       <div className="site-container">
