@@ -1,0 +1,80 @@
+{
+  "slug": "media-spotlight",
+  "hero": {
+    "title": "Media Spotlight",
+    "paragraphs": [
+      "Explore press coverage and podcast conversations featuring Armstrong Capital's insights on wealth management and financial planning."
+    ]
+  },
+  "articles": [
+    {
+      "title": "Moneycontrol Mutual Fund Distributor Awards: Honouring Excellence ....",
+      "href": "https://www.moneycontrol.com/news/business/moneycontrol-mutual-fund-distributor-awards-honouring-excellence-in-the-financial-sector-12804260.html",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/logo-1.webp"
+    },
+    {
+      "title": "Top 3 Visionary Indian Personalities of 2024",
+      "href": "https://timesofindia.indiatimes.com/business/india-business/top-3-visionary-indian-personalities-of-2024/articleshow/112193811.cms",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/92222747.svg"
+    },
+    {
+      "title": "Indian Leadership Summit & Awards 2024: A Resounding ....",
+      "href": "https://www.business-standard.com/content/press-releases-ani/indian-leadership-summit-awards-2024-a-resounding-success-in-pune-124022000532_1.html",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/business-standard.png"
+    },
+    {
+      "title": "Manju Mastakar: Empowering Everyone Achieve...",
+      "href": "https://ciolookindia.com/manju-mastakar-empowering-everyone-achieve-their-financial-goals-via-armstrong-cfs/",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/CIO-Look-LOGO.webp"
+    },
+    {
+      "title": "Armstrong Capital: Where Financial Planning Meets Purpose",
+      "href": "https://www.outlookindia.com/hub4business/armstrong-capital-where-financial-planning-meets-purpose",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/outlook.svg"
+    },
+    {
+      "title": "Armstrong Capital & Financial Services Pvt. Ltd - ....",
+      "href": "https://thebusinessfame.in/armstrong-capital-financial-services-pvt-ltd-comprehensive-investment-solutions/",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/TBF-Logo_Black-1.png"
+    },
+    {
+      "title": "Armstrong Capital & Financial Services, A Comprehensive ....",
+      "href": "https://primeview.co/armstrong-capital-financial-services-a-comprehensive-investment-solution-provider-by-manju-mastakar/",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/primeview_Logo1-1.png"
+    },
+    {
+      "title": "Recession & Rejection that gave birth to the resilient women ....",
+      "href": "https://entrepreneurinsights.in/armstrong-capital-financial-services-pvt-ltd/",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/cropped-entrepreneur-insights-new-logo-high-resolution-logo-1-1536x721-1.png"
+    },
+    {
+      "title": "Manju Mastakar: A Stock Market Expert Breaking the Stereotype....",
+      "href": "https://www.mirrorreview.com/manju-mastakar-armstrong-capital-advisory/",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/MR-logo-768x120-1.webp"
+    },
+    {
+      "title": "Armstrong Capital Advisory: The Outstanding Financial .....",
+      "href": "https://www.insightssuccess.in/armstrong-capital-advisory-the-outstanding-financial-advisory-partner/",
+      "logo": "https://armstrong-cap.com/wp-content/uploads/Logo-IS.png"
+    }
+  ],
+  "podcasts": [
+    {
+      "title": "LinkedIn Podcast",
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7366737784298012673?compact=1"
+    },
+    {
+      "title": "LinkedIn Podcast",
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7272852731587883008?compact=1"
+    },
+    {
+      "title": "LinkedIn Podcast",
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7267193708452675585?compact=1"
+    },
+    {
+      "title": "LinkedIn Podcast",
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7245370666923786241?compact=1"
+    }
+  ],
+  "updatedAt": "2026-06-17T07:22:38.091Z"
+}

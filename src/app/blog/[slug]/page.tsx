@@ -42,6 +42,8 @@ type BlogPostPageProps = {
 
 };
 
+export const dynamic = "force-dynamic";
+
 
 
 export async function generateStaticParams() {

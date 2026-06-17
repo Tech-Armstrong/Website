@@ -4,6 +4,7 @@ import { ContactPageIntro } from "@/components/contact/ContactPageIntro";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import type { MarketingPage } from "@/lib/pages/content";
 import type { MarketingPageConfig } from "@/types/marketing-page";
+import { MarketingArchiveGrid } from "./MarketingArchiveGrid";
 import { MarketingCareerSections } from "./MarketingCareerSections";
 import { MarketingFaqAccordion } from "./MarketingFaqAccordion";
 import { MarketingFeatures } from "./MarketingFeatures";
@@ -103,6 +104,13 @@ export function MarketingPageRenderer({
 
           {!useFullWidthTeamBlock && config.team && config.team.length > 0 ? (
             <MarketingTeamGrid members={config.team} />
+          ) : null}
+
+          {config.archiveGroups && config.archiveGroups.length > 0 ? (
+            <MarketingArchiveGrid
+              groups={config.archiveGroups}
+              headingId={`${config.slug}-archive-heading`}
+            />
           ) : null}
 
           {config.faqs && config.faqs.length > 0 ? (

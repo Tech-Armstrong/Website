@@ -98,13 +98,11 @@ export const aboutSection = {
     "not Just Promise, a result delivered",
     "Giving wings to financial dreams",
   ] as const,
-  heading: "About Us",
+  eyebrow: "About Us",
   title:
     "Elevating Wealth Management with Strategic Precision and Excellence",
-  paragraphs: [
-    "Armstrong Capital excels in delivering bespoke wealth management solutions through rigorous research and strategic innovation. Our expert team curates personalized financial plans with unparalleled insight and precision, empowering you to achieve lasting success and navigate your financial journey with confidence and excellence.",
-    "We go beyond short-term gains to steward your wealth for the long run—combining transparent advice, disciplined risk management, and solutions shaped around your goals. With Armstrong, you work with a dedicated team that treats your financial future as a partnership, not a transaction.",
-  ] as const,
+  description:
+    "Armstrong Capital excels in delivering bespoke wealth management solutions through revolutionary research and strategic innovation. Our expert team curates personalized financial plans with unparalleled insight and precision, empowering you to achieve extraordinary success and navigate your financial journey with confidence and excellence.",
   ctaLabel: "More About Us",
   ctaHref: "/about-us",
 } as const;
@@ -226,47 +224,6 @@ export const mediaSpotlights = [
     title: "Armstrong Capital Advisory: The Outstanding Financial .....",
     href: "https://www.insightssuccess.in/armstrong-capital-advisory-the-outstanding-financial-advisory-partner/",
     logo: "https://armstrong-cap.com/wp-content/uploads/Logo-IS.png",
-  },
-] as const;
-
-export const testimonials = [
-  {
-    name: "Abhijeet Sarkar",
-    quote:
-      "One of the best new age wealth managers for high networth individuals in Bangalore! Led by a dynamic and young team of qualified research associates, efficient relationship managers and an enigmatic leader. Advice is completely research and data driven and…",
-    avatar:
-      "https://armstrong-cap.com/wp-content/uploads/2023/06/image-4.png",
-  },
-  {
-    name: "Sayal Kharbanda",
-    quote:
-      "Armstrong Capital is a highly professional organization with customer interest as their first priority. They are wealth managers in true sense, who really make life easy for you by taking care of every single penny that you save getting invested…",
-    avatar:
-      "https://armstrong-cap.com/wp-content/uploads/2023/06/image-4.png",
-  },
-  {
-    name: "Vishak Marthanda",
-    quote:
-      "I have known Armstrong for a decade, admire their foresighted approach towards risk mitigation and attention towards every detail to make investors wealth building journey seamless and worth while.",
-  },
-  {
-    name: "Srikant Viswanathan",
-    quote:
-      "A few years ago, I was looking for somebody to help me with investment and financial planning. One of my colleagues referred me to Armstrong and shared his financial planning document (made by Armstrong) with me. I took one look…",
-    avatar:
-      "https://armstrong-cap.com/wp-content/uploads/2024/09/thumb-4.jpg",
-  },
-  {
-    name: "Vineet Garg",
-    quote:
-      "The services provided are quite professional and tailored to your needs. Portfolio Managers have excellent knowledge in their fields and provide you guidance.",
-  },
-  {
-    name: "Rutwik Bobade",
-    quote:
-      "Armstrong stands for its integrity and unparalleled service. Client's interest is always given utmost importance. The senior management at Armstrong brings years of experience in their field and ensures that the service provided is best in class.",
-    avatar:
-      "https://armstrong-cap.com/wp-content/uploads/2023/06/image-4.png",
   },
 ] as const;
 

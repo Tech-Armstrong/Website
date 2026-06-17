@@ -9,7 +9,8 @@
     "lint": "eslint",
     "export:wp": "node scripts/export-wordpress.mjs",
     "extract:marketing": "node scripts/extract-marketing-content.mjs",
-    "audit:site": "node scripts/audit-site.mjs"
+    "audit:site": "node scripts/audit-site.mjs",
+    "seed:knowledge": "node scripts/seed-knowledge-hub.mjs"
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",

@@ -4,7 +4,6 @@ import { Hero } from "@/components/home/Hero";
 import { StatsSection } from "@/components/home/StatsSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { MediaSpotlightsSection } from "@/components/home/MediaSpotlightsSection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { WhyChooseSection } from "@/components/home/WhyChooseSection";
 import { Footer } from "@/components/layout/Footer";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site/config";
@@ -30,7 +29,6 @@ export default function HomePage() {
       <ServicesSection />
       <WhyChooseSection />
       <MediaSpotlightsSection />
-      <TestimonialsSection />
       <Footer />
     </main>
   );

@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function BeginningToInvestPage() {
   const page = await getMarketingPageBySlug("beginning-to-invest");
-  const config = getMarketingPageConfig("beginning-to-invest");
+  const config = await getMarketingPageConfig("beginning-to-invest");
 
   if (!page || !config) {
     notFound();

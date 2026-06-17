@@ -1,0 +1,212 @@
+{
+  "slug": "market-updates",
+  "hero": {
+    "title": "Market Updates",
+    "paragraphs": [
+      "Stay informed with our monthly Money Moves series and timely market commentary from Armstrong Capital's research team."
+    ],
+    "image": "https://armstrong-cap.com/wp-content/uploads/investment_management-min.webp"
+  },
+  "groups": [
+    {
+      "label": "2025",
+      "items": [
+        {
+          "id": "04c4dc41-c5c5-4b9d-8d3e-adddaaa21ade",
+          "title": "Money Moves Monthly - DEC 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/MM-dec-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/MM-dec.pdf",
+          "sortOrder": 0
+        },
+        {
+          "id": "8d8ef865-3402-457c-b672-5a64c352ea6c",
+          "title": "Money Moves Monthly - NOV 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Money-Moves-Monthly-Nov.pdf-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Monthly-moves-Nov.pdf",
+          "sortOrder": 1
+        },
+        {
+          "id": "14ee49e8-2e44-41d3-be2b-5331a3fc59b1",
+          "title": "Money Moves Monthly - OCT 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Money-Moves-Monthly-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Money-Moves-Monthly-oct.pdf",
+          "sortOrder": 2
+        },
+        {
+          "id": "30fe8771-0aad-4b39-8473-ff95b3e4cdcb",
+          "title": "Money Moves Monthly - SEPT 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Monthly-Moves-Sept-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Monthly-Moves-Sept-2025.pdf",
+          "sortOrder": 3
+        },
+        {
+          "id": "2e70ee3e-710d-46b1-836f-e969864c8b38",
+          "title": "Money Moves Monthly - AUG 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/aug-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-3.pdf",
+          "sortOrder": 4
+        },
+        {
+          "id": "f8fa8972-6de3-4a1f-9bea-e7a572e32a63",
+          "title": "Money Moves Monthly - JUL 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/july-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-2.pdf",
+          "sortOrder": 5
+        },
+        {
+          "id": "04178aa6-ce3a-4c0b-b765-7fb2dd322a50",
+          "title": "Money Moves Monthly - JUN 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/june-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-7.pdf",
+          "sortOrder": 6
+        },
+        {
+          "id": "5ed0dde6-588e-46e3-aa9c-4a3cbae8db92",
+          "title": "Money Moves Monthly - MAY 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-1.pdf",
+          "sortOrder": 7
+        },
+        {
+          "id": "8b2fdbbc-48d2-47ac-9638-7618365474a9",
+          "title": "Money Moves Monthly - APR 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/apr-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-8.pdf",
+          "sortOrder": 8
+        },
+        {
+          "id": "7b9f6ad7-b3c9-453f-89c2-1a737a0496ca",
+          "title": "Money Moves Monthly - MAR 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/march-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-5.pdf",
+          "sortOrder": 9
+        },
+        {
+          "id": "c10b23d1-3c29-44ba-98b1-aa5cc8d68a96",
+          "title": "Money Moves Monthly - FEB 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/feb-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-6.pdf",
+          "sortOrder": 10
+        },
+        {
+          "id": "1ae27fc6-c048-4002-84ab-8040a2320d96",
+          "title": "Money Moves Monthly - JAN 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/jan-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-4.pdf",
+          "sortOrder": 11
+        }
+      ]
+    },
+    {
+      "label": "2026",
+      "items": [
+        {
+          "id": "845dcdbc-cd18-4004-b6c6-2dc2384a4569",
+          "title": "Money Moves Monthly - APR",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/monthly-moves-apr-26-webp-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/monthly-moves-apr-26.pdf",
+          "sortOrder": 0
+        },
+        {
+          "id": "b61bf440-530d-410c-9feb-4c0c481933a0",
+          "title": "Money Moves Monthly - MAR",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Money-moves-march-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Money-moves-march.pdf",
+          "sortOrder": 1
+        },
+        {
+          "id": "4115840f-89be-4a87-a869-ce3d0ec48ecf",
+          "title": "Money Moves Monthly - JAN",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/money-moves-jan-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/money-moves-jan.pdf",
+          "sortOrder": 2
+        },
+        {
+          "id": "b7223968-ab55-46a1-9398-c3f21fea215c",
+          "title": "Money Moves Monthly - DEC 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/MM-dec-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/MM-dec.pdf",
+          "sortOrder": 3
+        },
+        {
+          "id": "2822a942-f272-4d1a-9c4c-f683e3bede31",
+          "title": "Money Moves Monthly - NOV 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Money-Moves-Monthly-Nov.pdf-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Monthly-moves-Nov.pdf",
+          "sortOrder": 4
+        },
+        {
+          "id": "f6c03e87-5ff4-4211-90ab-4207b16bdc09",
+          "title": "Money Moves Monthly - OCT 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Money-Moves-Monthly-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Money-Moves-Monthly-oct.pdf",
+          "sortOrder": 5
+        },
+        {
+          "id": "2c9074b2-e2a5-474b-b8b2-9a5e8a4d26d5",
+          "title": "Money Moves Monthly - SEPT 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Monthly-Moves-Sept-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Monthly-Moves-Sept-2025.pdf",
+          "sortOrder": 6
+        },
+        {
+          "id": "a154b4bc-8c3a-4d00-aee3-0ea1a9825131",
+          "title": "Money Moves Monthly - AUG 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/aug-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-3.pdf",
+          "sortOrder": 7
+        },
+        {
+          "id": "baa0bf96-df60-4cd3-b1d3-3a14c7868be4",
+          "title": "Money Moves Monthly - JUL 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/july-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-2.pdf",
+          "sortOrder": 8
+        },
+        {
+          "id": "26ed3982-8fdb-431f-9f96-6ad0a2224ba3",
+          "title": "Money Moves Monthly - JUN 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/june-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-7.pdf",
+          "sortOrder": 9
+        },
+        {
+          "id": "3d5e3ce3-e3db-4c90-9927-d7ca95db5d58",
+          "title": "Money Moves Monthly - MAY 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-1.pdf",
+          "sortOrder": 10
+        },
+        {
+          "id": "b4461310-eee8-46f5-84de-854374c0a2e1",
+          "title": "Money Moves Monthly - APR 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/apr-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-8.pdf",
+          "sortOrder": 11
+        },
+        {
+          "id": "4004b142-c5f7-4599-b2e5-764df06be381",
+          "title": "Money Moves Monthly - MAR 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/march-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-5.pdf",
+          "sortOrder": 12
+        },
+        {
+          "id": "759f7b07-1a51-4a68-a4d2-820cf8e977af",
+          "title": "Money Moves Monthly - FEB 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/feb-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-6.pdf",
+          "sortOrder": 13
+        },
+        {
+          "id": "6b10452d-2770-4e5d-b76b-0926d638f589",
+          "title": "Money Moves Monthly - JAN 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/jan-2025-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/may-2025-4.pdf",
+          "sortOrder": 14
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-06-17T07:22:38.091Z"
+}

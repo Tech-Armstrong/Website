@@ -471,18 +471,7 @@ export const marketingPages = {
   },
   "our-accolade": {
     "slug": "our-accolade",
-    "category": "about",
-    "hero": {
-      "title": "Our Accolade",
-      "paragraphs": [
-        "Gold Medals Aren’t Made Of Gold. They’re Made Of Sweat, Determination And A Hard To Find Alloy Called Guts.Benjamin Graham"
-      ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
-    },
-    "quote": {
-      "text": "Gold Medals Aren’t Made Of Gold. They’re Made Of Sweat, Determination And A Hard To Find Alloy Called Guts.",
-      "attribution": "Benjamin Graham"
-    }
+    "category": "about"
   },
   "our-customer-journey": {
     "slug": "our-customer-journey",

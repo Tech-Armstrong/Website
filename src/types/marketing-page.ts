@@ -63,6 +63,19 @@ export type MarketingCareerSection = {
   bullets?: string[];
 };
 
+export type MarketingArchiveGroup = {
+  label: string;
+  items: MarketingArchiveItem[];
+};
+
+export type MarketingArchiveItem = {
+  id: string;
+  title: string;
+  pdfUrl: string;
+  thumbnailUrl: string;
+  sortOrder: number;
+};
+
 export type MarketingPageConfig = {
   slug: string;
   category: MarketingPageCategory;
@@ -74,6 +87,7 @@ export type MarketingPageConfig = {
   faqs?: MarketingFaqItem[];
   mediaArticles?: MarketingMediaArticle[];
   mediaPodcasts?: MarketingMediaPodcast[];
+  archiveGroups?: MarketingArchiveGroup[];
   careerSections?: MarketingCareerSection[];
   careerCta?: { label: string; href: string };
   showContactForm?: boolean;

@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import postSlugs from "../content/posts/_index.json";
+import { verifySessionTokenEdge } from "./lib/admin/auth-edge";
 
-const BLOG_SLUGS = new Set(
-  postSlugs.items.map((item: { slug: string }) => item.slug),
-);
+const ADMIN_SESSION_COOKIE = "admin_session";
 
 /** Legacy WordPress paths → Next.js routes */
 const LEGACY_REDIRECTS: Record<string, string> = {
@@ -14,8 +12,59 @@ const LEGACY_REDIRECTS: Record<string, string> = {
   "/media": "/media-spotlight",
 };
 
-export function middleware(request: NextRequest) {
+let blogSlugCache: { slugs: Set<string>; fetchedAt: number } | null = null;
+const BLOG_SLUG_CACHE_MS = 3000;
+
+async function isAuthenticated(request: NextRequest): Promise<boolean> {
+  const token = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;
+  return verifySessionTokenEdge(token);
+}
+
+async function getBlogSlugs(request: NextRequest): Promise<Set<string>> {
+  const now = Date.now();
+  if (blogSlugCache && now - blogSlugCache.fetchedAt < BLOG_SLUG_CACHE_MS) {
+    return blogSlugCache.slugs;
+  }
+
+  try {
+    const response = await fetch(
+      new URL("/api/internal/blog-slugs", request.url),
+      { cache: "no-store" },
+    );
+
+    if (!response.ok) {
+      return blogSlugCache?.slugs ?? new Set();
+    }
+
+    const slugs = (await response.json()) as string[];
+    blogSlugCache = { slugs: new Set(slugs), fetchedAt: now };
+    return blogSlugCache.slugs;
+  } catch {
+    return blogSlugCache?.slugs ?? new Set();
+  }
+}
+
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith("/api/internal/")) {
+    return NextResponse.next();
+  }
+
+  if (pathname.startsWith("/admin") || pathname.startsWith("/api/admin")) {
+    const authenticated = await isAuthenticated(request);
+    const isLoginRoute = pathname === "/admin/login";
+
+    if (!authenticated && !isLoginRoute) {
+      const loginUrl = new URL("/admin/login", request.url);
+      loginUrl.searchParams.set("next", pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    if (authenticated && isLoginRoute) {
+      return NextResponse.redirect(new URL("/admin", request.url));
+    }
+  }
 
   const blogPageMatch = pathname.match(/^\/blog\/page\/(\d+)\/?$/);
   if (blogPageMatch) {
@@ -35,8 +84,9 @@ export function middleware(request: NextRequest) {
   const singleSegment = pathname.match(/^\/([^/]+)\/?$/);
   if (singleSegment) {
     const slug = singleSegment[1];
+    const blogSlugs = await getBlogSlugs(request);
 
-    if (BLOG_SLUGS.has(slug)) {
+    if (blogSlugs.has(slug)) {
       return NextResponse.redirect(new URL(`/blog/${slug}`, request.url), 301);
     }
   }
@@ -46,6 +96,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|pdf)$).*)",
   ],
 };

@@ -1,5 +1,7 @@
-import { readFile, readdir } from "node:fs/promises";
+import { readFile, readdir, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { unstable_noStore as noStore } from "next/cache";
+import { writeJsonAtomic } from "@/lib/knowledge/write-json";
 import { calculateReadingTimeMinutes } from "./reading-time";
 import { decodeHtmlEntities, excerptFromHtml, stripHtml } from "./html";
 import type {
@@ -42,7 +44,7 @@ function toSummary(post: BlogPost): BlogPostSummary {
   };
 }
 
-async function readPostFile(filename: string): Promise<BlogPost | null> {
+async function readPostFileRaw(filename: string): Promise<BlogPostRaw | null> {
   if (!filename.endsWith(".json") || filename === "_index.json") {
     return null;
   }
@@ -51,23 +53,34 @@ async function readPostFile(filename: string): Promise<BlogPost | null> {
   const raw = await readFile(filepath, "utf8");
   const parsed = JSON.parse(raw) as BlogPostRaw;
 
-  if (parsed.status !== "publish" || parsed.type !== "post") {
+  if (parsed.type !== "post") {
     return null;
   }
 
-  return enrichPost({
+  return {
     ...parsed,
     categories: parsed.categories ?? [],
     tags: parsed.tags ?? [],
-  });
+  };
+}
+
+async function readPostFile(filename: string): Promise<BlogPost | null> {
+  const parsed = await readPostFileRaw(filename);
+  if (!parsed || parsed.status !== "publish") {
+    return null;
+  }
+
+  return enrichPost(parsed);
 }
 
 export async function getPostsIndex(): Promise<PostsIndex> {
+  noStore();
   const raw = await readFile(INDEX_FILE, "utf8");
   return JSON.parse(raw) as PostsIndex;
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
+  noStore();
   const files = await readdir(POSTS_DIR);
   const posts = await Promise.all(files.map(readPostFile));
 
@@ -131,6 +144,7 @@ export function parseBlogPageParam(value: string | undefined): number {
 export async function getPaginatedPostSummaries(
   page: number,
 ): Promise<PaginatedPostSummaries> {
+  noStore();
   const allPosts = await getAllPostSummaries();
   const totalCount = allPosts.length;
   const totalPages = Math.max(1, Math.ceil(totalCount / BLOG_PAGE_SIZE));
@@ -154,4 +168,72 @@ export async function getPaginatedPostSummaries(
     totalPages,
     totalCount,
   };
+}
+
+export async function getAllPostsForAdmin(): Promise<BlogPostRaw[]> {
+  const files = await readdir(POSTS_DIR);
+  const posts = await Promise.all(files.map(readPostFileRaw));
+
+  return posts
+    .filter((post): post is BlogPostRaw => post !== null)
+    .sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+}
+
+export async function getPostBySlugForAdmin(
+  slug: string,
+): Promise<BlogPostRaw | null> {
+  const posts = await getAllPostsForAdmin();
+  return posts.find((post) => post.slug === slug) ?? null;
+}
+
+function postFilename(slug: string): string {
+  return `${slug}.json`;
+}
+
+async function rebuildPostsIndex(): Promise<void> {
+  const posts = await getAllPostsForAdmin();
+  const published = posts.filter((post) => post.status === "publish");
+
+  const index: PostsIndex = {
+    exported_at: new Date().toISOString(),
+    base_url: "https://armstrong-cap.com",
+    count: published.length,
+    items: published.map((post) => ({
+      id: post.id,
+      slug: post.slug,
+      title: post.title,
+      link: post.link || `https://armstrong-cap.com/${post.slug}/`,
+      modified: post.modified,
+      featured_media_id: post.featured_media_id,
+      file: postFilename(post.slug),
+    })),
+  };
+
+  await writeJsonAtomic(INDEX_FILE, index);
+}
+
+export async function writePost(post: BlogPostRaw): Promise<void> {
+  const filepath = path.join(POSTS_DIR, postFilename(post.slug));
+  await writeJsonAtomic(filepath, post);
+  await rebuildPostsIndex();
+}
+
+export async function deletePost(slug: string): Promise<void> {
+  const filepath = path.join(POSTS_DIR, postFilename(slug));
+  await unlink(filepath);
+  await rebuildPostsIndex();
+}
+
+export function slugifyTitle(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80);
+}
+
+export function nextPostId(posts: BlogPostRaw[]): number {
+  return posts.reduce((max, post) => Math.max(max, post.id), 0) + 1;
 }

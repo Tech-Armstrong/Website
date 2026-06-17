@@ -3,6 +3,7 @@ type SectionTitleProps = {
   title: React.ReactNode;
   align?: "left" | "center";
   className?: string;
+  titleClassName?: string;
   headingId?: string;
 };
 
@@ -11,6 +12,7 @@ export function SectionTitle({
   title,
   align = "left",
   className = "",
+  titleClassName = "",
   headingId,
 }: SectionTitleProps) {
   const alignClass = align === "center" ? "text-center items-center" : "text-left items-start";
@@ -22,7 +24,11 @@ export function SectionTitle({
       </span>
       <h2
         id={headingId}
-        className="te_title font-display text-[26px] font-semibold leading-[34px] text-brand-navy sm:text-[30px] sm:leading-[38px] md:text-[32px] md:leading-[40px]"
+        className={
+          titleClassName
+            ? `te_title font-display font-semibold text-brand-navy ${titleClassName}`
+            : "te_title font-display text-[26px] font-semibold leading-[34px] text-brand-navy sm:text-[30px] sm:leading-[38px] md:text-[32px] md:leading-[40px]"
+        }
       >
         {title}
       </h2>
