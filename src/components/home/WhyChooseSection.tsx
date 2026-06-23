@@ -136,7 +136,7 @@ export function WhyChooseSection() {
 
   return (
     <section
-      className="home-section !pt-8 sm:!pt-9 lg:!pt-10 !pb-6 sm:!pb-8 lg:!pb-9"
+      className="home-section !pt-6 sm:!pt-7 lg:!pt-8 !pb-5 sm:!pb-6 lg:!pb-7"
       aria-labelledby="why-choose-heading"
     >
       <div className="site-container">
@@ -157,12 +157,12 @@ export function WhyChooseSection() {
                 />
               </div>
 
-              <div className="relative z-[1] flex flex-col lg:min-h-[560px] lg:flex-row">
-                <div className="flex min-w-0 flex-col bg-brand-dark/90 px-5 py-5 sm:px-8 lg:w-[58%] lg:max-w-[58%] lg:shrink-0 lg:px-10 lg:py-10 xl:w-[60%] xl:max-w-[60%]">
-                  <div className="sec-title light mb-4 flex flex-col items-start lg:mb-8">
+              <div className="relative z-[1] flex flex-col lg:min-h-[400px] lg:flex-row">
+                <div className="flex min-w-0 flex-col bg-brand-dark/90 px-4 py-4 sm:px-8 lg:w-[58%] lg:max-w-[58%] lg:shrink-0 lg:px-8 lg:py-6 xl:w-[60%] xl:max-w-[60%]">
+                  <div className="sec-title light mb-4 flex flex-col items-start lg:mb-5">
                     <h2
                       id="why-choose-heading"
-                      className="font-display text-[28px] font-semibold leading-tight text-white lg:text-[36px] lg:leading-tight xl:text-[42px]"
+                      className="font-display text-[24px] font-semibold leading-tight text-white lg:text-[28px] lg:leading-tight xl:text-[32px]"
                     >
                       {eyebrow} {title}
                     </h2>
@@ -215,7 +215,7 @@ export function WhyChooseSection() {
                             className={cx(
                               "flex min-w-0 items-center",
                               isMobileLayout ? "gap-3" : "items-stretch",
-                              !isMobileLayout && (isActive ? "py-2" : "py-4"),
+                              !isMobileLayout && (isActive ? "py-1.5" : "py-2.5"),
                             )}
                           >
                             {isMobileLayout ? (
@@ -230,7 +230,7 @@ export function WhyChooseSection() {
                               </span>
                             ) : isActive ? (
                               <span
-                                className="why-choose-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white font-display text-xl font-bold text-brand-blue sm:h-[58px] sm:w-[58px] sm:text-2xl"
+                                className="why-choose-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white font-display text-base font-bold text-brand-blue sm:h-12 sm:w-12 sm:text-lg"
                                 aria-hidden
                               >
                                 {tab.number}
@@ -248,8 +248,8 @@ export function WhyChooseSection() {
                                         : "text-white/75 group-hover:text-white",
                                     )
                                   : isActive
-                                    ? "truncate rounded-r-full bg-white px-5 py-3.5 text-base font-semibold text-brand-navy shadow-[var(--elevation-card)] sm:px-6 sm:py-4 sm:text-lg"
-                                    : "pl-1 text-base text-white/75 group-hover:text-white sm:text-lg",
+                                    ? "truncate rounded-r-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-navy shadow-[var(--elevation-card)] sm:px-6 sm:py-3 sm:text-base"
+                                    : "pl-1 text-sm text-white/75 group-hover:text-white sm:text-base",
                               )}
                             >
                               {!isMobileLayout && !isActive ? (
@@ -264,37 +264,37 @@ export function WhyChooseSection() {
                   </div>
                 </div>
 
-                <div className="relative z-10 flex items-stretch p-4 max-lg:pt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[42%] lg:items-center lg:p-6 xl:w-[40%]">
+                <div className="relative z-10 flex items-stretch p-3 max-lg:pt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[42%] lg:items-center lg:p-5 xl:w-[40%]">
                   <div
                     key={safeIndex}
                     role="tabpanel"
                     id={`why-choose-panel-${safeIndex}`}
                     aria-labelledby={`why-choose-tab-${safeIndex}`}
                     className={cx(
-                      "lift-card panel-fade-in flex w-full flex-col justify-center rounded-2xl border border-brand-blue/10 bg-gradient-to-br from-white via-white to-brand-blue/[0.05] px-5 py-5 shadow-[var(--elevation-panel)] max-lg:justify-start sm:px-8 sm:py-10 lg:px-6 lg:py-8",
-                      desktopPinActive && "lg:min-h-[480px]",
+                      "lift-card panel-fade-in flex w-full flex-col justify-center rounded-2xl border border-brand-blue/10 bg-gradient-to-br from-white via-white to-brand-blue/[0.05] px-4 py-4 shadow-[var(--elevation-panel)] max-lg:justify-start sm:px-6 sm:py-6 lg:px-5 lg:py-5",
+                      desktopPinActive && "lg:min-h-[320px]",
                     )}
                   >
-                    <div className="mb-4 flex items-start gap-3 sm:mb-5 sm:gap-5">
+                    <div className="mb-3 flex items-start gap-3 sm:mb-4 sm:gap-4">
                       <span
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue font-display text-base font-bold text-white sm:h-14 sm:w-14 sm:text-xl"
+                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-blue font-display text-sm font-bold text-white sm:h-10 sm:w-10 sm:text-base"
                         aria-hidden
                       >
                         {active.number}
                       </span>
-                      <h3 className="pt-0.5 font-display text-lg font-semibold leading-snug text-brand-navy sm:pt-1 sm:text-2xl">
+                      <h3 className="pt-0.5 font-display text-base font-semibold leading-snug text-brand-navy sm:pt-1 sm:text-xl">
                         {active.title}
                       </h3>
                     </div>
 
-                    <div className="space-y-3 sm:space-y-4">
+                    <div className="space-y-2 sm:space-y-3">
                       {active.paragraphs.map((paragraph, index) => (
                         <p
                           key={paragraph}
                           className={
                             index === 0
-                              ? "font-display text-base font-semibold leading-snug text-brand-navy sm:text-lg"
-                              : "font-body text-[15px] leading-relaxed text-brand-navy/85 sm:text-base lg:text-[17px] lg:leading-[30px]"
+                              ? "font-display text-base font-semibold leading-snug text-brand-navy"
+                              : "font-body text-[14px] leading-relaxed text-brand-navy/85 sm:text-[15px]"
                           }
                         >
                           {paragraph}
@@ -302,17 +302,17 @@ export function WhyChooseSection() {
                       ))}
                     </div>
 
-                    <blockquote className="relative mt-5 rounded-xl border-l-4 border-brand-blue bg-brand-blue/[0.06] px-4 py-3 sm:mt-6 sm:px-5 sm:py-4">
+                    <blockquote className="relative mt-4 rounded-xl border-l-4 border-brand-blue bg-brand-blue/[0.06] px-3 py-2.5 sm:mt-4 sm:px-4 sm:py-3">
                       <span
-                        className="pointer-events-none absolute left-4 top-2 font-display text-4xl leading-none text-brand-blue/25"
+                        className="pointer-events-none absolute left-3 top-1.5 font-display text-3xl leading-none text-brand-blue/25"
                         aria-hidden
                       >
                         &ldquo;
                       </span>
-                      <p className="relative font-display text-sm font-semibold leading-relaxed text-brand-navy sm:text-base lg:text-lg">
+                      <p className="relative font-display text-sm font-semibold leading-relaxed text-brand-navy sm:text-[15px]">
                         {active.quote}
                       </p>
-                      <cite className="relative mt-2 block font-body text-xs font-medium not-italic text-brand-blue sm:mt-3 sm:text-sm">
+                      <cite className="relative mt-1.5 block font-body text-xs font-medium not-italic text-brand-blue sm:mt-2 sm:text-sm">
                         — {active.attribution}
                       </cite>
                     </blockquote>

@@ -36,11 +36,98 @@ export const heroButtons = {
   secondary: { label: "See how we work", href: "/our-process" },
 } as const;
 
-export const servicesSection = {
-  eyebrow: "Services",
-  title: "What we do",
-  subtitle: "Six core services, one coordinated plan.",
+export const offeringsSection = {
+  eyebrow: "What we offer",
+  title: "Our offerings",
+  subtitle: "A complete suite of wealth services, coordinated under one plan.",
 } as const;
+
+export const offerings = [
+  {
+    title: "Wealth Management",
+    href: "/wealth-management",
+    image:
+      "https://armstrong-cap.com/wp-content/uploads/wealth_management.webp",
+    description:
+      "A high-touch experience that integrates every part of your financial life into one coordinated strategy.",
+    items: [
+      "Total wealth management",
+      "Holistic financial planning",
+      "Integrated financial solutions",
+      "Personalized, ongoing guidance",
+    ],
+  },
+  {
+    title: "Investment Management",
+    href: "/investment-management",
+    image:
+      "https://armstrong-cap.com/wp-content/uploads/investment_management-min.webp",
+    description:
+      "Evidence-based, research-led portfolios built for long-term wealth creation — not market timing.",
+    items: [
+      "Evidence-based approach",
+      "Strategic asset allocation",
+      "Smart investment selection",
+      "Comprehensive risk management",
+    ],
+  },
+  {
+    title: "Financial Planning",
+    href: "/financial-planning",
+    image:
+      "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp",
+    description:
+      "A goal-based roadmap that models the impact of real decisions before you make them.",
+    items: [
+      "Goal-based cash flows",
+      "Simulated investment outcomes",
+      "Inflation, tax & lifespan adjustments",
+      "Debt management & optimization",
+    ],
+  },
+  {
+    title: "Retirement Planning",
+    href: "/retirement-planning",
+    image:
+      "https://armstrong-cap.com/wp-content/uploads/retirement_planning-min.webp",
+    description:
+      "Income that lasts, with growth that keeps pace — for a secure, confident retirement.",
+    items: [
+      "Steady annuity income",
+      "Growth component",
+      "Ongoing portfolio management",
+      "Legacy planning integration",
+    ],
+  },
+  {
+    title: "Education Planning",
+    href: "/education-planning",
+    image:
+      "https://armstrong-cap.com/wp-content/uploads/educational_planning-min.webp",
+    description:
+      "Structured savings and investing to fund your child's education at every stage.",
+    items: [
+      "Savings component",
+      "Growth-focused investing",
+      "Ongoing portfolio management",
+      "Expense projection & adjustments",
+    ],
+  },
+  {
+    title: "Risk Management",
+    href: "/risk-management",
+    image:
+      "https://armstrong-cap.com/wp-content/uploads/risk_management-min.webp",
+    description:
+      "Protect what you've built with the right insurance, sized to your plan — no more, no less.",
+    items: [
+      "Comprehensive insurance review",
+      "Home, auto & liability cover",
+      "Life & health insurance",
+      "Customized insurance solutions",
+    ],
+  },
+] as const;
 
 export const services = [
   {

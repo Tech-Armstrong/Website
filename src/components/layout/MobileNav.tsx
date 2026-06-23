@@ -30,34 +30,64 @@ function renderMobileItem(item: NavItem, onClose: () => void) {
     );
   }
 
+  const selfLink = item.groups
+    .flatMap((group) => group.links)
+    .find((link) => link.label === item.label);
+
+  const headerClassName =
+    "mb-2 font-display text-sm font-bold text-brand-blue";
+
   return (
-    <div key={item.label} className="border-b border-[#eee] py-3">
-      <p className="mb-2 font-display text-sm font-bold text-brand-blue">
-        {item.label}
-      </p>
-      {item.groups.map((group) => (
-        <div key={group.title} className="mb-3 pl-2">
-          <p className="mb-1 text-xs font-semibold uppercase text-brand-muted">
-            {group.title}
-          </p>
-          <ul className="space-y-1">
-            {group.links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="focus-settle block rounded-md py-1 font-body text-sm text-brand-navy"
-                  onClick={onClose}
-                  {...(link.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+    <div
+      key={item.label}
+      className="border-b border-[color:var(--brand-border)] py-3"
+    >
+      {selfLink ? (
+        <Link
+          href={selfLink.href}
+          className={`focus-settle block ${headerClassName}`}
+          onClick={onClose}
+          {...(selfLink.external
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+        >
+          {item.label}
+        </Link>
+      ) : (
+        <p className={headerClassName}>{item.label}</p>
+      )}
+      {item.groups.map((group) => {
+        const showGroupTitle =
+          item.groups.length > 1 &&
+          group.title.toLowerCase() !== item.label.toLowerCase();
+        const links = group.links.filter((link) => link.href !== selfLink?.href);
+
+        return (
+          <div key={group.title} className="mb-3 pl-2">
+            {showGroupTitle ? (
+              <p className="mb-1 text-xs font-semibold uppercase text-brand-muted">
+                {group.title}
+              </p>
+            ) : null}
+            <ul className="space-y-1">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="focus-settle block rounded-md py-1 font-body text-sm text-brand-navy"
+                    onClick={onClose}
+                    {...(link.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -147,7 +177,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           visible ? "is-visible" : ""
         }`}
       >
-        <div className="flex items-center justify-between border-b border-[#eee] px-4 py-4">
+        <div className="flex items-center justify-between border-b border-[color:var(--brand-border)] px-4 py-4">
           <Image
             src={LOGO_SRC}
             alt="Armstrong Capital"
@@ -173,7 +203,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             .filter((item) => item.type !== "link" || !item.external)
             .map((item) => renderMobileItem(item, onClose))}
         </nav>
-        <div className="border-t border-[#eee] p-4">
+        <div className="border-t border-[color:var(--brand-border)] p-4">
           <Link
             href="/contact"
             className="theme-btn btn-two focus-settle block w-full text-center"

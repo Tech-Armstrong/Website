@@ -11,7 +11,7 @@ export function ExperienceCircle() {
     <div className="relative mx-auto w-full max-w-[420px] lg:max-w-[480px]">
       <div className="relative aspect-square w-full">
         <svg
-          className="absolute inset-0 hidden h-full w-full lg:block"
+          className="absolute inset-0 h-full w-full"
           viewBox="0 0 420 420"
           aria-hidden
         >
@@ -55,17 +55,10 @@ export function ExperienceCircle() {
         </div>
       </div>
 
-      <ul
-        className="about-ring-static mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:hidden"
-        aria-label="Experience highlights"
-      >
+      {/* Accessible text equivalent of the (decorative, aria-hidden) rotating ring */}
+      <ul className="sr-only" aria-label="Experience highlights">
         {ringText.map((text) => (
-          <li
-            key={text}
-            className="lift-card rounded-lg border border-[color:var(--brand-border)] bg-brand-surface/80 px-3 py-2 font-display text-[11px] font-semibold uppercase tracking-wide text-brand-navy"
-          >
-            {text}
-          </li>
+          <li key={text}>{text}</li>
         ))}
       </ul>
     </div>
