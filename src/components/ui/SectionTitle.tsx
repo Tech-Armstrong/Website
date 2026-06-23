@@ -27,7 +27,7 @@ export function SectionTitle({
         className={
           titleClassName
             ? `te_title font-display font-semibold text-brand-navy ${titleClassName}`
-            : "te_title font-display text-[26px] font-semibold leading-[34px] text-brand-navy sm:text-[30px] sm:leading-[38px] md:text-[32px] md:leading-[40px]"
+            : "te_title font-display text-[clamp(1.75rem,3vw,2.25rem)] font-semibold leading-[1.15] text-brand-navy"
         }
       >
         {title}

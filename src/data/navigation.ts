@@ -28,25 +28,17 @@ export const leftNav: NavItem[] = [
         title: "Overview",
         links: [
           { label: "About us", href: "/about-us" },
-          { label: "Our Values", href: "/values" },
           { label: "Our Team", href: "/our-team" },
-          { label: "Our Accolade", href: "/our-accolade" },
-        ],
-      },
-      {
-        title: "Process",
-        links: [
-          { label: "Our Plan", href: "/our-plan" },
           { label: "Our Process", href: "/our-process" },
-          { label: "Our Customer Journey", href: "/our-customer-journey" },
           { label: "Our Research", href: "/our-research" },
+          { label: "Our Accolade", href: "/our-accolade" },
         ],
       },
     ],
   },
   {
     type: "mega",
-    label: "Solutions",
+    label: "Services",
     groups: [
       {
         title: "Services",
@@ -63,7 +55,7 @@ export const leftNav: NavItem[] = [
   },
   {
     type: "mega",
-    label: "Our Approach",
+    label: "Who we help",
     groups: [
       {
         title: "Segments",

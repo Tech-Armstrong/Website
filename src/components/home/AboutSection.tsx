@@ -9,7 +9,7 @@ export function AboutSection() {
 
   return (
     <section
-      className="home-section border-t border-[#eef0f2] !pb-6 sm:!pb-8 lg:!pb-9"
+      className="home-section border-t border-[color:var(--brand-border)] !pb-6 sm:!pb-8 lg:!pb-9"
       aria-labelledby="about-heading"
     >
       <div className="site-container grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">

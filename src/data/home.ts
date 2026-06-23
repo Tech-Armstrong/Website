@@ -6,8 +6,6 @@ export const heroSlides = [
     titleSuffix: "Solutions",
     description:
       "Committed to our clients.\nPowered by research.\nDriven to perform.",
-    ctaLabel: "Explore Solutions",
-    ctaHref: "/contact",
     image:
       "https://armstrong-cap.com/wp-content/uploads/banner-2.webp",
   },
@@ -18,8 +16,6 @@ export const heroSlides = [
     titleSuffix: "Solutions",
     description:
       '"Experience cutting-edge financial strategies and personalized solutions for confident, clear navigation of your wealth."',
-    ctaLabel: "Innovative Solutions",
-    ctaHref: "/contact",
     image:
       "https://armstrong-cap.com/wp-content/uploads/banner-2.webp",
   },
@@ -30,12 +26,21 @@ export const heroSlides = [
     titleSuffix: "Solutions",
     description:
       '"Our bespoke approach combines detailed research with personalized strategies to meet your unique financial goals."',
-    ctaLabel: "Bespoke Solutions",
-    ctaHref: "/wealth-management",
     image:
       "https://armstrong-cap.com/wp-content/uploads/2024/07/Nature-Spiral-Bokeh-Micro1.jpg",
   },
 ] as const;
+
+export const heroButtons = {
+  primary: { label: "Book a consultation", href: "/contact" },
+  secondary: { label: "See how we work", href: "/our-process" },
+} as const;
+
+export const servicesSection = {
+  eyebrow: "Services",
+  title: "What we do",
+  subtitle: "Six core services, one coordinated plan.",
+} as const;
 
 export const services = [
   {
@@ -91,20 +96,18 @@ export const services = [
 export const aboutSection = {
   image:
     "https://armstrong-cap.com/wp-content/uploads/2024/10/image-6-min.jpg",
-  years: 14,
   ringText: [
     "Handling tough Financial tasks",
     "Giving Futures to your Investment",
     "not Just Promise, a result delivered",
     "Giving wings to financial dreams",
   ] as const,
-  eyebrow: "About Us",
-  title:
-    "Elevating Wealth Management with Strategic Precision and Excellence",
+  eyebrow: "About Armstrong",
+  title: "A wealth manager's job is to manage risk and build discipline.",
   description:
-    "Armstrong Capital excels in delivering bespoke wealth management solutions through revolutionary research and strategic innovation. Our expert team curates personalized financial plans with unparalleled insight and precision, empowering you to achieve extraordinary success and navigate your financial journey with confidence and excellence.",
-  ctaLabel: "More About Us",
-  ctaHref: "/about-us",
+    "Founded in 2010 by Manju Mastakar, Armstrong Capital advises families, HNIs, and NRIs across India and abroad. Our team of seven specialists builds goal-based plans grounded in our own fund research — then reviews them with you as markets and your life change. We earn a regulated, disclosed commission, so our incentives stay aligned with your long-term returns.",
+  ctaLabel: "Meet the team",
+  ctaHref: "/our-team",
 } as const;
 
 export const whyChooseSection = {
@@ -175,7 +178,7 @@ export const whyChooseSection = {
 export const mediaSpotlights = [
   {
     title:
-      "Moneycontrol Mutual Fund Distributor Awards: Honouring Excellence ....",
+      "Moneycontrol Mutual Fund Distributor Awards: Honouring Excellence",
     href: "https://www.moneycontrol.com/news/business/moneycontrol-mutual-fund-distributor-awards-honouring-excellence-in-the-financial-sector-12804260.html",
     logo: "https://armstrong-cap.com/wp-content/uploads/logo-1.webp",
   },
@@ -185,12 +188,12 @@ export const mediaSpotlights = [
     logo: "https://armstrong-cap.com/wp-content/uploads/92222747.svg",
   },
   {
-    title: "Indian Leadership Summit & Awards 2024: A Resounding ....",
+    title: "Indian Leadership Summit & Awards 2024: A Resounding Success",
     href: "https://www.business-standard.com/content/press-releases-ani/indian-leadership-summit-awards-2024-a-resounding-success-in-pune-124022000532_1.html",
     logo: "https://armstrong-cap.com/wp-content/uploads/business-standard.png",
   },
   {
-    title: "Manju Mastakar: Empowering Everyone Achieve...",
+    title: "Manju Mastakar: Empowering Everyone to Achieve Their Financial Goals",
     href: "https://ciolookindia.com/manju-mastakar-empowering-everyone-achieve-their-financial-goals-via-armstrong-cfs/",
     logo: "https://armstrong-cap.com/wp-content/uploads/CIO-Look-LOGO.webp",
   },
@@ -200,32 +203,39 @@ export const mediaSpotlights = [
     logo: "https://armstrong-cap.com/wp-content/uploads/outlook.svg",
   },
   {
-    title: "Armstrong Capital & Financial Services Pvt. Ltd - ....",
+    title: "Armstrong Capital & Financial Services Pvt. Ltd",
     href: "https://thebusinessfame.in/armstrong-capital-financial-services-pvt-ltd-comprehensive-investment-solutions/",
     logo: "https://armstrong-cap.com/wp-content/uploads/TBF-Logo_Black-1.png",
   },
   {
-    title: "Armstrong Capital & Financial Services, A Comprehensive ....",
+    title: "Armstrong Capital & Financial Services: A Comprehensive Investment Solution",
     href: "https://primeview.co/armstrong-capital-financial-services-a-comprehensive-investment-solution-provider-by-manju-mastakar/",
     logo: "https://armstrong-cap.com/wp-content/uploads/primeview_Logo1-1.png",
   },
   {
     title:
-      "Recession & Rejection that gave birth to the resilient women ....",
+      "Recession & Rejection that gave birth to the resilient women entrepreneur",
     href: "https://entrepreneurinsights.in/armstrong-capital-financial-services-pvt-ltd/",
     logo: "https://armstrong-cap.com/wp-content/uploads/cropped-entrepreneur-insights-new-logo-high-resolution-logo-1-1536x721-1.png",
   },
   {
-    title: "Manju Mastakar: A Stock Market Expert Breaking the Stereotype....",
+    title: "Manju Mastakar: A Stock Market Expert Breaking the Stereotype",
     href: "https://www.mirrorreview.com/manju-mastakar-armstrong-capital-advisory/",
     logo: "https://armstrong-cap.com/wp-content/uploads/MR-logo-768x120-1.webp",
   },
   {
-    title: "Armstrong Capital Advisory: The Outstanding Financial .....",
+    title: "Armstrong Capital Advisory: The Outstanding Financial Advisory Partner",
     href: "https://www.insightssuccess.in/armstrong-capital-advisory-the-outstanding-financial-advisory-partner/",
     logo: "https://armstrong-cap.com/wp-content/uploads/Logo-IS.png",
   },
 ] as const;
+
+export const awardsSection = {
+  eyebrow: "Recognition",
+  title: "Awards & partners",
+  subtitle:
+    "Industry honors and AMC partnerships that reflect our commitment to clients.",
+} as const;
 
 export const homeStats = [
   { value: "500", suffix: "+", label: "Crores of Assets Managed" },
@@ -233,6 +243,14 @@ export const homeStats = [
   { value: "4", suffix: "K", label: "Strategies Planned" },
   { value: "2", suffix: "K", label: "Satisfied Clients" },
 ] as const;
+
+export const ctaBand = {
+  title: "Ready to build a plan that fits your life?",
+  subtitle:
+    "Speak with our advisors for a no-obligation consultation about your goals.",
+  ctaLabel: "Book a consultation",
+  ctaHref: "/contact",
+} as const;
 
 export const footerAssets = {
   logo:
@@ -257,3 +275,5 @@ export const footerSegments = [
   { label: "Pre-Retirement Planning", href: "/pre-retirement-planning" },
   { label: "Career Transition", href: "/career-transition" },
 ] as const;
+
+export const PRIMARY_CTA_LABEL = "Book a consultation";

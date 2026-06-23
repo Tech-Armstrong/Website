@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PRIMARY_CTA_LABEL } from "@/data/home";
 
 export function SidebarCta() {
   return (
@@ -14,7 +15,7 @@ export function SidebarCta() {
         href="/contact"
         className="mt-4 inline-block rounded-full bg-white px-5 py-2 font-display text-sm font-semibold text-brand-blue transition-colors hover:bg-brand-surface"
       >
-        Contact Us
+        {PRIMARY_CTA_LABEL}
       </Link>
     </div>
   );

@@ -160,7 +160,7 @@ export function OurAccoladeAwards() {
 
   return (
     <section
-      className="relative overflow-hidden border-t border-[#eef0f2] bg-brand-surface/50 py-12 lg:py-16"
+      className="relative overflow-hidden border-t border-[color:var(--brand-border)] bg-brand-surface/50 py-12 lg:py-16"
       aria-labelledby="our-accolade-awards-heading"
     >
       <div

@@ -11,6 +11,7 @@ import {
   rightNav,
   type NavItem,
 } from "@/data/navigation";
+import { PRIMARY_CTA_LABEL } from "@/data/home";
 
 function renderMobileItem(item: NavItem, onClose: () => void) {
   if (item.type === "link") {
@@ -178,7 +179,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             className="theme-btn btn-two focus-settle block w-full text-center"
             onClick={onClose}
           >
-            Contact Us
+            {PRIMARY_CTA_LABEL}
           </Link>
           <a
             href={CLIENT_LOGIN_URL}

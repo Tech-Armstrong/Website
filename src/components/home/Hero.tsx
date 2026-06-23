@@ -11,7 +11,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { heroSlides, homeStats } from "@/data/home";
+import { heroButtons, heroSlides, homeStats } from "@/data/home";
 import { CountUp } from "@/components/ui/CountUp";
 
 const settleEase = [0.22, 1, 0.36, 1] as const;
@@ -232,12 +232,20 @@ export function Hero() {
                 <p className="mb-8 max-w-md whitespace-pre-line text-lg leading-relaxed text-white/85 sm:leading-[30px]">
                   {slide.description}
                 </p>
-                <Link
-                  href={slide.ctaHref}
-                  className="theme-btn btn-two counsolve-btn inline-block max-lg:!px-8 max-lg:!py-4 max-lg:text-lg"
-                >
-                  {slide.ctaLabel}
-                </Link>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Link
+                    href={heroButtons.primary.href}
+                    className="theme-btn btn-two focus-settle inline-block text-center max-sm:w-full max-lg:!px-8 max-lg:!py-4 max-lg:text-lg"
+                  >
+                    {heroButtons.primary.label}
+                  </Link>
+                  <Link
+                    href={heroButtons.secondary.href}
+                    className="focus-settle inline-block rounded-full border border-white/40 px-8 py-4 text-center font-display text-base font-semibold text-white transition-colors hover:border-white hover:bg-white/10 max-sm:w-full"
+                  >
+                    {heroButtons.secondary.label}
+                  </Link>
+                </div>
               </HeroReveal>
             </div>
             </div>

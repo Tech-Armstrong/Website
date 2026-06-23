@@ -15,8 +15,8 @@ export const knowledgeNavLinks = megaLinks(rightNav, "Knowledge Hub").filter(
   (link) => link.href !== "/blog",
 );
 
-export const segmentNavLinks = megaLinks(leftNav, "Our Approach");
+export const segmentNavLinks = megaLinks(leftNav, "Who we help");
 
-export const serviceNavLinks = megaLinks(leftNav, "Solutions");
+export const serviceNavLinks = megaLinks(leftNav, "Services");
 
 export { footerServices };

@@ -20,7 +20,7 @@ export function MarketingFaqAccordion({ faqs }: MarketingFaqAccordionProps) {
           return (
             <ScrollReveal key={faq.question} delay={index * 50}>
             <div
-              className="overflow-hidden rounded-xl border border-[#e8eaed] bg-white shadow-sm"
+              className="overflow-hidden rounded-xl border border-[color:var(--brand-border)] bg-white shadow-sm"
             >
               <button
                 type="button"
@@ -35,7 +35,7 @@ export function MarketingFaqAccordion({ faqs }: MarketingFaqAccordionProps) {
               </button>
               <div className={`faq-answer-grid ${isOpen ? "is-open" : ""}`}>
                 <div className="faq-answer-inner">
-                  <div className="border-t border-[#eef0f2] px-5 py-4 font-body text-[15px] leading-relaxed text-brand-muted">
+                  <div className="border-t border-[color:var(--brand-border)] px-5 py-4 font-body text-[15px] leading-relaxed text-brand-muted">
                     {faq.answer}
                   </div>
                 </div>

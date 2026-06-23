@@ -44,13 +44,13 @@ export function TeamMemberModal({
   return (
     <dialog
       ref={dialogRef}
-      className="team-member-dialog fixed inset-0 z-50 m-auto w-[min(100%-2rem,640px)] max-h-[85vh] overflow-hidden rounded-xl border border-[#e8eaed] bg-white p-0 shadow-xl backdrop:bg-brand-dark/50 open:flex open:flex-col"
+      className="team-member-dialog fixed inset-0 z-50 m-auto w-[min(100%-2rem,640px)] max-h-[85vh] overflow-hidden rounded-xl border border-[color:var(--brand-border)] bg-white p-0 shadow-xl backdrop:bg-brand-dark/50 open:flex open:flex-col"
       aria-labelledby="team-member-dialog-title"
       onClick={(event) => {
         if (event.target === dialogRef.current) onClose();
       }}
     >
-      <div className="flex items-start justify-between gap-4 border-b border-[#eef0f2] px-6 py-5">
+      <div className="flex items-start justify-between gap-4 border-b border-[color:var(--brand-border)] px-6 py-5">
         <div className="min-w-0">
           <h2
             id="team-member-dialog-title"
@@ -130,7 +130,7 @@ export function TeamMemberCard({
 
   return (
     <article
-      className={`lift-card group flex h-full flex-col overflow-hidden rounded-xl border border-[#e8eaed] bg-white ${hasBio ? "cursor-pointer" : ""} ${className}`}
+      className={`lift-card group flex h-full flex-col overflow-hidden rounded-xl border border-[color:var(--brand-border)] bg-white ${hasBio ? "cursor-pointer" : ""} ${className}`}
       {...(hasBio
         ? {
             role: "button" as const,

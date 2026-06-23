@@ -6,6 +6,7 @@ import {
   footerAssets,
   footerSegments,
   footerServices,
+  PRIMARY_CTA_LABEL,
 } from "@/data/home";
 
 const socialLinkBaseClass =
@@ -51,7 +52,7 @@ export function Footer() {
                   href="/contact"
                   className="theme-btn btn-two focus-settle mt-5 inline-block !px-5 !py-2.5 text-sm active:scale-[0.98]"
                 >
-                  Appointment
+                  {PRIMARY_CTA_LABEL}
                 </Link>
               </div>
             </section>

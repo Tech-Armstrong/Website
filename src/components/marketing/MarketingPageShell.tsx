@@ -33,18 +33,14 @@ export function MarketingPageShell({
       >
         <div className="site-container px-4">
           <ScrollReveal>
-          <Breadcrumbs
-            className={compact ? "mb-4" : "mb-8"}
-            items={[
-              { label: "Home", href: "/" },
-              { label: title },
-            ]}
-          />
+            <Breadcrumbs
+              className={compact ? "mb-4" : "mb-8"}
+              items={[
+                { label: "Home", href: "/" },
+                { label: title },
+              ]}
+            />
           </ScrollReveal>
-
-          <header className="sr-only">
-            <h1>{title}</h1>
-          </header>
 
           {fullWidth || !sidebar ? (
             <>

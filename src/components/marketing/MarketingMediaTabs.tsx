@@ -43,7 +43,7 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
               href={article.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="lift-card focus-settle block rounded-xl border border-[#e8eaed] bg-white p-5"
+              className="lift-card focus-settle block rounded-xl border border-[color:var(--brand-border)] bg-white p-5"
             >
               {article.logo ? (
                 <div className="mb-4 flex h-16 items-center justify-center">
@@ -68,7 +68,7 @@ export function MarketingMediaTabs({ articles, podcasts }: MarketingMediaTabsPro
           {podcasts.map((podcast, index) => (
             <ScrollReveal key={podcast.embedUrl} delay={index * 60}>
             <div
-              className="lift-card overflow-hidden rounded-xl border border-[#e8eaed] bg-white"
+              className="lift-card overflow-hidden rounded-xl border border-[color:var(--brand-border)] bg-white"
             >
               <div className="aspect-video w-full">
                 <iframe

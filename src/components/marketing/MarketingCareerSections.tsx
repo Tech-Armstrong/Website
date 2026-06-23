@@ -9,7 +9,7 @@ type MarketingCareerSectionsProps = {
 
 export function MarketingCareerSections({ sections, cta }: MarketingCareerSectionsProps) {
   return (
-    <section className="border-t border-[#eef0f2] pt-8 pb-6" aria-label="Career opportunities">
+    <section className="border-t border-[color:var(--brand-border)] pt-8 pb-6" aria-label="Career opportunities">
       <div className="space-y-8">
         {sections.map((section, index) => (
           <ScrollReveal key={section.title} delay={index * 80}>

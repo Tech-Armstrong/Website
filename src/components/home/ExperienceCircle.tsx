@@ -3,7 +3,7 @@ import { useId } from "react";
 import { aboutSection } from "@/data/home";
 
 export function ExperienceCircle() {
-  const { image, years, ringText } = aboutSection;
+  const { image, ringText } = aboutSection;
   const ringPathId = useId().replace(/:/g, "");
   const ringLabel = ringText.join(" • ");
 
@@ -43,7 +43,7 @@ export function ExperienceCircle() {
           </g>
         </svg>
 
-        <div className="absolute inset-[14%] overflow-hidden rounded-full border border-[#e8eaed] bg-white shadow-[var(--elevation-panel)]">
+        <div className="absolute inset-[14%] overflow-hidden rounded-full border border-[color:var(--brand-border)] bg-white shadow-[var(--elevation-panel)]">
           <Image
             src={image}
             alt="Balanced stones on a pebble beach"
@@ -52,14 +52,6 @@ export function ExperienceCircle() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-center rounded-full bg-brand-navy/40 text-center text-white">
-            <span className="font-display text-[56px] font-bold leading-none sm:text-[64px] lg:text-[72px]">
-              {years}
-            </span>
-            <span className="mt-1 font-display text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs">
-              Years Experience
-            </span>
-          </div>
         </div>
       </div>
 
@@ -70,7 +62,7 @@ export function ExperienceCircle() {
         {ringText.map((text) => (
           <li
             key={text}
-            className="lift-card rounded-lg border border-[#e8eaed] bg-brand-surface/80 px-3 py-2 font-display text-[11px] font-semibold uppercase tracking-wide text-brand-navy"
+            className="lift-card rounded-lg border border-[color:var(--brand-border)] bg-brand-surface/80 px-3 py-2 font-display text-[11px] font-semibold uppercase tracking-wide text-brand-navy"
           >
             {text}
           </li>

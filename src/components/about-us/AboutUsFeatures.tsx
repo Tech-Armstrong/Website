@@ -68,7 +68,7 @@ export function AboutUsFeatures() {
 
   return (
     <section
-      className="site-container border-t border-[#eef0f2] py-12 lg:py-16"
+      className="site-container border-t border-[color:var(--brand-border)] py-12 lg:py-16"
       aria-labelledby="about-us-features-heading"
     >
       <ScrollReveal>
@@ -99,7 +99,7 @@ export function AboutUsFeatures() {
                 key={feature.number}
                 className="flex min-w-0 flex-[0_0_100%] pl-4 sm:flex-[0_0_50%] md:pl-5 lg:flex-[0_0_25%]"
               >
-                <div className="relative flex h-full w-full min-h-[260px] flex-col rounded-2xl border border-[#e8eaed] bg-white p-6 pt-8 shadow-sm sm:min-h-[280px]">
+                <div className="relative flex h-full w-full min-h-[260px] flex-col rounded-2xl border border-[color:var(--brand-border)] bg-white p-6 pt-8 shadow-sm sm:min-h-[280px]">
                   <WavyAccent />
                   <span className="absolute right-4 top-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-navy font-display text-sm font-bold text-white">
                     {feature.number}

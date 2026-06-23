@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { aboutUsHero } from "@/data/about-us";
+import { aboutUsCredential, aboutUsHero } from "@/data/about-us";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function AboutUsHero() {
@@ -45,14 +45,17 @@ export function AboutUsHero() {
 
         <ScrollReveal direction="right" delay={100}>
           <div>
-            <h2
+            <h1
               id="about-us-hero-heading"
-              className="font-display text-2xl font-semibold leading-tight text-brand-navy sm:text-[26px] md:text-[30px] md:leading-[38px]"
+              className="font-display text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.1] text-brand-navy"
             >
               {titleLine1}
               <br />
               {titleLine2}
-            </h2>
+            </h1>
+            <p className="mt-4 font-body text-sm font-medium text-brand-blue">
+              {aboutUsCredential}
+            </p>
             <div className="mt-5 space-y-4 font-body text-[15px] leading-relaxed text-brand-navy/85 md:text-base md:leading-[28px]">
               {paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>

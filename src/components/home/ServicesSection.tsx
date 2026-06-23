@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-import { services } from "@/data/home";
+import { services, servicesSection } from "@/data/home";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function ServicesSection() {
@@ -57,14 +57,17 @@ export function ServicesSection() {
       <div className="site-container">
         <ScrollReveal>
           <div className="mx-auto mb-8 max-w-4xl text-center">
+            <p className="mb-2 font-display text-[11px] font-bold uppercase tracking-[0.12em] text-brand-blue sm:text-xs">
+              {servicesSection.eyebrow}
+            </p>
             <h2
               id="services-heading"
-              className="font-display text-[28px] font-semibold leading-tight tracking-tight text-brand-navy sm:text-[34px] md:text-[40px] lg:text-[44px]"
+              className="font-display text-[clamp(1.75rem,3vw,2.25rem)] font-semibold leading-[1.15] tracking-tight text-brand-navy"
             >
-              Strategizing Wealth, Maximizing Opportunities
+              {servicesSection.title}
             </h2>
             <p className="mx-auto mt-3 max-w-2xl font-body text-base leading-relaxed text-brand-muted md:text-[17px] md:leading-[28px]">
-              Tailored solutions across planning, investing, and protection.
+              {servicesSection.subtitle}
             </p>
           </div>
         </ScrollReveal>
@@ -84,7 +87,7 @@ export function ServicesSection() {
                   >
                     <Link
                       href={service.href}
-                      className="lift-card group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-blue/10 bg-white focus-settle"
+                      className="lift-card group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-blue/10 bg-brand-surface focus-settle"
                     >
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <Image

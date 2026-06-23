@@ -59,7 +59,7 @@ export function MarketingArchiveGrid({
       >
         {activeGroup.items.map((item, index) => (
           <ScrollReveal key={item.id} delay={index * 60}>
-            <article className="lift-card group relative overflow-hidden rounded-xl border border-[#e8eaed] bg-white">
+            <article className="lift-card group relative overflow-hidden rounded-xl border border-[color:var(--brand-border)] bg-white">
               <div className="relative aspect-[525/286] w-full overflow-hidden bg-brand-surface">
                 {item.thumbnailUrl ? (
                   <Image

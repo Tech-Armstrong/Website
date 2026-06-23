@@ -20,7 +20,7 @@ export function SidebarNav({
 }: SidebarNavProps) {
   return (
     <nav
-      className="rounded-xl border border-[#e8eaed] bg-white p-5 shadow-sm"
+      className="rounded-xl border border-[color:var(--brand-border)] bg-white p-5 shadow-sm"
       aria-label={ariaLabel}
     >
       <h2 className="mb-3 font-display text-base font-semibold text-brand-navy">

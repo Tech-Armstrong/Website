@@ -28,7 +28,7 @@ type ContactCardShellProps = {
 function ContactCardShell({ children, delay }: ContactCardShellProps) {
   return (
     <ScrollReveal delay={delay}>
-      <article className="lift-card flex h-full flex-col rounded-xl border border-[#e8eaed] bg-white p-5 sm:p-6">
+      <article className="lift-card flex h-full flex-col rounded-xl border border-[color:var(--brand-border)] bg-white p-5 sm:p-6">
         {children}
       </article>
     </ScrollReveal>
@@ -137,7 +137,7 @@ export function ContactInfoCards() {
         <ContactCardShell key={office.id} delay={(index + 1) * 60}>
           <ContactCardHeader icon={icon} eyebrow={eyebrow} title={office.label} />
           <div className="flex flex-1 flex-col">
-            <div className="flex-1 rounded-lg rounded-br-none border border-[#e8eaed] border-l-[3px] border-l-brand-blue bg-[#fafbfc] p-4">
+            <div className="flex-1 rounded-lg rounded-br-none border border-[color:var(--brand-border)] border-l-[3px] border-l-brand-blue bg-[#fafbfc] p-4">
               <p className="font-body text-sm leading-relaxed text-brand-muted">
                 {office.address}
               </p>

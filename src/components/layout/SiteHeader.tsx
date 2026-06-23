@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { leftNav, LOGO_SRC, rightNav, type NavItem } from "@/data/navigation";
+import { PRIMARY_CTA_LABEL } from "@/data/home";
 import { MobileNav } from "./MobileNav";
 import { NavDropdown } from "./NavDropdown";
 
@@ -144,7 +145,7 @@ export function SiteHeader() {
                 href="/contact"
                 className="theme-btn btn-two focus-settle shrink-0 !px-5 !py-2.5 text-base"
               >
-                Contact Us
+                {PRIMARY_CTA_LABEL}
               </Link>
             </div>
 

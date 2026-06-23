@@ -44,16 +44,16 @@ export function MarketingHero({
 
         <ScrollReveal direction={image ? "right" : "up"} delay={image ? 80 : 0}>
           <div className={image ? "" : compact ? "max-w-2xl" : "max-w-3xl"}>
-            <h2
+            <h1
               id={headingId}
               className={
                 compact
-                  ? "font-display text-[24px] font-semibold leading-tight text-brand-navy sm:text-[26px] md:text-[28px] md:leading-[34px]"
-                  : "font-display text-[26px] font-semibold leading-tight text-brand-navy sm:text-[28px] md:text-[30px] md:leading-[38px]"
+                  ? "font-display text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.1] text-brand-navy"
+                  : "font-display text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.1] text-brand-navy"
               }
             >
               {title}
-            </h2>
+            </h1>
             <div
               className={
                 compact

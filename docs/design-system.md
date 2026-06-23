@@ -12,12 +12,15 @@ Defined in `:root` and exposed to Tailwind via `@theme inline` in [`src/app/glob
 |----------------------------|-------|---------------|
 | `--brand-navy` / `brand-navy` | `#272e39` | Primary body text, default foreground |
 | `--brand-blue` / `brand-blue` | `#0a6d9c` | Accent, links, CTAs, focus rings, active nav |
-| `--brand-pink` / `brand-pink` | `#f66587` | Active indicators (e.g. team scroll dots) |
-| `--brand-green` / `brand-green` | `#7ab036` | Secondary accent (available, sparse use) |
+| `--brand-blue-strong` / `brand-blue-strong` | `#084f72` | Hover/active states, small accent text |
+| `--brand-blue-tint` / `brand-blue-tint` | `#eaf2f7` | Accent wash for chips, eyebrows, icon backgrounds |
+| `--brand-pink` / `brand-pink` | `#f66587` | **Retired from UI** — kept only if legacy assets reference |
+| `--brand-green` / `brand-green` | `#7ab036` | Decorative only — not for readable text |
 | `--brand-dark` / `brand-dark` | `#14203a` | Dark panels, footer, hero overlay base, theme-color |
 | `--brand-muted` / `brand-muted` | `#5f6b7a` | Secondary / meta text |
-| `--brand-surface` / `brand-surface` | `var(--site-background)` | Same as page canvas — placeholders, skeletons, hover fills |
-| `--site-background` / `site-background` | `color-mix(in srgb, var(--brand-blue) 12%, white)` | Page canvas (`body` background) |
+| `--brand-surface` / `brand-surface` | `#ffffff` | Cards and raised surfaces |
+| `--brand-border` / `brand-border` | `#e6e8ec` | Single hairline border token |
+| `--site-background` / `site-background` | `#fafaf8` | Page canvas (`body` background) |
 
 ### Layout & elevation variables
 
@@ -30,7 +33,7 @@ Defined in `:root` and exposed to Tailwind via `@theme inline` in [`src/app/glob
 | `--elevation-header` | `0 8px 30px rgba(39,46,57,0.12)` | Header shell default |
 | `--elevation-header-scrolled` | `0 4px 20px rgba(39,46,57,0.1)` | Header shell when scrolled |
 | `--elevation-pop` | `0 8px 40px -8px rgba(20,32,58,0.18)` | Nav dropdown popover |
-| `--elevation-panel` | `0 12px 40px rgba(20,32,58,0.12)` | Large homepage panels (testimonials, Why Choose shell) |
+| `--elevation-panel` | `0 12px 40px rgba(20,32,58,0.12)` | Large homepage panels (Proof, CTA band) |
 
 ### Motion tokens
 
@@ -55,7 +58,7 @@ Loaded in [`src/app/layout.tsx`](../src/app/layout.tsx):
 
 | Role | Next font | CSS variable | Tailwind class | Weights |
 |------|-----------|--------------|----------------|---------|
-| Display / headings | Urbanist | `--font-urbanist` | `font-display` | 400, 500, 600, 700 |
+| Display / headings | Fraunces | `--font-urbanist` | `font-display` | 400, 500, 600 |
 | Body / UI copy | Mulish | `--font-mulish` | `font-body` | 400, 500, 600, 700 |
 
 Body default: `font-body antialiased` on `<body>`, color `var(--brand-navy)`.
@@ -66,8 +69,9 @@ Values observed in [`SectionTitle`](../src/components/ui/SectionTitle.tsx), [`He
 
 | Role | Size / weight / leading | Source |
 |------|-------------------------|--------|
-| **Hero display** | `text-4xl` → `sm:text-5xl` → `md:text-[56px]` → `lg:text-[64px] lg:leading-[1.08]`; `font-display font-semibold` | Hero h2 |
-| **Section h2** | `text-[26px] leading-[34px]` → `sm:text-[30px] sm:leading-[38px]` → `md:text-[32px] md:leading-[40px]`; semibold | SectionTitle |
+| **Hero H1 (home)** | `clamp(2.5rem, 5vw, 3.75rem)` / 1.05 / 600; `font-display` | Hero |
+| **Page H1 (marketing)** | `clamp(2rem, 4vw, 2.75rem)` / 1.1 / 600; visible `<h1>` in MarketingHero | MarketingHero |
+| **Section h2** | `clamp(1.75rem, 3vw, 2.25rem)` / 1.15 / 600; semibold | SectionTitle, home sections |
 | **Page h1 (blog)** | `text-[32px]` → `md:text-[42px] md:leading-[1.15]`; semibold | BlogPostHeader |
 | **Card h2** | `text-xl font-semibold leading-snug` | BlogCard |
 | **Eyebrow** | `text-[11px]` → `sm:text-xs sm:leading-[26px]`; bold uppercase; brand-blue pill border/bg | SectionTitle |
@@ -91,7 +95,7 @@ max-width: var(--container-max); /* 1200px */
 margin-inline: auto;
 ```
 
-Used in: Hero, home sections (About, Services, Stats, Testimonials, Why Choose, Media), Footer, about-us pages, blog post content, MarketingPageShell, loading skeleton.
+Used in: Hero, home sections (About, Services, Stats, Why Armstrong, Process, Proof, Team teaser), Footer, about-us pages, blog post content, MarketingPageShell, loading skeleton.
 
 ### `.home-section`
 
@@ -120,7 +124,7 @@ Home page Hero is full-bleed; no top padding on main.
 |---------|---------|----------|
 | Marketing / contact cards | `rounded-xl` + `border border-[#e8eaed]` + `.lift-card` | MarketingFeatures, ContactInfoCards, TeamMemberCard |
 | Blog / feature cards | `rounded-2xl` + `.lift-card` | BlogCard, AboutUsFeatures |
-| Large dark panels | `rounded-2xl lg:rounded-3xl` | AboutUsQuote, TestimonialsSection, WhyChooseSection outer shell |
+| Large dark panels | `rounded-2xl lg:rounded-3xl` | AboutUsQuote, ProofSection press carousel |
 | Header shell | `rounded-2xl sm:rounded-[1.25rem]` | SiteHeader |
 
 **Shadows:** Prefer `--elevation-*` via `.lift-card`, `.header-shell`, `.testimonial-panel`. Nav dropdown uses `shadow-[var(--elevation-pop)]`.
@@ -276,7 +280,7 @@ Shared components and where they are consumed. Run grep on these before changing
 
 | Component | Mounted from |
 |-----------|--------------|
-| Hero, StatsSection, AboutSection, ServicesSection, WhyChooseSection, MediaSpotlightsSection, TestimonialsSection | `src/app/page.tsx` |
+| Hero, TrustBand, StatsSection, AboutSection, ServicesSection, WhyChooseSection, ProcessSection, ProofSection, TeamTeaser, CtaBand | `src/app/page.tsx` |
 
 ### Global CSS classes (grep before rename)
 
@@ -293,7 +297,7 @@ Shared components and where they are consumed. Run grep on these before changing
 
 | Route | Top-level components |
 |-------|---------------------|
-| `/` | Hero, StatsSection, AboutSection, ServicesSection, WhyChooseSection, MediaSpotlightsSection, TestimonialsSection, Footer |
+| `/` | Hero, TrustBand, StatsSection, AboutSection, ServicesSection, WhyChooseSection, ProcessSection, ProofSection, TeamTeaser, CtaBand, Footer |
 | `/about-us` | AboutUsHero, AboutUsFeatures, AboutUsQuote, Breadcrumbs, Footer |
 | `/blog`, `/blog/[slug]` | BlogCard / BlogPostShell + blog subcomponents, Footer |
 | `/[slug]`, `/beginning-to-invest` | MarketingPageRenderer → shell + conditional marketing blocks, Footer |

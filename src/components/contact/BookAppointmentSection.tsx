@@ -27,7 +27,7 @@ export function BookAppointmentSection({
           {description}
         </p>
       ) : null}
-      <div className="mt-5 overflow-hidden rounded-xl border border-[#e8eaed] bg-white p-3 sm:p-4">
+      <div className="mt-5 overflow-hidden rounded-xl border border-[color:var(--brand-border)] bg-white p-3 sm:p-4">
         <iframe
           className="airtable-embed w-full bg-transparent"
           src={embedUrl}

@@ -1,19 +1,8 @@
-export type ContactPhone = {
-  label: string;
-  href: string;
-  display: string;
-};
-
-export type ContactOffice = {
-  id: string;
-  label: string;
-  address: string;
-};
-
 export const contactInfo = {
-  eyebrow: "Let's Talk",
-  title: "Contact us for Top-Notch Service",
-  subtitle: "Call, Email, Or Drop By Our Office",
+  eyebrow: "Let's talk",
+  title: "Book a consultation with our advisors",
+  subtitle:
+    "Tell us about your goals — we'll respond with a clear next step, not a sales pitch.",
   phones: [
     {
       label: "Call Us",
@@ -31,8 +20,8 @@ export const contactInfo = {
     href: "mailto:reachus@armstrong-cap.com",
     display: "reachus@armstrong-cap.com",
   },
-  addressTitle: "Address",
-  addressSubtitle: "To visiting our company",
+  addressTitle: "Offices",
+  addressSubtitle: "Visit us in Bengaluru or Kannur",
   offices: [
     {
       id: "head",
@@ -47,4 +36,16 @@ export const contactInfo = {
         "XII/404, First Floor TJ Complex, Kallumutty Iritty P.O, 670703, Kannur, Kerala",
     },
   ] satisfies ContactOffice[],
+};
+
+export type ContactPhone = {
+  label: string;
+  href: string;
+  display: string;
+};
+
+export type ContactOffice = {
+  id: string;
+  label: string;
+  address: string;
 };

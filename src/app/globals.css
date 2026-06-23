@@ -3,12 +3,15 @@
 :root {
   --brand-navy: #272e39;
   --brand-blue: #0a6d9c;
+  --brand-blue-strong: #084f72;
+  --brand-blue-tint: #eaf2f7;
   --brand-pink: #f66587;
   --brand-green: #7ab036;
   --brand-dark: #14203a;
   --brand-muted: #5f6b7a;
-  --site-background: color-mix(in srgb, var(--brand-blue) 12%, white);
-  --brand-surface: var(--site-background);
+  --site-background: #fafaf8;
+  --brand-surface: #ffffff;
+  --brand-border: #e6e8ec;
   --container-max: 1200px;
   /* Fixed header clearance — matches main pt-28 / lg:pt-32 */
   --site-header-offset: 7rem;
@@ -44,6 +47,9 @@
   --color-brand-dark: var(--brand-dark);
   --color-brand-muted: var(--brand-muted);
   --color-brand-surface: var(--brand-surface);
+  --color-brand-border: var(--brand-border);
+  --color-brand-blue-strong: var(--brand-blue-strong);
+  --color-brand-blue-tint: var(--brand-blue-tint);
   --color-site-background: var(--site-background);
   --font-display: var(--font-urbanist);
   --font-body: var(--font-mulish);
@@ -97,7 +103,7 @@ body {
 }
 
 .theme-btn.btn-two:hover {
-  background: #000066;
+  background: var(--brand-blue-strong);
   box-shadow: var(--elevation-panel);
 }
 
@@ -228,7 +234,7 @@ body {
 }
 
 .team-scroll-dot.is-active {
-  background-color: var(--color-brand-pink);
+  background-color: var(--brand-blue);
   transform: scale(1.1);
 }
 
@@ -408,7 +414,7 @@ body {
 /* Services card */
 .service-card {
   border-radius: 14px;
-  border-color: #e8eaed;
+  border-color: var(--brand-border);
   box-shadow: var(--elevation-card);
   transition:
     border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -634,7 +640,7 @@ body {
 }
 
 .blog-prose a:hover {
-  color: #000066;
+  color: var(--brand-blue-strong);
 }
 
 .blog-prose img {

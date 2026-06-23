@@ -4,12 +4,15 @@ export const aboutUsPageBanner = {
   title: "About Us",
 } as const;
 
+export const aboutUsCredential =
+  "AMFI-registered mutual fund distributor · ARN-105949 · Valid through 09-Oct-2027";
+
 export const aboutUsHero = {
-  titleLine1: "Welcome to Armstrong:",
-  titleLine2: "Strategic Wealth Stewardship",
+  titleLine1: "Research-driven wealth management,",
+  titleLine2: "built on discipline and transparency.",
   paragraphs: [
-    "At Armstrong, we go beyond wealth management—we are dedicated to the strategic stewardship of your financial future. Our client-centric approach is designed around your unique goals, backed by our deep expertise in financial planning.",
-    "We pride ourselves on delivering personalized, transparent, and comprehensive financial services that not only grow your wealth but also preserve it for generations to come. With Armstrong, you are more than just a client; you are a partner in a lifelong journey toward financial security and lasting success.",
+    "Founded in 2010 by Manju Mastakar, Armstrong Capital advises families, HNIs, and NRIs across India and abroad. We build goal-based plans grounded in our own fund research — then review them with you as markets and your life change.",
+    "We work on a non-discretionary basis: your assets stay in your name, every investment needs your sign-off, and we earn a regulated, disclosed commission so our incentives stay aligned with your long-term returns.",
   ] as const,
   images: {
     shape:
@@ -22,39 +25,39 @@ export const aboutUsHero = {
 } as const;
 
 export const aboutUsWhyChoose = {
-  title: "Why Choose Us",
+  title: "What guides our work",
   description:
-    "We believe that excellence in wealth management begins with a strategy that's as unique as you are. Our commitment is to craft solutions that align with your aspirations, guiding you every step of the way toward achieving your financial dreams.",
+    "Integrity, transparency, and client-first advice — the values that shape every plan we build and every recommendation we make.",
 } as const;
 
 export const aboutUsFeatures = [
   {
     number: "01",
-    titleMain: "Lifelong Financial",
-    titleAccent: "Guidance",
+    titleMain: "Discipline over",
+    titleAccent: "promises",
     description:
-      "Armstrong is an Investment Management firm providing professional insights and strategic advice on all facets of the financial needs of an individual.",
+      "Wealth managers don't deliver returns; they create discipline and manage risk — and that's what truly creates wealth.",
   },
   {
     number: "02",
-    titleMain: "Tailored Financial",
-    titleAccent: "Solutions",
+    titleMain: "Research-backed",
+    titleAccent: "recommendations",
     description:
-      "Our expertise spans a wide spectrum of financial services, enabling us to provide tailored solutions that align with your unique financial objectives.",
+      "Funds are screened on active ratios, portfolio overlap, manager track record, and downside resilience — not last year's returns.",
   },
   {
     number: "03",
-    titleMain: "Professional Insights",
-    titleAccent: "Strategic Advice",
+    titleMain: "Your assets,",
+    titleAccent: "never ours",
     description:
-      "Expert financial guidance to navigate complexities, make informed decisions, and achieve success with a seasoned team deeply understanding the financial landscape.",
+      "Non-discretionary custody: your money is held with AMCs and custodians (CAMS, NSDL), with transparency at every step.",
   },
   {
     number: "04",
-    titleMain: "Preserving and",
-    titleAccent: "Growing Your Capital",
+    titleMain: "Reviewed, not",
+    titleAccent: "set-and-forgotten",
     description:
-      "Capital preservation is our priority. With a meticulous, risk-minimizing approach, we aim for steady returns, helping your wealth grow and financial dreams come true.",
+      "Portfolios are monitored and rebalanced through market cycles, with profit-booking and reallocation built into the plan.",
   },
 ] as const;
 

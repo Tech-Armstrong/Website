@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Mulish, Urbanist } from "next/font/google";
+import { Fraunces, Mulish } from "next/font/google";
 import { CalendlyBadge } from "@/components/integrations/CalendlyBadge";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SocialSidebar } from "@/components/layout/SocialSidebar";
@@ -8,10 +8,10 @@ import { MotionProvider } from "@/components/ui/MotionProvider";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site/config";
 import "./globals.css";
 
-const urbanist = Urbanist({
+const fraunces = Fraunces({
   variable: "--font-urbanist",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -59,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${urbanist.variable} ${mulish.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${mulish.variable}`}>
       <head>
         <link rel="preconnect" href="https://armstrong-cap.com" />
         <link rel="dns-prefetch" href="https://armstrong-cap.com" />

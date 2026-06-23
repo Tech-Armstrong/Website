@@ -145,7 +145,7 @@ export function MarketingTeamGrid({ members }: MarketingTeamGridProps) {
   return (
     <section
       ref={sectionRef}
-      className="border-t border-[#eef0f2] pt-10 pb-12 lg:pt-12 lg:pb-16"
+      className="border-t border-[color:var(--brand-border)] pt-10 pb-12 lg:pt-12 lg:pb-16"
       aria-label="Our team"
     >
       {pinActive ? (
