@@ -21,10 +21,10 @@ export function Footer() {
   const linkedInLink = getSocialLink("linkedin");
 
   return (
-    <footer className="mt-10 overflow-x-clip bg-brand-dark pt-20 pb-8 text-white lg:mt-12 lg:overflow-visible lg:pt-28">
+    <footer className="mt-10 overflow-x-clip bg-brand-dark pt-20 pb-8 text-white lg:mt-12 lg:overflow-visible">
       <div className="site-container px-4">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:items-start lg:gap-8">
-          <div className="md:col-span-2 lg:col-span-3 lg:-mt-32">
+          <div className="md:col-span-2 lg:col-span-3">
             <section
               aria-labelledby="footer-cta-heading"
               className="relative mx-auto w-full max-w-[280px] overflow-hidden rounded-[30px] rounded-br-none bg-cover bg-center px-5 py-8 shadow-xl lg:mx-0"
@@ -58,7 +58,7 @@ export function Footer() {
             </section>
           </div>
 
-          <div className="md:col-span-2 lg:col-span-4 lg:-mt-32">
+          <div className="md:col-span-2 lg:col-span-4">
             <h3 className={sectionTitleClass}>Get in Touch</h3>
             <p className="footer-text mb-6 font-body text-[15px] leading-[26px]">
               Armstrong Capital &amp; Financial Services Pvt. Ltd.
@@ -86,7 +86,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-2 lg:-mt-32">
+          <div className="lg:col-span-2">
             <h3 className={sectionTitleClass}>Services</h3>
             <ul className="space-y-2">
               <li>
@@ -104,7 +104,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-3 lg:-mt-32">
+          <div className="lg:col-span-3">
             <h3 className={sectionTitleClass}>Segments</h3>
             <ul className="space-y-2">
               {footerSegments.map((item) => (
