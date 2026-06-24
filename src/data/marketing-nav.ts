@@ -1,5 +1,6 @@
 import { leftNav, rightNav, type NavItem } from "@/data/navigation";
 import { footerServices } from "@/data/home";
+import { clientSegments } from "@/data/segments";
 
 function megaLinks(items: NavItem[], label: string) {
   return items
@@ -15,7 +16,7 @@ export const knowledgeNavLinks = megaLinks(rightNav, "Knowledge Hub").filter(
   (link) => link.href !== "/blog",
 );
 
-export const segmentNavLinks = megaLinks(leftNav, "Who we help");
+export const segmentNavLinks = clientSegments;
 
 export const serviceNavLinks = megaLinks(leftNav, "Services");
 

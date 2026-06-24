@@ -53,26 +53,6 @@ export const leftNav: NavItem[] = [
       },
     ],
   },
-  {
-    type: "mega",
-    label: "Who we help",
-    groups: [
-      {
-        title: "Segments",
-        links: [
-          { label: "Beginning To Invest", href: "/beginning-to-invest" },
-          { label: "Women Investors", href: "/women-investors" },
-          {
-            label: "High-Net-Worth Individuals",
-            href: "/high-net-worth-individuals-hnis",
-          },
-          { label: "Non-Resident Indians (NRI)", href: "/non-resident-indians-nri" },
-          { label: "Pre-Retirement Planning", href: "/pre-retirement-planning" },
-          { label: "Career Transition", href: "/career-transition" },
-        ],
-      },
-    ],
-  },
 ];
 
 export const rightNav: NavItem[] = [
@@ -93,6 +73,7 @@ export const rightNav: NavItem[] = [
       },
     ],
   },
+  { type: "link", label: "Who we help", href: "/who-we-help" },
   { type: "link", label: "Career", href: "/career" },
   {
     type: "link",

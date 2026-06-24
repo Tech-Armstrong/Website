@@ -6,11 +6,24 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { leftNav, LOGO_SRC, rightNav, type NavItem } from "@/data/navigation";
 import { PRIMARY_CTA_LABEL } from "@/data/home";
+import {
+  WHO_WE_HELP_HREF,
+  clientSegmentHrefs,
+} from "@/data/segments";
 import { MobileNav } from "./MobileNav";
 import { NavDropdown } from "./NavDropdown";
 
 function isActive(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";
+  if (href === WHO_WE_HELP_HREF) {
+    return (
+      pathname === WHO_WE_HELP_HREF ||
+      clientSegmentHrefs.some(
+        (segmentHref) =>
+          pathname === segmentHref || pathname.startsWith(`${segmentHref}/`),
+      )
+    );
+  }
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
