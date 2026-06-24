@@ -3,6 +3,7 @@ import {
   getKnowledgeFaqs,
   getKnowledgeMedia,
 } from "@/lib/knowledge";
+import { ourTeamMembers } from "@/data/team";
 import type { MarketingPageConfig } from "@/types/marketing-page";
 import type { KnowledgeArchiveSlug } from "@/types/knowledge-hub";
 import { marketingPages } from "./pages";
@@ -56,6 +57,19 @@ async function overlayKnowledgeData(
         ...(faqs.hero ? { hero: faqs.hero } : {}),
       };
     }
+  }
+
+  if (slug === "our-team") {
+    return {
+      ...config,
+      team: ourTeamMembers.map((member) => ({
+        name: member.name,
+        role: member.role,
+        image: member.image,
+        linkedinUrl: member.linkedinUrl,
+        bio: member.bio,
+      })),
+    };
   }
 
   return config;

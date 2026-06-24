@@ -10,7 +10,7 @@ export const marketingPages = {
       "paragraphs": [
         "Starting early is key to financial success. Whether you’re planning for education, buying a home, or retirement, every milestone requires careful planning. Being financially prepared for what lies ahead isn’t a choice; it’s a necessity. By building a well-thought-out financial foundation now, you can confidently navigate future challenges and opportunities.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     },
     "features": {
       "eyebrow": "Our Approach",
@@ -47,7 +47,7 @@ export const marketingPages = {
       "paragraphs": [
         "Transitioning into entrepreneurship is an exhilarating yet challenging endeavor. Without a meticulous financial strategy, this career shift can lead to emotional and financial strain. In today’s competitive landscape, clear goals and a solid financial plan are essential for success. At Armstrong Capital, we recognize the unique challenges of entrepreneurship and are committed to guiding you through this transformative period. Our financial blueprint will align with your entrepreneurial aspirations, ensuring you’re well-prepared for the journey ahead.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     },
     "features": {
       "eyebrow": "Our Approach",
@@ -81,7 +81,7 @@ export const marketingPages = {
         "Join a finance services firm that values growth, collaboration, and work-life balance. Armstrong Capital offers opportunities for graduates, placement interns, and experienced professionals.",
         "We are in continuous search for individuals who could be assets in our balance sheet."
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/career/hero.png"
     },
     "features": {
       "eyebrow": "Why Choose Us",
@@ -156,7 +156,7 @@ export const marketingPages = {
       "paragraphs": [
         "Providing a high-quality education for your children is a significant financial goal that requires careful planning. To ensure you can cover these costs without jeopardizing your financial stability, our strategic approach to education planning is designed to help you build and manage a fund that supports educational expenses through every stage of learning.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/educational_planning-min.webp"
+      "image": "/images/armstrong/educational_planning-min.webp"
     },
     "features": {
       "eyebrow": "Our Services",
@@ -270,7 +270,7 @@ export const marketingPages = {
       "paragraphs": [
         "Entering retirement without a financial plan is like setting sail without a map—you might drift aimlessly and never reach your intended destination. At Armstrong Capital, our expert financial planners use advanced modelling to help you see the impact of financial decisions before making them. The financial planning process begins by understanding your priorities and what matters most in your life. Through in-depth discussions, we tailor recommendations to your unique needs, whether you’re planning for retirement, buying a first home, or saving for college. Our Financial Planners guide you through crucial financial decisions, ensuring your financial plan is a strong foundation for your future.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     },
     "features": {
       "eyebrow": "Our Services",
@@ -307,7 +307,7 @@ export const marketingPages = {
       "paragraphs": [
         "At Armstrong Capital, we specialize in providing High-Net-Worth Individuals (HNIs) with a comprehensive and strategic approach to wealth management. Our services are designed to optimize returns, minimize tax liabilities, and address the complexities of wealth preservation and growth. We understand that managing a diverse portfolio requires a precise and proactive strategy. Our expert team tailors financial plans to meet the unique needs and challenges of HNIs, ensuring every aspect of your wealth is effectively managed. As your trusted partner, we are committed to guiding you through every financial decision, securing a prosperous and enduring legacy for your future.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/wealth_management.webp"
+      "image": "/images/armstrong/wealth_management.webp"
     },
     "features": {
       "eyebrow": "Our Approach",
@@ -344,7 +344,7 @@ export const marketingPages = {
       "paragraphs": [
         "Our investment management approach is built on a decade of research and a comprehensive understanding of financial market principles. Instead of chasing returns or trying to time the market, we implement evidence-based strategies focused on long-term wealth building and preservation. Our methodology emphasizes rational decision-making over emotional reactions, leading to more consistent and successful investment outcomes.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/investment_management-min.webp"
+      "image": "/images/armstrong/investment_management-min.webp"
     },
     "features": {
       "eyebrow": "Our Services",
@@ -381,7 +381,7 @@ export const marketingPages = {
     "paragraphs": [
       "Our monthly read on markets, macro, and what it means for your portfolio."
     ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     }
   },
   "media-spotlight": {
@@ -421,7 +421,7 @@ export const marketingPages = {
       "paragraphs": [
         "Our latest newsletters featuring market perspectives, portfolio insights, and financial planning guidance."
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     }
   },
   "non-resident-indians-nri": {
@@ -432,7 +432,7 @@ export const marketingPages = {
       "paragraphs": [
         "At Armstrong, we recognize that financial challenges extend beyond the borders of residency. For Non-Resident Indians and Persons of Indian Origin, managing wealth can be a complex endeavour filled with both risks and opportunities. We thoroughly review all your assets, both in India and abroad, offering expert advice tailored to your unique circumstances. We specialize in crafting solutions that address the complexities of your financial situation, whether it’s tax planning, retirement, or investments.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/investment_management-min.webp"
+      "image": "/images/armstrong/investment_management-min.webp"
     },
     "features": {
       "eyebrow": "Our Approach",
@@ -469,7 +469,7 @@ export const marketingPages = {
       "paragraphs": [
         "From first conversation to ongoing review, our process is designed to understand your goals, build a research-backed plan, and adapt as your life and markets change."
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     },
     "features": {
       "eyebrow": "Our Approach",
@@ -514,7 +514,7 @@ export const marketingPages = {
       "paragraphs": [
         "Our Research At Armstrong Capital, our pride lies in the depth and precision of our research, a cornerstone that distinguishes us and instills trust in our clients. We adhere to a comprehensive, two-sided research approach within the wealth management industry, setting the stage for informed financi"
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     },
     "features": {
       "eyebrow": "Our Approach",
@@ -555,7 +555,7 @@ export const marketingPages = {
       "paragraphs": [
         "At Armstrong Capital, we're committed to eliminating every barrier between where you are today and where you want to be tomorrow."
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/2024/10/about-3-1-min-1.png"
+      "image": "/images/armstrong/2024/10/about-3-1-min-1.png"
     },
     "quote": {
       "text": "Coming Together Is A Beginning.\nKeeping Together Is Progress.\nWorking Together Is Success.",
@@ -570,7 +570,7 @@ export const marketingPages = {
       "paragraphs": [
         "As retirement approaches, ensuring a seamless transition from your working years to a fulfilling retirement is crucial. The challenges of investment risk, inflation, taxes, and healthcare costs can make retirement planning complex and overwhelming. At Armstrong Capital, our expert financial advisors specialize in transforming your retirement dreams into achievable goals. We conduct thorough research and analysis to design a retirement plan that aligns with your unique financial needs and aspirations.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/retirement_planning-min.webp"
+      "image": "/images/armstrong/retirement_planning-min.webp"
     },
     "features": {
       "eyebrow": "Our Approach",
@@ -603,7 +603,7 @@ export const marketingPages = {
       "paragraphs": [
         "Browse Armstrong Capital research on markets, macro trends, and investment strategy."
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     }
   },
   "retirement-planning": {
@@ -614,7 +614,7 @@ export const marketingPages = {
       "paragraphs": [
         "One of the biggest challenges retirees face today is ensuring their savings last throughout their lifetime. It’s similar to guiding a ship through unpredictable seas—you need to manage your supplies and resources wisely to navigate through both calm and stormy waters. You need income from your investments to cover your needs, but you also need growth to maintain your portfolio’s longevity. That’s why our approach combines consistent income with growth potential to help you enjoy a secure retirement. Our team of experienced financial advisors has applied this methodology for decades through various market conditions, ensuring our clients stay on track.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/retirement_planning-min.webp"
+      "image": "/images/armstrong/retirement_planning-min.webp"
     },
     "features": {
       "eyebrow": "Our Services",
@@ -651,7 +651,7 @@ export const marketingPages = {
       "paragraphs": [
         "Protecting your wealth is a fundamental aspect of a sound financial strategy, and proper insurance planning plays a crucial role. Insurance is essentially a tool for shifting risk to others, helping you guard against unlikely financial losses that could be detrimental to your financial stability. By pooling risk among policyholders, insurance mitigates the impact of unexpected events, but it’s essential to strike the right balance—ensuring you have neither too little nor too much coverage.",
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/risk_management-min.webp"
+      "image": "/images/armstrong/risk_management-min.webp"
     },
     "features": {
       "eyebrow": "Our Services",
@@ -688,7 +688,7 @@ export const marketingPages = {
       "paragraphs": [
         "At Armstrong Capital, we offer a high-touch wealth management experience that goes beyond mere asset management. Our approach integrates all aspects of your financial life, combining meticulous financial planning with strategic investment management to provide a holistic view of your wealth."
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/wealth_management.webp"
+      "image": "/images/armstrong/wealth_management.webp"
     },
     "features": {
       "eyebrow": "Our Services",
@@ -726,7 +726,7 @@ export const marketingPages = {
         "Life can present unexpected changes, and women often face unique challenges such as separation, loss of a partner, or taking a sabbatical.",
         "At Armstrong Capital, we understand the importance of proactive financial planning during these pivotal times. Our focus is on creating tailored financial strategies that help you navigate transitions smoothly, adapt your finances, and seize new opportunities. Whether you’re dealing with personal or professional shifts, we are dedicated to empowering women to achieve financial stability and resilience. Our solutions ensure you maintain confidence and security as you embrace new life stages, helping you stay financially healthy amidst life’s uncertainties."
       ],
-      "image": "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp"
+      "image": "/images/armstrong/financial_planning.webp"
     },
     "features": {
       "eyebrow": "Our Approach",

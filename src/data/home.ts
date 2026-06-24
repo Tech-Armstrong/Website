@@ -7,7 +7,7 @@ export const heroSlides = [
     description:
       "Committed to our clients.\nPowered by research.\nDriven to perform.",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/banner-2.webp",
+      "/images/armstrong/banner-2.webp",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const heroSlides = [
     description:
       '"Experience cutting-edge financial strategies and personalized solutions for confident, clear navigation of your wealth."',
     image:
-      "https://armstrong-cap.com/wp-content/uploads/banner-2.webp",
+      "/images/armstrong/banner-2.webp",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const heroSlides = [
     description:
       '"Our bespoke approach combines detailed research with personalized strategies to meet your unique financial goals."',
     image:
-      "https://armstrong-cap.com/wp-content/uploads/2024/07/Nature-Spiral-Bokeh-Micro1.jpg",
+      "/images/armstrong/2024/07/Nature-Spiral-Bokeh-Micro1.jpg",
   },
 ] as const;
 
@@ -47,7 +47,7 @@ export const offerings = [
     title: "Wealth Management",
     href: "/wealth-management",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/wealth_management.webp",
+      "/images/armstrong/wealth_management.webp",
     description:
       "A high-touch experience that integrates every part of your financial life into one coordinated strategy.",
     items: [
@@ -61,7 +61,7 @@ export const offerings = [
     title: "Investment Management",
     href: "/investment-management",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/investment_management-min.webp",
+      "/images/armstrong/investment_management-min.webp",
     description:
       "Evidence-based, research-led portfolios built for long-term wealth creation — not market timing.",
     items: [
@@ -75,7 +75,7 @@ export const offerings = [
     title: "Financial Planning",
     href: "/financial-planning",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp",
+      "/images/armstrong/financial_planning.webp",
     description:
       "A goal-based roadmap that models the impact of real decisions before you make them.",
     items: [
@@ -89,7 +89,7 @@ export const offerings = [
     title: "Retirement Planning",
     href: "/retirement-planning",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/retirement_planning-min.webp",
+      "/images/armstrong/retirement_planning-min.webp",
     description:
       "Income that lasts, with growth that keeps pace — for a secure, confident retirement.",
     items: [
@@ -103,7 +103,7 @@ export const offerings = [
     title: "Education Planning",
     href: "/education-planning",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/educational_planning-min.webp",
+      "/images/armstrong/educational_planning-min.webp",
     description:
       "Structured savings and investing to fund your child's education at every stage.",
     items: [
@@ -117,7 +117,7 @@ export const offerings = [
     title: "Risk Management",
     href: "/risk-management",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/risk_management-min.webp",
+      "/images/armstrong/risk_management-min.webp",
     description:
       "Protect what you've built with the right insurance, sized to your plan — no more, no less.",
     items: [
@@ -136,7 +136,7 @@ export const services = [
     tagline:
       "Holistic planning and investment strategies for lasting prosperity.",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/wealth_management.webp",
+      "/images/armstrong/wealth_management.webp",
   },
   {
     title: "Investment Management",
@@ -144,7 +144,7 @@ export const services = [
     tagline:
       "Disciplined portfolio management aligned with your goals and risk profile.",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/investment_management-min.webp",
+      "/images/armstrong/investment_management-min.webp",
   },
   {
     title: "Financial Planning",
@@ -152,7 +152,7 @@ export const services = [
     tagline:
       "Personalized plans that balance today's needs with tomorrow's ambitions.",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/financial_planning.webp",
+      "/images/armstrong/financial_planning.webp",
   },
   {
     title: "Retirement Planning",
@@ -160,7 +160,7 @@ export const services = [
     tagline:
       "Build confidence for the lifestyle you envision after your career.",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/retirement_planning-min.webp",
+      "/images/armstrong/retirement_planning-min.webp",
   },
   {
     title: "Education Planning",
@@ -168,7 +168,7 @@ export const services = [
     tagline:
       "Structured savings strategies to fund your child's educational future.",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/educational_planning-min.webp",
+      "/images/armstrong/educational_planning-min.webp",
   },
   {
     title: "Risk Management",
@@ -176,13 +176,13 @@ export const services = [
     tagline:
       "Protect what you've built with thoughtful, proactive risk strategies.",
     image:
-      "https://armstrong-cap.com/wp-content/uploads/risk_management-min.webp",
+      "/images/armstrong/risk_management-min.webp",
   },
 ] as const;
 
 export const aboutSection = {
   image:
-    "https://armstrong-cap.com/wp-content/uploads/2024/10/image-6-min.jpg",
+    "/images/armstrong/2024/10/image-6-min.jpg",
   ringText: [
     "Handling tough Financial tasks",
     "Giving Futures to your Investment",
@@ -199,7 +199,7 @@ export const aboutSection = {
 
 export const whyChooseSection = {
   backgroundImage:
-    "https://armstrong-cap.com/wp-content/uploads/why_choose_bg-min.webp",
+    "/images/armstrong/why_choose_bg-min.webp",
   eyebrow: "Why Choose",
   title: "Armstrong",
   tabs: [
@@ -267,53 +267,53 @@ export const mediaSpotlights = [
     title:
       "Moneycontrol Mutual Fund Distributor Awards: Honouring Excellence",
     href: "https://www.moneycontrol.com/news/business/moneycontrol-mutual-fund-distributor-awards-honouring-excellence-in-the-financial-sector-12804260.html",
-    logo: "https://armstrong-cap.com/wp-content/uploads/logo-1.webp",
+    logo: "/images/armstrong/logo-1.webp",
   },
   {
     title: "Top 3 Visionary Indian Personalities of 2024",
     href: "https://timesofindia.indiatimes.com/business/india-business/top-3-visionary-indian-personalities-of-2024/articleshow/112193811.cms",
-    logo: "https://armstrong-cap.com/wp-content/uploads/92222747.svg",
+    logo: "/images/armstrong/92222747.svg",
   },
   {
     title: "Indian Leadership Summit & Awards 2024: A Resounding Success",
     href: "https://www.business-standard.com/content/press-releases-ani/indian-leadership-summit-awards-2024-a-resounding-success-in-pune-124022000532_1.html",
-    logo: "https://armstrong-cap.com/wp-content/uploads/business-standard.png",
+    logo: "/images/armstrong/business-standard.png",
   },
   {
     title: "Manju Mastakar: Empowering Everyone to Achieve Their Financial Goals",
     href: "https://ciolookindia.com/manju-mastakar-empowering-everyone-achieve-their-financial-goals-via-armstrong-cfs/",
-    logo: "https://armstrong-cap.com/wp-content/uploads/CIO-Look-LOGO.webp",
+    logo: "/images/armstrong/CIO-Look-LOGO.webp",
   },
   {
     title: "Armstrong Capital: Where Financial Planning Meets Purpose",
     href: "https://www.outlookindia.com/hub4business/armstrong-capital-where-financial-planning-meets-purpose",
-    logo: "https://armstrong-cap.com/wp-content/uploads/outlook.svg",
+    logo: "/images/armstrong/outlook.svg",
   },
   {
     title: "Armstrong Capital & Financial Services Pvt. Ltd",
     href: "https://thebusinessfame.in/armstrong-capital-financial-services-pvt-ltd-comprehensive-investment-solutions/",
-    logo: "https://armstrong-cap.com/wp-content/uploads/TBF-Logo_Black-1.png",
+    logo: "/images/armstrong/TBF-Logo_Black-1.png",
   },
   {
     title: "Armstrong Capital & Financial Services: A Comprehensive Investment Solution",
     href: "https://primeview.co/armstrong-capital-financial-services-a-comprehensive-investment-solution-provider-by-manju-mastakar/",
-    logo: "https://armstrong-cap.com/wp-content/uploads/primeview_Logo1-1.png",
+    logo: "/images/armstrong/primeview_Logo1-1.png",
   },
   {
     title:
       "Recession & Rejection that gave birth to the resilient women entrepreneur",
     href: "https://entrepreneurinsights.in/armstrong-capital-financial-services-pvt-ltd/",
-    logo: "https://armstrong-cap.com/wp-content/uploads/cropped-entrepreneur-insights-new-logo-high-resolution-logo-1-1536x721-1.png",
+    logo: "/images/armstrong/cropped-entrepreneur-insights-new-logo-high-resolution-logo-1-1536x721-1.png",
   },
   {
     title: "Manju Mastakar: A Stock Market Expert Breaking the Stereotype",
     href: "https://www.mirrorreview.com/manju-mastakar-armstrong-capital-advisory/",
-    logo: "https://armstrong-cap.com/wp-content/uploads/MR-logo-768x120-1.webp",
+    logo: "/images/armstrong/MR-logo-768x120-1.webp",
   },
   {
     title: "Armstrong Capital Advisory: The Outstanding Financial Advisory Partner",
     href: "https://www.insightssuccess.in/armstrong-capital-advisory-the-outstanding-financial-advisory-partner/",
-    logo: "https://armstrong-cap.com/wp-content/uploads/Logo-IS.png",
+    logo: "/images/armstrong/Logo-IS.png",
   },
 ] as const;
 
@@ -341,9 +341,9 @@ export const ctaBand = {
 
 export const footerAssets = {
   logo:
-    "https://armstrong-cap.com/wp-content/uploads/Group-1707483555-1024x292.png",
+    "/images/armstrong/Group-1707483555-1024x292.png",
   ctaBackground:
-    "https://armstrong-cap.com/wp-content/uploads/coffee_banner-1.webp",
+    "/images/armstrong/coffee_banner-1.webp",
 } as const;
 
 export const footerServices = services.map(({ title, href }) => ({

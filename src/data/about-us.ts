@@ -1,6 +1,6 @@
 export const aboutUsPageBanner = {
   backgroundImage:
-    "https://armstrong-cap.com/wp-content/uploads/2024/10/banner-min.jpg",
+    "/images/armstrong/2024/10/banner-min.jpg",
   title: "About Us",
 } as const;
 
@@ -16,11 +16,11 @@ export const aboutUsHero = {
   ] as const,
   images: {
     shape:
-      "https://armstrong-cap.com/wp-content/uploads/2024/07/shape-44.png",
+      "/images/armstrong/2024/07/shape-44.png",
     primary:
-      "https://armstrong-cap.com/wp-content/uploads/2024/09/image-7.png",
+      "/images/armstrong/2024/09/image-7.png",
     secondary:
-      "https://armstrong-cap.com/wp-content/uploads/2024/07/about-3.jpg",
+      "/images/armstrong/2024/07/about-3.jpg",
   },
 } as const;
 

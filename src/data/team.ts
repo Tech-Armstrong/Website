@@ -6,7 +6,7 @@ export type TeamMember = {
   bio: string;
 };
 
-const UPLOADS = "https://armstrong-cap.com/wp-content/uploads";
+const UPLOADS = "/images/armstrong";
 
 export const ourTeamMembers: TeamMember[] = [
   {

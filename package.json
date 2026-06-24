@@ -10,7 +10,8 @@
     "export:wp": "node scripts/export-wordpress.mjs",
     "extract:marketing": "node scripts/extract-marketing-content.mjs",
     "audit:site": "node scripts/audit-site.mjs",
-    "seed:knowledge": "node scripts/seed-knowledge-hub.mjs"
+    "seed:knowledge": "node scripts/seed-knowledge-hub.mjs",
+    "mirror-images": "node scripts/mirror-src-data-images.mjs"
   },
   "dependencies": {
     "embla-carousel-react": "^8.6.0",

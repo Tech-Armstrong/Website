@@ -16,7 +16,7 @@ export type NavItem =
 export const CLIENT_LOGIN_URL = "https://armstrongcap.themfbox.com/";
 
 export const LOGO_SRC =
-  "https://armstrong-cap.com/wp-content/uploads/b-1-e1755768208421.png";
+  "/images/armstrong/b-1-e1755768208421.png";
 
 export const leftNav: NavItem[] = [
   { type: "link", label: "Home", href: "/" },
