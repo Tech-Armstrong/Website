@@ -11,4 +11,10 @@ export const EXCLUDED_PAGE_SLUGS = new Set([
   "home-old-backup",
   "career-send-resume",
   "blog",
+  "beginning-to-invest",
+  "women-investors",
+  "high-net-worth-individuals-hnis",
+  "non-resident-indians-nri",
+  "pre-retirement-planning",
+  "career-transition",
 ]);

@@ -352,15 +352,24 @@ export const footerServices = services.map(({ title, href }) => ({
 }));
 
 export const footerSegments = [
-  { label: "Beginning To Invest", href: "/beginning-to-invest" },
-  { label: "Women Investors", href: "/women-investors" },
+  {
+    label: "Beginning To Invest",
+    href: "/who-we-help#beginning-to-invest",
+  },
+  { label: "Women Investors", href: "/who-we-help#women-investors" },
   {
     label: "High-Net-Worth-Individuals",
-    href: "/high-net-worth-individuals-hnis",
+    href: "/who-we-help#high-net-worth-individuals-hnis",
   },
-  { label: "Non–Resident Indians (NRI)", href: "/non-resident-indians-nri" },
-  { label: "Pre-Retirement Planning", href: "/pre-retirement-planning" },
-  { label: "Career Transition", href: "/career-transition" },
+  {
+    label: "Non–Resident Indians (NRI)",
+    href: "/who-we-help#non-resident-indians-nri",
+  },
+  {
+    label: "Pre-Retirement Planning",
+    href: "/who-we-help#pre-retirement-planning",
+  },
+  { label: "Career Transition", href: "/who-we-help#career-transition" },
 ] as const;
 
 export const PRIMARY_CTA_LABEL = "Book a consultation";
