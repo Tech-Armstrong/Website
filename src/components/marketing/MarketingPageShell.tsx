@@ -10,6 +10,7 @@ type MarketingPageShellProps = {
   /** Renders below the main+sidebar grid at full container width */
   fullWidthSections?: ReactNode;
   compact?: boolean;
+  narrow?: boolean;
   children: ReactNode;
 };
 
@@ -19,6 +20,7 @@ export function MarketingPageShell({
   fullWidth = false,
   fullWidthSections,
   compact = false,
+  narrow = false,
   children,
 }: MarketingPageShellProps) {
   return (
@@ -44,9 +46,13 @@ export function MarketingPageShell({
 
           {fullWidth || !sidebar ? (
             <>
-              <div className="min-w-0">{children}</div>
+              <div className={`min-w-0 ${narrow ? "mx-auto max-w-4xl" : ""}`}>
+                {children}
+              </div>
               {fullWidthSections ? (
-                <div className="min-w-0">{fullWidthSections}</div>
+                <div className={`min-w-0 ${narrow ? "mx-auto max-w-4xl" : ""}`}>
+                  {fullWidthSections}
+                </div>
               ) : null}
             </>
           ) : (

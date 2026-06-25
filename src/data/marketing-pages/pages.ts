@@ -138,7 +138,7 @@ export const marketingPages = {
       }
     ],
     "careerCta": {
-      "label": "Send Resume",
+      "label": "Apply Now",
       "href": "/career-send-resume"
     }
   },
@@ -377,11 +377,35 @@ export const marketingPages = {
     "slug": "market-updates",
     "category": "knowledge",
     "hero": {
-      "title": "Money Moves Monthly - DEC 2025",
-    "paragraphs": [
-      "Our monthly read on markets, macro, and what it means for your portfolio."
-    ],
-      "image": "/images/armstrong/financial_planning.webp"
+      "title": "Market Updates",
+      "paragraphs": [
+        "Our monthly read on markets, macro, and what it means for your portfolio.",
+        "Money Moves Monthly is Armstrong Capital's flagship market commentary — concise analysis of what moved markets, what's ahead, and how it may affect investors like you.",
+        "Browse editions by year below and download any issue as a PDF. New editions are added each month."
+      ],
+      "image": "/images/armstrong/investment_management-min.webp"
+    },
+    "features": {
+      "eyebrow": "Money Moves Monthly",
+      "title": "What you'll find in each edition",
+      "items": [
+        {
+          "title": "Markets & macro",
+          "description": "A clear read on indices, sectors, and the economic forces shaping Indian and global markets."
+        },
+        {
+          "title": "Portfolio context",
+          "description": "How current conditions may affect asset allocation, mutual funds, and long-term financial goals."
+        },
+        {
+          "title": "Timely commentary",
+          "description": "Research-driven perspective from Armstrong Capital — not headlines, but what the data means for you."
+        },
+        {
+          "title": "Downloadable PDFs",
+          "description": "Every edition is available to save and share. Select a cover below to open the full report."
+        }
+      ]
     }
   },
   "media-spotlight": {

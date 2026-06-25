@@ -10,8 +10,6 @@ function megaLinks(items: NavItem[], label: string) {
     .flatMap((item) => item.groups.flatMap((g) => g.links));
 }
 
-export const aboutNavLinks = megaLinks(leftNav, "About us");
-
 export const knowledgeNavLinks = megaLinks(rightNav, "Knowledge Hub").filter(
   (link) => link.href !== "/blog",
 );

@@ -14,7 +14,6 @@ import { MarketingPageShell } from "./MarketingPageShell";
 import { MarketingPlanGrid } from "./MarketingPlanGrid";
 import { MarketingQuote } from "./MarketingQuote";
 import { MarketingTeamGrid } from "./MarketingTeamGrid";
-import { AboutSidebar } from "./sidebars/AboutSidebar";
 import { KnowledgeSidebar } from "./sidebars/KnowledgeSidebar";
 import { SegmentSidebar } from "./sidebars/SegmentSidebar";
 import { ServiceSidebar } from "./sidebars/ServiceSidebar";
@@ -34,8 +33,6 @@ function renderSidebar(config: MarketingPageConfig) {
       return <SegmentSidebar activeSlug={config.slug} />;
     case "service":
       return <ServiceSidebar activeSlug={config.slug} />;
-    case "about":
-      return <AboutSidebar activeSlug={config.slug} />;
     case "knowledge":
       return config.slug === "faqs" ? undefined : (
         <KnowledgeSidebar activeSlug={config.slug} />
@@ -51,6 +48,7 @@ export function MarketingPageRenderer({
 }: MarketingPageRendererProps) {
   const headingId = `${config.slug}-hero-heading`;
   const sidebar = renderSidebar(config);
+  const narrow = config.category === "about";
   const isContact = config.category === "contact";
   const useFullWidthTeamBlock =
     Boolean(sidebar && config.team && config.team.length > 0);
@@ -69,6 +67,7 @@ export function MarketingPageRenderer({
       fullWidth={config.fullWidth && !sidebar}
       fullWidthSections={fullWidthSections}
       compact={isContact}
+      narrow={narrow}
     >
       {isContact ? (
         <div className="mx-auto max-w-[960px] space-y-8">
