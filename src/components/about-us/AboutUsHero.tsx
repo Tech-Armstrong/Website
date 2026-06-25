@@ -45,14 +45,14 @@ export function AboutUsHero() {
 
         <ScrollReveal direction="right" delay={100}>
           <div>
-            <h1
+            <h2
               id="about-us-hero-heading"
               className="font-display text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.1] text-brand-navy"
             >
               {titleLine1}
               <br />
               {titleLine2}
-            </h1>
+            </h2>
             <p className="mt-4 font-body text-sm font-medium text-brand-blue">
               {aboutUsCredential}
             </p>

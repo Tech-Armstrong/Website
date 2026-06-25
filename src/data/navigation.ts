@@ -20,22 +20,7 @@ export const LOGO_SRC =
 
 export const leftNav: NavItem[] = [
   { type: "link", label: "Home", href: "/" },
-  {
-    type: "mega",
-    label: "About us",
-    groups: [
-      {
-        title: "Overview",
-        links: [
-          { label: "About us", href: "/about-us" },
-          { label: "Our Team", href: "/our-team" },
-          { label: "Our Process", href: "/our-process" },
-          { label: "Our Research", href: "/our-research" },
-          { label: "Our Accolade", href: "/our-accolade" },
-        ],
-      },
-    ],
-  },
+  { type: "link", label: "About us", href: "/about-us" },
   {
     type: "mega",
     label: "Services",

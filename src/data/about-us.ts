@@ -60,8 +60,3 @@ export const aboutUsFeatures = [
       "Portfolios are monitored and rebalanced through market cycles, with profit-booking and reallocation built into the plan.",
   },
 ] as const;
-
-export const aboutUsQuote = {
-  text: "Successful Investing Is About Managing Risk, Not Avoiding It.",
-  attribution: "Benjamin Graham",
-} as const;

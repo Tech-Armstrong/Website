@@ -48,7 +48,6 @@ export function MarketingPageRenderer({
 }: MarketingPageRendererProps) {
   const headingId = `${config.slug}-hero-heading`;
   const sidebar = renderSidebar(config);
-  const narrow = config.category === "about";
   const isContact = config.category === "contact";
   const useFullWidthTeamBlock =
     Boolean(sidebar && config.team && config.team.length > 0);
@@ -67,7 +66,6 @@ export function MarketingPageRenderer({
       fullWidth={config.fullWidth && !sidebar}
       fullWidthSections={fullWidthSections}
       compact={isContact}
-      narrow={narrow}
     >
       {isContact ? (
         <div className="mx-auto max-w-[960px] space-y-8">

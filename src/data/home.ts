@@ -33,7 +33,7 @@ export const heroSlides = [
 
 export const heroButtons = {
   primary: { label: "Book a consultation", href: "/contact" },
-  secondary: { label: "See how we work", href: "/our-process" },
+  secondary: { label: "See how we work", href: "/about-us#our-process" },
 } as const;
 
 export const offeringsSection = {
@@ -194,7 +194,7 @@ export const aboutSection = {
   description:
     "Founded in 2010 by Manju Mastakar, Armstrong Capital advises families, HNIs, and NRIs across India and abroad. Our team of seven specialists builds goal-based plans grounded in our own fund research — then reviews them with you as markets and your life change. We earn a regulated, disclosed commission, so our incentives stay aligned with your long-term returns.",
   ctaLabel: "Meet the team",
-  ctaHref: "/our-team",
+  ctaHref: "/about-us#our-team",
 } as const;
 
 export const whyChooseSection = {

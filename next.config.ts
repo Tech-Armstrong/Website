@@ -6,16 +6,36 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/our-plan",
-        destination: "/our-process",
+        destination: "/about-us#our-process",
         permanent: true,
       },
       {
         source: "/our-customer-journey",
-        destination: "/our-process",
+        destination: "/about-us#our-process",
         permanent: true,
       },
       {
         source: "/values",
+        destination: "/about-us#about",
+        permanent: true,
+      },
+      {
+        source: "/our-team",
+        destination: "/about-us#our-team",
+        permanent: true,
+      },
+      {
+        source: "/our-process",
+        destination: "/about-us#our-process",
+        permanent: true,
+      },
+      {
+        source: "/our-research",
+        destination: "/about-us#our-research",
+        permanent: true,
+      },
+      {
+        source: "/our-accolade",
         destination: "/about-us",
         permanent: true,
       },

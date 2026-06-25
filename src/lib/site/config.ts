@@ -17,4 +17,8 @@ export const EXCLUDED_PAGE_SLUGS = new Set([
   "non-resident-indians-nri",
   "pre-retirement-planning",
   "career-transition",
+  "our-team",
+  "our-process",
+  "our-research",
+  "our-accolade",
 ]);

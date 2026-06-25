@@ -19,11 +19,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   const slugs = (await getMarketingPageSlugs()).filter(
-    (slug) =>
-      slug !== "about-us" &&
-      slug !== "beginning-to-invest" &&
-      slug !== "our-accolade" &&
-      isMarketingPageSlug(slug),
+    (slug) => slug !== "about-us" && isMarketingPageSlug(slug),
   );
   return slugs.map((slug) => ({ slug }));
 }
