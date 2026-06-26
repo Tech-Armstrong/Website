@@ -7,14 +7,19 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 type MarketingFeaturesProps = {
   features: MarketingFeaturesData;
   headingId: string;
+  borderless?: boolean;
 };
 
-export function MarketingFeatures({ features, headingId }: MarketingFeaturesProps) {
+export function MarketingFeatures({
+  features,
+  headingId,
+  borderless = false,
+}: MarketingFeaturesProps) {
   const { eyebrow, title, items } = features;
 
   return (
     <section
-      className="border-t border-[color:var(--brand-border)] pt-8 pb-6"
+      className={`pt-8 pb-6${borderless ? "" : " border-t border-[color:var(--brand-border)]"}`}
       aria-labelledby={headingId}
     >
       <ScrollReveal>

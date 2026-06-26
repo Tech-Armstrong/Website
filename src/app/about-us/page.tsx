@@ -84,6 +84,7 @@ export default async function AboutUsPage() {
             <MarketingFeatures
               features={aboutProcess}
               headingId="our-process-heading"
+              borderless
             />
           </div>
         </section>
@@ -97,6 +98,7 @@ export default async function AboutUsPage() {
             <MarketingFeatures
               features={aboutResearch}
               headingId="our-research-heading"
+              borderless
             />
           </div>
         </section>

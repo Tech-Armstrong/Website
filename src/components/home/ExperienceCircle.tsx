@@ -3,7 +3,7 @@ import { useId } from "react";
 import { aboutSection } from "@/data/home";
 
 export function ExperienceCircle() {
-  const { image, ringText } = aboutSection;
+  const { image, years, ringText } = aboutSection;
   const ringPathId = useId().replace(/:/g, "");
   const ringLabel = ringText.join(" • ");
 
@@ -43,15 +43,29 @@ export function ExperienceCircle() {
           </g>
         </svg>
 
-        <div className="absolute inset-[14%] overflow-hidden rounded-full border border-[color:var(--brand-border)] bg-white shadow-[var(--elevation-panel)]">
+        <div
+          className="absolute inset-[14%] overflow-hidden rounded-full border border-[color:var(--brand-border)] bg-white shadow-[var(--elevation-panel)]"
+          aria-label={`${years} years of experience`}
+        >
           <Image
             src={image}
-            alt="Balanced stones on a pebble beach"
+            alt=""
             fill
             sizes="(max-width: 1024px) 320px, 380px"
             className="object-cover"
             priority
           />
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center rounded-full bg-brand-navy/40 text-center text-white"
+            aria-hidden
+          >
+            <span className="font-display text-[56px] font-bold leading-none sm:text-[64px] lg:text-[72px]">
+              {years}
+            </span>
+            <span className="mt-1 font-display text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs">
+              Years Experience
+            </span>
+          </div>
         </div>
       </div>
 
