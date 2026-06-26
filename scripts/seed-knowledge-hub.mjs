@@ -163,6 +163,34 @@ function parseArchiveGroups(html) {
   return groups;
 }
 
+function splitArchiveGroupsByYear(groups) {
+  const items = groups.flatMap((group) => group.items);
+  if (items.length === 0) return groups;
+
+  const buckets = new Map();
+
+  for (const item of items) {
+    const year = item.title.match(/\b(20\d{2})\b/)?.[1];
+    if (!year) return groups;
+
+    const bucket = buckets.get(year) ?? [];
+    bucket.push(item);
+    buckets.set(year, bucket);
+  }
+
+  if (buckets.size <= 1) return groups;
+
+  return [...buckets.keys()]
+    .sort((a, b) => Number(a) - Number(b))
+    .map((year) => ({
+      label: year,
+      items: buckets.get(year).map((item, index) => ({
+        ...item,
+        sortOrder: index,
+      })),
+    }));
+}
+
 function extractFaqs(html) {
   const items = [];
   const blocks = html.split(/<li class="accordion block/);
@@ -219,7 +247,10 @@ const now = new Date().toISOString();
 
 for (const slug of ARCHIVE_SLUGS) {
   const page = readPageJson(slug);
-  const groups = parseArchiveGroups(page.content ?? "");
+  let groups = parseArchiveGroups(page.content ?? "");
+  if (slug === "newsletters") {
+    groups = splitArchiveGroupsByYear(groups);
+  }
 
   writeKnowledge(`${slug}.json`, {
     slug,

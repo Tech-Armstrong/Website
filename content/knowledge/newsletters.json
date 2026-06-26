@@ -9,7 +9,40 @@
   },
   "groups": [
     {
-      "label": "All",
+      "label": "2025",
+      "items": [
+        {
+          "id": "1b1844ee-ba6f-4c42-a24e-bca8c903b97a",
+          "title": "NOV 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Armstrong-Global-Newsletter-Nov25-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Oct-25.pdf",
+          "sortOrder": 0
+        },
+        {
+          "id": "6b58f014-b73d-493c-af4b-b8a935b76f61",
+          "title": "OCT 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Oct-25-724x1024.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Oct-25.pdf",
+          "sortOrder": 1
+        },
+        {
+          "id": "10f8114a-0919-4458-bcd2-c7f238eded91",
+          "title": "SEP 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Sept-25-1-724x1024.jpg",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Sept-25.pdf",
+          "sortOrder": 2
+        },
+        {
+          "id": "2ebdb42b-b672-456c-931f-4cdf3ae8acd2",
+          "title": "AUG 2025",
+          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/newsletters.webp",
+          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Navy-Modern-Technology-Newsletters-1_compressed.pdf",
+          "sortOrder": 3
+        }
+      ]
+    },
+    {
+      "label": "2026",
       "items": [
         {
           "id": "d3e005c2-2e15-4790-a284-aef58239922e",
@@ -24,34 +57,6 @@
           "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Monthly-Newsletter-Jan-2026-724x1024.webp",
           "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Monthly-Newsletter-Jan-2026.pdf",
           "sortOrder": 1
-        },
-        {
-          "id": "1b1844ee-ba6f-4c42-a24e-bca8c903b97a",
-          "title": "NOV 2025",
-          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Armstrong-Global-Newsletter-Nov25-724x1024.webp",
-          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Oct-25.pdf",
-          "sortOrder": 2
-        },
-        {
-          "id": "6b58f014-b73d-493c-af4b-b8a935b76f61",
-          "title": "OCT 2025",
-          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Oct-25-724x1024.webp",
-          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Oct-25.pdf",
-          "sortOrder": 3
-        },
-        {
-          "id": "10f8114a-0919-4458-bcd2-c7f238eded91",
-          "title": "SEP 2025",
-          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Sept-25-1-724x1024.jpg",
-          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Newsletters-Sept-25.pdf",
-          "sortOrder": 4
-        },
-        {
-          "id": "2ebdb42b-b672-456c-931f-4cdf3ae8acd2",
-          "title": "AUG 2025",
-          "thumbnailUrl": "https://armstrong-cap.com/wp-content/uploads/newsletters.webp",
-          "pdfUrl": "https://armstrong-cap.com/wp-content/uploads/Navy-Modern-Technology-Newsletters-1_compressed.pdf",
-          "sortOrder": 5
         }
       ]
     }
