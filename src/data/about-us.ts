@@ -5,7 +5,7 @@ export const aboutUsPageBanner = {
 } as const;
 
 export const aboutUsCredential =
-  "AMFI-registered mutual fund distributor · ARN-105949 · Valid through 09-Oct-2027";
+  "";
 
 export const aboutUsHero = {
   titleLine1: "Research-driven wealth management,",
