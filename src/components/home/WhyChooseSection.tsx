@@ -213,8 +213,10 @@ export function WhyChooseSection() {
                         >
                           <div
                             className={cx(
-                              "flex min-w-0 items-center",
-                              isMobileLayout ? "gap-3" : "items-stretch",
+                              "min-w-0",
+                              isMobileLayout
+                                ? "flex items-center gap-3"
+                                : "grid grid-cols-[3rem_minmax(0,1fr)] items-center gap-x-2",
                               !isMobileLayout && (isActive ? "py-1.5" : "py-2.5"),
                             )}
                           >
@@ -228,18 +230,23 @@ export function WhyChooseSection() {
                               >
                                 {tab.number}
                               </span>
-                            ) : isActive ? (
+                            ) : (
                               <span
-                                className="why-choose-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white font-display text-base font-bold text-brand-blue sm:h-12 sm:w-12 sm:text-lg"
+                                className={cx(
+                                  "flex h-11 w-11 shrink-0 items-center justify-center rounded-full sm:h-12 sm:w-12",
+                                  isActive &&
+                                    "bg-white font-display text-base font-bold text-brand-blue sm:text-lg",
+                                )}
                                 aria-hidden
                               >
-                                {tab.number}
+                                {isActive ? tab.number : null}
                               </span>
-                            ) : null}
+                            )}
 
                             <span
                               className={cx(
-                                "flex min-w-0 flex-1 items-center font-display font-medium",
+                                "flex min-w-0 items-center font-display font-medium",
+                                isMobileLayout && "flex-1",
                                 isMobileLayout
                                   ? cx(
                                       "text-left text-sm leading-snug sm:text-base",
@@ -249,7 +256,7 @@ export function WhyChooseSection() {
                                     )
                                   : isActive
                                     ? "truncate rounded-r-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-navy shadow-[var(--elevation-card)] sm:px-6 sm:py-3 sm:text-base"
-                                    : "pl-1 text-sm text-white/75 group-hover:text-white sm:text-base",
+                                    : "text-sm text-white/75 group-hover:text-white sm:text-base",
                               )}
                             >
                               {!isMobileLayout && !isActive ? (

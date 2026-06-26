@@ -191,8 +191,13 @@ function extractPodcasts(html) {
   ];
 
   for (const embed of embeds) {
+    const index = html.indexOf(embed[1]);
+    const after = html.slice(index, index + 2500);
+    const titleMatch = after.match(
+      /text-editor\.default">[\s\S]*?elementor-widget-container">\s*([^<]+?)\s*</,
+    );
     podcasts.push({
-      title: "LinkedIn Podcast",
+      title: decodeHtml(titleMatch?.[1]?.trim() ?? "LinkedIn Podcast"),
       embedUrl: embed[1],
     });
   }

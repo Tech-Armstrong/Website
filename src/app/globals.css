@@ -239,14 +239,18 @@ body {
 }
 
 .header-shell {
-  box-shadow: var(--elevation-header);
+  box-shadow:
+    var(--elevation-card),
+    var(--elevation-panel);
   transition:
     box-shadow var(--dur-3) var(--ease-settle),
     padding var(--dur-3) var(--ease-settle);
 }
 
 .header-shell[data-scrolled="true"] {
-  box-shadow: var(--elevation-header-scrolled);
+  box-shadow:
+    var(--elevation-card),
+    var(--elevation-header-scrolled);
 }
 
 .header-logo {

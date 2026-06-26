@@ -39,7 +39,8 @@ export const heroButtons = {
 export const offeringsSection = {
   eyebrow: "What we offer",
   title: "Our offerings",
-  subtitle: "A complete suite of wealth services, coordinated under one plan.",
+  subtitle:
+    "A high-touch approach that integrates every part of your financial life into one coordinated strategy.",
 } as const;
 
 export const offerings = [
@@ -55,76 +56,6 @@ export const offerings = [
       "Holistic financial planning",
       "Integrated financial solutions",
       "Personalized, ongoing guidance",
-    ],
-  },
-  {
-    title: "Investment Management",
-    href: "/investment-management",
-    image:
-      "/images/armstrong/investment_management-min.webp",
-    description:
-      "Evidence-based, research-led portfolios built for long-term wealth creation — not market timing.",
-    items: [
-      "Evidence-based approach",
-      "Strategic asset allocation",
-      "Smart investment selection",
-      "Comprehensive risk management",
-    ],
-  },
-  {
-    title: "Financial Planning",
-    href: "/financial-planning",
-    image:
-      "/images/armstrong/financial_planning.webp",
-    description:
-      "A goal-based roadmap that models the impact of real decisions before you make them.",
-    items: [
-      "Goal-based cash flows",
-      "Simulated investment outcomes",
-      "Inflation, tax & lifespan adjustments",
-      "Debt management & optimization",
-    ],
-  },
-  {
-    title: "Retirement Planning",
-    href: "/retirement-planning",
-    image:
-      "/images/armstrong/retirement_planning-min.webp",
-    description:
-      "Income that lasts, with growth that keeps pace — for a secure, confident retirement.",
-    items: [
-      "Steady annuity income",
-      "Growth component",
-      "Ongoing portfolio management",
-      "Legacy planning integration",
-    ],
-  },
-  {
-    title: "Education Planning",
-    href: "/education-planning",
-    image:
-      "/images/armstrong/educational_planning-min.webp",
-    description:
-      "Structured savings and investing to fund your child's education at every stage.",
-    items: [
-      "Savings component",
-      "Growth-focused investing",
-      "Ongoing portfolio management",
-      "Expense projection & adjustments",
-    ],
-  },
-  {
-    title: "Risk Management",
-    href: "/risk-management",
-    image:
-      "/images/armstrong/risk_management-min.webp",
-    description:
-      "Protect what you've built with the right insurance, sized to your plan — no more, no less.",
-    items: [
-      "Comprehensive insurance review",
-      "Home, auto & liability cover",
-      "Life & health insurance",
-      "Customized insurance solutions",
     ],
   },
 ] as const;
@@ -183,6 +114,7 @@ export const services = [
 export const aboutSection = {
   image:
     "/images/armstrong/2024/10/image-6-min.jpg",
+  years: 16,
   ringText: [
     "Handling tough Financial tasks",
     "Giving Futures to your Investment",

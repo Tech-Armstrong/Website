@@ -420,19 +420,19 @@ export const marketingPages = {
     "mediaArticles": [],
     "mediaPodcasts": [
       {
-        "title": "LinkedIn Podcast",
+        "title": "Harsha Upadhyaya, CFA (CIO – Equity, Kotak Mutual Fund; ₹85,000 Cr AUM) on India's GDP Growth Outlook",
         "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7366737784298012673?compact=1"
       },
       {
-        "title": "LinkedIn Podcast",
+        "title": "Charanjit Singh, Fund Manager, DSP, on the DSP Business Cycle Fund and Market Perspectives",
         "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7272852731587883008?compact=1"
       },
       {
-        "title": "LinkedIn Podcast",
+        "title": "In Conversation with Meeta Shetty, Fund Manager, Tata Mutual Fund, Managing $3B in Assets",
         "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7267193708452675585?compact=1"
       },
       {
-        "title": "LinkedIn Podcast",
+        "title": "Umeshkumar Mehta, CIO, Samco Securities, on Market Outlook and the Hexashield Risk Framework",
         "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7245370666923786241?compact=1"
       }
     ]
