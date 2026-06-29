@@ -58,9 +58,9 @@ export function MarketingArchiveGrid({
         className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
       >
         {activeGroup.items.map((item, index) => (
-          <ScrollReveal key={item.id} delay={index * 60}>
-            <article className="lift-card group relative overflow-hidden rounded-xl border border-[color:var(--brand-border)] bg-white">
-              <div className="relative aspect-[525/286] w-full overflow-hidden bg-brand-surface">
+          <ScrollReveal key={item.id} delay={index * 60} className="h-full">
+            <article className="lift-card group relative flex h-full flex-col overflow-hidden rounded-xl border border-[color:var(--brand-border)] bg-white">
+              <div className="relative aspect-[525/286] w-full shrink-0 overflow-hidden bg-brand-surface">
                 {item.thumbnailUrl ? (
                   <Image
                     src={item.thumbnailUrl}
