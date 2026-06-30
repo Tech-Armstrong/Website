@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { AboutSection } from "@/components/home/AboutSection";
 import { AwardsSection } from "@/components/home/AwardsSection";
-import { CtaBand } from "@/components/home/CtaBand";
 import { Hero } from "@/components/home/Hero";
 import { MediaSpotlightsSection } from "@/components/home/MediaSpotlightsSection";
 import { OurOfferingsSection } from "@/components/home/OurOfferingsSection";
@@ -32,7 +31,6 @@ export default function HomePage() {
       <WhyChooseSection />
       <MediaSpotlightsSection />
       <AwardsSection />
-      <CtaBand />
       <Footer />
     </main>
   );

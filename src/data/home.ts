@@ -40,23 +40,63 @@ export const offeringsSection = {
   eyebrow: "What we offer",
   title: "Our offerings",
   subtitle:
-    "A high-touch approach that integrates every part of your financial life into one coordinated strategy.",
+    "From mutual funds and equities to PMS, AIFs, and insurance — coordinated solutions across your full investment spectrum.",
 } as const;
 
 export const offerings = [
   {
-    title: "Wealth Management",
-    href: "/wealth-management",
-    image:
-      "/images/armstrong/wealth_management.webp",
+    title: "Mutual Funds",
     description:
-      "A high-touch experience that integrates every part of your financial life into one coordinated strategy.",
-    items: [
-      "Total wealth management",
-      "Holistic financial planning",
-      "Integrated financial solutions",
-      "Personalized, ongoing guidance",
-    ],
+      "Research-backed fund selection across asset classes for every goal and risk profile.",
+    href: "/contact",
+  },
+  {
+    title: "Alternative Investment Funds (AIF)",
+    description:
+      "Access curated alternative strategies for qualified investors seeking diversification beyond traditional markets.",
+    href: "/contact",
+  },
+  {
+    title: "Specialised Investment Funds (SIF)",
+    description:
+      "Targeted specialised strategies for investors who need focused exposure beyond standard mutual fund categories.",
+    href: "/contact",
+  },
+  {
+    title: "Portfolio Management Services (PMS)",
+    description:
+      "Discretionary portfolio management tailored to your goals, with direct oversight from experienced strategists.",
+    href: "/contact",
+  },
+  {
+    title: "International Equity",
+    description:
+      "Build global diversification with international equity allocations aligned to your risk tolerance and horizon.",
+    href: "/contact",
+  },
+  {
+    title: "Corporate Fixed Deposits",
+    description:
+      "Earn competitive returns on corporate FDs selected for credit quality, tenure fit, and portfolio balance.",
+    href: "/contact",
+  },
+  {
+    title: "Domestic equity",
+    description:
+      "Participate in India's growth story with disciplined equity strategies grounded in research and risk management.",
+    href: "/contact",
+  },
+  {
+    title: "REITs & InvITs",
+    description:
+      "Access income-oriented real estate and infrastructure exposure through listed REITs and InvITs as part of a diversified portfolio.",
+    href: "/contact",
+  },
+  {
+    title: "Insurance",
+    description:
+      "Protect what you have built with life, health, and asset coverage integrated into your financial plan.",
+    href: "/contact",
   },
 ] as const;
 
@@ -260,16 +300,8 @@ export const homeStats = [
   { value: "500", suffix: "+", label: "Crores of Assets Managed" },
   { value: "2500", suffix: "+", label: "Financial Plans" },
   { value: "4", suffix: "K", label: "Strategies Planned" },
-  { value: "2", suffix: "K", label: "Satisfied Clients" },
+  { value: "15", suffix: "+", label: "Clients in Countries" },
 ] as const;
-
-export const ctaBand = {
-  title: "Ready to build a plan that fits your life?",
-  subtitle:
-    "Speak with our advisors for a no-obligation consultation about your goals.",
-  ctaLabel: "Book a consultation",
-  ctaHref: "/contact",
-} as const;
 
 export const footerAssets = {
   logo:
