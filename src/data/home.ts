@@ -300,7 +300,7 @@ export const homeStats = [
   { value: "500", suffix: "+", label: "Crores of Assets Managed" },
   { value: "2500", suffix: "+", label: "Financial Plans" },
   { value: "4", suffix: "K", label: "Strategies Planned" },
-  { value: "15", suffix: "+", label: "Clients in Countries" },
+  { value: "15", suffix: "+", label: "Countries Served" },
 ] as const;
 
 export const footerAssets = {
