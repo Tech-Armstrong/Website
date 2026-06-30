@@ -15,9 +15,9 @@ export const ourTeamMembers: TeamMember[] = [
     image: `${UPLOADS}/2023/06/Manju-FounderCEO.jpg`,
     linkedinUrl: "https://www.linkedin.com/in/manju-mastakar-5a3489a/",
     bio: [
-      "Ms. Manju Mastakar, with over three decades of experience navigating multiple market cycles, is a recognized leader in India's wealth management industry. She began her career at Dalal Street—the epicenter of India's investing world. Her career with prestigious firms like Motilal Oswal, MF Global, and HSBC gave her the foundation to see both the power of markets and the gaps in how financial advice was delivered.",
+      "Ms. Manju Mastakar, with over three decades of experience navigating multiple market cycles, is a recognized leader in India's wealth management industry. She began her career at Dalal Street, the epicenter of India's investing world. Her career with prestigious firms like Motilal Oswal, MF Global, and HSBC gave her the foundation to see both the power of markets and the gaps in how financial advice was delivered.",
       "In 2010, she founded Armstrong Capital & Financial Services Pvt. Ltd. with a vision to build a client-first, transparent, and research-driven advisory platform. Since then, many corporates and HNIs have successfully built and managed their wealth under her sound investment advice, making her a trusted partner in long-term financial growth.",
-      "A recipient of several prestigious awards and accolades, Ms. Mastakar has nurtured Armstrong Capital from a modest beginning into a well-respected wealth management firm, trusted by clients across India and abroad. Her philosophy is simple yet powerful: \"Wealth managers don't deliver returns; they create discipline and manage risk — and that's what truly creates wealth.\"",
+      "A recipient of several prestigious awards and accolades, Ms. Mastakar has nurtured Armstrong Capital from a modest beginning into a well-respected wealth management firm, trusted by clients across India and abroad. Her philosophy is simple yet powerful: \"Wealth managers don't deliver returns; they create discipline and manage risk, and that's what truly creates wealth.\"",
     ].join("\n\n"),
   },
   {
@@ -73,7 +73,7 @@ export const ourTeamMembers: TeamMember[] = [
     bio: [
       "Khushboo Sheth is the Investment Solution Manager at Armstrong Capital, where she blends analytical expertise with a deeply human approach to wealth management.",
       "Her career began at HDFC Securities as an Equity Advisor & Dealer, where she built a reputation for simplifying complex market movements into actionable strategies. From executing trades to conducting portfolio reviews, she learned that successful investing relies as much on trust and clarity as on numbers.",
-      "At Armstrong Capital, she plays a pivotal role in shaping clients' wealth creation journeys. She works closely with individuals from diverse backgrounds to design tailored financial plans, conduct risk assessments, and build portfolio strategies that balance growth with stability—ensuring every roadmap remains resilient and aligned with evolving goals.",
+      "At Armstrong Capital, she plays a pivotal role in shaping clients' wealth creation journeys. She works closely with individuals from diverse backgrounds to design tailored financial plans, conduct risk assessments, and build portfolio strategies that balance growth with stability, ensuring every roadmap remains resilient and aligned with evolving goals.",
       "An MBA in Finance and NISM-certified professional, Khushboo finds joy in being part of every client's financial story. From small beginnings to major milestones, she makes wealth management simple and personal.",
     ].join("\n\n"),
   },
@@ -85,7 +85,7 @@ export const ourTeamMembers: TeamMember[] = [
     bio: [
       "Suhas Patchipulusu is the Senior Portfolio Strategist at Armstrong Capital & Financial Services Pvt. Ltd., with 4 years of experience across wealth management, equity research, and financial planning.",
       "Before Armstrong, Suhas worked as an Equity Research Analyst and Investment Coach at FundsIndia, where he developed expertise in business analysis, market research, and investor coaching. His strong analytical background enables him to blend research-driven insights with practical solutions in every plan.",
-      "At Armstrong, he helps clients build customized strategies that emphasize portfolio diversification, tax efficiency, and practical decision-making—whether evaluating a loan, purchasing a home, or balancing investments with long-term security.",
+      "At Armstrong, he helps clients build customized strategies that emphasize portfolio diversification, tax efficiency, and practical decision-making, whether evaluating a loan, purchasing a home, or balancing investments with long-term security.",
       "He holds an MBA in Banking, Financial Services & Insurance (BFSI). Guided by a client-first approach, he simplifies complex financial choices so clients can act with clarity and confidence.",
     ].join("\n\n"),
   },

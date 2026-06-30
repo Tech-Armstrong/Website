@@ -110,7 +110,7 @@ export function MediaSpotlightsSection() {
                     />
                     <Image
                       src={item.logo}
-                      alt={`${item.title} — publication logo`}
+                      alt={`${item.title}, publication logo`}
                       width={220}
                       height={80}
                       className="relative z-[1] h-auto max-h-[72px] w-auto max-w-[200px] object-contain transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"

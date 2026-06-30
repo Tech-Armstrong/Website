@@ -19,11 +19,11 @@
     },
     {
       "question": "Is my data safe? Why should I give you so much information?",
-      "answer": "Yes, your data is absolutely safe with us. Just as you trust doctors and lawyers with sensitive information, financial advisors require complete disclosure to provide accurate and effective advice. Without knowing your liabilities or cash positions, we may inadvertently recommend an inappropriate asset allocation. To ensure your privacy, only two people—the relationship manager and the financial planner—have access to your information. As a medium-sized organization, we prioritize the security of your data, ensuring it is handled with the utmost confidentiality."
+      "answer": "Yes, your data is absolutely safe with us. Just as you trust doctors and lawyers with sensitive information, financial advisors require complete disclosure to provide accurate and effective advice. Without knowing your liabilities or cash positions, we may inadvertently recommend an inappropriate asset allocation. To ensure your privacy, only two people, the relationship manager and the financial planner, have access to your information. As a medium-sized organization, we prioritize the security of your data, ensuring it is handled with the utmost confidentiality."
     },
     {
       "question": "Why don’t you invest in direct plans?",
-      "answer": "The difference between the NAV of Direct plans and Regular plans is the cost of professional services, typically ranging from 0.5% to 0.75%. This commission compensates the advisor, the service manager, and the software that supports your investments. While some fintech platforms offer free services with zero revenue, we believe that for a long-term relationship to thrive, both the advisor and the investor must benefit. Our approach involves thoroughly evaluating your risk profile and financial needs to identify the mutual funds that best meet your requirements. With constantly evolving markets, we monitor market conditions and regularly review client portfolios to ensure capital preservation. Additionally, our services include maintaining detailed records of your investments, providing tax documentation, facilitating redemptions, and more—services that direct plans typically do not offer."
+      "answer": "The difference between the NAV of Direct plans and Regular plans is the cost of professional services, typically ranging from 0.5% to 0.75%. This commission compensates the advisor, the service manager, and the software that supports your investments. While some fintech platforms offer free services with zero revenue, we believe that for a long-term relationship to thrive, both the advisor and the investor must benefit. Our approach involves thoroughly evaluating your risk profile and financial needs to identify the mutual funds that best meet your requirements. With constantly evolving markets, we monitor market conditions and regularly review client portfolios to ensure capital preservation. Additionally, our services include maintaining detailed records of your investments, providing tax documentation, facilitating redemptions, and more: services that direct plans typically do not offer."
     },
     {
       "question": "How are you compensated?",
@@ -31,7 +31,7 @@
     },
     {
       "question": "How do you ensure that you do not have any conflicts of interest?",
-      "answer": "We ensure there are no conflicts of interest by receiving similar compensation from all Asset Management Companies (AMCs), as this commission is regulated and capped by SEBI. Our compensation structure is designed to align with your financial success—starting lower and increasing as your assets grow. This approach ensures that our primary focus remains on growing and preserving your wealth, without any bias toward specific AMCs."
+      "answer": "We ensure there are no conflicts of interest by receiving similar compensation from all Asset Management Companies (AMCs), as this commission is regulated and capped by SEBI. Our compensation structure is designed to align with your financial success, starting lower and increasing as your assets grow. This approach ensures that our primary focus remains on growing and preserving your wealth, without any bias toward specific AMCs."
     },
     {
       "question": "How do you track so many clients?",

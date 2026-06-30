@@ -122,7 +122,7 @@ export function SiteHeader() {
             <Link
               href="/"
               className="focus-settle flex shrink-0 items-center justify-center rounded-md"
-              aria-label="Armstrong Capital — Home"
+              aria-label="Armstrong Capital home"
             >
               <Image
                 src={LOGO_SRC}

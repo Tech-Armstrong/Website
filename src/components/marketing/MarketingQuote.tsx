@@ -14,7 +14,7 @@ export function MarketingQuote({ quote }: MarketingQuoteProps) {
             {quote.text}
           </p>
           <cite className="mt-3 block font-body text-sm not-italic text-white/70 sm:text-base">
-            — {quote.attribution}
+            {quote.attribution}
           </cite>
         </blockquote>
       </ScrollReveal>

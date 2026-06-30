@@ -164,7 +164,7 @@ export const marketingPages = {
       "items": [
         {
           "title": "Savings Component",
-          "description": "We create personalized education plans based on your child’s age, timeline, and study preferences—domestic or abroad. Our approach ensures consistent savings growth to cover tuition, books, and other expenses, securing their future educational success."
+          "description": "We create personalized education plans based on your child’s age, timeline, and study preferences, domestic or abroad. Our approach ensures consistent savings growth to cover tuition, books, and other expenses, securing their future educational success."
         },
         {
           "title": "Investment Component",
@@ -208,11 +208,11 @@ export const marketingPages = {
       },
       {
         "question": "Is my data safe? Why should I give you so much information?",
-        "answer": "Yes, your data is absolutely safe with us. Just as you trust doctors and lawyers with sensitive information, financial advisors require complete disclosure to provide accurate and effective advice. Without knowing your liabilities or cash positions, we may inadvertently recommend an inappropriate asset allocation. To ensure your privacy, only two people—the relationship manager and the financial planner—have access to your information. As a medium-sized organization, we prioritize the security of your data, ensuring it is handled with the utmost confidentiality."
+        "answer": "Yes, your data is absolutely safe with us. Just as you trust doctors and lawyers with sensitive information, financial advisors require complete disclosure to provide accurate and effective advice. Without knowing your liabilities or cash positions, we may inadvertently recommend an inappropriate asset allocation. To ensure your privacy, only two people, the relationship manager and the financial planner, have access to your information. As a medium-sized organization, we prioritize the security of your data, ensuring it is handled with the utmost confidentiality."
       },
       {
         "question": "Why don’t you invest in direct plans?",
-        "answer": "The difference between the NAV of Direct plans and Regular plans is the cost of professional services, typically ranging from 0.5% to 0.75%. This commission compensates the advisor, the service manager, and the software that supports your investments. While some fintech platforms offer free services with zero revenue, we believe that for a long-term relationship to thrive, both the advisor and the investor must benefit. Our approach involves thoroughly evaluating your risk profile and financial needs to identify the mutual funds that best meet your requirements. With constantly evolving markets, we monitor market conditions and regularly review client portfolios to ensure capital preservation. Additionally, our services include maintaining detailed records of your investments, providing tax documentation, facilitating redemptions, and more—services that direct plans typically do not offer."
+        "answer": "The difference between the NAV of Direct plans and Regular plans is the cost of professional services, typically ranging from 0.5% to 0.75%. This commission compensates the advisor, the service manager, and the software that supports your investments. While some fintech platforms offer free services with zero revenue, we believe that for a long-term relationship to thrive, both the advisor and the investor must benefit. Our approach involves thoroughly evaluating your risk profile and financial needs to identify the mutual funds that best meet your requirements. With constantly evolving markets, we monitor market conditions and regularly review client portfolios to ensure capital preservation. Additionally, our services include maintaining detailed records of your investments, providing tax documentation, facilitating redemptions, and more: services that direct plans typically do not offer."
       },
       {
         "question": "How are you compensated?",
@@ -220,7 +220,7 @@ export const marketingPages = {
       },
       {
         "question": "How do you ensure that you do not have any conflicts of interest?",
-        "answer": "We ensure there are no conflicts of interest by receiving similar compensation from all Asset Management Companies (AMCs), as this commission is regulated and capped by SEBI. Our compensation structure is designed to align with your financial success—starting lower and increasing as your assets grow. This approach ensures that our primary focus remains on growing and preserving your wealth, without any bias toward specific AMCs."
+        "answer": "We ensure there are no conflicts of interest by receiving similar compensation from all Asset Management Companies (AMCs), as this commission is regulated and capped by SEBI. Our compensation structure is designed to align with your financial success, starting lower and increasing as your assets grow. This approach ensures that our primary focus remains on growing and preserving your wealth, without any bias toward specific AMCs."
       },
       {
         "question": "How do you track so many clients?",
@@ -268,7 +268,7 @@ export const marketingPages = {
     "hero": {
       "title": "Financial Planning",
       "paragraphs": [
-        "Entering retirement without a financial plan is like setting sail without a map—you might drift aimlessly and never reach your intended destination. At Armstrong Capital, our expert financial planners use advanced modelling to help you see the impact of financial decisions before making them. The financial planning process begins by understanding your priorities and what matters most in your life. Through in-depth discussions, we tailor recommendations to your unique needs, whether you’re planning for retirement, buying a first home, or saving for college. Our Financial Planners guide you through crucial financial decisions, ensuring your financial plan is a strong foundation for your future.",
+        "Entering retirement without a financial plan is like setting sail without a map: you might drift aimlessly and never reach your intended destination. At Armstrong Capital, our expert financial planners use advanced modelling to help you see the impact of financial decisions before making them. The financial planning process begins by understanding your priorities and what matters most in your life. Through in-depth discussions, we tailor recommendations to your unique needs, whether you’re planning for retirement, buying a first home, or saving for college. Our Financial Planners guide you through crucial financial decisions, ensuring your financial plan is a strong foundation for your future.",
       ],
       "image": "/images/armstrong/financial_planning.webp"
     },
@@ -290,7 +290,7 @@ export const marketingPages = {
         },
         {
           "title": "Debt Management and Optimization",
-          "description": "Smart debt management is crucial for financial well-being. We evaluate your liabilities—mortgages, loans, and credit lines—and craft strategies to minimize interest and streamline repayment. By optimizing your debt, you can reduce stress, save more, and invest effectively."
+          "description": "Smart debt management is crucial for financial well-being. We evaluate your liabilities: mortgages, loans, and credit lines, and craft strategies to minimize interest and streamline repayment. By optimizing your debt, you can reduce stress, save more, and invest effectively."
         }
       ]
     },
@@ -380,7 +380,7 @@ export const marketingPages = {
       "title": "Market Updates",
       "paragraphs": [
         "Our monthly read on markets, macro, and what it means for your portfolio.",
-        "Money Moves Monthly is Armstrong Capital's flagship market commentary — concise analysis of what moved markets, what's ahead, and how it may affect investors like you.",
+        "Money Moves Monthly is Armstrong Capital's flagship market commentary: concise analysis of what moved markets, what's ahead, and how it may affect investors like you.",
         "Browse editions by year below and download any issue as a PDF. New editions are added each month."
       ],
       "image": "/images/armstrong/investment_management-min.webp"
@@ -399,7 +399,7 @@ export const marketingPages = {
         },
         {
           "title": "Timely commentary",
-          "description": "Research-driven perspective from Armstrong Capital — not headlines, but what the data means for you."
+          "description": "Research-driven perspective from Armstrong Capital, not headlines, but what the data means for you."
         },
         {
           "title": "Downloadable PDFs",
@@ -636,7 +636,7 @@ export const marketingPages = {
     "hero": {
       "title": "Retirement Planning",
       "paragraphs": [
-        "One of the biggest challenges retirees face today is ensuring their savings last throughout their lifetime. It’s similar to guiding a ship through unpredictable seas—you need to manage your supplies and resources wisely to navigate through both calm and stormy waters. You need income from your investments to cover your needs, but you also need growth to maintain your portfolio’s longevity. That’s why our approach combines consistent income with growth potential to help you enjoy a secure retirement. Our team of experienced financial advisors has applied this methodology for decades through various market conditions, ensuring our clients stay on track.",
+        "One of the biggest challenges retirees face today is ensuring their savings last throughout their lifetime. It’s similar to guiding a ship through unpredictable seas: you need to manage your supplies and resources wisely to navigate through both calm and stormy waters. You need income from your investments to cover your needs, but you also need growth to maintain your portfolio’s longevity. That’s why our approach combines consistent income with growth potential to help you enjoy a secure retirement. Our team of experienced financial advisors has applied this methodology for decades through various market conditions, ensuring our clients stay on track.",
       ],
       "image": "/images/armstrong/retirement_planning-min.webp"
     },
@@ -673,7 +673,7 @@ export const marketingPages = {
     "hero": {
       "title": "Risk Management",
       "paragraphs": [
-        "Protecting your wealth is a fundamental aspect of a sound financial strategy, and proper insurance planning plays a crucial role. Insurance is essentially a tool for shifting risk to others, helping you guard against unlikely financial losses that could be detrimental to your financial stability. By pooling risk among policyholders, insurance mitigates the impact of unexpected events, but it’s essential to strike the right balance—ensuring you have neither too little nor too much coverage.",
+        "Protecting your wealth is a fundamental aspect of a sound financial strategy, and proper insurance planning plays a crucial role. Insurance is essentially a tool for shifting risk to others, helping you guard against unlikely financial losses that could be detrimental to your financial stability. By pooling risk among policyholders, insurance mitigates the impact of unexpected events, but it’s essential to strike the right balance, ensuring you have neither too little nor too much coverage.",
       ],
       "image": "/images/armstrong/risk_management-min.webp"
     },

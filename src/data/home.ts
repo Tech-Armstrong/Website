@@ -40,7 +40,7 @@ export const offeringsSection = {
   eyebrow: "What we offer",
   title: "Our offerings",
   subtitle:
-    "From mutual funds and equities to PMS, AIFs, and insurance — coordinated solutions across your full investment spectrum.",
+    "From mutual funds and equities to PMS, AIFs, and insurance, coordinated solutions across your full investment spectrum.",
 } as const;
 
 export const offerings = [
@@ -164,7 +164,7 @@ export const aboutSection = {
   eyebrow: "About Armstrong",
   title: "A wealth manager's job is to manage risk and build discipline.",
   description:
-    "Founded in 2010 by Manju Mastakar, Armstrong Capital advises families, HNIs, and NRIs across India and abroad. Our team of seven specialists builds goal-based plans grounded in our own fund research — then reviews them with you as markets and your life change. We earn a regulated, disclosed commission, so our incentives stay aligned with your long-term returns.",
+    "Founded in 2010 by Manju Mastakar, Armstrong Capital advises families, HNIs, and NRIs across India and abroad. Our team of seven specialists builds goal-based plans grounded in our own fund research, then reviews them with you as markets and your life change. We earn a regulated, disclosed commission, so our incentives stay aligned with your long-term returns.",
   ctaLabel: "Meet the team",
   ctaHref: "/about-us#our-team",
 } as const;

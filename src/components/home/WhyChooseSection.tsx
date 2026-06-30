@@ -272,7 +272,7 @@ export function WhyChooseSection() {
                     {active.quote}
                   </p>
                   <cite className="relative mt-1.5 block font-body text-xs font-medium not-italic text-brand-blue sm:mt-2 sm:text-sm">
-                    — {active.attribution}
+                    {active.attribution}
                   </cite>
                 </blockquote>
               </div>

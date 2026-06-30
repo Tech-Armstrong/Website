@@ -18,7 +18,7 @@ import { getMarketingPageBySlug } from "@/lib/pages/content";
 import { marketingPageMetadata } from "@/lib/pages/metadata";
 
 const ABOUT_PAGE_DESCRIPTION =
-  "Learn about Armstrong Capital — our team, advisory process, and research approach. One place for who we are and how we work.";
+  "Learn about Armstrong Capital: our team, advisory process, and research approach. One place for who we are and how we work.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getMarketingPageBySlug("about-us");

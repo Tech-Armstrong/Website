@@ -17,7 +17,7 @@ export const whoWeHelpSegments = [
     title: "Beginning to Invest",
     image: "/images/who-we-help/beginning-to-invest.png",
     description:
-      "Start early and build a strong foundation. We design plans that balance growth with the lifestyle you want today — guiding every milestone from your first investment to long-term security.",
+      "Start early and build a strong foundation. We design plans that balance growth with the lifestyle you want today, guiding every milestone from your first investment to long-term security.",
     items: [
       "Tailored financial planning",
       "Personalized one-on-one consultations",
@@ -30,7 +30,7 @@ export const whoWeHelpSegments = [
     title: "Women Investors",
     image: "/images/who-we-help/women-investors.png",
     description:
-      "Financial strategies that adapt through life's transitions — career breaks, motherhood, separation, or loss — so you stay confident and secure at every stage.",
+      "Financial strategies that adapt through life's transitions, career breaks, motherhood, separation, or loss, so you stay confident and secure at every stage.",
     items: [
       "Whole-family financial analysis",
       "Cash-flow projections",
@@ -44,7 +44,7 @@ export const whoWeHelpSegments = [
     // TODO(client image): replace with a distinct photo for this segment
     image: "/images/armstrong/wealth_management.webp",
     description:
-      "A precise, proactive approach to growing and preserving substantial wealth — optimizing returns, managing tax, and securing your legacy across generations.",
+      "A precise, proactive approach to growing and preserving substantial wealth, optimizing returns, managing tax, and securing your legacy across generations.",
     items: [
       "Consolidated portfolio view",
       "International investment advisory",
@@ -58,7 +58,7 @@ export const whoWeHelpSegments = [
     // TODO(client image): replace with a distinct photo for this segment
     image: "/images/armstrong/investment_management-min.webp",
     description:
-      "Cross-border wealth, handled with care. We review your assets in India and abroad and craft strategies for tax, retirement, and investing — whatever your residency.",
+      "Cross-border wealth, handled with care. We review your assets in India and abroad and craft strategies for tax, retirement, and investing, whatever your residency.",
     items: [
       "Cross-border tax guidance",
       "Retirement planning, India or abroad",
@@ -86,7 +86,7 @@ export const whoWeHelpSegments = [
     // TODO(client image): replace with a distinct photo for this segment
     image: "/images/armstrong/financial_planning.webp",
     description:
-      "Changing careers or starting a venture? We build the financial blueprint — budgeting, safety nets, and contingencies — so you can take the leap with stability.",
+      "Changing careers or starting a venture? We build the financial blueprint: budgeting, safety nets, and contingencies, so you can take the leap with stability.",
     items: [
       "Budgeting & cash-flow management",
       "Emergency fund establishment",

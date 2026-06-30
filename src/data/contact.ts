@@ -2,7 +2,7 @@ export const contactInfo = {
   eyebrow: "Let's talk",
   title: "Book a consultation with our advisors",
   subtitle:
-    "Tell us about your goals — we'll respond with a clear next step, not a sales pitch.",
+    "Tell us about your goals. We'll respond with a clear next step, not a sales pitch.",
   phones: [
     {
       label: "Call Us",
