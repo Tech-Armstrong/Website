@@ -3,7 +3,7 @@ import { aboutSection } from "@/data/home";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ExperienceCircle } from "./ExperienceCircle";
-
+//test
 export function AboutSection() {
   const { eyebrow, title, description, ctaLabel, ctaHref } = aboutSection;
 
