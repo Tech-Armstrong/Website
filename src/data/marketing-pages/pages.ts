@@ -1,4 +1,5 @@
 // Hand-maintained marketing page content (see docs/plans/002-marketing-site-redesign.md)
+import { careersEmail } from "@/data/contact";
 import type { MarketingPageConfig } from "@/types/marketing-page";
 
 export const marketingPages = {
@@ -139,7 +140,7 @@ export const marketingPages = {
     ],
     "careerCta": {
       "label": "Apply Now",
-      "href": "/career-send-resume"
+      "href": careersEmail.href
     }
   },
   "contact": {

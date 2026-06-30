@@ -69,6 +69,11 @@ const nextConfig: NextConfig = {
         destination: "/who-we-help#career-transition",
         permanent: true,
       },
+      {
+        source: "/career-send-resume",
+        destination: "/career",
+        permanent: true,
+      },
     ];
   },
   images: {

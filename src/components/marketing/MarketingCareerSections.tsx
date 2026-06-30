@@ -1,6 +1,6 @@
-import Link from "next/link";
 import type { MarketingCareerSection } from "@/types/marketing-page";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { CareerApplyCta } from "./CareerApplyCta";
 
 type MarketingCareerSectionsProps = {
   sections: MarketingCareerSection[];
@@ -33,13 +33,7 @@ export function MarketingCareerSections({ sections, cta }: MarketingCareerSectio
           </ScrollReveal>
         ))}
       </div>
-      {cta ? (
-        <ScrollReveal delay={sections.length * 80}>
-          <Link href={cta.href} className="theme-btn btn-two mt-8 inline-block">
-            {cta.label}
-          </Link>
-        </ScrollReveal>
-      ) : null}
+      {cta ? <CareerApplyCta label={cta.label} /> : null}
     </section>
   );
 }

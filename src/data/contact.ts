@@ -1,3 +1,8 @@
+export const careersEmail = {
+  display: "careers@armstrong-cap.com",
+  href: "mailto:careers@armstrong-cap.com",
+} as const;
+
 export const contactInfo = {
   eyebrow: "Let's talk",
   title: "Book a consultation with our advisors",
