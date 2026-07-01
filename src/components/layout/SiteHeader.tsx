@@ -105,7 +105,7 @@ export function SiteHeader() {
 
   const desktopNavItems = [
     ...leftNav.slice(1),
-    ...rightNav.filter((item) => item.type !== "link" || !item.external),
+    ...rightNav,
   ];
 
   return (
