@@ -43,13 +43,13 @@ export function AboutTeamSection() {
       </ScrollReveal>
 
       <div
-        className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
+        className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
         role="list"
         aria-labelledby="our-team-heading"
       >
         {ourTeamMembers.map((member, index) => (
-          <div key={member.name} role="listitem">
-            <ScrollReveal delay={index * 60}>
+          <div key={member.name} role="listitem" className="h-full">
+            <ScrollReveal delay={index * 60} className="h-full">
               <TeamMemberCard
                 member={member}
                 onReadMore={openModal}

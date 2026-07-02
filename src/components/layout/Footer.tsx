@@ -89,11 +89,6 @@ export function Footer() {
           <div className="lg:col-span-2">
             <h3 className={sectionTitleClass}>Services</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/blog" className="footer-link font-body text-base">
-                  Blog
-                </Link>
-              </li>
               {footerServices.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="footer-link font-body text-base">

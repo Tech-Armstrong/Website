@@ -153,12 +153,12 @@ export function TeamMemberCard({
         </div>
       ) : null}
       <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex min-h-[4.5rem] items-start justify-between gap-3">
           <div>
             <h3 className="font-display text-lg font-semibold text-brand-navy">
               {member.name}
             </h3>
-            <p className="mt-1 font-body text-sm text-brand-muted">
+            <p className="mt-1 line-clamp-2 font-body text-sm text-brand-muted">
               {member.role}
             </p>
           </div>
