@@ -14,14 +14,9 @@ export const aboutUsHero = {
     "Founded in 2010 by Manju Mastakar, Armstrong Capital advises families, HNIs, and NRIs across India and abroad. We build goal-based plans grounded in our own fund research, then review them with you as markets and your life change.",
     "We work on a non-discretionary basis: your assets stay in your name, every investment needs your sign-off, and we earn a regulated, disclosed commission so our incentives stay aligned with your long-term returns.",
   ] as const,
-  images: {
-    shape:
-      "/images/armstrong/2024/07/shape-44.png",
-    primary:
-      "/images/armstrong/2024/09/image-7.png",
-    secondary:
-      "/images/armstrong/2024/07/about-3.jpg",
-  },
+  image: "/images/armstrong/2024/10/about-us-hero-collaboration.png",
+  imageAlt:
+    "Advisors reviewing financial charts and documents together at a planning meeting",
 } as const;
 
 export const aboutUsWhyChoose = {

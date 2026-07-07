@@ -82,7 +82,7 @@ export const marketingPages = {
         "Join a finance services firm that values growth, collaboration, and work-life balance. Armstrong Capital offers opportunities for graduates, placement interns, and experienced professionals.",
         "We are in continuous search for individuals who could be assets in our balance sheet."
       ],
-      "image": "/images/career/hero.png"
+      "image": "/images/career/hero-career-interview.png"
     },
     "features": {
       "eyebrow": "Why Choose Us",

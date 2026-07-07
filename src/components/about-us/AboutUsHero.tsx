@@ -3,7 +3,7 @@ import { aboutUsCredential, aboutUsHero } from "@/data/about-us";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function AboutUsHero() {
-  const { titleLine1, titleLine2, paragraphs, images } = aboutUsHero;
+  const { titleLine1, titleLine2, paragraphs, image, imageAlt } = aboutUsHero;
 
   return (
     <section
@@ -11,35 +11,20 @@ export function AboutUsHero() {
       aria-labelledby="about-us-hero-heading"
     >
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
-        <ScrollReveal
-          direction="left"
-          className="relative mx-auto aspect-[4/5] w-full max-w-md lg:max-w-none"
-        >
-          <div
-            className="pointer-events-none absolute -left-2 -top-2 h-[92%] w-[92%] bg-contain bg-left-top bg-no-repeat sm:-left-4 sm:-top-4"
-            style={{ backgroundImage: `url(${images.shape})` }}
-            aria-hidden
-          />
-          <div className="relative ml-auto h-full w-[82%]">
-            <div className="relative z-10 aspect-[4/5] w-[68%] overflow-hidden rounded-2xl shadow-[var(--elevation-panel)]">
-              <Image
-                src={images.primary}
-                alt="Armstrong Capital team collaboration"
-                fill
-                sizes="(max-width: 1024px) 280px, 360px"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="absolute bottom-0 right-0 z-20 aspect-[4/5] w-[58%] overflow-hidden rounded-2xl border-4 border-white shadow-[var(--elevation-panel)]">
-              <Image
-                src={images.secondary}
-                alt="Professional financial advisory setting"
-                fill
-                sizes="(max-width: 1024px) 200px, 260px"
-                className="object-cover"
-              />
-            </div>
+        <ScrollReveal direction="left">
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-lg overflow-hidden rounded-2xl shadow-[var(--elevation-panel)] lg:max-w-none">
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-brand-dark/30 to-transparent"
+              aria-hidden
+            />
           </div>
         </ScrollReveal>
 
