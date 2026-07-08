@@ -3,6 +3,6 @@ export const appointmentForm = {
   description:
     "",
   embedUrl:
-    "https://airtable.com/embed/appFH8nVIFq1sPPgK/pagEAbxXQ3LTRtuZs/form",
+    "https://airtable.com/embed/app1TxkbyiO6xF4T8/pagvnIN8QuPSvhGHN/form",
   embedHeight: 533,
 } as const;
