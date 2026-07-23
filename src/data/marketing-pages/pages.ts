@@ -143,6 +143,92 @@ export const marketingPages = {
       "href": careersEmail.href
     }
   },
+  "life-at-armstrong": {
+    slug: "life-at-armstrong",
+    category: "career",
+    hero: {
+      title: "Life @ Armstrong",
+      paragraphs: [
+        "At Armstrong, culture is built in the moments between the work — wellness, celebration, learning, and play. Life @ Armstrong brings together the programs and experiences that keep our teams healthy, connected, and inspired.",
+        "From preventive health check-ups and festival celebrations to #ActiveArmstrong sports days and outdoor excursions, every initiative reinforces one idea: people thrive when they feel cared for.",
+      ],
+      image: "/images/life-at-armstrong/Team_Outing_3.JPG",
+    },
+    careerSections: [
+      {
+        title: "Health & Wellness Programs",
+        paragraphs: [
+          "At Armstrong, employee well-being isn't just a benefit — it's a promise. Our initiatives are designed to ensure every team member feels supported and cared for through meaningful health measures.",
+        ],
+        bullets: [
+          "Annual Preventive Health Check-ups: Every year, employees undergo comprehensive screenings, ensuring proactive care and reinforcing our commitment to long-term wellness.",
+          "Medical Coverage & Insurance: Armstrong's comprehensive insurance coverage protects every employee and their family, reflecting our enduring promise of care, security, and lasting wellbeing.",
+        ],
+        tagline: "Caring today, healthier tomorrow",
+        images: [
+          {
+            src: "/images/life-at-armstrong/Health_checkup_1.jpeg",
+            alt: "Armstrong Capital annual health checkup",
+          },
+          {
+            src: "/images/life-at-armstrong/Health_checkup_2.jpeg",
+            alt: "Armstrong Capital wellness screening",
+          },
+          {
+            src: "/images/life-at-armstrong/Health_checkup_3.jpeg",
+            alt: "Armstrong Capital employee health program",
+          },
+        ],
+      },
+      {
+        title: "Dining & Corporate Outings",
+        paragraphs: [
+          "Dining together and stepping out as a team strengthen bonds, while business meets provide valuable opportunities to learn, connect, and grow professionally.",
+        ],
+        tagline: "Dining that bonds, meets that build success",
+        images: [
+          {
+            src: "/images/life-at-armstrong/Team_Outing.jpeg",
+            alt: "Armstrong Capital team dining outing",
+          },
+          {
+            src: "/images/life-at-armstrong/Team_Outing_2.jpeg",
+            alt: "Armstrong Capital corporate outing celebration",
+          },
+        ],
+      },
+      {
+        title: "Sports & Fitness Initiatives",
+        paragraphs: [
+          "We believe fitness fuels energy, teamwork, and positivity. Every month, our #ActiveArmstrong sports event brings employees together to play a variety of sports, encouraging healthy competition, collaboration, and fun.",
+          "These initiatives promote physical wellbeing and inspire an active, engaging environment.",
+        ],
+        tagline: "Stay active, stay Armstrong",
+        images: [
+          {
+            src: "/images/life-at-armstrong/Sports_1.jpeg",
+            alt: "Armstrong Capital sports event",
+          },
+          {
+            src: "/images/life-at-armstrong/Sports_2.jpeg",
+            alt: "Armstrong Capital team fitness activity",
+          },
+          {
+            src: "/images/life-at-armstrong/Sports_3.jpeg",
+            alt: "ActiveArmstrong sports day",
+          },
+        ],
+      },
+    ],
+    careerCta: {
+      label: "Explore Careers",
+      href: "/career",
+    },
+    quote: {
+      text: "Stay active, stay Armstrong",
+      attribution: "Armstrong Capital",
+    },
+  },
   "contact": {
     "slug": "contact",
     "category": "contact",

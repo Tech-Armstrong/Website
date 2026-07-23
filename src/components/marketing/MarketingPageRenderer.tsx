@@ -85,6 +85,11 @@ export function MarketingPageRenderer({
             <MarketingCareerSections
               sections={config.careerSections}
               cta={config.careerCta}
+              ariaLabel={
+                config.slug === "life-at-armstrong"
+                  ? "Life at Armstrong"
+                  : "Career opportunities"
+              }
             />
           ) : null}
 

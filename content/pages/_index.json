@@ -274,6 +274,15 @@
       "file": "blog.json"
     },
     {
+      "id": 99001,
+      "slug": "life-at-armstrong",
+      "title": "Life @ Armstrong",
+      "link": "https://armstrong-cap.com/life-at-armstrong/",
+      "modified": "2026-07-23T00:00:00",
+      "featured_media_id": null,
+      "file": "life-at-armstrong.json"
+    },
+    {
       "id": 3061,
       "slug": "home-old-backup",
       "title": "Home-old-backup",

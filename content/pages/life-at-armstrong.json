@@ -1,0 +1,39 @@
+{
+  "id": 99001,
+  "type": "page",
+  "slug": "life-at-armstrong",
+  "status": "publish",
+  "link": "https://armstrong-cap.com/life-at-armstrong/",
+  "date": "2026-07-23T00:00:00",
+  "date_gmt": "2026-07-23T00:00:00",
+  "modified": "2026-07-23T00:00:00",
+  "modified_gmt": "2026-07-23T00:00:00",
+  "title": "Life @ Armstrong",
+  "excerpt": "<p>Discover Life @ Armstrong — health and wellness programs, team-building, outings, upskilling, excursions, and sports initiatives that shape our workplace culture.</p>\n",
+  "content": "",
+  "author": 1,
+  "featured_media_id": null,
+  "featured_image": null,
+  "parent": 0,
+  "menu_order": 0,
+  "template": "tpl-default-elementor.php",
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "meta": {
+    "footnotes": ""
+  },
+  "yoast": {
+    "title": "Life @ Armstrong - Armstrong Capital",
+    "robots": {
+      "index": "index",
+      "follow": "follow"
+    },
+    "canonical": "https://armstrong-cap.com/life-at-armstrong/",
+    "og_locale": "en_US",
+    "og_type": "article",
+    "og_title": "Life @ Armstrong - Armstrong Capital",
+    "og_description": "Discover Life @ Armstrong — health and wellness programs, team-building, outings, upskilling, excursions, and sports initiatives that shape our workplace culture.",
+    "og_url": "https://armstrong-cap.com/life-at-armstrong/",
+    "og_site_name": "Armstrong"
+  }
+}

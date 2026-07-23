@@ -59,7 +59,19 @@ export const rightNav: NavItem[] = [
     ],
   },
   { type: "link", label: "Who we help", href: "/who-we-help" },
-  { type: "link", label: "Career", href: "/career" },
+  {
+    type: "mega",
+    label: "Life & Careers",
+    groups: [
+      {
+        title: "Life & Careers",
+        links: [
+          { label: "Careers", href: "/career" },
+          { label: "Life @ Armstrong", href: "/life-at-armstrong" },
+        ],
+      },
+    ],
+  },
   {
     type: "link",
     label: "Client Login",

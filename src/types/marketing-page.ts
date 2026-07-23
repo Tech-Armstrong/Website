@@ -57,10 +57,23 @@ export type MarketingMediaPodcast = {
   embedUrl: string;
 };
 
+export type MarketingGalleryImage = {
+  src: string;
+  alt: string;
+};
+
+export type MarketingGallery = {
+  eyebrow?: string;
+  title: string;
+  images: MarketingGalleryImage[];
+};
+
 export type MarketingCareerSection = {
   title: string;
   paragraphs: string[];
   bullets?: string[];
+  tagline?: string;
+  images?: MarketingGalleryImage[];
 };
 
 export type MarketingArchiveGroup = {
@@ -90,6 +103,7 @@ export type MarketingPageConfig = {
   archiveGroups?: MarketingArchiveGroup[];
   careerSections?: MarketingCareerSection[];
   careerCta?: { label: string; href: string };
+  gallery?: MarketingGallery;
   showContactForm?: boolean;
   fullWidth?: boolean;
 };
